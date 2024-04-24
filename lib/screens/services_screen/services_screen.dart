@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/widgets/footer.dart';
 import 'package:my_portfolio/widgets/header.dart';
 import 'package:my_portfolio/widgets/horizontal_scrollbar_tile.dart';
@@ -16,26 +17,52 @@ class ServicesScreen extends StatefulWidget {
 class _ServicesScreenState extends State<ServicesScreen> {
   @override
   Widget build(BuildContext context) {
+    var isDesktopScreen = Breakpoints.isLargeScreen(context);
+    var isTabletScreen = Breakpoints.isMediumScreen(context);
+
     return Scaffold(
       appBar: const CustomHeader(),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
-              margin:
-                  const EdgeInsets.symmetric(horizontal: 400, vertical: 100),
-              child: const Column(
+              margin: isDesktopScreen
+                  ? EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * .2,
+                      vertical: 100)
+                  : isTabletScreen
+                      ? EdgeInsets.symmetric(
+                          horizontal: MediaQuery.of(context).size.width * .1,
+                          vertical: 100)
+                      : EdgeInsets.symmetric(
+                          horizontal: MediaQuery.of(context).size.width * .04,
+                          vertical: 100),
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
                     "Transforming Visions into Reality",
-                    style: TextStyle(
-                        fontSize: 60,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.black),
+                    style: isDesktopScreen
+                        ? const TextStyle(
+                            fontSize: 60,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black)
+                        : isTabletScreen
+                            ? const TextStyle(
+                                fontSize: 40,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black)
+                            : const TextStyle(
+                                fontSize: 30,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
                   ),
-                  Text(
+                  if (!isDesktopScreen)
+                    const SizedBox(
+                      height: 10,
+                    ),
+                  const Text(
                     "Explore our extensive portfolio for a glimpse into seamless digital solutions that elevate online experiences. I ensures your presence is not just noticed but remembered",
                     style: TextStyle(
                         fontSize: 17,
@@ -48,8 +75,17 @@ class _ServicesScreenState extends State<ServicesScreen> {
             Container(
               color: const Color(0xfff5f5f0),
               child: Container(
-                margin:
-                    const EdgeInsets.symmetric(horizontal: 400, vertical: 120),
+                margin: isDesktopScreen
+                    ? EdgeInsets.symmetric(
+                        horizontal: MediaQuery.of(context).size.width * .2,
+                        vertical: 120)
+                    : isTabletScreen
+                        ? EdgeInsets.symmetric(
+                            horizontal: MediaQuery.of(context).size.width * .1,
+                            vertical: 120)
+                        : EdgeInsets.symmetric(
+                            horizontal: MediaQuery.of(context).size.width * .04,
+                            vertical: 120),
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
