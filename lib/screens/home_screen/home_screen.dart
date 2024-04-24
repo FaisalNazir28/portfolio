@@ -75,203 +75,462 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: [
                 Container(
-                  margin: const EdgeInsets.symmetric(
-                      horizontal: 200, vertical: 150),
-                  child: Row(
-                    children: [
-                      const Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                  margin: isDesktopScreen
+                      ? EdgeInsets.symmetric(
+                          horizontal: MediaQuery.of(context).size.width * .2,
+                          vertical: 150)
+                      : isTabletScreen
+                          ? EdgeInsets.symmetric(
+                              horizontal:
+                                  MediaQuery.of(context).size.width * .1,
+                              vertical: 80)
+                          : EdgeInsets.symmetric(
+                              horizontal:
+                                  MediaQuery.of(context).size.width * .04,
+                              vertical: 60),
+                  child: isDesktopScreen
+                      ? Row(
                           children: [
-                            CircleAvatar(
-                              radius: 30,
-                              backgroundImage:
-                                  AssetImage('assets/profiles/faisal.png'),
+                            const Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  CircleAvatar(
+                                    radius: 30,
+                                    backgroundImage: AssetImage(
+                                        'assets/profiles/faisal.png'),
+                                  ),
+                                  SizedBox(
+                                    height: 30,
+                                  ),
+                                  Text(
+                                    "Hello! I'm Faisal Nazir",
+                                    style: TextStyle(
+                                        fontSize: 60,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ],
+                              ),
                             ),
-                            SizedBox(
-                              height: 30,
-                            ),
-                            Text(
-                              "Hello! I'm Faisal\nNazir",
-                              style: TextStyle(
-                                  fontSize: 50, fontWeight: FontWeight.w600),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    padding: isDesktopScreen
+                                        ? const EdgeInsets.only(right: 80)
+                                        : null,
+                                    child: const Text(
+                                      "A Cross Platform Developer based in Lahore, Pakistan.",
+                                      style: TextStyle(
+                                          fontSize: 33,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  const Text(
+                                    "Passionate creating great applications for production.",
+                                    style: TextStyle(
+                                        fontSize: 17, color: Colors.black54),
+                                  ),
+                                  const SizedBox(
+                                    height: 50,
+                                  ),
+                                  Row(
+                                    children: [
+                                      InkWell(
+                                        onTap: () {
+                                          Navigator.pushNamed(
+                                              context, Routes.contact);
+                                        },
+                                        child: Container(
+                                          margin:
+                                              const EdgeInsets.only(right: 20),
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 22, vertical: 13),
+                                          decoration: BoxDecoration(
+                                              color: Colors.black,
+                                              borderRadius:
+                                                  BorderRadius.circular(12)),
+                                          child: const Text(
+                                            "Talk with me",
+                                            style: TextStyle(
+                                                fontSize: 16,
+                                                color: Colors.white),
+                                          ),
+                                        ),
+                                      ),
+                                      InkWell(
+                                        onTap: () {
+                                          Navigator.pushNamed(
+                                              context, Routes.caseStudies);
+                                        },
+                                        child: Container(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 22, vertical: 13),
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(12),
+                                            border: Border.all(
+                                              color: Colors.black26,
+                                            ),
+                                          ),
+                                          child: const Text(
+                                            "See my work",
+                                            style: TextStyle(
+                                                fontSize: 16,
+                                                color: Colors.black),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
                             ),
                           ],
-                        ),
-                      ),
-                      Expanded(
-                        child: Column(
+                        )
+                      : Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
-                              "A Cross Platform Developer based in\nLahore, Pakistan.",
-                              style: TextStyle(
-                                  fontSize: 40, fontWeight: FontWeight.w500),
-                            ),
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            const Text(
-                              "Passionate creating great applications for production.",
-                              style: TextStyle(
-                                  fontSize: 15, color: Colors.black54),
-                            ),
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            Row(
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                InkWell(
-                                  onTap: () {
-                                    Navigator.pushNamed(
-                                        context, Routes.contact);
-                                  },
-                                  child: Container(
-                                    margin: const EdgeInsets.only(right: 20),
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 18, vertical: 10),
-                                    decoration: BoxDecoration(
-                                        color: Colors.black,
-                                        borderRadius: BorderRadius.circular(8)),
-                                    child: const Text(
-                                      "Talk with me",
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                  ),
+                                const CircleAvatar(
+                                  radius: 30,
+                                  backgroundImage:
+                                      AssetImage('assets/profiles/faisal.png'),
                                 ),
-                                InkWell(
-                                  onTap: () {
-                                    Navigator.pushNamed(
-                                        context, Routes.caseStudies);
-                                  },
-                                  child: Container(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 18, vertical: 10),
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: Colors.black26,
-                                      ),
-                                    ),
-                                    child: const Text(
-                                      "See my work",
-                                      style: TextStyle(color: Colors.black),
-                                    ),
-                                  ),
+                                const SizedBox(
+                                  height: 30,
+                                ),
+                                Text(
+                                  "Hello! I'm Faisal Nazir",
+                                  style: TextStyle(
+                                      fontSize: isMobileScreen ? 30 : 35,
+                                      fontWeight: FontWeight.w500),
                                 ),
                               ],
-                            )
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  padding: isDesktopScreen
+                                      ? const EdgeInsets.only(right: 80)
+                                      : null,
+                                  child: Text(
+                                    "A Cross Platform Developer based in Lahore, Pakistan.",
+                                    style: TextStyle(
+                                        fontSize: isMobileScreen ? 20 : 25,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                const Text(
+                                  "Passionate creating great applications for production.",
+                                  style: TextStyle(
+                                      fontSize: 17, color: Colors.black54),
+                                ),
+                                const SizedBox(
+                                  height: 50,
+                                ),
+                                Row(
+                                  children: [
+                                    InkWell(
+                                      onTap: () {
+                                        Navigator.pushNamed(
+                                            context, Routes.contact);
+                                      },
+                                      child: Container(
+                                        margin:
+                                            const EdgeInsets.only(right: 20),
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 22, vertical: 13),
+                                        decoration: BoxDecoration(
+                                            color: Colors.black,
+                                            borderRadius:
+                                                BorderRadius.circular(12)),
+                                        child: const Text(
+                                          "Talk with me",
+                                          style: TextStyle(
+                                              fontSize: 16,
+                                              color: Colors.white),
+                                        ),
+                                      ),
+                                    ),
+                                    InkWell(
+                                      onTap: () {
+                                        Navigator.pushNamed(
+                                            context, Routes.caseStudies);
+                                      },
+                                      child: Container(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 22, vertical: 13),
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius:
+                                              BorderRadius.circular(12),
+                                          border: Border.all(
+                                            color: Colors.black26,
+                                          ),
+                                        ),
+                                        child: const Text(
+                                          "See my work",
+                                          style: TextStyle(
+                                              fontSize: 16,
+                                              color: Colors.black),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
                           ],
                         ),
-                      ),
-                    ],
+                ),
+                Container(
+                  color: const Color(0xfff5f5f0),
+                  child: Container(
+                    margin: isDesktopScreen
+                        ? EdgeInsets.symmetric(
+                            horizontal: MediaQuery.of(context).size.width * .2,
+                            vertical: 150)
+                        : isTabletScreen
+                            ? EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .1,
+                                vertical: 80)
+                            : EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .04,
+                                vertical: 60),
+                    child: isDesktopScreen
+                        ? const Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
+                                  children: [
+                                    Text(
+                                      "Working experience",
+                                      style: TextStyle(
+                                          fontSize: 40,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                    SizedBox(
+                                      height: 50,
+                                    ),
+                                    ExperienceTile(
+                                        companyLogo:
+                                            "assets/logo/soloinsight.jpeg",
+                                        title:
+                                            "Flutter Developer at Soloinsight Inc.",
+                                        startDate: "March 2020",
+                                        endDate: "Present"),
+                                    ExperienceTile(
+                                        companyLogo: "assets/logo/artache.jfif",
+                                        title: "Webmaster at Artache Magazine",
+                                        startDate: "July 2023",
+                                        endDate: "Present"),
+                                    ExperienceTile(
+                                        companyLogo:
+                                            "assets/logo/wordpress.png",
+                                        title: "Wordpress Developer at Fiverr",
+                                        startDate: "October 2018",
+                                        endDate: "Present"),
+                                    ExperienceTile(
+                                        companyLogo: "assets/logo/gdsc1.webp",
+                                        title:
+                                            "Google DSC Ambassador at GDSC - PUCIT",
+                                        startDate: "October 2021",
+                                        endDate: "October 2022"),
+                                    ExperienceTile(
+                                        companyLogo: "assets/logo/pel1.png",
+                                        title: "Android Developer at PEL",
+                                        startDate: "October 2018",
+                                        endDate: "November 2018"),
+                                    ExperienceTile(
+                                        companyLogo:
+                                            "assets/logo/wordpress.png",
+                                        title:
+                                            "Wordpress Developer at ECOM Technologies",
+                                        startDate: "September 2018",
+                                        endDate: "October 2018"),
+                                  ],
+                                ),
+                              ),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
+                                  children: [
+                                    Text(
+                                      maxLines: 1,
+                                      overflow: TextOverflow.fade,
+                                      "Awards & Recognitions",
+                                      style: TextStyle(
+                                          fontSize: 40,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                    SizedBox(
+                                      height: 50,
+                                    ),
+                                    ExperienceTile(
+                                        companyLogo: "assets/logo/pieas1.jpg",
+                                        title:
+                                            "Best Website Design Award by PIEAS",
+                                        startDate: "March 2021"),
+                                    ExperienceTile(
+                                        companyLogo:
+                                            "assets/logo/soloinsight.jpeg",
+                                        title:
+                                            "Information Security Training by Soloinsight",
+                                        startDate: "January 2022"),
+                                    ExperienceTile(
+                                        companyLogo:
+                                            "assets/logo/soloinsight.jpeg",
+                                        title:
+                                            "Application Security Training by Soloinsight",
+                                        startDate: "April 2023"),
+                                  ],
+                                ),
+                              )
+                            ],
+                          )
+                        : Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Text(
+                                    "Working experience",
+                                    style: TextStyle(
+                                        fontSize: isMobileScreen ? 23 : 40,
+                                        fontWeight: isMobileScreen
+                                            ? FontWeight.w600
+                                            : FontWeight.w500),
+                                  ),
+                                  const SizedBox(
+                                    height: 50,
+                                  ),
+                                  const ExperienceTile(
+                                      companyLogo:
+                                          "assets/logo/soloinsight.jpeg",
+                                      title:
+                                          "Flutter Developer at Soloinsight Inc.",
+                                      startDate: "March 2020",
+                                      endDate: "Present"),
+                                  const ExperienceTile(
+                                      companyLogo: "assets/logo/artache.jfif",
+                                      title: "Webmaster at Artache Magazine",
+                                      startDate: "July 2023",
+                                      endDate: "Present"),
+                                  const ExperienceTile(
+                                      companyLogo: "assets/logo/wordpress.png",
+                                      title: "Wordpress Developer at Fiverr",
+                                      startDate: "October 2018",
+                                      endDate: "Present"),
+                                  const ExperienceTile(
+                                      companyLogo: "assets/logo/gdsc1.webp",
+                                      title:
+                                          "Google DSC Ambassador at GDSC - PUCIT",
+                                      startDate: "October 2021",
+                                      endDate: "October 2022"),
+                                  const ExperienceTile(
+                                      companyLogo: "assets/logo/pel1.png",
+                                      title: "Android Developer at PEL",
+                                      startDate: "October 2018",
+                                      endDate: "November 2018"),
+                                  const ExperienceTile(
+                                      companyLogo: "assets/logo/wordpress.png",
+                                      title:
+                                          "Wordpress Developer at ECOM Technologies",
+                                      startDate: "September 2018",
+                                      endDate: "October 2018"),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 50,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Text(
+                                    "Awards & Recognitions",
+                                    style: TextStyle(
+                                        fontSize: isMobileScreen ? 23 : 40,
+                                        fontWeight: isMobileScreen
+                                            ? FontWeight.w600
+                                            : FontWeight.w500),
+                                  ),
+                                  const SizedBox(
+                                    height: 50,
+                                  ),
+                                  const ExperienceTile(
+                                      companyLogo: "assets/logo/pieas1.jpg",
+                                      title:
+                                          "Best Website Design Award by PIEAS",
+                                      startDate: "March 2021"),
+                                  const ExperienceTile(
+                                      companyLogo:
+                                          "assets/logo/soloinsight.jpeg",
+                                      title:
+                                          "Information Security Training by Soloinsight",
+                                      startDate: "January 2022"),
+                                  const ExperienceTile(
+                                      companyLogo:
+                                          "assets/logo/soloinsight.jpeg",
+                                      title:
+                                          "Application Security Training by Soloinsight",
+                                      startDate: "April 2023"),
+                                ],
+                              )
+                            ],
+                          ),
                   ),
                 ),
                 Container(
                   color: const Color(0xfff5f5f0),
                   child: Container(
-                    margin: const EdgeInsets.symmetric(
-                        horizontal: 200, vertical: 150),
-                    child: const Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Working experience",
-                                style: TextStyle(
-                                    fontSize: 30, fontWeight: FontWeight.w500),
-                              ),
-                              SizedBox(
-                                height: 50,
-                              ),
-                              ExperienceTile(
-                                  companyLogo: "assets/logo/soloinsight.jpeg",
-                                  title:
-                                      "Flutter Developer at Soloinsight Inc.",
-                                  startDate: "March 2020",
-                                  endDate: "Present"),
-                              ExperienceTile(
-                                  companyLogo: "assets/logo/artache.jfif",
-                                  title: "Webmaster at Artache Magazine",
-                                  startDate: "July 2023",
-                                  endDate: "Present"),
-                              ExperienceTile(
-                                  companyLogo: "assets/logo/wordpress.png",
-                                  title: "Wordpress Developer at Fiverr",
-                                  startDate: "October 2018",
-                                  endDate: "Present"),
-                              ExperienceTile(
-                                  companyLogo: "assets/logo/gdsc1.webp",
-                                  title:
-                                      "Google DSC Ambassador at GDSC - PUCIT",
-                                  startDate: "October 2021",
-                                  endDate: "October 2022"),
-                              ExperienceTile(
-                                  companyLogo: "assets/logo/pel1.png",
-                                  title: "Android Developer at PEL",
-                                  startDate: "October 2018",
-                                  endDate: "November 2018"),
-                              ExperienceTile(
-                                  companyLogo: "assets/logo/wordpress.png",
-                                  title:
-                                      "Wordpress Developer at ECOM Technologies",
-                                  startDate: "September 2018",
-                                  endDate: "October 2018"),
-                            ],
-                          ),
-                        ),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Awards & Recognitions",
-                                style: TextStyle(
-                                    fontSize: 30, fontWeight: FontWeight.w500),
-                              ),
-                              SizedBox(
-                                height: 50,
-                              ),
-                              ExperienceTile(
-                                  companyLogo: "assets/logo/pieas1.jpg",
-                                  title: "Best Website Design Award by PIEAS",
-                                  startDate: "March 2021"),
-                              ExperienceTile(
-                                  companyLogo: "assets/logo/soloinsight.jpeg",
-                                  title:
-                                      "Information Security Training by Soloinsight",
-                                  startDate: "January 2022"),
-                              ExperienceTile(
-                                  companyLogo: "assets/logo/soloinsight.jpeg",
-                                  title:
-                                      "Application Security Training by Soloinsight",
-                                  startDate: "April 2023"),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                  color: const Color(0xfff5f5f0),
-                  child: Container(
-                    margin: const EdgeInsets.only(
-                        bottom: 150, left: 200, right: 400),
+                    margin: isDesktopScreen
+                        ? EdgeInsets.only(
+                            left: MediaQuery.of(context).size.width * .2,
+                            right: MediaQuery.of(context).size.width * .2,
+                            bottom: 150)
+                        : isTabletScreen
+                            ? EdgeInsets.only(
+                                left: MediaQuery.of(context).size.width * .1,
+                                right: MediaQuery.of(context).size.width * .1,
+                                bottom: 80)
+                            : EdgeInsets.only(
+                                left: MediaQuery.of(context).size.width * .04,
+                                right: MediaQuery.of(context).size.width * .04,
+                                bottom: 60),
                     child: Column(
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Text(
+                            Text(
                               "I CAN HELP YOU WITH",
                               style: TextStyle(
-                                  fontSize: 35,
-                                  fontWeight: FontWeight.w500,
+                                  fontSize: isMobileScreen ? 25 : 35,
+                                  fontWeight: isMobileScreen
+                                      ? FontWeight.w600
+                                      : FontWeight.w500,
                                   color: Colors.black),
                             ),
                             InkWell(
@@ -328,9 +587,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
-                const StatsChart(
-                  homeScreen: true,
-                ),
+                const StatsChart(),
                 Container(
                   color: const Color(0xfff5f5f0),
                   width: MediaQuery.of(context).size.width,

@@ -5,10 +5,9 @@ import 'package:my_portfolio/routes/routes.dart';
 
 class StatsChart extends StatefulWidget {
   final bool? showWorkButton;
-  final bool? homeScreen;
 
   const StatsChart(
-      {super.key, this.showWorkButton = true, this.homeScreen = false});
+      {super.key, this.showWorkButton = true,});
 
   @override
   State<StatsChart> createState() => _StatsChartState();
@@ -21,9 +20,7 @@ class _StatsChartState extends State<StatsChart> {
     var isTabletScreen = Breakpoints.isMediumScreen(context);
 
     return Container(
-      margin: widget.homeScreen == true
-          ? const EdgeInsets.symmetric(horizontal: 200, vertical: 150)
-          : isDesktopScreen
+      margin: isDesktopScreen
               ? EdgeInsets.symmetric(
                   horizontal: MediaQuery.of(context).size.width * .2,
                   vertical: 100)

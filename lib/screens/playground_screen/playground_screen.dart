@@ -315,7 +315,7 @@ class _PlayGroundScreenState extends State<PlayGroundScreen> {
                               width: 10,
                             ),
                             Text(
-                              "View more on Stack Overflow",
+                              "View more on Github",
                               style: TextStyle(color: Colors.black),
                             ),
                           ],

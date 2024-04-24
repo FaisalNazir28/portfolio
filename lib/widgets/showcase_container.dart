@@ -53,49 +53,90 @@ class _ShowcaseContainerState extends State<ShowcaseContainer> {
         if (widget.hideTitles == false)
           Container(
             padding: const EdgeInsets.all(16.0),
-            child: Row(
-              children: [
-                Container(
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.white,
-                  ),
-                  padding: const EdgeInsets.all(10.0),
-                  child: Icon(
-                    widget.initialIcon,
-                    color: Colors.black,
-                  ),
-                ),
-                const SizedBox(width: 20.0),
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: isMobileScreen
+                ? Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Expanded(
-                        flex: 3,
-                        child: Text(
-                          widget.title,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 25,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.white,
+                            ),
+                            padding: const EdgeInsets.all(10.0),
+                            child: Icon(
+                              widget.initialIcon,
+                              color: Colors.black,
+                            ),
                           ),
-                        ),
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          Text(
+                            widget.title,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 22,
+                            ),
+                          ),
+                        ],
                       ),
-                      Expanded(
-                        flex: 2,
-                        child: Text(
-                          widget.description,
-                          style: const TextStyle(
-                              fontSize: 16.0, color: Colors.black54),
-                        ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        widget.description,
+                        style: const TextStyle(
+                            fontSize: 16.0, color: Colors.black54),
                       ),
                     ],
+                  )
+                : Row(
+                    children: [
+                      Container(
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white,
+                        ),
+                        padding: const EdgeInsets.all(10.0),
+                        child: Icon(
+                          widget.initialIcon,
+                          color: Colors.black,
+                        ),
+                      ),
+                      const SizedBox(width: 20.0),
+                      Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              flex: 3,
+                              child: Text(
+                                widget.title,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 25,
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              flex: 2,
+                              child: Text(
+                                widget.description,
+                                style: const TextStyle(
+                                    fontSize: 16.0, color: Colors.black54),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 25.0),
+                      const Icon(CupertinoIcons.arrow_down_circle),
+                    ],
                   ),
-                ),
-                const SizedBox(width: 25.0),
-                const Icon(CupertinoIcons.arrow_down_circle),
-              ],
-            ),
           ),
         if (widget.hideTitles == false) const SizedBox(height: 20.0),
         isMobileScreen

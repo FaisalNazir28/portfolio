@@ -59,12 +59,9 @@ class _ExperienceTileState extends State<ExperienceTile> {
           ),
           const Divider(
             color: Colors.black,
-            thickness: 0.2,
-            height: 40,
+            thickness: 0.1,
+            height: 80,
           ),
-          const SizedBox(
-            height: 20,
-          )
         ],
       ),
     );
