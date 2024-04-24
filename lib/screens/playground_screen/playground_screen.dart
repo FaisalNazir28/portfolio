@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/widgets/footer.dart';
 import 'package:my_portfolio/widgets/header.dart';
 import 'package:my_portfolio/widgets/horizontal_scrollbar_tile.dart';
@@ -16,107 +17,235 @@ class PlayGroundScreen extends StatefulWidget {
 class _PlayGroundScreenState extends State<PlayGroundScreen> {
   @override
   Widget build(BuildContext context) {
+    var isDesktopScreen = Breakpoints.isLargeScreen(context);
+    var isTabletScreen = Breakpoints.isMediumScreen(context);
+
     return Scaffold(
       appBar: const CustomHeader(),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
-              margin:
-                  const EdgeInsets.symmetric(horizontal: 400, vertical: 100),
-              child: IntrinsicHeight(
-                child: Row(
-                  children: [
-                    const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
-                          "Hello!",
-                          style: TextStyle(
-                              fontSize: 40,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black),
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Text(
-                          "Welcome to my\nplayground",
-                          style: TextStyle(
-                            fontSize: 60,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black,
+              margin: isDesktopScreen
+                  ? EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * .2,
+                      vertical: 100)
+                  : isTabletScreen
+                      ? EdgeInsets.symmetric(
+                          horizontal: MediaQuery.of(context).size.width * .1,
+                          vertical: 100)
+                      : EdgeInsets.symmetric(
+                          horizontal: MediaQuery.of(context).size.width * .04,
+                          vertical: 60),
+              child: isDesktopScreen
+                  ? IntrinsicHeight(
+                      child: Row(
+                        children: [
+                          const Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Text(
+                                  "Hello!",
+                                  style: TextStyle(
+                                      fontSize: 40,
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.black),
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Text(
+                                  "Welcome to my playground",
+                                  style: TextStyle(
+                                    fontSize: 60,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      width: 150,
-                    ),
-                    Column(
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.only(right: 35),
+                                  child: const Text(
+                                    "This is where i showcase the results of my projects and developments, will always be updated every month. "
+                                    "You can also find my playground on other platforms such as:",
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.black54),
+                                  ),
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Container(
+                                      margin: const EdgeInsets.only(right: 20),
+                                      padding: const EdgeInsets.all(10),
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        border:
+                                            Border.all(color: Colors.black38),
+                                      ),
+                                      child: const Icon(Icons.call_merge_sharp),
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.only(right: 20),
+                                      padding: const EdgeInsets.all(10),
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        border:
+                                            Border.all(color: Colors.black38),
+                                      ),
+                                      child:
+                                          const Icon(Icons.messenger_outline),
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.only(right: 20),
+                                      padding: const EdgeInsets.all(10),
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        border:
+                                            Border.all(color: Colors.black38),
+                                      ),
+                                      child: const Icon(
+                                          Icons.data_exploration_sharp),
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.only(right: 20),
+                                      padding: const EdgeInsets.all(10),
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        border:
+                                            Border.all(color: Colors.black38),
+                                      ),
+                                      child: const Icon(Icons.deblur),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    )
+                  : Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        const Text(
-                          "This is where i showcase the results of my projects and\ndevelopments, will always be updated every month. "
-                          "You\ncan also find my playground on other platforms such as:",
-                          style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black54),
-                        ),
-                        Row(
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Container(
-                              margin: const EdgeInsets.only(right: 20),
-                              padding: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(color: Colors.black38),
-                              ),
-                              child: const Icon(Icons.call_merge_sharp),
+                            const Text(
+                              "Hello!",
+                              style: TextStyle(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.black),
                             ),
-                            Container(
-                              margin: const EdgeInsets.only(right: 20),
-                              padding: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(color: Colors.black38),
-                              ),
-                              child: const Icon(Icons.messenger_outline),
+                            const SizedBox(
+                              height: 10,
                             ),
-                            Container(
-                              margin: const EdgeInsets.only(right: 20),
-                              padding: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(color: Colors.black38),
-                              ),
-                              child: const Icon(Icons.data_exploration_sharp),
+                            Text(
+                              "Welcome to my playground",
+                              style: isTabletScreen
+                                  ? const TextStyle(
+                                      fontSize: 50,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.black,
+                                    )
+                                  : const TextStyle(
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.black,
+                                    ),
                             ),
-                            Container(
-                              margin: const EdgeInsets.only(right: 20),
-                              padding: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(color: Colors.black38),
-                              ),
-                              child: const Icon(Icons.deblur),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 30,
+                        ),
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              "This is where i showcase the results of my projects and developments, will always be updated every month. "
+                              "You can also find my playground on other platforms such as:",
+                              style: TextStyle(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black54),
                             ),
+                            const SizedBox(
+                              height: 30,
+                            ),
+                            Row(
+                              children: [
+                                Container(
+                                  margin: const EdgeInsets.only(right: 20),
+                                  padding: const EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(color: Colors.black38),
+                                  ),
+                                  child: const Icon(Icons.call_merge_sharp),
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(right: 20),
+                                  padding: const EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(color: Colors.black38),
+                                  ),
+                                  child: const Icon(Icons.messenger_outline),
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(right: 20),
+                                  padding: const EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(color: Colors.black38),
+                                  ),
+                                  child:
+                                      const Icon(Icons.data_exploration_sharp),
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(right: 20),
+                                  padding: const EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(color: Colors.black38),
+                                  ),
+                                  child: const Icon(Icons.deblur),
+                                ),
+                              ],
+                            )
                           ],
                         )
                       ],
-                    )
-                  ],
-                ),
-              ),
+                    ),
             ),
             Container(
               color: const Color(0xfff5f5f0),
               child: Container(
-                margin:
-                    const EdgeInsets.symmetric(horizontal: 400, vertical: 120),
+                margin: isDesktopScreen
+                    ? EdgeInsets.symmetric(
+                        horizontal: MediaQuery.of(context).size.width * .2,
+                        vertical: 120)
+                    : EdgeInsets.symmetric(
+                        horizontal: MediaQuery.of(context).size.width * .04,
+                        vertical: isTabletScreen ? 80 : 60),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
