@@ -19,6 +19,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
   Widget build(BuildContext context) {
     var isDesktopScreen = Breakpoints.isLargeScreen(context);
     var isTabletScreen = Breakpoints.isMediumScreen(context);
+    var isMobileScreen = Breakpoints.isSmallScreen(context);
 
     return Scaffold(
       appBar: const CustomHeader(),
@@ -36,7 +37,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
                           vertical: 100)
                       : EdgeInsets.symmetric(
                           horizontal: MediaQuery.of(context).size.width * .04,
-                          vertical: 100),
+                          vertical: 60),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -85,105 +86,234 @@ class _ServicesScreenState extends State<ServicesScreen> {
                             vertical: 120)
                         : EdgeInsets.symmetric(
                             horizontal: MediaQuery.of(context).size.width * .04,
-                            vertical: 120),
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                            vertical: 60),
+                child: isMobileScreen
+                    ? const Column(
                         children: [
-                          Text(
-                            "Let me assist you in\nachieving your goals",
-                            style: TextStyle(
-                                fontSize: 40, fontWeight: FontWeight.w600),
-                          ),
-                          SizedBox(
-                            height: 25,
-                          ),
-                          Text(
-                            "I offer expertise in cross-platform development, problem-solving,\nand strategic planning for tailored solution that match your\nunique needs.",
-                            style:
-                                TextStyle(fontSize: 15, color: Colors.black54),
-                          ),
-                          SizedBox(
-                            height: 40,
-                          ),
-                          Row(
+                          Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "50+",
-                                    style: TextStyle(
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Text(
-                                    "Projects finished",
-                                    style: TextStyle(
-                                        color: Colors.grey, fontSize: 16),
-                                  ),
-                                ],
+                              Text(
+                                "Let me assist you in achieving your goals",
+                                style: TextStyle(
+                                    fontSize: 32, fontWeight: FontWeight.w600),
                               ),
                               SizedBox(
-                                width: 100,
+                                height: 25,
                               ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "80+",
-                                    style: TextStyle(
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Text(
-                                    "Happy clients",
-                                    style: TextStyle(
-                                        color: Colors.grey, fontSize: 16),
-                                  ),
-                                ],
+                              Text(
+                                "I offer expertise in cross-platform development, problem-solving, and strategic planning for tailored solution that match your unique needs.",
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.black54),
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              IntrinsicHeight(
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            "50+",
+                                            style: TextStyle(
+                                                fontSize: 25,
+                                                fontWeight: FontWeight.w500),
+                                          ),
+                                          SizedBox(
+                                            height: 5,
+                                          ),
+                                          Text(
+                                            "Projects finished",
+                                            style: TextStyle(
+                                                color: Colors.grey,
+                                                fontSize: 16),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 100,
+                                    ),
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            "80+",
+                                            style: TextStyle(
+                                                fontSize: 25,
+                                                fontWeight: FontWeight.w500),
+                                          ),
+                                          SizedBox(
+                                            height: 5,
+                                          ),
+                                          Text(
+                                            "Happy clients",
+                                            style: TextStyle(
+                                                color: Colors.grey,
+                                                fontSize: 16),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: 50,
+                          ),
+                          Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              MiniShowcaseContainer(
+                                title: 'Full pages Website design',
+                                description:
+                                    'Creating immersive and engaging full-page website designs that captivate audiences and deliver a seamless user experience.',
+                                mainImage: 'assets/showcase/art1.png',
+                                detailImage: 'assets/showcase/art1.png',
+                                initialContainer: true,
+                              ),
+                              MiniShowcaseContainer(
+                                title: 'Portfolio Websites',
+                                description:
+                                    'Intuitively designed portfolio websites for esteemed users helping people showcase their work and skills.',
+                                mainImage: 'assets/showcase/hmk1.png',
+                                detailImage: 'assets/showcase/hmk2.png',
+                                detailImageBG: Colors.black,
                               ),
                             ],
-                          )
+                          ),
                         ],
-                      ),
-                    ),
-                    Expanded(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
+                      )
+                    : Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          MiniShowcaseContainer(
-                            title: 'Full pages Website design',
-                            description:
-                                'Creating immersive and engaging full-page website designs that captivate audiences and deliver a seamless user experience.',
-                            mainImage: 'assets/showcase/art1.png',
-                            detailImage: 'assets/showcase/art1.png',
-                            initialContainer: true,
+                          Expanded(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                isDesktopScreen
+                                    ? const Text(
+                                        "Let me assist you in\nachieving your goals",
+                                        style: TextStyle(
+                                            fontSize: 40,
+                                            fontWeight: FontWeight.w600),
+                                      )
+                                    : const Text(
+                                        "Let me assist you in achieving your goals",
+                                        style: TextStyle(
+                                            fontSize: 32,
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                const SizedBox(
+                                  height: 25,
+                                ),
+                                Text(
+                                  isDesktopScreen
+                                      ? "I offer expertise in cross-platform development, problem-solving,\nand strategic planning for tailored solution that match your\nunique needs."
+                                      : "I offer expertise in cross-platform development, problem-solving, and strategic planning for tailored solution that match your unique needs.",
+                                  style: const TextStyle(
+                                      fontSize: 15, color: Colors.black54),
+                                ),
+                                const SizedBox(
+                                  height: 40,
+                                ),
+                                const IntrinsicHeight(
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              "50+",
+                                              style: TextStyle(
+                                                  fontSize: 30,
+                                                  fontWeight: FontWeight.w500),
+                                            ),
+                                            SizedBox(
+                                              height: 5,
+                                            ),
+                                            Text(
+                                              "Projects finished",
+                                              style: TextStyle(
+                                                  color: Colors.grey,
+                                                  fontSize: 16),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 100,
+                                      ),
+                                      Expanded(
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              "80+",
+                                              style: TextStyle(
+                                                  fontSize: 30,
+                                                  fontWeight: FontWeight.w500),
+                                            ),
+                                            SizedBox(
+                                              height: 5,
+                                            ),
+                                            Text(
+                                              "Happy clients",
+                                              style: TextStyle(
+                                                  color: Colors.grey,
+                                                  fontSize: 16),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
-                          MiniShowcaseContainer(
-                            title: 'Portfolio Websites',
-                            description:
-                                'Intuitively designed portfolio websites for esteemed users helping people showcase their work and skills.',
-                            mainImage: 'assets/showcase/hmk1.png',
-                            detailImage: 'assets/showcase/hmk2.png',
-                            detailImageBG: Colors.black,
+                          SizedBox(
+                            width: isDesktopScreen ? 20 : 50,
+                          ),
+                          const Expanded(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                MiniShowcaseContainer(
+                                  title: 'Full pages Website design',
+                                  description:
+                                      'Creating immersive and engaging full-page website designs that captivate audiences and deliver a seamless user experience.',
+                                  mainImage: 'assets/showcase/art1.png',
+                                  detailImage: 'assets/showcase/art1.png',
+                                  initialContainer: true,
+                                ),
+                                MiniShowcaseContainer(
+                                  title: 'Portfolio Websites',
+                                  description:
+                                      'Intuitively designed portfolio websites for esteemed users helping people showcase their work and skills.',
+                                  mainImage: 'assets/showcase/hmk1.png',
+                                  detailImage: 'assets/showcase/hmk2.png',
+                                  detailImageBG: Colors.black,
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
-                    ),
-                  ],
-                ),
               ),
             ),
             const Row(

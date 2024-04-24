@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/responsiveness/breakpoints.dart';
 
 class MiniShowcaseContainer extends StatefulWidget {
   final String title;
@@ -29,6 +30,8 @@ class MiniShowcaseContainer extends StatefulWidget {
 class _MiniShowcaseContainerState extends State<MiniShowcaseContainer> {
   @override
   Widget build(BuildContext context) {
+    var isMobileScreen = Breakpoints.isSmallScreen(context);
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -85,10 +88,15 @@ class _MiniShowcaseContainerState extends State<MiniShowcaseContainer> {
         ),
         Text(
           widget.title,
-          style: const TextStyle(
-            fontWeight: FontWeight.w600,
-            fontSize: 25,
-          ),
+          style: isMobileScreen
+              ? const TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 22.5,
+                )
+              : const TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 25,
+                ),
         ),
         const SizedBox(
           height: 20,
