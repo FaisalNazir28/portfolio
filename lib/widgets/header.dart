@@ -28,10 +28,16 @@ class _HeaderState extends State<CustomHeader> {
       leading: Padding(
           padding: EdgeInsets.only(
               left: isDesktopScreen
-                  ? 200
+                  ? MediaQuery.of(context).size.width * .2
                   : isTabletScreen
-                      ? 100
-                      : 50),
+                      ? MediaQuery.of(context).size.width * .1
+                      : MediaQuery.of(context).size.width * .04),
+          // padding: EdgeInsets.only(
+          //     left: isDesktopScreen
+          //         ? 200
+          //         : isTabletScreen
+          //             ? 100
+          //             : 50),
           child:
               // Icon(Icons.blur_circular_rounded, size: 50,)
               // Icon(Icons.border_vertical_sharp, size: 50,)
@@ -46,10 +52,16 @@ class _HeaderState extends State<CustomHeader> {
       title: Padding(
         padding: EdgeInsets.only(
             left: isDesktopScreen
-                ? 200
+                ? MediaQuery.of(context).size.width * .2
                 : isTabletScreen
-                    ? 100
-                    : 50),
+                    ? MediaQuery.of(context).size.width * .1
+                    : MediaQuery.of(context).size.width * .04),
+        // padding: EdgeInsets.only(
+        //     left: isDesktopScreen
+        //         ? 200
+        //         : isTabletScreen
+        //         ? 100
+        //         : 50),
         child: Row(
           children: [
             if (!isMobileScreen)
@@ -129,11 +141,19 @@ class _HeaderState extends State<CustomHeader> {
         Padding(
           padding: EdgeInsets.only(
               right: isDesktopScreen
-                  ? 200
+                  ? MediaQuery.of(context).size.width * .2
                   : isTabletScreen
-                      ? 100
-                      : 50),
+                      ? MediaQuery.of(context).size.width * .1
+                      : MediaQuery.of(context).size.width * .04),
         ),
+        // Padding(
+        //   padding: EdgeInsets.only(
+        //       right: isDesktopScreen
+        //           ? 200
+        //           : isTabletScreen
+        //           ? 100
+        //           : 50),
+        // ),
       ],
     );
   }
