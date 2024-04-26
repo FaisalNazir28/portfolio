@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/models/selected_project_data.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
+import 'package:my_portfolio/widgets/custom_drawer.dart';
 import 'package:my_portfolio/widgets/experience_tile.dart';
 import 'package:my_portfolio/widgets/footer.dart';
 import 'package:my_portfolio/widgets/header.dart';
@@ -37,44 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: const CustomHeader(),
-      endDrawer: isMobileScreen
-          ? Drawer(
-              child: ListView(
-                children: [
-                  ListTile(
-                    title: const Text('Playground'),
-                    onTap: () {
-                      Navigator.pushNamed(context, Routes.playground);
-                    },
-                  ),
-                  ListTile(
-                    title: const Text('Services'),
-                    onTap: () {
-                      Navigator.pushNamed(context, Routes.services);
-                    },
-                  ),
-                  ListTile(
-                    title: const Text('Case Studies'),
-                    onTap: () {
-                      Navigator.pushNamed(context, Routes.caseStudies);
-                    },
-                  ),
-                  ListTile(
-                    title: const Text('About Me'),
-                    onTap: () {
-                      Navigator.pushNamed(context, Routes.about);
-                    },
-                  ),
-                  ListTile(
-                    title: const Text('Contact'),
-                    onTap: () {
-                      Navigator.pushNamed(context, Routes.contact);
-                    },
-                  ),
-                ],
-              ),
-            )
-          : null,
+      endDrawer: isMobileScreen ? const CustomEndDrawer() : null,
       body: Stack(
         alignment: Alignment.bottomRight,
         children: [
