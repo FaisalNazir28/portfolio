@@ -27,6 +27,8 @@ class _HomeScreenState extends State<HomeScreen> {
     var isDesktopScreen = Breakpoints.isLargeScreen(context);
     var isTabletScreen = Breakpoints.isMediumScreen(context);
     var isMobileScreen = Breakpoints.isSmallScreen(context);
+    var isMobileLessThan500 = Breakpoints.isMobileLessThan500(context);
+    var isMobile500to550 = Breakpoints.isMobile500to550(context);
     var isTablet600to800 = Breakpoints.isTablet600to800(context);
     var isDesktop1200to1300 = Breakpoints.isDesktop1200to1300(context);
     var isDesktop1300to1400 = Breakpoints.isDesktop1300to1400(context);
@@ -613,9 +615,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ? isTablet600to800
                                           ? 1.5
                                           : 2.3
-                                      : MediaQuery.of(context).size.width <= 500
-                                          ? 0.75
-                                          : 0.82,
+                                      : isMobileLessThan500
+                                          ? 0.69
+                                          : isMobile500to550
+                                              ? 0.76
+                                              : 0.83,
                               crossAxisSpacing: 50.0,
                               mainAxisSpacing: 50.0,
                             ),

@@ -14,6 +14,15 @@ class Breakpoints {
     return MediaQuery.of(context).size.width <= 600;
   }
 
+  static bool isMobileLessThan500(BuildContext context) {
+    return MediaQuery.of(context).size.width <= 500;
+  }
+
+  static bool isMobile500to550(BuildContext context) {
+    return MediaQuery.of(context).size.width > 500 &&
+        MediaQuery.of(context).size.width <= 550;
+  }
+
   static bool isTablet600to800(BuildContext context) {
     return MediaQuery.of(context).size.width > 600 &&
         MediaQuery.of(context).size.width <= 800;
