@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
+import 'package:my_portfolio/widgets/custom_drawer.dart';
 import 'package:my_portfolio/widgets/experience_tile.dart';
 import 'package:my_portfolio/widgets/footer.dart';
 import 'package:my_portfolio/widgets/header.dart';
@@ -23,6 +24,7 @@ class _AboutScreenState extends State<AboutScreen> {
     var isMobileScreen = Breakpoints.isSmallScreen(context);
     return Scaffold(
       appBar: const CustomHeader(),
+      endDrawer: isMobileScreen ? const CustomEndDrawer() : null,
       body: SingleChildScrollView(
         child: Column(
           children: [

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
+import 'package:my_portfolio/widgets/custom_drawer.dart';
 import 'package:my_portfolio/widgets/footer.dart';
 import 'package:my_portfolio/widgets/header.dart';
 import 'package:my_portfolio/widgets/horizontal_scrollbar_tile.dart';
@@ -19,9 +20,11 @@ class _PlayGroundScreenState extends State<PlayGroundScreen> {
   Widget build(BuildContext context) {
     var isDesktopScreen = Breakpoints.isLargeScreen(context);
     var isTabletScreen = Breakpoints.isMediumScreen(context);
+    var isMobileScreen = Breakpoints.isSmallScreen(context);
 
     return Scaffold(
       appBar: const CustomHeader(),
+      endDrawer: isMobileScreen ? const CustomEndDrawer() : null,
       body: SingleChildScrollView(
         child: Column(
           children: [

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
+import 'package:my_portfolio/widgets/custom_drawer.dart';
 import 'package:my_portfolio/widgets/footer.dart';
 import 'package:my_portfolio/widgets/header.dart';
 import 'package:my_portfolio/widgets/horizontal_scrollbar_tile.dart';
@@ -23,6 +24,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
 
     return Scaffold(
       appBar: const CustomHeader(),
+      endDrawer: isMobileScreen ? const CustomEndDrawer() : null,
       body: SingleChildScrollView(
         child: Column(
           children: [
