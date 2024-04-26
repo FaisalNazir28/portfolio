@@ -26,6 +26,14 @@ class _HomeScreenState extends State<HomeScreen> {
     var isDesktopScreen = Breakpoints.isLargeScreen(context);
     var isTabletScreen = Breakpoints.isMediumScreen(context);
     var isMobileScreen = Breakpoints.isSmallScreen(context);
+    var isTablet600to800 = Breakpoints.isTablet600to800(context);
+    var isDesktop1200to1300 = Breakpoints.isDesktop1200to1300(context);
+    var isDesktop1300to1400 = Breakpoints.isDesktop1300to1400(context);
+    var isDesktop1400to1500 = Breakpoints.isDesktop1400to1500(context);
+    var isDesktop1500to1600 = Breakpoints.isDesktop1500to1600(context);
+    var isDesktop1600to1700 = Breakpoints.isDesktop1600to1700(context);
+    var isDesktop1700to1800 = Breakpoints.isDesktop1700to1800(context);
+    var isDesktop1800to1900 = Breakpoints.isDesktop1800to1900(context);
 
     return Scaffold(
       appBar: const CustomHeader(),
@@ -592,7 +600,19 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: const Color(0xfff5f5f0),
                   width: MediaQuery.of(context).size.width,
                   child: Container(
-                    margin: const EdgeInsets.fromLTRB(200, 150, 200, 150),
+                    margin: isDesktopScreen
+                        ? EdgeInsets.symmetric(
+                            horizontal: MediaQuery.of(context).size.width * .2,
+                            vertical: 150)
+                        : isTabletScreen
+                            ? EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .1,
+                                vertical: 80)
+                            : EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .04,
+                                vertical: 60),
                     child: Column(
                       children: [
                         const Text(
@@ -603,24 +623,44 @@ class _HomeScreenState extends State<HomeScreen> {
                         const SizedBox(
                           height: 50,
                         ),
-                        Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 100),
-                          child: GridView.builder(
-                              shrinkWrap: true,
-                              gridDelegate:
-                                  const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                crossAxisSpacing: 50.0,
-                                mainAxisSpacing: 50.0,
-                              ),
-                              itemCount:
-                                  SelectedProjectData.selectedProjects.length,
-                              itemBuilder: (context, index) {
-                                return SelectedWorkContainer(
-                                    projectData: SelectedProjectData
-                                        .selectedProjects[index]);
-                              }),
-                        ),
+                        GridView.builder(
+                            shrinkWrap: true,
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: isDesktopScreen ? 2 : 1,
+                              childAspectRatio: isDesktopScreen
+                                  ? isDesktop1200to1300
+                                      ? 0.55
+                                      : isDesktop1300to1400
+                                          ? 0.60
+                                          : isDesktop1400to1500
+                                              ? 0.64
+                                              : isDesktop1500to1600
+                                                  ? 0.69
+                                                  : isDesktop1600to1700
+                                                      ? 0.74
+                                                      : isDesktop1700to1800
+                                                          ? 0.79
+                                                          : isDesktop1800to1900
+                                                              ? 0.84
+                                                              : 0.88
+                                  : isTabletScreen
+                                      ? isTablet600to800
+                                          ? 1.5
+                                          : 2.3
+                                      : MediaQuery.of(context).size.width <= 500
+                                          ? 0.75
+                                          : 0.82,
+                              crossAxisSpacing: 50.0,
+                              mainAxisSpacing: 50.0,
+                            ),
+                            itemCount:
+                                SelectedProjectData.selectedProjects.length,
+                            itemBuilder: (context, index) {
+                              return SelectedWorkContainer(
+                                  projectData: SelectedProjectData
+                                      .selectedProjects[index]);
+                            }),
                       ],
                     ),
                   ),
