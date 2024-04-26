@@ -136,7 +136,11 @@ class _HeaderState extends State<CustomHeader> {
                 Scaffold.of(context).openEndDrawer();
               });
             },
-            child: const Icon(CupertinoIcons.line_horizontal_3),
+            child: const Icon(
+              CupertinoIcons.bars,
+              size: 40,
+              color: Colors.black87,
+            ),
           ),
         Padding(
           padding: EdgeInsets.only(
