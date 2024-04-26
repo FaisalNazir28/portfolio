@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
 import 'package:my_portfolio/widgets/dateTime.dart';
 
@@ -19,23 +20,47 @@ class CustomFooter extends StatefulWidget {
 class _CustomFooterState extends State<CustomFooter> {
   @override
   Widget build(BuildContext context) {
+    var isDesktopScreen = Breakpoints.isLargeScreen(context);
+    var isTabletScreen = Breakpoints.isMediumScreen(context);
+
     return Column(
       children: [
         if (widget.miniFooter == false)
           Container(
-            margin: const EdgeInsets.symmetric(horizontal: 200, vertical: 100),
+            margin: isDesktopScreen
+                ? EdgeInsets.symmetric(
+                    horizontal: MediaQuery.of(context).size.width * .2,
+                    vertical: 100)
+                : isTabletScreen
+                    ? EdgeInsets.symmetric(
+                        horizontal: MediaQuery.of(context).size.width * .1,
+                        vertical: 80)
+                    : EdgeInsets.symmetric(
+                        horizontal: MediaQuery.of(context).size.width * .04,
+                        vertical: 60),
             child: Column(
               children: [
-                const Text(
+                Text(
                   "Have a project?",
-                  style: TextStyle(fontSize: 22),
+                  style: isDesktopScreen
+                      ? const TextStyle(fontSize: 22)
+                      : isTabletScreen
+                          ? const TextStyle(fontSize: 22)
+                          : const TextStyle(fontSize: 17),
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                const Text(
+                Text(
                   "Let's talk with me",
-                  style: TextStyle(fontSize: 60, fontWeight: FontWeight.w600),
+                  style: isDesktopScreen
+                      ? const TextStyle(
+                          fontSize: 60, fontWeight: FontWeight.w600)
+                      : isTabletScreen
+                          ? const TextStyle(
+                              fontSize: 55, fontWeight: FontWeight.w600)
+                          : const TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.w600),
                 ),
                 const SizedBox(
                   height: 40,
@@ -86,7 +111,17 @@ class _CustomFooterState extends State<CustomFooter> {
             ),
           ),
         Container(
-          margin: const EdgeInsets.symmetric(horizontal: 200, vertical: 20),
+          margin: isDesktopScreen
+              ? EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * .2,
+                  vertical: 20)
+              : isTabletScreen
+                  ? EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * .1,
+                      vertical: 20)
+                  : EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * .04,
+                      vertical: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

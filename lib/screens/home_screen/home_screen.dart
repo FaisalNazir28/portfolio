@@ -671,8 +671,8 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Positioned(
-            right: 50,
-            bottom: 50,
+            right: MediaQuery.of(context).size.width < 800 ? 25 : 50,
+            bottom: MediaQuery.of(context).size.width > 1100 ? 50 : 100,
             child: InkWell(
               onTap: () {
                 scrollController.animateTo(0.0,
