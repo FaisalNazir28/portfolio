@@ -314,43 +314,7 @@ class _AboutScreenState extends State<AboutScreen> {
                 ),
               ),
             ),
-            const Row(
-              children: [
-                HorizontalScrollBarTile(
-                    count: '15', text: 'Websites developed'),
-                HorizontalScrollBarTile(
-                    count: '',
-                    text: '',
-                    icon: Icon(
-                      CupertinoIcons.textformat_abc_dottedunderline,
-                      size: 40,
-                    )),
-                HorizontalScrollBarTile(count: '33', text: 'Projects finished'),
-                HorizontalScrollBarTile(
-                    count: '',
-                    text: '',
-                    icon: Icon(
-                      CupertinoIcons.airplane,
-                      size: 40,
-                    )),
-                HorizontalScrollBarTile(count: '9', text: 'Apps Built'),
-                HorizontalScrollBarTile(
-                    count: '',
-                    text: '',
-                    icon: Icon(
-                      Icons.code_off_sharp,
-                      size: 40,
-                    )),
-                HorizontalScrollBarTile(count: '17', text: 'Recognitions'),
-                HorizontalScrollBarTile(
-                    count: '',
-                    text: '',
-                    icon: Icon(
-                      Icons.five_g_sharp,
-                      size: 40,
-                    )),
-              ],
-            ),
+            const HorizontalScrollBarTile(),
             Container(
               margin: isDesktopScreen
                   ? EdgeInsets.symmetric(
