@@ -50,12 +50,18 @@ class _ContactPageState extends State<ContactPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      const Text(
+                      Text(
                         "Contact me",
-                        style: TextStyle(fontSize: 33, color: Colors.black),
+                        style: isDesktopScreen
+                            ? const TextStyle(fontSize: 33, color: Colors.black)
+                            : isTabletScreen
+                                ? const TextStyle(
+                                    fontSize: 30, color: Colors.black)
+                                : const TextStyle(
+                                    fontSize: 24, color: Colors.black),
                       ),
-                      const SizedBox(
-                        height: 35,
+                      SizedBox(
+                        height: isMobileScreen ? 20 : 35,
                       ),
                       Text(
                         "Starting a new project? Get in touch and let's talk all about it",
@@ -98,112 +104,87 @@ class _ContactPageState extends State<ContactPage> {
                             ? EdgeInsets.symmetric(
                                 horizontal:
                                     MediaQuery.of(context).size.width * .1,
-                                vertical: 100)
+                                vertical: 80)
                             : EdgeInsets.symmetric(
                                 horizontal:
                                     MediaQuery.of(context).size.width * .04,
-                                vertical: 100),
-                    child: IntrinsicHeight(
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                              padding: const EdgeInsets.all(15),
-                              child: Column(
-                                // mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Row(
-                                    children: [
-                                      // TextFormField(
-                                      //   controller: _passwordController,
-                                      //   obscureText: true,
-                                      //   decoration: InputDecoration(
-                                      //     labelText: 'Enter your password',
-                                      //     labelStyle: TextStyle(
-                                      //       fontSize: 16.0,
-                                      //       color: Colors.black54,
-                                      //     ),
-                                      //     border: OutlineInputBorder(
-                                      //         borderRadius: BorderRadius.circular(6)),
-                                      //     focusedBorder: OutlineInputBorder(
-                                      //       borderRadius: BorderRadius.circular(6),
-                                      //       borderSide:
-                                      //       BorderSide(color: Colors.black, width: 2.0),
-                                      //     ),
-                                      //   ),
-                                      //   validator: (value) {
-                                      //     if (value!.isEmpty) {
-                                      //       return 'Password is missing';
-                                      //     }
-                                      //     return null;
-                                      //   },
-                                      // ),
-                                      Expanded(
-                                        child: TextFormField(
-                                          cursorColor: Colors.black87,
-                                          decoration: InputDecoration(
-                                            fillColor: const Color(0xfff5f5f0),
-                                            filled: true,
-                                            hintText: 'Name',
-                                            hintStyle: const TextStyle(
-                                              fontSize: 16.0,
-                                              color: Colors.black54,
-                                            ),
-                                            border: OutlineInputBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                              borderSide: BorderSide.none,
-                                            ),
-                                            focusedBorder: OutlineInputBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                              borderSide: BorderSide.none,
+                                vertical: 60),
+                    child: isMobileScreen
+                        ? Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                                padding: const EdgeInsets.all(15),
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Expanded(
+                                          child: TextFormField(
+                                            cursorColor: Colors.black87,
+                                            decoration: InputDecoration(
+                                              fillColor:
+                                                  const Color(0xfff5f5f0),
+                                              filled: true,
+                                              hintText: 'Name',
+                                              hintStyle: const TextStyle(
+                                                fontSize: 16.0,
+                                                color: Colors.black54,
+                                              ),
+                                              border: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                                borderSide: BorderSide.none,
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                                borderSide: BorderSide.none,
+                                              ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                      const SizedBox(
-                                        width: 15,
-                                      ),
-                                      Expanded(
-                                        child: TextFormField(
-                                          cursorColor: Colors.black87,
-                                          decoration: InputDecoration(
-                                            fillColor: const Color(0xfff5f5f0),
-                                            filled: true,
-                                            hintText: 'Email',
-                                            hintStyle: const TextStyle(
-                                              fontSize: 16.0,
-                                              color: Colors.black54,
-                                            ),
-                                            border: OutlineInputBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                              borderSide: BorderSide.none,
-                                            ),
-                                            focusedBorder: OutlineInputBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                              borderSide: BorderSide.none,
+                                        const SizedBox(
+                                          width: 15,
+                                        ),
+                                        Expanded(
+                                          child: TextFormField(
+                                            cursorColor: Colors.black87,
+                                            decoration: InputDecoration(
+                                              fillColor:
+                                                  const Color(0xfff5f5f0),
+                                              filled: true,
+                                              hintText: 'Email',
+                                              hintStyle: const TextStyle(
+                                                fontSize: 16.0,
+                                                color: Colors.black54,
+                                              ),
+                                              border: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                                borderSide: BorderSide.none,
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                                borderSide: BorderSide.none,
+                                              ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                  const SizedBox(
-                                    height: 15,
-                                  ),
-                                  Expanded(
-                                    child: TextFormField(
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 15,
+                                    ),
+                                    TextFormField(
                                       cursorColor: Colors.black87,
-                                      minLines: null,
-                                      maxLines: null,
-                                      expands: true,
+                                      minLines: 5,
+                                      maxLines: 5,
                                       decoration: InputDecoration(
                                         fillColor: const Color(0xfff5f5f0),
                                         filled: true,
@@ -224,134 +205,372 @@ class _ContactPageState extends State<ContactPage> {
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  const SizedBox(
-                                    height: 15,
-                                  ),
-                                  InkWell(
-                                    onTap: () {},
-                                    child: Container(
-                                      width: double.infinity,
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 20, vertical: 12),
-                                      decoration: BoxDecoration(
-                                          color: Colors.black,
-                                          borderRadius:
-                                              BorderRadius.circular(8)),
-                                      child: const Text(
-                                        "Send Message",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w400),
+                                    const SizedBox(
+                                      height: 15,
+                                    ),
+                                    InkWell(
+                                      onTap: () {},
+                                      child: Container(
+                                        width: double.infinity,
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 20, vertical: 12),
+                                        decoration: BoxDecoration(
+                                            color: Colors.black,
+                                            borderRadius:
+                                                BorderRadius.circular(8)),
+                                        child: const Text(
+                                          "Send Message",
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w400),
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
+                              const SizedBox(
+                                height: 25,
+                              ),
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                                padding: const EdgeInsets.all(25),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      "Don't hesitate",
+                                      style: TextStyle(
+                                          fontSize: 17, color: Colors.black),
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    const Text(
+                                      "You just need to make one more step to start your project",
+                                      style: TextStyle(
+                                          fontSize: 24,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                    const SizedBox(
+                                      height: 12,
+                                    ),
+                                    const Text(
+                                      "Speak with me. Fill out the form to let me know what exactly you desire.",
+                                      style: TextStyle(
+                                          fontSize: 15, color: Colors.grey),
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            const Text(
+                                              "Meet your Expert",
+                                              style: TextStyle(
+                                                  fontSize: 12,
+                                                  color: Colors.grey),
+                                            ),
+                                            const SizedBox(
+                                              height: 6,
+                                            ),
+                                            Row(
+                                              children: [
+                                                Stack(
+                                                  children: [
+                                                    const CircleAvatar(
+                                                      radius: 18,
+                                                      backgroundImage:
+                                                          AssetImage(
+                                                        'assets/profiles/faisal.png',
+                                                      ),
+                                                    ),
+                                                    Container(
+                                                      width: 10,
+                                                      height: 10,
+                                                      decoration:
+                                                          const BoxDecoration(
+                                                        color:
+                                                            Colors.lightGreen,
+                                                        shape: BoxShape.circle,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                                const SizedBox(
+                                                  width: 8,
+                                                ),
+                                                const Text(
+                                                  "Faisal Nazir",
+                                                  style: TextStyle(
+                                                      fontSize: 18,
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                          FontWeight.w700),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          )
+                        : IntrinsicHeight(
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                    padding: const EdgeInsets.all(15),
+                                    child: Column(
+                                      // mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Expanded(
+                                              child: TextFormField(
+                                                cursorColor: Colors.black87,
+                                                decoration: InputDecoration(
+                                                  fillColor:
+                                                      const Color(0xfff5f5f0),
+                                                  filled: true,
+                                                  hintText: 'Name',
+                                                  hintStyle: const TextStyle(
+                                                    fontSize: 16.0,
+                                                    color: Colors.black54,
+                                                  ),
+                                                  border: OutlineInputBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10),
+                                                    borderSide: BorderSide.none,
+                                                  ),
+                                                  focusedBorder:
+                                                      OutlineInputBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10),
+                                                    borderSide: BorderSide.none,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            const SizedBox(
+                                              width: 15,
+                                            ),
+                                            Expanded(
+                                              child: TextFormField(
+                                                cursorColor: Colors.black87,
+                                                decoration: InputDecoration(
+                                                  fillColor:
+                                                      const Color(0xfff5f5f0),
+                                                  filled: true,
+                                                  hintText: 'Email',
+                                                  hintStyle: const TextStyle(
+                                                    fontSize: 16.0,
+                                                    color: Colors.black54,
+                                                  ),
+                                                  border: OutlineInputBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10),
+                                                    borderSide: BorderSide.none,
+                                                  ),
+                                                  focusedBorder:
+                                                      OutlineInputBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10),
+                                                    borderSide: BorderSide.none,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        const SizedBox(
+                                          height: 15,
+                                        ),
+                                        Expanded(
+                                          child: TextFormField(
+                                            cursorColor: Colors.black87,
+                                            minLines: null,
+                                            maxLines: null,
+                                            expands: true,
+                                            decoration: InputDecoration(
+                                              fillColor:
+                                                  const Color(0xfff5f5f0),
+                                              filled: true,
+                                              hintText:
+                                                  'Tell me about your project',
+                                              hintStyle: const TextStyle(
+                                                fontSize: 16.0,
+                                                color: Colors.black54,
+                                              ),
+                                              border: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                                borderSide: BorderSide.none,
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                                borderSide: BorderSide.none,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          height: 15,
+                                        ),
+                                        InkWell(
+                                          onTap: () {},
+                                          child: Container(
+                                            width: double.infinity,
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 20, vertical: 12),
+                                            decoration: BoxDecoration(
+                                                color: Colors.black,
+                                                borderRadius:
+                                                    BorderRadius.circular(8)),
+                                            child: const Text(
+                                              "Send Message",
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.w400),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 15,
+                                ),
+                                Expanded(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                    padding: const EdgeInsets.all(25),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        const Text(
+                                          "Don't hesitate",
+                                          style: TextStyle(
+                                              fontSize: 22,
+                                              color: Colors.black),
+                                        ),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        const Text(
+                                          "You just need to make one more step to start your project",
+                                          style: TextStyle(
+                                              fontSize: 33,
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                        const SizedBox(
+                                          height: 12,
+                                        ),
+                                        const Text(
+                                          "Speak with me. Fill out the form to let me know what exactly you desire.",
+                                          style: TextStyle(
+                                              fontSize: 17, color: Colors.grey),
+                                        ),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                const Text(
+                                                  "Meet your Expert",
+                                                  style: TextStyle(
+                                                      fontSize: 12,
+                                                      color: Colors.grey),
+                                                ),
+                                                const SizedBox(
+                                                  height: 6,
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    Stack(
+                                                      children: [
+                                                        const CircleAvatar(
+                                                          radius: 20,
+                                                          backgroundImage:
+                                                              AssetImage(
+                                                            'assets/profiles/faisal.png',
+                                                          ),
+                                                        ),
+                                                        Container(
+                                                          width: 10,
+                                                          height: 10,
+                                                          decoration:
+                                                              const BoxDecoration(
+                                                            color: Colors
+                                                                .lightGreen,
+                                                            shape:
+                                                                BoxShape.circle,
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    const SizedBox(
+                                                      width: 8,
+                                                    ),
+                                                    const Text(
+                                                      "Faisal Nazir",
+                                                      style: TextStyle(
+                                                          fontSize: 20,
+                                                          color: Colors.black,
+                                                          fontWeight:
+                                                              FontWeight.w700),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          Expanded(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                              padding: const EdgeInsets.all(25),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  const Text(
-                                    "Don't hesitate",
-                                    style: TextStyle(
-                                        fontSize: 22, color: Colors.black),
-                                  ),
-                                  const SizedBox(
-                                    height: 10,
-                                  ),
-                                  const Text(
-                                    "You just need to make one more step to start your project",
-                                    style: TextStyle(
-                                        fontSize: 33,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                  const SizedBox(
-                                    height: 12,
-                                  ),
-                                  const Text(
-                                    "Speak with me. Fill out the form to let me know what exactly you desire.",
-                                    style: TextStyle(
-                                        fontSize: 17, color: Colors.grey),
-                                  ),
-                                  const SizedBox(
-                                    height: 10,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          const Text(
-                                            "Meet your Expert",
-                                            style: TextStyle(
-                                                fontSize: 12,
-                                                color: Colors.grey),
-                                          ),
-                                          const SizedBox(
-                                            height: 6,
-                                          ),
-                                          Row(
-                                            children: [
-                                              Stack(
-                                                children: [
-                                                  const CircleAvatar(
-                                                    radius: 20,
-                                                    backgroundImage: AssetImage(
-                                                      'assets/profiles/faisal.png',
-                                                    ),
-                                                  ),
-                                                  Container(
-                                                    width: 10,
-                                                    height: 10,
-                                                    decoration:
-                                                        const BoxDecoration(
-                                                      color: Colors.lightGreen,
-                                                      shape: BoxShape.circle,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                              const SizedBox(
-                                                width: 8,
-                                              ),
-                                              const Text(
-                                                "Faisal Nazir",
-                                                style: TextStyle(
-                                                    fontSize: 20,
-                                                    color: Colors.black,
-                                                    fontWeight:
-                                                        FontWeight.w700),
-                                              ),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
                   ),
                 ),
                 Container(
@@ -363,30 +582,50 @@ class _ContactPageState extends State<ContactPage> {
                           ? EdgeInsets.symmetric(
                               horizontal:
                                   MediaQuery.of(context).size.width * .1,
-                              vertical: 100)
+                              vertical: 80)
                           : EdgeInsets.symmetric(
                               horizontal:
                                   MediaQuery.of(context).size.width * .04,
-                              vertical: 100),
+                              vertical: 60),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                      Text(
                         "FAQs",
-                        style: TextStyle(
-                            fontSize: 33,
-                            color: Colors.black,
-                            fontWeight: FontWeight.w600),
+                        style: isDesktopScreen
+                            ? const TextStyle(
+                                fontSize: 33,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w600)
+                            : isTabletScreen
+                                ? const TextStyle(
+                                    fontSize: 30,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w600)
+                                : const TextStyle(
+                                    fontSize: 22,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w600),
                       ),
                       const SizedBox(
                         height: 15,
                       ),
-                      const Text(
+                      Text(
                         "My commitment to transparency",
-                        style: TextStyle(
-                          fontSize: 30,
-                          color: Colors.black,
-                        ),
+                        style: isDesktopScreen
+                            ? const TextStyle(
+                                fontSize: 30,
+                                color: Colors.black,
+                              )
+                            : isTabletScreen
+                                ? const TextStyle(
+                                    fontSize: 28,
+                                    color: Colors.black,
+                                  )
+                                : const TextStyle(
+                                    fontSize: 25,
+                                    color: Colors.black,
+                                  ),
                       ),
                       const SizedBox(height: 20),
                       faqsTile(
@@ -458,6 +697,8 @@ class _ContactPageState extends State<ContactPage> {
     bool isFirst = false,
     bool isLast = false,
   }) {
+    var isDesktopScreen = Breakpoints.isLargeScreen(context);
+    var isTabletScreen = Breakpoints.isMediumScreen(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -467,21 +708,43 @@ class _ContactPageState extends State<ContactPage> {
           ),
         Text(
           question,
-          style: const TextStyle(
-            fontSize: 28,
-            color: Colors.black,
-            fontWeight: FontWeight.w500,
-          ),
+          style: isDesktopScreen
+              ? const TextStyle(
+                  fontSize: 28,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w500,
+                )
+              : isTabletScreen
+                  ? const TextStyle(
+                      fontSize: 25,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500,
+                    )
+                  : const TextStyle(
+                      fontSize: 22,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500,
+                    ),
         ),
         const SizedBox(
           height: 10,
         ),
         Text(
           answer,
-          style: const TextStyle(
-            fontSize: 17,
-            color: Colors.grey,
-          ),
+          style: isDesktopScreen
+              ? const TextStyle(
+                  fontSize: 17,
+                  color: Colors.grey,
+                )
+              : isTabletScreen
+                  ? const TextStyle(
+                      fontSize: 16,
+                      color: Colors.grey,
+                    )
+                  : const TextStyle(
+                      fontSize: 15,
+                      color: Colors.grey,
+                    ),
         ),
         if (isLast == false)
           const Divider(
