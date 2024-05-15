@@ -8,4 +8,5 @@ class Routes{
   static String caseStudies = '/case-studies';
   static String contact = '/contact';
   static String pageNotFound = '/404';
+  static String project = '/project';
 }
