@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:my_portfolio/models/selected_works_model.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
@@ -131,7 +130,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             Expanded(
                               flex: 5,
                               child: Text(
-                                "Utilizing captivating imagery to enhance the overall user experience",
+                                projectModel.shortBio,
                                 style: isDesktopScreen
                                     ? const TextStyle(
                                         fontSize: 30,
@@ -177,7 +176,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                     height: 10,
                                   ),
                                   Text(
-                                    "Construction Company",
+                                    projectModel.company,
                                     style: isDesktopScreen
                                         ? const TextStyle(
                                             fontSize: 30,
@@ -238,7 +237,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                     height: 10,
                                   ),
                                   Text(
-                                    'Website development',
+                                    projectModel.projectType,
                                     style: const TextStyle(
                                         fontSize: 20,
                                         fontWeight: FontWeight.w500),
@@ -259,7 +258,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                     height: 10,
                                   ),
                                   Text(
-                                    'April 1, 2023',
+                                    projectModel.projectDate,
                                     style: const TextStyle(
                                         fontSize: 20,
                                         fontWeight: FontWeight.w500),
@@ -280,7 +279,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                     height: 10,
                                   ),
                                   Text(
-                                    '2 months',
+                                    projectModel.projectDuration,
                                     style: const TextStyle(
                                         fontSize: 20,
                                         fontWeight: FontWeight.w500),
@@ -294,7 +293,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                           height: 50,
                         ),
                         Text(
-                          'Explore our extensive portfolio for a glimpse into seamless digital solutions that elevate online experiences. I ensures your presence is not just noticed but remembered. Explore our extensive portfolio for a glimpse into seamless digital solutions that elevate online experiences. I ensures your presence is not just noticed but remembered. Explore our extensive portfolio for a glimpse into seamless digital solutions that elevate online experiences. I ensures your presence is not just noticed but remembered',
+                          projectModel.description,
                           style: TextStyle(
                             color: Colors.black54,
                             fontSize: 17,
@@ -382,7 +381,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                           height: 20,
                         ),
                         Text(
-                          'Explore our extensive portfolio for a glimpse into seamless digital solutions that elevate online experiences. I ensures your presence is not just noticed but remembered. Explore our extensive portfolio for a glimpse into seamless digital solutions that elevate online experiences. I ensures your presence is not just noticed but remembered. Explore our extensive portfolio for a glimpse into seamless digital solutions that elevate online experiences. I ensures your presence is not just noticed but remembered',
+                          projectModel.challengesFaced,
                           style: TextStyle(
                             color: Colors.black54,
                             fontSize: 17,
@@ -400,7 +399,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                           height: 20,
                         ),
                         Text(
-                          'Explore our extensive portfolio for a glimpse into seamless digital solutions that elevate online experiences. I ensures your presence is not just noticed but remembered. Explore our extensive portfolio for a glimpse into seamless digital solutions that elevate online experiences. I ensures your presence is not just noticed but remembered. Explore our extensive portfolio for a glimpse into seamless digital solutions that elevate online experiences. I ensures your presence is not just noticed but remembered',
+                          projectModel.results,
                           style: TextStyle(
                             color: Colors.black54,
                             fontSize: 17,
