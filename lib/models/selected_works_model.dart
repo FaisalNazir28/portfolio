@@ -15,7 +15,6 @@ class SelectedProjectModel {
   final String extraImage2;
   final String extraImage3;
   final String mobileView;
-  final Function() onTap;
 
   SelectedProjectModel({
     required this.mainImage,
@@ -34,6 +33,5 @@ class SelectedProjectModel {
     required this.extraImage2,
     required this.extraImage3,
     required this.mobileView,
-    required this.onTap,
   });
 }

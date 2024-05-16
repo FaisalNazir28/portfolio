@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:my_portfolio/models/selected_works_model.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
 import 'package:my_portfolio/widgets/footer.dart';
@@ -22,6 +23,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
     var isDesktopScreen = Breakpoints.isLargeScreen(context);
     var isTabletScreen = Breakpoints.isMediumScreen(context);
     var isMobileScreen = Breakpoints.isSmallScreen(context);
+
+    final SelectedProjectModel projectModel =
+        ModalRoute.of(context)!.settings.arguments as SelectedProjectModel;
 
     return Scaffold(
       appBar: const CustomHeader(),
@@ -72,8 +76,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 // color: widget.firstImageBG ?? Colors.white,
                                 color: Colors.white,
                                 child: Image.asset(
-                                  // widget.firstImage,
-                                  'assets/showcase/art1.png',
+                                  projectModel.mainImage,
                                   fit: BoxFit.fitWidth,
                                   alignment: Alignment.topCenter,
                                 ),
@@ -90,8 +93,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 // color: widget.secondImageBG ?? Colors.white,
                                 color: Colors.white,
                                 child: Image.asset(
-                                  // widget.secondImage,
-                                  'assets/showcase/hmk1.png',
+                                  projectModel.secondImage,
                                   fit: BoxFit.fitWidth,
                                   alignment: Alignment.center,
                                 ),
@@ -108,8 +110,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 // color: widget.thirdImageBG ?? Colors.white,
                                 color: Colors.white,
                                 child: Image.asset(
-                                  // widget.thirdImage,
-                                  'assets/showcase/hmk2.png',
+                                  projectModel.thirdImage,
                                   fit: BoxFit.fitWidth,
                                   alignment: Alignment.center,
                                 ),
@@ -156,7 +157,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    "Struktura",
+                                    projectModel.title,
                                     style: isDesktopScreen
                                         ? const TextStyle(
                                             fontSize: 40,

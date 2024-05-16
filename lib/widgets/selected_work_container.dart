@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/models/selected_works_model.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
+import 'package:my_portfolio/routes/routes.dart';
 
 class SelectedWorkContainer extends StatefulWidget {
   final SelectedProjectModel projectData;
@@ -105,15 +106,21 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                   AnimatedPositioned(
                     duration: const Duration(milliseconds: 200),
                     bottom: isHovered ? 16.0 : -52.0,
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 18, vertical: 15),
-                      decoration: BoxDecoration(
-                          color: Colors.black,
-                          borderRadius: BorderRadius.circular(8)),
-                      child: const Text(
-                        "View detail works",
-                        style: TextStyle(color: Colors.white),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, Routes.project,
+                            arguments: widget.projectData);
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 18, vertical: 15),
+                        decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.circular(8)),
+                        child: const Text(
+                          "View detail works",
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
                     ),
                   ),
@@ -200,15 +207,21 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                               ),
                             ),
                             const SizedBox(height: 15.0),
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 18, vertical: 15),
-                              decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  borderRadius: BorderRadius.circular(8)),
-                              child: const Text(
-                                "View detail works",
-                                style: TextStyle(color: Colors.white),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, Routes.project,
+                                    arguments: widget.projectData);
+                              },
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 18, vertical: 15),
+                                decoration: BoxDecoration(
+                                    color: Colors.black,
+                                    borderRadius: BorderRadius.circular(8)),
+                                child: const Text(
+                                  "View detail works",
+                                  style: TextStyle(color: Colors.white),
+                                ),
                               ),
                             ),
                           ],
@@ -280,15 +293,21 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                     const SizedBox(height: 15.0),
                     Row(
                       children: [
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 18, vertical: 15),
-                          decoration: BoxDecoration(
-                              color: Colors.black,
-                              borderRadius: BorderRadius.circular(8)),
-                          child: const Text(
-                            "View detail works",
-                            style: TextStyle(color: Colors.white),
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, Routes.project,
+                                arguments: widget.projectData);
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 18, vertical: 15),
+                            decoration: BoxDecoration(
+                                color: Colors.black,
+                                borderRadius: BorderRadius.circular(8)),
+                            child: const Text(
+                              "View detail works",
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ),
                         ),
                       ],
