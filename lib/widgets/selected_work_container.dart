@@ -57,7 +57,7 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(15),
                             child: Image.asset(
-                              widget.projectData.imagePath,
+                              widget.projectData.mainImage,
                               fit: BoxFit.cover,
                               alignment: Alignment.topCenter,
                             ),
@@ -81,7 +81,7 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                         ),
                         const SizedBox(height: 5.0),
                         Text(
-                          widget.projectData.monthYear,
+                          widget.projectData.projectDate,
                           style: const TextStyle(
                             fontSize: 16.0,
                             color: Colors.grey,
@@ -146,7 +146,7 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(15),
                                   child: Image.asset(
-                                    widget.projectData.imagePath,
+                                    widget.projectData.mainImage,
                                     fit: BoxFit.cover,
                                     alignment: Alignment.topCenter,
                                   ),
@@ -181,7 +181,7 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                             ),
                             const SizedBox(height: 5.0),
                             Text(
-                              widget.projectData.monthYear,
+                              widget.projectData.projectDate,
                               style: const TextStyle(
                                 fontSize: 16.0,
                                 color: Colors.grey,
@@ -235,7 +235,7 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(15),
                         child: Image.asset(
-                          widget.projectData.imagePath,
+                          widget.projectData.mainImage,
                           fit: BoxFit.cover,
                           alignment: Alignment.topCenter,
                         ),
@@ -259,7 +259,7 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                     ),
                     const SizedBox(height: 4.0),
                     Text(
-                      widget.projectData.monthYear,
+                      widget.projectData.projectDate,
                       style: const TextStyle(
                         fontSize: 16.0,
                         color: Colors.grey,
