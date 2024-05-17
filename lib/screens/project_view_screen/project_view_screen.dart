@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:my_portfolio/models/selected_works_model.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
@@ -303,7 +304,6 @@ class _ProjectScreenState extends State<ProjectScreen> {
                           height: 80,
                         ),
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 25),
                           height: isMobileScreen
                               ? MediaQuery.of(context).size.height * .25
                               : MediaQuery.of(context).size.height * .45,
@@ -311,62 +311,166 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             color: Colors.grey.shade300,
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Expanded(
-                                flex: 3,
-                                child: Container(
-                                  height: double.infinity,
-                                  width: double.infinity,
-                                  margin: const EdgeInsets.only(top: 30),
-                                  // color: widget.firstImageBG ?? Colors.white,
-                                  color: Colors.white,
-                                  child: Image.asset(
-                                    // widget.firstImage,
-                                    'assets/showcase/art1.png',
-                                    fit: BoxFit.fitWidth,
-                                    alignment: Alignment.topCenter,
+                          child: ClipRect(
+                            child: OverflowBox(
+                              child: Transform.translate(
+                                offset: const Offset(280, -450),
+                                child: Transform.rotate(
+                                  alignment: Alignment.topLeft,
+                                  angle: 0.5,
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Expanded(
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.stretch,
+                                          children: [
+                                            const SizedBox(
+                                              height: 100,
+                                            ),
+                                            roundCorneredImageView(
+                                                imagePath:
+                                                    'assets/showcase/art1.png'),
+                                            const SizedBox(
+                                              height: 20,
+                                            ),
+                                            roundCorneredImageView(
+                                                imagePath:
+                                                    'assets/showcase/hmk1.png'),
+                                            const SizedBox(
+                                              height: 20,
+                                            ),
+                                            roundCorneredImageView(
+                                                imagePath:
+                                                    'assets/showcase/hmk2.png'),
+                                          ],
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 50,
+                                      ),
+                                      Expanded(
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.stretch,
+                                          children: [
+                                            roundCorneredImageView(
+                                                imagePath:
+                                                    'assets/showcase/art1.png'),
+                                            const SizedBox(
+                                              height: 20,
+                                            ),
+                                            roundCorneredImageView(
+                                                imagePath:
+                                                    'assets/showcase/hmk1.png'),
+                                            const SizedBox(
+                                              height: 20,
+                                            ),
+                                            roundCorneredImageView(
+                                                imagePath:
+                                                    'assets/showcase/hmk2.png'),
+                                          ],
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 50,
+                                      ),
+                                      Expanded(
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.stretch,
+                                          children: [
+                                            const SizedBox(
+                                              height: 30,
+                                            ),
+                                            roundCorneredImageView(
+                                                imagePath:
+                                                    'assets/showcase/art1.png'),
+                                            const SizedBox(
+                                              height: 20,
+                                            ),
+                                            roundCorneredImageView(
+                                                imagePath:
+                                                    'assets/showcase/hmk1.png'),
+                                            const SizedBox(
+                                              height: 20,
+                                            ),
+                                            roundCorneredImageView(
+                                                imagePath:
+                                                    'assets/showcase/hmk2.png'),
+                                          ],
+                                        ),
+                                      ),
+                                      // Expanded(
+                                      //   flex: 3,
+                                      //   child: Container(
+                                      //     height: double.infinity,
+                                      //     width: double.infinity,
+                                      //     margin: const EdgeInsets.only(top: 30),
+                                      //     // color: widget.firstImageBG ?? Colors.white,
+                                      //     color: Colors.white,
+                                      //     child: Image.asset(
+                                      //       // widget.firstImage,
+                                      //       'assets/showcase/art1.png',
+                                      //       fit: BoxFit.fitWidth,
+                                      //       alignment: Alignment.topCenter,
+                                      //     ),
+                                      //   ),
+                                      // ),
+                                      // const SizedBox(
+                                      //   width: 20,
+                                      // ),
+                                      // Expanded(
+                                      //   flex: 3,
+                                      //   child: Container(
+                                      //     height: double.infinity,
+                                      //     width: double.infinity,
+                                      //     // color: widget.secondImageBG ?? Colors.white,
+                                      //     color: Colors.white,
+                                      //     child: Image.asset(
+                                      //       // widget.secondImage,
+                                      //       'assets/showcase/hmk1.png',
+                                      //       fit: BoxFit.fitWidth,
+                                      //       alignment: Alignment.center,
+                                      //     ),
+                                      //   ),
+                                      // ),
+                                      // const SizedBox(
+                                      //   width: 20,
+                                      // ),
+                                      // Expanded(
+                                      //   flex: 2,
+                                      //   child: Container(
+                                      //     height: double.infinity,
+                                      //     width: double.infinity,
+                                      //     // color: widget.thirdImageBG ?? Colors.white,
+                                      //     color: Colors.white,
+                                      //     child: Image.asset(
+                                      //       // widget.thirdImage,
+                                      //       'assets/showcase/hmk2.png',
+                                      //       fit: BoxFit.fitWidth,
+                                      //       alignment: Alignment.center,
+                                      //     ),
+                                      //   ),
+                                      // ),
+                                    ],
                                   ),
                                 ),
                               ),
-                              const SizedBox(
-                                width: 20,
-                              ),
-                              Expanded(
-                                flex: 3,
-                                child: Container(
-                                  height: double.infinity,
-                                  width: double.infinity,
-                                  // color: widget.secondImageBG ?? Colors.white,
-                                  color: Colors.white,
-                                  child: Image.asset(
-                                    // widget.secondImage,
-                                    'assets/showcase/hmk1.png',
-                                    fit: BoxFit.fitWidth,
-                                    alignment: Alignment.center,
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                width: 20,
-                              ),
-                              Expanded(
-                                flex: 2,
-                                child: Container(
-                                  height: double.infinity,
-                                  width: double.infinity,
-                                  // color: widget.thirdImageBG ?? Colors.white,
-                                  color: Colors.white,
-                                  child: Image.asset(
-                                    // widget.thirdImage,
-                                    'assets/showcase/hmk2.png',
-                                    fit: BoxFit.fitWidth,
-                                    alignment: Alignment.center,
-                                  ),
-                                ),
-                              ),
-                            ],
+                            ),
                           ),
                         ),
                         SizedBox(
@@ -440,6 +544,24 @@ class _ProjectScreenState extends State<ProjectScreen> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget roundCorneredImageView({required String imagePath}) {
+    return Container(
+      height: 250,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(15),
+        child: Image.asset(
+          imagePath,
+          fit: BoxFit.fitWidth,
+          alignment: Alignment.center,
+        ),
       ),
     );
   }
