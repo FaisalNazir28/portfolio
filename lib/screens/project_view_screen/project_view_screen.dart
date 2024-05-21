@@ -1,6 +1,6 @@
+import 'package:device_frame/device_frame.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:my_portfolio/models/selected_works_model.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
@@ -290,7 +290,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             ),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 50,
                         ),
                         Text(
@@ -300,7 +300,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             fontSize: 17,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 80,
                         ),
                         Container(
@@ -473,7 +473,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 80,
                         ),
                         Text(
@@ -481,7 +481,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                           style: const TextStyle(
                               fontSize: 30, fontWeight: FontWeight.w600),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         Text(
@@ -491,7 +491,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             fontSize: 17,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 80,
                         ),
                         Text(
@@ -499,7 +499,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                           style: const TextStyle(
                               fontSize: 30, fontWeight: FontWeight.w600),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         Text(
@@ -512,6 +512,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                         SizedBox(
                           height: 80,
                         ),
+                        devicePortfolioShowcase(),
                       ],
                     ),
                   ),
@@ -561,6 +562,349 @@ class _ProjectScreenState extends State<ProjectScreen> {
           imagePath,
           fit: BoxFit.fitWidth,
           alignment: Alignment.center,
+        ),
+      ),
+    );
+  }
+
+  Widget devicePortfolioShowcase() {
+    var isMobileScreen = Breakpoints.isSmallScreen(context);
+
+    return isMobileScreen
+        ? Column(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Container(
+                  padding: const EdgeInsets.only(left: 10),
+                  height: MediaQuery.of(context).size.height * .4,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade300,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        width: 200,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            tabletView(
+                              hasInitialMargin: true,
+                              imagePath: 'assets/showcase/art1.png',
+                              imageAlignment: Alignment.topCenter,
+                            ),
+                            const SizedBox(
+                              height: 15,
+                            ),
+                            tabletView(
+                              imagePath: 'assets/showcase/art1.png',
+                              imageAlignment: Alignment.center,
+                            ),
+                            const SizedBox(
+                              height: 15,
+                            ),
+                            tabletView(
+                              imagePath: 'assets/showcase/art1.png',
+                              imageAlignment: Alignment.bottomCenter,
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 15,
+                      ),
+                      SizedBox(
+                        width: 200,
+                        child: Transform.translate(
+                          offset: const Offset(0, -65),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              tabletView(
+                                imagePath: 'assets/showcase/art1.png',
+                                imageAlignment: Alignment.topCenter,
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              tabletView(
+                                imagePath: 'assets/showcase/art1.png',
+                                imageAlignment: Alignment.center,
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              tabletView(
+                                imagePath: 'assets/showcase/art1.png',
+                                imageAlignment: Alignment.bottomCenter,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 15,
+                      ),
+                      SizedBox(
+                        width: 200,
+                        child: Transform.translate(
+                          offset: const Offset(0, -30),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              tabletView(
+                                imagePath: 'assets/showcase/art1.png',
+                                imageAlignment: Alignment.topCenter,
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              tabletView(
+                                imagePath: 'assets/showcase/art1.png',
+                                imageAlignment: Alignment.center,
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              tabletView(
+                                imagePath: 'assets/showcase/art1.png',
+                                imageAlignment: Alignment.bottomCenter,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 25.0),
+              Container(
+                padding: const EdgeInsets.only(left: 25, right: 25, top: 25),
+                height: MediaQuery.of(context).size.height * .4,
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade300,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      flex: 3,
+                      child: DeviceFrame(
+                        device: Devices.ios.iPhone13ProMax,
+                        screen: Image.asset(
+                          'assets/showcase/art1.png',
+                          fit: BoxFit.fitWidth,
+                          alignment: Alignment.topLeft,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 30,
+                    ),
+                    Expanded(
+                      flex: 7,
+                      child: DeviceFrame(
+                        orientation: Orientation.landscape,
+                        device: Devices.ios.iPad12InchesGen4,
+                        screen: Image.asset(
+                          'assets/showcase/art1.png',
+                          fit: BoxFit.fitWidth,
+                          alignment: Alignment.topLeft,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          )
+        : Row(
+            children: [
+              Expanded(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Container(
+                    padding: const EdgeInsets.only(left: 10),
+                    height: MediaQuery.of(context).size.height * .4,
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade300,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 200,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              tabletView(
+                                hasInitialMargin: true,
+                                imagePath: 'assets/showcase/art1.png',
+                                imageAlignment: Alignment.topCenter,
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              tabletView(
+                                imagePath: 'assets/showcase/art1.png',
+                                imageAlignment: Alignment.center,
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              tabletView(
+                                imagePath: 'assets/showcase/art1.png',
+                                imageAlignment: Alignment.bottomCenter,
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        SizedBox(
+                          width: 200,
+                          child: Transform.translate(
+                            offset: const Offset(0, -65),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                tabletView(
+                                  imagePath: 'assets/showcase/art2.png',
+                                  imageAlignment: Alignment.topCenter,
+                                ),
+                                const SizedBox(
+                                  height: 15,
+                                ),
+                                tabletView(
+                                  imagePath: 'assets/showcase/art2.png',
+                                  imageAlignment: Alignment.center,
+                                ),
+                                const SizedBox(
+                                  height: 15,
+                                ),
+                                tabletView(
+                                  imagePath: 'assets/showcase/art2.png',
+                                  imageAlignment: Alignment.bottomCenter,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        SizedBox(
+                          width: 200,
+                          child: Transform.translate(
+                            offset: const Offset(0, -30),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                tabletView(
+                                  imagePath: 'assets/showcase/art1.png',
+                                  imageAlignment: Alignment.topCenter,
+                                ),
+                                const SizedBox(
+                                  height: 15,
+                                ),
+                                tabletView(
+                                  imagePath: 'assets/showcase/art1.png',
+                                  imageAlignment: Alignment.center,
+                                ),
+                                const SizedBox(
+                                  height: 15,
+                                ),
+                                tabletView(
+                                  imagePath: 'assets/showcase/art1.png',
+                                  imageAlignment: Alignment.bottomCenter,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 25.0),
+              Expanded(
+                child: Container(
+                  padding: const EdgeInsets.only(left: 25, right: 25, top: 25),
+                  height: MediaQuery.of(context).size.height * .4,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade300,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        flex: 3,
+                        child: DeviceFrame(
+                          device: Devices.ios.iPhone13ProMax,
+                          screen: Image.asset(
+                            'assets/showcase/art1.png',
+                            fit: BoxFit.fitWidth,
+                            alignment: Alignment.topLeft,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 30,
+                      ),
+                      Expanded(
+                        flex: 7,
+                        child: DeviceFrame(
+                          orientation: Orientation.landscape,
+                          device: Devices.ios.iPad12InchesGen4,
+                          screen: Image.asset(
+                            'assets/showcase/art1.png',
+                            fit: BoxFit.fitWidth,
+                            alignment: Alignment.topLeft,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          );
+  }
+
+  Widget tabletView({
+    bool hasInitialMargin = false,
+    required String imagePath,
+    required Alignment imageAlignment,
+    DeviceInfo? device,
+  }) {
+    return Container(
+      margin: EdgeInsets.only(top: hasInitialMargin == true ? 15 : 0),
+      height: (MediaQuery.of(context).size.height * .4) / 2.5,
+      child: DeviceFrame(
+        orientation: Orientation.landscape,
+        device: device ?? Devices.ios.iPad12InchesGen4,
+        screen: Image.asset(
+          imagePath,
+          fit: BoxFit.fitWidth,
+          alignment: imageAlignment,
         ),
       ),
     );
