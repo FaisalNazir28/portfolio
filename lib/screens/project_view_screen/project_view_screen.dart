@@ -75,8 +75,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 height: double.infinity,
                                 width: double.infinity,
                                 margin: const EdgeInsets.only(top: 30),
-                                // color: widget.firstImageBG ?? Colors.white,
-                                color: Colors.white,
+                                color: projectModel.mainImageBG,
                                 child: Image.asset(
                                   projectModel.mainImage,
                                   fit: BoxFit.fitWidth,
@@ -92,8 +91,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               child: Container(
                                 height: double.infinity,
                                 width: double.infinity,
-                                // color: widget.secondImageBG ?? Colors.white,
-                                color: Colors.white,
+                                color: projectModel.secondImageBG,
                                 child: Image.asset(
                                   projectModel.secondImage,
                                   fit: BoxFit.fitWidth,
@@ -109,8 +107,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               child: Container(
                                 height: double.infinity,
                                 width: double.infinity,
-                                // color: widget.thirdImageBG ?? Colors.white,
-                                color: Colors.white,
+                                color: projectModel.thirdImageBG,
                                 child: Image.asset(
                                   projectModel.thirdImage,
                                   fit: BoxFit.fitWidth,

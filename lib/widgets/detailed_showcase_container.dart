@@ -1,38 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/models/selected_works_model.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
+import 'package:my_portfolio/routes/routes.dart';
 
 class DetailedShowcaseContainer extends StatefulWidget {
-  final String title;
-  final String description;
-  final String clientName;
-  final String projectDate;
-  final String projectType;
-  final String projectDuration;
-  final Color? containerBG;
-  final String firstImage;
-  final String secondImage;
-  final String thirdImage;
-  final Color? firstImageBG;
-  final Color? secondImageBG;
-  final Color? thirdImageBG;
   final bool initialContainer;
+  final SelectedProjectModel projectData;
 
   const DetailedShowcaseContainer({
     super.key,
-    required this.title,
-    required this.description,
-    required this.clientName,
-    required this.projectDate,
-    required this.projectType,
-    required this.projectDuration,
-    this.containerBG,
-    this.firstImageBG,
-    this.secondImageBG,
-    this.thirdImageBG,
-    required this.firstImage,
-    required this.secondImage,
-    required this.thirdImage,
     this.initialContainer = false,
+    required this.projectData,
   });
 
   @override
@@ -60,7 +38,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
               ? MediaQuery.of(context).size.height * .25
               : MediaQuery.of(context).size.height * .45,
           decoration: BoxDecoration(
-            color: widget.containerBG ?? Colors.grey.shade300,
+            color: Colors.grey.shade300,
             borderRadius: BorderRadius.circular(20),
           ),
           child: Row(
@@ -72,9 +50,9 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                   height: double.infinity,
                   width: double.infinity,
                   margin: const EdgeInsets.only(top: 30),
-                  color: widget.firstImageBG ?? Colors.white,
+                  color: widget.projectData.mainImageBG,
                   child: Image.asset(
-                    widget.firstImage,
+                    widget.projectData.mainImage,
                     fit: BoxFit.fitWidth,
                     alignment: Alignment.topCenter,
                   ),
@@ -88,9 +66,9 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                 child: Container(
                   height: double.infinity,
                   width: double.infinity,
-                  color: widget.secondImageBG ?? Colors.white,
+                  color: widget.projectData.secondImageBG,
                   child: Image.asset(
-                    widget.secondImage,
+                    widget.projectData.secondImage,
                     fit: BoxFit.fitWidth,
                     alignment: Alignment.center,
                   ),
@@ -104,9 +82,9 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                 child: Container(
                   height: double.infinity,
                   width: double.infinity,
-                  color: widget.thirdImageBG ?? Colors.white,
+                  color: widget.projectData.thirdImageBG,
                   child: Image.asset(
-                    widget.thirdImage,
+                    widget.projectData.thirdImage,
                     fit: BoxFit.fitWidth,
                     alignment: Alignment.center,
                   ),
@@ -125,7 +103,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        widget.title,
+                        widget.projectData.title,
                         style: const TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 25,
@@ -135,28 +113,34 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                         height: 10,
                       ),
                       Text(
-                        widget.description,
+                        widget.projectData.description,
                         style: const TextStyle(
                             fontSize: 17.0, color: Colors.black54),
                       ),
                       const SizedBox(
                         height: 25,
                       ),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 20,
-                          vertical: 12,
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          border: Border.all(
-                            color: Colors.black26,
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, Routes.project,
+                              arguments: widget.projectData);
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 20,
+                            vertical: 12,
                           ),
-                        ),
-                        child: const Text(
-                          "View detail work",
-                          style: TextStyle(
-                            fontSize: 16,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(
+                              color: Colors.black26,
+                            ),
+                          ),
+                          child: const Text(
+                            "View detail work",
+                            style: TextStyle(
+                              fontSize: 16,
+                            ),
                           ),
                         ),
                       ),
@@ -185,7 +169,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                                   height: 10,
                                 ),
                                 Text(
-                                  widget.clientName,
+                                  widget.projectData.company,
                                   style: const TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w500),
@@ -207,7 +191,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                                   height: 10,
                                 ),
                                 Text(
-                                  widget.projectDate,
+                                  widget.projectData.projectDate,
                                   style: const TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w500),
@@ -237,7 +221,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                                   height: 10,
                                 ),
                                 Text(
-                                  widget.projectType,
+                                  widget.projectData.projectType,
                                   style: const TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w500),
@@ -259,7 +243,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                                   height: 10,
                                 ),
                                 Text(
-                                  widget.projectDuration,
+                                  widget.projectData.projectDuration,
                                   style: const TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w500),
@@ -282,7 +266,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          widget.title,
+                          widget.projectData.title,
                           style: isTabletScreen
                               ? const TextStyle(
                                   fontWeight: FontWeight.w500,
@@ -297,28 +281,34 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                           height: 20,
                         ),
                         Text(
-                          widget.description,
+                          widget.projectData.description,
                           style: const TextStyle(
                               fontSize: 17.0, color: Colors.black54),
                         ),
                         const SizedBox(
                           height: 40,
                         ),
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 20,
-                            vertical: 12,
-                          ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            border: Border.all(
-                              color: Colors.black26,
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, Routes.project,
+                                arguments: widget.projectData);
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 20,
+                              vertical: 12,
                             ),
-                          ),
-                          child: const Text(
-                            "View detail work",
-                            style: TextStyle(
-                              fontSize: 16,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(
+                                color: Colors.black26,
+                              ),
+                            ),
+                            child: const Text(
+                              "View detail work",
+                              style: TextStyle(
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                         ),
@@ -345,7 +335,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                               height: 10,
                             ),
                             Text(
-                              widget.clientName,
+                              widget.projectData.company,
                               style: const TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.w500),
                             ),
@@ -366,7 +356,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                               height: 10,
                             ),
                             Text(
-                              widget.projectDate,
+                              widget.projectData.projectDate,
                               style: const TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.w500),
                             ),
@@ -395,7 +385,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                               height: 10,
                             ),
                             Text(
-                              widget.projectType,
+                              widget.projectData.projectType,
                               style: const TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.w500),
                             ),
@@ -416,7 +406,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                               height: 10,
                             ),
                             Text(
-                              widget.projectDuration,
+                              widget.projectData.projectDuration,
                               style: const TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.w500),
                             ),

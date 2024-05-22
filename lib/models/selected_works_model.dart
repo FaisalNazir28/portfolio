@@ -1,8 +1,13 @@
+import 'dart:ui';
+
 class SelectedProjectModel {
   final int index;
   final String mainImage;
   final String secondImage;
   final String thirdImage;
+  final Color? mainImageBG;
+  final Color? secondImageBG;
+  final Color? thirdImageBG;
   final String title;
   final String company;
   final String projectDate;
@@ -22,6 +27,9 @@ class SelectedProjectModel {
     required this.mainImage,
     required this.secondImage,
     required this.thirdImage,
+    required this.mainImageBG,
+    required this.secondImageBG,
+    required this.thirdImageBG,
     required this.title,
     required this.company,
     required this.projectDate,

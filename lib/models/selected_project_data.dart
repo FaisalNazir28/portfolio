@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:my_portfolio/models/selected_works_model.dart';
 
 class SelectedProjectData {
@@ -7,6 +8,9 @@ class SelectedProjectData {
       mainImage: 'assets/showcase/hmk1.png',
       secondImage: 'assets/showcase/hmk1.png',
       thirdImage: 'assets/showcase/hmk2.png',
+      mainImageBG: Colors.black,
+      secondImageBG: Colors.black,
+      thirdImageBG: Colors.black,
       title: '10thbit',
       company: 'Software Company',
       projectDate: 'March 2023',
@@ -30,6 +34,9 @@ class SelectedProjectData {
       mainImage: 'assets/showcase/art1.png',
       secondImage: 'assets/showcase/art1.png',
       thirdImage: 'assets/showcase/art2.png',
+      mainImageBG: Colors.white,
+      secondImageBG: Colors.white,
+      thirdImageBG: Colors.white,
       title: 'Artache Magazine',
       company: 'Digital Magazine',
       projectDate: 'September 2023',
@@ -53,6 +60,9 @@ class SelectedProjectData {
       mainImage: 'assets/showcase/bridges1.png',
       secondImage: 'assets/showcase/bridges2.png',
       thirdImage: 'assets/showcase/bridges2.png',
+      mainImageBG: Colors.black,
+      secondImageBG: Colors.black,
+      thirdImageBG: Colors.black,
       title: 'Bridges Interactive',
       company: 'Gaming Portfolio',
       projectDate: 'January 2022',
@@ -76,6 +86,9 @@ class SelectedProjectData {
       mainImage: 'assets/showcase/barak1.png',
       secondImage: 'assets/showcase/barak1.png',
       thirdImage: 'assets/showcase/barak2.png',
+      mainImageBG: Colors.white,
+      secondImageBG: Colors.white,
+      thirdImageBG: Colors.white,
       title: 'Barak IP',
       company: 'Intellectual Law Firm',
       projectDate: 'October 2021',
