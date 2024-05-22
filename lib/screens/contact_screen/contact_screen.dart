@@ -15,6 +15,7 @@ class ContactPage extends StatefulWidget {
 
 class _ContactPageState extends State<ContactPage> {
   final ScrollController scrollController = ScrollController();
+  bool isSentMessage = false;
 
   @override
   Widget build(BuildContext context) {
@@ -113,124 +114,182 @@ class _ContactPageState extends State<ContactPage> {
                         ? Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                                padding: const EdgeInsets.all(15),
-                                child: Column(
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Expanded(
-                                          child: TextFormField(
-                                            cursorColor: Colors.black87,
-                                            decoration: InputDecoration(
-                                              fillColor:
-                                                  const Color(0xfff5f5f0),
-                                              filled: true,
-                                              hintText: 'Name',
-                                              hintStyle: const TextStyle(
-                                                fontSize: 16.0,
-                                                color: Colors.black54,
-                                              ),
-                                              border: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                                borderSide: BorderSide.none,
-                                              ),
-                                              focusedBorder: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                                borderSide: BorderSide.none,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          width: 15,
-                                        ),
-                                        Expanded(
-                                          child: TextFormField(
-                                            cursorColor: Colors.black87,
-                                            decoration: InputDecoration(
-                                              fillColor:
-                                                  const Color(0xfff5f5f0),
-                                              filled: true,
-                                              hintText: 'Email',
-                                              hintStyle: const TextStyle(
-                                                fontSize: 16.0,
-                                                color: Colors.black54,
-                                              ),
-                                              border: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                                borderSide: BorderSide.none,
-                                              ),
-                                              focusedBorder: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                                borderSide: BorderSide.none,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    const SizedBox(
-                                      height: 15,
-                                    ),
-                                    TextFormField(
-                                      cursorColor: Colors.black87,
-                                      minLines: 5,
-                                      maxLines: 5,
-                                      decoration: InputDecoration(
-                                        fillColor: const Color(0xfff5f5f0),
-                                        filled: true,
-                                        hintText: 'Tell me about your project',
-                                        hintStyle: const TextStyle(
-                                          fontSize: 16.0,
-                                          color: Colors.black54,
-                                        ),
-                                        border: OutlineInputBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          borderSide: BorderSide.none,
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          borderSide: BorderSide.none,
-                                        ),
+                              isSentMessage == true
+                                  ? Container(
+                                      width: double.infinity,
+                                      height: 320,
+                                      decoration: BoxDecoration(
+                                        color: Colors.black,
+                                        borderRadius: BorderRadius.circular(15),
                                       ),
-                                    ),
-                                    const SizedBox(
-                                      height: 15,
-                                    ),
-                                    InkWell(
-                                      onTap: () {},
-                                      child: Container(
-                                        width: double.infinity,
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 20, vertical: 12),
-                                        decoration: BoxDecoration(
-                                            color: Colors.black,
-                                            borderRadius:
-                                                BorderRadius.circular(8)),
-                                        child: const Text(
-                                          "Send Message",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
+                                      child: const Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Icon(
+                                            CupertinoIcons.checkmark_alt,
+                                            color: Colors.white,
+                                            size: 40,
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Text(
+                                            "Message Sent Successfully",
+                                            style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 16,
-                                              fontWeight: FontWeight.w400),
-                                        ),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                  : Container(
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(15),
+                                      ),
+                                      padding: const EdgeInsets.all(15),
+                                      child: Column(
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Expanded(
+                                                child: TextFormField(
+                                                  cursorColor: Colors.black87,
+                                                  decoration: InputDecoration(
+                                                    fillColor:
+                                                        const Color(0xfff5f5f0),
+                                                    filled: true,
+                                                    hintText: 'Name',
+                                                    hintStyle: const TextStyle(
+                                                      fontSize: 16.0,
+                                                      color: Colors.black54,
+                                                    ),
+                                                    border: OutlineInputBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10),
+                                                      borderSide:
+                                                          BorderSide.none,
+                                                    ),
+                                                    focusedBorder:
+                                                        OutlineInputBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10),
+                                                      borderSide:
+                                                          BorderSide.none,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              const SizedBox(
+                                                width: 15,
+                                              ),
+                                              Expanded(
+                                                child: TextFormField(
+                                                  cursorColor: Colors.black87,
+                                                  decoration: InputDecoration(
+                                                    fillColor:
+                                                        const Color(0xfff5f5f0),
+                                                    filled: true,
+                                                    hintText: 'Email',
+                                                    hintStyle: const TextStyle(
+                                                      fontSize: 16.0,
+                                                      color: Colors.black54,
+                                                    ),
+                                                    border: OutlineInputBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10),
+                                                      borderSide:
+                                                          BorderSide.none,
+                                                    ),
+                                                    focusedBorder:
+                                                        OutlineInputBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10),
+                                                      borderSide:
+                                                          BorderSide.none,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          const SizedBox(
+                                            height: 15,
+                                          ),
+                                          TextFormField(
+                                            cursorColor: Colors.black87,
+                                            minLines: 5,
+                                            maxLines: 5,
+                                            decoration: InputDecoration(
+                                              fillColor:
+                                                  const Color(0xfff5f5f0),
+                                              filled: true,
+                                              hintText:
+                                                  'Tell me about your project',
+                                              hintStyle: const TextStyle(
+                                                fontSize: 16.0,
+                                                color: Colors.black54,
+                                              ),
+                                              border: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                                borderSide: BorderSide.none,
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                                borderSide: BorderSide.none,
+                                              ),
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 15,
+                                          ),
+                                          InkWell(
+                                            onTap: () {
+                                              setState(() {
+                                                isSentMessage = true;
+                                                Future.delayed(
+                                                    const Duration(seconds: 3),
+                                                    () {
+                                                  setState(() {
+                                                    isSentMessage = false;
+                                                  });
+                                                });
+                                              });
+                                            },
+                                            child: Container(
+                                              width: double.infinity,
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: 20,
+                                                      vertical: 12),
+                                              decoration: BoxDecoration(
+                                                  color: Colors.black,
+                                                  borderRadius:
+                                                      BorderRadius.circular(8)),
+                                              child: const Text(
+                                                "Send Message",
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 16,
+                                                    fontWeight:
+                                                        FontWeight.w400),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
-                                  ],
-                                ),
-                              ),
                               const SizedBox(
                                 height: 25,
                               ),
@@ -334,136 +393,199 @@ class _ContactPageState extends State<ContactPage> {
                             child: Row(
                               children: [
                                 Expanded(
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(15),
-                                    ),
-                                    padding: const EdgeInsets.all(15),
-                                    child: Column(
-                                      // mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Expanded(
-                                              child: TextFormField(
-                                                cursorColor: Colors.black87,
-                                                decoration: InputDecoration(
-                                                  fillColor:
-                                                      const Color(0xfff5f5f0),
-                                                  filled: true,
-                                                  hintText: 'Name',
-                                                  hintStyle: const TextStyle(
-                                                    fontSize: 16.0,
-                                                    color: Colors.black54,
+                                  child: isSentMessage == true
+                                      ? Container(
+                                          decoration: BoxDecoration(
+                                            color: Colors.black,
+                                            borderRadius:
+                                                BorderRadius.circular(15),
+                                          ),
+                                          child: const Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Icon(
+                                                CupertinoIcons.checkmark_alt,
+                                                color: Colors.white,
+                                                size: 50,
+                                              ),
+                                              SizedBox(
+                                                height: 10,
+                                              ),
+                                              Text(
+                                                "Message Sent Successfully",
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 20),
+                                              )
+                                            ],
+                                          ),
+                                        )
+                                      : Container(
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(15),
+                                          ),
+                                          padding: const EdgeInsets.all(15),
+                                          child: Column(
+                                            // mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Row(
+                                                children: [
+                                                  Expanded(
+                                                    child: TextFormField(
+                                                      cursorColor:
+                                                          Colors.black87,
+                                                      decoration:
+                                                          InputDecoration(
+                                                        fillColor: const Color(
+                                                            0xfff5f5f0),
+                                                        filled: true,
+                                                        hintText: 'Name',
+                                                        hintStyle:
+                                                            const TextStyle(
+                                                          fontSize: 16.0,
+                                                          color: Colors.black54,
+                                                        ),
+                                                        border:
+                                                            OutlineInputBorder(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(10),
+                                                          borderSide:
+                                                              BorderSide.none,
+                                                        ),
+                                                        focusedBorder:
+                                                            OutlineInputBorder(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(10),
+                                                          borderSide:
+                                                              BorderSide.none,
+                                                        ),
+                                                      ),
+                                                    ),
                                                   ),
-                                                  border: OutlineInputBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10),
-                                                    borderSide: BorderSide.none,
+                                                  const SizedBox(
+                                                    width: 15,
                                                   ),
-                                                  focusedBorder:
-                                                      OutlineInputBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10),
-                                                    borderSide: BorderSide.none,
+                                                  Expanded(
+                                                    child: TextFormField(
+                                                      cursorColor:
+                                                          Colors.black87,
+                                                      decoration:
+                                                          InputDecoration(
+                                                        fillColor: const Color(
+                                                            0xfff5f5f0),
+                                                        filled: true,
+                                                        hintText: 'Email',
+                                                        hintStyle:
+                                                            const TextStyle(
+                                                          fontSize: 16.0,
+                                                          color: Colors.black54,
+                                                        ),
+                                                        border:
+                                                            OutlineInputBorder(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(10),
+                                                          borderSide:
+                                                              BorderSide.none,
+                                                        ),
+                                                        focusedBorder:
+                                                            OutlineInputBorder(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(10),
+                                                          borderSide:
+                                                              BorderSide.none,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              const SizedBox(
+                                                height: 15,
+                                              ),
+                                              Expanded(
+                                                child: TextFormField(
+                                                  cursorColor: Colors.black87,
+                                                  minLines: null,
+                                                  maxLines: null,
+                                                  expands: true,
+                                                  decoration: InputDecoration(
+                                                    fillColor:
+                                                        const Color(0xfff5f5f0),
+                                                    filled: true,
+                                                    hintText:
+                                                        'Tell me about your project',
+                                                    hintStyle: const TextStyle(
+                                                      fontSize: 16.0,
+                                                      color: Colors.black54,
+                                                    ),
+                                                    border: OutlineInputBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10),
+                                                      borderSide:
+                                                          BorderSide.none,
+                                                    ),
+                                                    focusedBorder:
+                                                        OutlineInputBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10),
+                                                      borderSide:
+                                                          BorderSide.none,
+                                                    ),
                                                   ),
                                                 ),
                                               ),
-                                            ),
-                                            const SizedBox(
-                                              width: 15,
-                                            ),
-                                            Expanded(
-                                              child: TextFormField(
-                                                cursorColor: Colors.black87,
-                                                decoration: InputDecoration(
-                                                  fillColor:
-                                                      const Color(0xfff5f5f0),
-                                                  filled: true,
-                                                  hintText: 'Email',
-                                                  hintStyle: const TextStyle(
-                                                    fontSize: 16.0,
-                                                    color: Colors.black54,
-                                                  ),
-                                                  border: OutlineInputBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10),
-                                                    borderSide: BorderSide.none,
-                                                  ),
-                                                  focusedBorder:
-                                                      OutlineInputBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10),
-                                                    borderSide: BorderSide.none,
+                                              const SizedBox(
+                                                height: 15,
+                                              ),
+                                              InkWell(
+                                                onTap: () {
+                                                  setState(() {
+                                                    isSentMessage = true;
+                                                    Future.delayed(
+                                                        const Duration(
+                                                            seconds: 3), () {
+                                                      setState(() {
+                                                        isSentMessage = false;
+                                                      });
+                                                    });
+                                                  });
+                                                },
+                                                child: Container(
+                                                  width: double.infinity,
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
+                                                      horizontal: 20,
+                                                      vertical: 12),
+                                                  decoration: BoxDecoration(
+                                                      color: Colors.black,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8)),
+                                                  child: const Text(
+                                                    "Send Message",
+                                                    textAlign: TextAlign.center,
+                                                    style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 16,
+                                                        fontWeight:
+                                                            FontWeight.w400),
                                                   ),
                                                 ),
                                               ),
-                                            ),
-                                          ],
-                                        ),
-                                        const SizedBox(
-                                          height: 15,
-                                        ),
-                                        Expanded(
-                                          child: TextFormField(
-                                            cursorColor: Colors.black87,
-                                            minLines: null,
-                                            maxLines: null,
-                                            expands: true,
-                                            decoration: InputDecoration(
-                                              fillColor:
-                                                  const Color(0xfff5f5f0),
-                                              filled: true,
-                                              hintText:
-                                                  'Tell me about your project',
-                                              hintStyle: const TextStyle(
-                                                fontSize: 16.0,
-                                                color: Colors.black54,
-                                              ),
-                                              border: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                                borderSide: BorderSide.none,
-                                              ),
-                                              focusedBorder: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                                borderSide: BorderSide.none,
-                                              ),
-                                            ),
+                                            ],
                                           ),
                                         ),
-                                        const SizedBox(
-                                          height: 15,
-                                        ),
-                                        InkWell(
-                                          onTap: () {},
-                                          child: Container(
-                                            width: double.infinity,
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 20, vertical: 12),
-                                            decoration: BoxDecoration(
-                                                color: Colors.black,
-                                                borderRadius:
-                                                    BorderRadius.circular(8)),
-                                            child: const Text(
-                                              "Send Message",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 16,
-                                                  fontWeight: FontWeight.w400),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
                                 ),
                                 const SizedBox(
                                   width: 15,
