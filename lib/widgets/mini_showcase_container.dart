@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
+import 'package:my_portfolio/routes/routes.dart';
 
 class MiniShowcaseContainer extends StatefulWidget {
   final String title;
@@ -110,16 +111,23 @@ class _MiniShowcaseContainerState extends State<MiniShowcaseContainer> {
         ),
         Row(
           children: [
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-              decoration: BoxDecoration(
-                  color: Colors.black, borderRadius: BorderRadius.circular(8)),
-              child: const Text(
-                "View example work",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400),
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, Routes.caseStudies);
+              },
+              child: Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(8)),
+                child: const Text(
+                  "View example work",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400),
+                ),
               ),
             ),
           ],

@@ -511,7 +511,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                         const SizedBox(
                           height: 80,
                         ),
-                        devicePortfolioShowcase(),
+                        devicePortfolioShowcase(projectModel),
                       ],
                     ),
                   ),
@@ -567,7 +567,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
     );
   }
 
-  Widget devicePortfolioShowcase() {
+  Widget devicePortfolioShowcase(SelectedProjectModel projectModel) {
     var isMobileScreen = Breakpoints.isSmallScreen(context);
 
     return isMobileScreen
@@ -698,13 +698,33 @@ class _ProjectScreenState extends State<ProjectScreen> {
                   children: [
                     Expanded(
                       flex: 3,
-                      child: DeviceFrame(
-                        device: Devices.ios.iPhone13ProMax,
-                        screen: Image.asset(
-                          'assets/showcase/art1.png',
-                          fit: BoxFit.fitWidth,
-                          alignment: Alignment.topLeft,
-                        ),
+                      child: Stack(
+                        alignment: Alignment.topCenter,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(
+                                top: 7, left: 7, right: 7),
+                            color: projectModel.mainImageBG,
+                            height: double.infinity,
+                            width: double.infinity,
+                            child: Image.asset(
+                              projectModel.mainImage,
+                              fit: BoxFit.fitWidth,
+                              alignment: Alignment.topLeft,
+                            ),
+                          ),
+                          DeviceFrame(
+                            device: Devices.ios.iPhone13ProMax,
+                            screen: Container(
+                              color: projectModel.mainImageBG,
+                              child: Image.asset(
+                                projectModel.mainImage,
+                                fit: BoxFit.fitWidth,
+                                alignment: Alignment.topLeft,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     const SizedBox(
@@ -712,14 +732,34 @@ class _ProjectScreenState extends State<ProjectScreen> {
                     ),
                     Expanded(
                       flex: 7,
-                      child: DeviceFrame(
-                        orientation: Orientation.landscape,
-                        device: Devices.ios.iPad12InchesGen4,
-                        screen: Image.asset(
-                          'assets/showcase/art1.png',
-                          fit: BoxFit.fitWidth,
-                          alignment: Alignment.topLeft,
-                        ),
+                      child: Stack(
+                        alignment: Alignment.topCenter,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(
+                                top: 13, left: 13, right: 13),
+                            color: projectModel.mainImageBG,
+                            height: double.infinity,
+                            width: double.infinity,
+                            child: Image.asset(
+                              projectModel.mainImage,
+                              fit: BoxFit.fitWidth,
+                              alignment: Alignment.topLeft,
+                            ),
+                          ),
+                          DeviceFrame(
+                            orientation: Orientation.landscape,
+                            device: Devices.ios.iPad12InchesGen4,
+                            screen: Container(
+                              color: projectModel.mainImageBG,
+                              child: Image.asset(
+                                projectModel.mainImage,
+                                fit: BoxFit.fitWidth,
+                                alignment: Alignment.topLeft,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
@@ -857,13 +897,33 @@ class _ProjectScreenState extends State<ProjectScreen> {
                     children: [
                       Expanded(
                         flex: 3,
-                        child: DeviceFrame(
-                          device: Devices.ios.iPhone13ProMax,
-                          screen: Image.asset(
-                            'assets/showcase/art1.png',
-                            fit: BoxFit.fitWidth,
-                            alignment: Alignment.topLeft,
-                          ),
+                        child: Stack(
+                          alignment: Alignment.topCenter,
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(
+                                  top: 7, left: 7, right: 7),
+                              color: projectModel.mainImageBG,
+                              height: double.infinity,
+                              width: double.infinity,
+                              child: Image.asset(
+                                projectModel.mainImage,
+                                fit: BoxFit.fitWidth,
+                                alignment: Alignment.topLeft,
+                              ),
+                            ),
+                            DeviceFrame(
+                              device: Devices.ios.iPhone13ProMax,
+                              screen: Container(
+                                color: projectModel.mainImageBG,
+                                child: Image.asset(
+                                  projectModel.mainImage,
+                                  fit: BoxFit.fitWidth,
+                                  alignment: Alignment.topLeft,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       const SizedBox(
@@ -871,14 +931,34 @@ class _ProjectScreenState extends State<ProjectScreen> {
                       ),
                       Expanded(
                         flex: 7,
-                        child: DeviceFrame(
-                          orientation: Orientation.landscape,
-                          device: Devices.ios.iPad12InchesGen4,
-                          screen: Image.asset(
-                            'assets/showcase/art1.png',
-                            fit: BoxFit.fitWidth,
-                            alignment: Alignment.topLeft,
-                          ),
+                        child: Stack(
+                          alignment: Alignment.topCenter,
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(
+                                  top: 13, left: 13, right: 13),
+                              color: projectModel.mainImageBG,
+                              height: double.infinity,
+                              width: double.infinity,
+                              child: Image.asset(
+                                projectModel.mainImage,
+                                fit: BoxFit.fitWidth,
+                                alignment: Alignment.topLeft,
+                              ),
+                            ),
+                            DeviceFrame(
+                              orientation: Orientation.landscape,
+                              device: Devices.ios.iPad12InchesGen4,
+                              screen: Container(
+                                color: projectModel.mainImageBG,
+                                child: Image.asset(
+                                  projectModel.mainImage,
+                                  fit: BoxFit.fitWidth,
+                                  alignment: Alignment.topLeft,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],
