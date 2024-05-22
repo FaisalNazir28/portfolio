@@ -9,6 +9,7 @@ import 'package:my_portfolio/widgets/header.dart';
 import 'package:my_portfolio/widgets/horizontal_scrollbar_tile.dart';
 import 'package:my_portfolio/widgets/review_widget.dart';
 import 'package:my_portfolio/widgets/showcase_container.dart';
+import 'package:ionicons/ionicons.dart';
 
 class AboutScreen extends StatefulWidget {
   const AboutScreen({super.key});
@@ -770,6 +771,7 @@ class _AboutScreenState extends State<AboutScreen> {
                     ],
                   ),
                 ),
+                myToolsContainer(),
                 ReviewWidget(),
                 const CustomFooter(),
               ],
@@ -844,5 +846,72 @@ class _AboutScreenState extends State<AboutScreen> {
         ),
       ),
     );
+  }
+
+  Widget myToolsContainer() {
+    var isDesktopScreen = Breakpoints.isLargeScreen(context);
+    var isTabletScreen = Breakpoints.isMediumScreen(context);
+    var isMobileScreen = Breakpoints.isSmallScreen(context);
+
+    return Container(
+        margin: isDesktopScreen
+            ? EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width * .2,
+                vertical: 100)
+            : isTabletScreen
+                ? EdgeInsets.symmetric(
+                    horizontal: MediaQuery.of(context).size.width * .1,
+                    vertical: 100)
+                : EdgeInsets.symmetric(
+                    horizontal: MediaQuery.of(context).size.width * .04,
+                    vertical: 100),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Some of my tools",
+              style: isMobileScreen
+                  ? const TextStyle(fontSize: 30, fontWeight: FontWeight.w400)
+                  : const TextStyle(fontSize: 40, fontWeight: FontWeight.w500),
+            ),
+            const Divider(
+              height: 50,
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            const Wrap(
+              runSpacing: 100,
+              spacing: 100,
+              children: [
+                Icon(Ionicons.logo_android, size: 70),
+                Icon(Ionicons.logo_apple, size: 70),
+                Icon(Ionicons.logo_windows, size: 70),
+                Icon(Ionicons.logo_firebase, size: 70),
+                Icon(Ionicons.logo_nodejs, size: 70),
+                Icon(Ionicons.logo_javascript, size: 70),
+                Icon(Ionicons.logo_stackoverflow, size: 70),
+                Icon(Ionicons.logo_wordpress, size: 70),
+                Icon(Ionicons.logo_github, size: 70),
+                Icon(Ionicons.logo_bitbucket, size: 70),
+                Icon(Ionicons.logo_apple_appstore, size: 70),
+                Icon(Ionicons.logo_google_playstore, size: 70),
+                Icon(Ionicons.logo_chrome, size: 70),
+                Icon(Ionicons.logo_firefox, size: 70),
+                Icon(Ionicons.logo_figma, size: 70),
+                Icon(Ionicons.logo_behance, size: 70),
+                Icon(Ionicons.logo_dribbble, size: 70),
+                Icon(Ionicons.logo_dropbox, size: 70),
+                Icon(Ionicons.logo_linkedin, size: 70),
+                Icon(Ionicons.logo_medium, size: 70),
+                Icon(Ionicons.logo_skype, size: 70),
+                Icon(Ionicons.logo_slack, size: 70),
+                Icon(Ionicons.logo_discord, size: 70),
+                Icon(Ionicons.logo_facebook, size: 70),
+                Icon(Ionicons.logo_instagram, size: 70),
+              ],
+            ),
+          ],
+        ));
   }
 }
