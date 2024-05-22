@@ -4,12 +4,10 @@ import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
 
 class DetailedShowcaseContainer extends StatefulWidget {
-  final bool initialContainer;
   final SelectedProjectModel projectData;
 
   const DetailedShowcaseContainer({
     super.key,
-    this.initialContainer = false,
     required this.projectData,
   });
 
@@ -28,7 +26,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        if (widget.initialContainer == false)
+        if (widget.projectData.index != 0)
           const SizedBox(
             height: 100,
           ),
