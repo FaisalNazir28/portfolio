@@ -1,4 +1,5 @@
 class SelectedProjectModel {
+  final int index;
   final String mainImage;
   final String secondImage;
   final String thirdImage;
@@ -17,6 +18,7 @@ class SelectedProjectModel {
   final String mobileView;
 
   SelectedProjectModel({
+    required this.index,
     required this.mainImage,
     required this.secondImage,
     required this.thirdImage,

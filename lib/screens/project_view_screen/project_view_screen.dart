@@ -1,12 +1,14 @@
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/models/selected_project_data.dart';
 import 'package:my_portfolio/models/selected_works_model.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
 import 'package:my_portfolio/widgets/footer.dart';
 import 'package:my_portfolio/widgets/header.dart';
 import 'package:my_portfolio/widgets/review_widget.dart';
+import 'package:my_portfolio/widgets/selected_work_container.dart';
 
 class ProjectScreen extends StatefulWidget {
   const ProjectScreen({super.key});
@@ -295,7 +297,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                         ),
                         Text(
                           projectModel.description,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.black54,
                             fontSize: 17,
                           ),
@@ -476,9 +478,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                         const SizedBox(
                           height: 80,
                         ),
-                        Text(
+                        const Text(
                           'Challenge Faced:',
-                          style: const TextStyle(
+                          style: TextStyle(
                               fontSize: 30, fontWeight: FontWeight.w600),
                         ),
                         const SizedBox(
@@ -486,7 +488,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                         ),
                         Text(
                           projectModel.challengesFaced,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.black54,
                             fontSize: 17,
                           ),
@@ -494,9 +496,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                         const SizedBox(
                           height: 80,
                         ),
-                        Text(
+                        const Text(
                           'Results and Impact:',
-                          style: const TextStyle(
+                          style: TextStyle(
                               fontSize: 30, fontWeight: FontWeight.w600),
                         ),
                         const SizedBox(
@@ -504,12 +506,12 @@ class _ProjectScreenState extends State<ProjectScreen> {
                         ),
                         Text(
                           projectModel.results,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.black54,
                             fontSize: 17,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 80,
                         ),
                         devicePortfolioShowcase(),
@@ -517,7 +519,8 @@ class _ProjectScreenState extends State<ProjectScreen> {
                     ),
                   ),
                 ),
-                ReviewWidget(defaultColor: false),
+                anotherWorkContainer(projectModel.index),
+                ReviewWidget(defaultColor: true),
                 const CustomFooter(),
               ],
             ),
@@ -905,6 +908,69 @@ class _ProjectScreenState extends State<ProjectScreen> {
           imagePath,
           fit: BoxFit.fitWidth,
           alignment: imageAlignment,
+        ),
+      ),
+    );
+  }
+
+  Widget anotherWorkContainer(int currentIndex) {
+    var isDesktopScreen = Breakpoints.isLargeScreen(context);
+    var isTabletScreen = Breakpoints.isMediumScreen(context);
+
+    List checkNextIndex() {
+      List nextIndex = List.empty(growable: true);
+      if (currentIndex == SelectedProjectData.selectedProjects.first.index) {
+        nextIndex = [currentIndex + 1, currentIndex + 2];
+      } else if (currentIndex ==
+          SelectedProjectData.selectedProjects.last.index) {
+        nextIndex = [currentIndex - 2, currentIndex - 1];
+      } else {
+        nextIndex = [currentIndex - 1, currentIndex + 1];
+      }
+      return nextIndex;
+    }
+
+    return Container(
+      color: const Color(0xfff5f5f0),
+      child: Container(
+        margin: isDesktopScreen
+            ? EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width * .2,
+                vertical: 100)
+            : isTabletScreen
+                ? EdgeInsets.symmetric(
+                    horizontal: MediaQuery.of(context).size.width * .1,
+                    vertical: 100)
+                : EdgeInsets.symmetric(
+                    horizontal: MediaQuery.of(context).size.width * .04,
+                    vertical: 100),
+        child: Column(
+          children: [
+            const Text(
+              "Another work",
+              style: TextStyle(fontSize: 50, fontWeight: FontWeight.w500),
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: SelectedWorkContainer(
+                      projectData: SelectedProjectData
+                          .selectedProjects[checkNextIndex()[0]]),
+                ),
+                const SizedBox(
+                  width: 50,
+                ),
+                Expanded(
+                  child: SelectedWorkContainer(
+                      projectData: SelectedProjectData
+                          .selectedProjects[checkNextIndex()[1]]),
+                ),
+              ],
+            )
+          ],
         ),
       ),
     );

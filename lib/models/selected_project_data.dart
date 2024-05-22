@@ -3,6 +3,7 @@ import 'package:my_portfolio/models/selected_works_model.dart';
 class SelectedProjectData {
   static List<SelectedProjectModel> selectedProjects = [
     SelectedProjectModel(
+      index: 0,
       mainImage: 'assets/showcase/hmk1.png',
       secondImage: 'assets/showcase/hmk1.png',
       thirdImage: 'assets/showcase/hmk2.png',
@@ -25,6 +26,7 @@ class SelectedProjectData {
       mobileView: 'null',
     ),
     SelectedProjectModel(
+      index: 1,
       mainImage: 'assets/showcase/art1.png',
       secondImage: 'assets/showcase/art1.png',
       thirdImage: 'assets/showcase/art2.png',
@@ -47,6 +49,7 @@ class SelectedProjectData {
       mobileView: 'null',
     ),
     SelectedProjectModel(
+      index: 2,
       mainImage: 'assets/showcase/bridges1.png',
       secondImage: 'assets/showcase/bridges2.png',
       thirdImage: 'assets/showcase/bridges2.png',
@@ -69,6 +72,7 @@ class SelectedProjectData {
       mobileView: 'null',
     ),
     SelectedProjectModel(
+      index: 3,
       mainImage: 'assets/showcase/barak1.png',
       secondImage: 'assets/showcase/barak1.png',
       thirdImage: 'assets/showcase/barak2.png',
