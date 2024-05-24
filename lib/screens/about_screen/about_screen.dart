@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
+import 'package:my_portfolio/utilities/app_images.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
 import 'package:my_portfolio/widgets/experience_tile.dart';
 import 'package:my_portfolio/widgets/footer.dart';
@@ -9,7 +10,6 @@ import 'package:my_portfolio/widgets/header.dart';
 import 'package:my_portfolio/widgets/horizontal_scrollbar_tile.dart';
 import 'package:my_portfolio/widgets/review_widget.dart';
 import 'package:my_portfolio/widgets/showcase_container.dart';
-import 'package:ionicons/ionicons.dart';
 
 class AboutScreen extends StatefulWidget {
   const AboutScreen({super.key});
@@ -771,7 +771,7 @@ class _AboutScreenState extends State<AboutScreen> {
                     ],
                   ),
                 ),
-                myToolsContainer(),
+                myToolsImagesContainer(),
                 ReviewWidget(),
                 const CustomFooter(),
               ],
@@ -848,10 +848,19 @@ class _AboutScreenState extends State<AboutScreen> {
     );
   }
 
-  Widget myToolsContainer() {
+  Widget myToolsImagesContainer() {
     var isDesktopScreen = Breakpoints.isLargeScreen(context);
     var isTabletScreen = Breakpoints.isMediumScreen(context);
     var isMobileScreen = Breakpoints.isSmallScreen(context);
+
+    Widget iconBox({required String icon, bool defaultColor = false}) {
+      return Image.asset(
+        icon,
+        width: 60,
+        height: 60,
+        color: defaultColor == true ? null : Colors.black87,
+      );
+    }
 
     return Container(
         margin: isDesktopScreen
@@ -880,35 +889,38 @@ class _AboutScreenState extends State<AboutScreen> {
             const SizedBox(
               height: 50,
             ),
-            const Wrap(
+            Wrap(
               runSpacing: 100,
               spacing: 100,
               children: [
-                Icon(Ionicons.logo_android, size: 70),
-                Icon(Ionicons.logo_apple, size: 70),
-                Icon(Ionicons.logo_windows, size: 70),
-                Icon(Ionicons.logo_firebase, size: 70),
-                Icon(Ionicons.logo_nodejs, size: 70),
-                Icon(Ionicons.logo_javascript, size: 70),
-                Icon(Ionicons.logo_stackoverflow, size: 70),
-                Icon(Ionicons.logo_wordpress, size: 70),
-                Icon(Ionicons.logo_github, size: 70),
-                Icon(Ionicons.logo_bitbucket, size: 70),
-                Icon(Ionicons.logo_apple_appstore, size: 70),
-                Icon(Ionicons.logo_google_playstore, size: 70),
-                Icon(Ionicons.logo_chrome, size: 70),
-                Icon(Ionicons.logo_firefox, size: 70),
-                Icon(Ionicons.logo_figma, size: 70),
-                Icon(Ionicons.logo_behance, size: 70),
-                Icon(Ionicons.logo_dribbble, size: 70),
-                Icon(Ionicons.logo_dropbox, size: 70),
-                Icon(Ionicons.logo_linkedin, size: 70),
-                Icon(Ionicons.logo_medium, size: 70),
-                Icon(Ionicons.logo_skype, size: 70),
-                Icon(Ionicons.logo_slack, size: 70),
-                Icon(Ionicons.logo_discord, size: 70),
-                Icon(Ionicons.logo_facebook, size: 70),
-                Icon(Ionicons.logo_instagram, size: 70),
+                iconBox(icon: AppImages.androidStudio),
+                iconBox(icon: AppImages.xcode),
+                iconBox(icon: AppImages.windows),
+                iconBox(icon: AppImages.macos, defaultColor: true),
+                iconBox(icon: AppImages.firebase),
+                iconBox(icon: AppImages.nodejs),
+                iconBox(icon: AppImages.javascript),
+                iconBox(icon: AppImages.stackoverflow),
+                iconBox(icon: AppImages.wordpress),
+                iconBox(icon: AppImages.github),
+                iconBox(icon: AppImages.bitbucket),
+                iconBox(icon: AppImages.appstore),
+                iconBox(icon: AppImages.playStore),
+                iconBox(icon: AppImages.chrome),
+                iconBox(icon: AppImages.firefox),
+                iconBox(icon: AppImages.edge),
+                iconBox(icon: AppImages.figma),
+                iconBox(icon: AppImages.behance),
+                iconBox(icon: AppImages.dribble),
+                iconBox(icon: AppImages.dropbox),
+                iconBox(icon: AppImages.linkedin),
+                iconBox(icon: AppImages.medium),
+                iconBox(icon: AppImages.skype),
+                iconBox(icon: AppImages.slack),
+                iconBox(icon: AppImages.discord),
+                iconBox(icon: AppImages.facebook),
+                iconBox(icon: AppImages.instagram),
+                iconBox(icon: AppImages.whatsapp),
               ],
             ),
           ],
