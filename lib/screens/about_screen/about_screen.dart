@@ -853,15 +853,6 @@ class _AboutScreenState extends State<AboutScreen> {
     var isTabletScreen = Breakpoints.isMediumScreen(context);
     var isMobileScreen = Breakpoints.isSmallScreen(context);
 
-    Widget iconBox({required String icon, bool defaultColor = false}) {
-      return Image.asset(
-        icon,
-        width: 60,
-        height: 60,
-        color: defaultColor == true ? null : Colors.black87,
-      );
-    }
-
     return Container(
         margin: isDesktopScreen
             ? EdgeInsets.symmetric(
@@ -893,51 +884,258 @@ class _AboutScreenState extends State<AboutScreen> {
               runSpacing: 100,
               spacing: 100,
               children: [
-                iconBox(icon: AppImages.androidStudio),
-                iconBox(icon: AppImages.xcode),
-                iconBox(icon: AppImages.windows),
-                iconBox(icon: AppImages.macos, defaultColor: true),
-                iconBox(icon: AppImages.visualstudio),
-                iconBox(icon: AppImages.vscode),
-                iconBox(icon: AppImages.postman),
-                iconBox(icon: AppImages.flutter),
-                iconBox(icon: AppImages.dart),
-                iconBox(icon: AppImages.firebase),
-                iconBox(icon: AppImages.nodejs),
-                iconBox(icon: AppImages.javascript),
-                iconBox(icon: AppImages.sqlite),
-                iconBox(icon: AppImages.jira),
-                iconBox(icon: AppImages.stackoverflow),
-                iconBox(icon: AppImages.chatGPT),
-                iconBox(icon: AppImages.notion),
-                iconBox(icon: AppImages.wordpress),
-                iconBox(icon: AppImages.elementor),
-                iconBox(icon: AppImages.git),
-                iconBox(icon: AppImages.github),
-                iconBox(icon: AppImages.bitbucket),
-                iconBox(icon: AppImages.appstore),
-                iconBox(icon: AppImages.playStore),
-                iconBox(icon: AppImages.chrome),
-                iconBox(icon: AppImages.firefox),
-                iconBox(icon: AppImages.edge),
-                iconBox(icon: AppImages.adobe),
-                iconBox(icon: AppImages.photoshop),
-                iconBox(icon: AppImages.adobeXd),
-                iconBox(icon: AppImages.figma),
-                iconBox(icon: AppImages.behance),
-                iconBox(icon: AppImages.dribble),
-                iconBox(icon: AppImages.dropbox),
-                iconBox(icon: AppImages.linkedin),
-                iconBox(icon: AppImages.medium),
-                iconBox(icon: AppImages.skype),
-                iconBox(icon: AppImages.slack),
-                iconBox(icon: AppImages.discord),
-                iconBox(icon: AppImages.facebook),
-                iconBox(icon: AppImages.instagram),
-                iconBox(icon: AppImages.whatsapp),
+                IconBoxWidget(
+                  icon: AppImages.androidStudio,
+                  hoverColor: Colors.green,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.xcode,
+                  hoverColor: Colors.green,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.windows,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.windowsColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.macos,
+                  defaultColor: true,
+                  hoverColor: Colors.transparent,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.visualstudio,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.visualstudioColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.vscode,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.vscodeColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.postman,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.postmanColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.flutter,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.flutterColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.dart,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.dartColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.firebase,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.firebaseColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.nodejs,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.nodejsColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.javascript,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.javascriptColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.sqlite,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.sqliteColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.jira,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.jiraColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.stackoverflow,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.stackoverflowColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.chatGPT,
+                  hoverColor: Colors.green,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.notion,
+                  hoverColor: Colors.green,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.wordpress,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.wordpressColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.elementor,
+                  hoverColor: Colors.green,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.git,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.gitColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.github,
+                  hoverColor: Colors.green,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.bitbucket,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.bitbucketColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.appstore,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.appstoreColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.playStore,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.playStoreColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.chrome,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.chromeColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.firefox,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.firefoxColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.edge,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.edgeColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.adobe,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.adobeColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.photoshop,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.photoshopColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.adobeXd,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.adobeXdColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.figma,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.figmaColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.behance,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.behanceColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.dribble,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.dribbleColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.dropbox,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.dropboxColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.linkedin,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.linkedinColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.medium,
+                  hoverColor: Colors.green,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.skype,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.skypeColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.slack,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.slackColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.discord,
+                  hoverColor: Colors.green,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.facebook,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.facebookColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.instagram,
+                  hoverColor: Colors.green,
+                  hoveredIcon: AppImages.instagramColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.whatsapp,
+                  hoverColor: Colors.green,
+                ),
               ],
             ),
           ],
         ));
+  }
+}
+
+class IconBoxWidget extends StatefulWidget {
+  final String icon;
+  final bool defaultColor;
+  bool isHovered = false;
+  final Color hoverColor;
+  final String hoveredIcon;
+
+  IconBoxWidget({
+    super.key,
+    required this.icon,
+    this.defaultColor = false,
+    required this.hoverColor,
+    this.hoveredIcon = '',
+  });
+
+  @override
+  State<IconBoxWidget> createState() => _IconBoxWidget();
+}
+
+class _IconBoxWidget extends State<IconBoxWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      overlayColor: MaterialStateProperty.all(Colors.transparent),
+      onTap: () {},
+      onHover: (value) {
+        setState(() {
+          widget.isHovered = value;
+        });
+      },
+      child: Image.asset(
+        widget.hoveredIcon.isNotEmpty && widget.isHovered
+            ? widget.hoveredIcon
+            : widget.icon,
+        width: 60,
+        height: 60,
+        color: widget.hoveredIcon.isEmpty && widget.isHovered
+            ? widget.hoverColor
+            : widget.defaultColor == true
+                ? null
+                : widget.hoveredIcon.isNotEmpty && widget.isHovered
+                    ? null
+                    : Colors.black87,
+      ),
+    );
   }
 }
