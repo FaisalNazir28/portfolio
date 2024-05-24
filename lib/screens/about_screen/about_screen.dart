@@ -771,7 +771,7 @@ class _AboutScreenState extends State<AboutScreen> {
                     ],
                   ),
                 ),
-                myToolsImagesContainer(),
+                myToolsContainer(),
                 ReviewWidget(),
                 const CustomFooter(),
               ],
@@ -848,7 +848,7 @@ class _AboutScreenState extends State<AboutScreen> {
     );
   }
 
-  Widget myToolsImagesContainer() {
+  Widget myToolsContainer() {
     var isDesktopScreen = Breakpoints.isLargeScreen(context);
     var isTabletScreen = Breakpoints.isMediumScreen(context);
     var isMobileScreen = Breakpoints.isSmallScreen(context);
@@ -897,11 +897,22 @@ class _AboutScreenState extends State<AboutScreen> {
                 iconBox(icon: AppImages.xcode),
                 iconBox(icon: AppImages.windows),
                 iconBox(icon: AppImages.macos, defaultColor: true),
+                iconBox(icon: AppImages.visualstudio),
+                iconBox(icon: AppImages.vscode),
+                iconBox(icon: AppImages.postman),
+                iconBox(icon: AppImages.flutter),
+                iconBox(icon: AppImages.dart),
                 iconBox(icon: AppImages.firebase),
                 iconBox(icon: AppImages.nodejs),
                 iconBox(icon: AppImages.javascript),
+                iconBox(icon: AppImages.sqlite),
+                iconBox(icon: AppImages.jira),
                 iconBox(icon: AppImages.stackoverflow),
+                iconBox(icon: AppImages.chatGPT),
+                iconBox(icon: AppImages.notion),
                 iconBox(icon: AppImages.wordpress),
+                iconBox(icon: AppImages.elementor),
+                iconBox(icon: AppImages.git),
                 iconBox(icon: AppImages.github),
                 iconBox(icon: AppImages.bitbucket),
                 iconBox(icon: AppImages.appstore),
@@ -909,6 +920,9 @@ class _AboutScreenState extends State<AboutScreen> {
                 iconBox(icon: AppImages.chrome),
                 iconBox(icon: AppImages.firefox),
                 iconBox(icon: AppImages.edge),
+                iconBox(icon: AppImages.adobe),
+                iconBox(icon: AppImages.photoshop),
+                iconBox(icon: AppImages.adobeXd),
                 iconBox(icon: AppImages.figma),
                 iconBox(icon: AppImages.behance),
                 iconBox(icon: AppImages.dribble),
