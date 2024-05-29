@@ -409,7 +409,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                         const SizedBox(
                           height: 80,
                         ),
-                        projectScreensContainer(),
+                        projectScreensContainer(projectModel: projectModel),
                         const SizedBox(
                           height: 80,
                         ),
@@ -487,7 +487,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
     );
   }
 
-  Widget projectScreensContainer() {
+  Widget projectScreensContainer({required SelectedProjectModel projectModel}) {
     var isMobileScreen = Breakpoints.isSmallScreen(context);
 
     Widget roundCorneredImageView({required String imagePath}) {
@@ -542,17 +542,17 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 height: 180,
                               ),
                               roundCorneredImageView(
-                                  imagePath: 'assets/showcase/art1.png'),
+                                  imagePath: projectModel.thirdImage),
                               const SizedBox(
                                 height: 10,
                               ),
                               roundCorneredImageView(
-                                  imagePath: 'assets/showcase/hmk1.png'),
+                                  imagePath: projectModel.mainImage),
                               const SizedBox(
                                 height: 10,
                               ),
                               roundCorneredImageView(
-                                  imagePath: 'assets/showcase/hmk2.png'),
+                                  imagePath: projectModel.secondImage),
                             ],
                           ),
                         ),
@@ -568,17 +568,17 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 height: 300,
                               ),
                               roundCorneredImageView(
-                                  imagePath: 'assets/showcase/art1.png'),
+                                  imagePath: projectModel.secondImage),
                               const SizedBox(
                                 height: 10,
                               ),
                               roundCorneredImageView(
-                                  imagePath: 'assets/showcase/hmk1.png'),
+                                  imagePath: projectModel.thirdImage),
                               const SizedBox(
                                 height: 10,
                               ),
                               roundCorneredImageView(
-                                  imagePath: 'assets/showcase/hmk2.png'),
+                                  imagePath: projectModel.mainImage),
                             ],
                           ),
                         ),
@@ -594,17 +594,17 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 height: 100,
                               ),
                               roundCorneredImageView(
-                                  imagePath: 'assets/showcase/art1.png'),
+                                  imagePath: projectModel.mainImage),
                               const SizedBox(
                                 height: 10,
                               ),
                               roundCorneredImageView(
-                                  imagePath: 'assets/showcase/hmk1.png'),
+                                  imagePath: projectModel.secondImage),
                               const SizedBox(
                                 height: 10,
                               ),
                               roundCorneredImageView(
-                                  imagePath: 'assets/showcase/hmk2.png'),
+                                  imagePath: projectModel.thirdImage),
                             ],
                           ),
                         ),
@@ -624,17 +624,17 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 height: 100,
                               ),
                               roundCorneredImageView(
-                                  imagePath: 'assets/showcase/art1.png'),
+                                  imagePath: projectModel.thirdImage),
                               const SizedBox(
                                 height: 20,
                               ),
                               roundCorneredImageView(
-                                  imagePath: 'assets/showcase/hmk1.png'),
+                                  imagePath: projectModel.mainImage),
                               const SizedBox(
                                 height: 20,
                               ),
                               roundCorneredImageView(
-                                  imagePath: 'assets/showcase/hmk2.png'),
+                                  imagePath: projectModel.secondImage),
                             ],
                           ),
                         ),
@@ -648,17 +648,17 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               roundCorneredImageView(
-                                  imagePath: 'assets/showcase/art1.png'),
+                                  imagePath: projectModel.secondImage),
                               const SizedBox(
                                 height: 20,
                               ),
                               roundCorneredImageView(
-                                  imagePath: 'assets/showcase/hmk1.png'),
+                                  imagePath: projectModel.thirdImage),
                               const SizedBox(
                                 height: 20,
                               ),
                               roundCorneredImageView(
-                                  imagePath: 'assets/showcase/hmk2.png'),
+                                  imagePath: projectModel.mainImage),
                             ],
                           ),
                         ),
@@ -675,17 +675,17 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 height: 30,
                               ),
                               roundCorneredImageView(
-                                  imagePath: 'assets/showcase/art1.png'),
+                                  imagePath: projectModel.mainImage),
                               const SizedBox(
                                 height: 20,
                               ),
                               roundCorneredImageView(
-                                  imagePath: 'assets/showcase/hmk1.png'),
+                                  imagePath: projectModel.secondImage),
                               const SizedBox(
                                 height: 20,
                               ),
                               roundCorneredImageView(
-                                  imagePath: 'assets/showcase/hmk2.png'),
+                                  imagePath: projectModel.thirdImage),
                             ],
                           ),
                         ),
@@ -725,21 +725,21 @@ class _ProjectScreenState extends State<ProjectScreen> {
                           children: [
                             tabletView(
                               hasInitialMargin: true,
-                              imagePath: 'assets/showcase/art1.png',
+                              imagePath: projectModel.mainImage,
                               imageAlignment: Alignment.topCenter,
                             ),
                             const SizedBox(
                               height: 10,
                             ),
                             tabletView(
-                              imagePath: 'assets/showcase/art1.png',
+                              imagePath: projectModel.secondImage,
                               imageAlignment: Alignment.center,
                             ),
                             const SizedBox(
                               height: 10,
                             ),
                             tabletView(
-                              imagePath: 'assets/showcase/art1.png',
+                              imagePath: projectModel.thirdImage,
                               imageAlignment: Alignment.bottomCenter,
                             ),
                           ],
@@ -757,21 +757,21 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               tabletView(
-                                imagePath: 'assets/showcase/art1.png',
+                                imagePath: projectModel.thirdImage,
                                 imageAlignment: Alignment.topCenter,
                               ),
                               const SizedBox(
                                 height: 10,
                               ),
                               tabletView(
-                                imagePath: 'assets/showcase/art1.png',
+                                imagePath: projectModel.secondImage,
                                 imageAlignment: Alignment.center,
                               ),
                               const SizedBox(
                                 height: 10,
                               ),
                               tabletView(
-                                imagePath: 'assets/showcase/art1.png',
+                                imagePath: projectModel.mainImage,
                                 imageAlignment: Alignment.bottomCenter,
                               ),
                             ],
@@ -790,21 +790,21 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               tabletView(
-                                imagePath: 'assets/showcase/art1.png',
+                                imagePath: projectModel.secondImage,
                                 imageAlignment: Alignment.topCenter,
                               ),
                               const SizedBox(
                                 height: 10,
                               ),
                               tabletView(
-                                imagePath: 'assets/showcase/art1.png',
+                                imagePath: projectModel.mainImage,
                                 imageAlignment: Alignment.center,
                               ),
                               const SizedBox(
                                 height: 10,
                               ),
                               tabletView(
-                                imagePath: 'assets/showcase/art1.png',
+                                imagePath: projectModel.thirdImage,
                                 imageAlignment: Alignment.bottomCenter,
                               ),
                             ],
@@ -922,21 +922,21 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             children: [
                               tabletView(
                                 hasInitialMargin: true,
-                                imagePath: 'assets/showcase/art1.png',
+                                imagePath: projectModel.mainImage,
                                 imageAlignment: Alignment.topCenter,
                               ),
                               const SizedBox(
                                 height: 15,
                               ),
                               tabletView(
-                                imagePath: 'assets/showcase/art1.png',
+                                imagePath: projectModel.secondImage,
                                 imageAlignment: Alignment.center,
                               ),
                               const SizedBox(
                                 height: 15,
                               ),
                               tabletView(
-                                imagePath: 'assets/showcase/art1.png',
+                                imagePath: projectModel.thirdImage,
                                 imageAlignment: Alignment.bottomCenter,
                               ),
                             ],
@@ -954,21 +954,21 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
                                 tabletView(
-                                  imagePath: 'assets/showcase/art2.png',
+                                  imagePath: projectModel.thirdImage,
                                   imageAlignment: Alignment.topCenter,
                                 ),
                                 const SizedBox(
                                   height: 15,
                                 ),
                                 tabletView(
-                                  imagePath: 'assets/showcase/art2.png',
+                                  imagePath: projectModel.secondImage,
                                   imageAlignment: Alignment.center,
                                 ),
                                 const SizedBox(
                                   height: 15,
                                 ),
                                 tabletView(
-                                  imagePath: 'assets/showcase/art2.png',
+                                  imagePath: projectModel.mainImage,
                                   imageAlignment: Alignment.bottomCenter,
                                 ),
                               ],
@@ -987,21 +987,21 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
                                 tabletView(
-                                  imagePath: 'assets/showcase/art1.png',
+                                  imagePath: projectModel.secondImage,
                                   imageAlignment: Alignment.topCenter,
                                 ),
                                 const SizedBox(
                                   height: 15,
                                 ),
                                 tabletView(
-                                  imagePath: 'assets/showcase/art1.png',
+                                  imagePath: projectModel.mainImage,
                                   imageAlignment: Alignment.center,
                                 ),
                                 const SizedBox(
                                   height: 15,
                                 ),
                                 tabletView(
-                                  imagePath: 'assets/showcase/art1.png',
+                                  imagePath: projectModel.thirdImage,
                                   imageAlignment: Alignment.bottomCenter,
                                 ),
                               ],
