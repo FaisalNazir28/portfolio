@@ -48,7 +48,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                           ? EdgeInsets.symmetric(
                               horizontal:
                                   MediaQuery.of(context).size.width * .1,
-                              vertical: 100)
+                              vertical: 80)
                           : EdgeInsets.symmetric(
                               horizontal:
                                   MediaQuery.of(context).size.width * .04,
@@ -233,11 +233,11 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             ? EdgeInsets.symmetric(
                                 horizontal:
                                     MediaQuery.of(context).size.width * .1,
-                                vertical: 100)
+                                vertical: 80)
                             : EdgeInsets.symmetric(
                                 horizontal:
                                     MediaQuery.of(context).size.width * .04,
-                                vertical: 100),
+                                vertical: 60),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -1152,10 +1152,10 @@ class _ProjectScreenState extends State<ProjectScreen> {
             : isTabletScreen
                 ? EdgeInsets.symmetric(
                     horizontal: MediaQuery.of(context).size.width * .1,
-                    vertical: 100)
+                    vertical: 80)
                 : EdgeInsets.symmetric(
                     horizontal: MediaQuery.of(context).size.width * .04,
-                    vertical: 100),
+                    vertical: 60),
         child: Column(
           children: [
             const Text(
