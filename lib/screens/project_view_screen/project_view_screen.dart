@@ -118,86 +118,107 @@ class _ProjectScreenState extends State<ProjectScreen> {
                           ],
                         ),
                       ),
-                      const SizedBox(
-                        height: 80,
+                      SizedBox(
+                        height: isDesktopScreen ? 80 : 50,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 40),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Expanded(
-                              flex: 5,
-                              child: Text(
-                                projectModel.shortBio,
-                                style: isDesktopScreen
-                                    ? const TextStyle(
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.w400,
-                                        color: Colors.black)
-                                    : isTabletScreen
-                                        ? const TextStyle(
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black)
-                                        : const TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black),
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 80,
-                            ),
-                            Expanded(
-                              flex: 6,
-                              child: Column(
+                      isDesktopScreen
+                          ? Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 40),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    projectModel.title,
-                                    style: isDesktopScreen
-                                        ? const TextStyle(
-                                            fontSize: 40,
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black)
-                                        : isTabletScreen
-                                            ? const TextStyle(
-                                                fontSize: 35,
-                                                fontWeight: FontWeight.w400,
-                                                color: Colors.black)
-                                            : const TextStyle(
-                                                fontSize: 30,
-                                                fontWeight: FontWeight.w400,
-                                                color: Colors.black),
+                                  Expanded(
+                                    flex: 5,
+                                    child: Text(
+                                      projectModel.shortBio,
+                                      style: const TextStyle(
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.black),
+                                    ),
                                   ),
                                   const SizedBox(
-                                    height: 10,
+                                    width: 80,
                                   ),
-                                  Text(
-                                    projectModel.company,
-                                    style: isDesktopScreen
-                                        ? const TextStyle(
-                                            fontSize: 30,
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black)
-                                        : isTabletScreen
-                                            ? const TextStyle(
-                                                fontSize: 25,
-                                                fontWeight: FontWeight.w400,
-                                                color: Colors.black)
-                                            : const TextStyle(
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.w400,
-                                                color: Colors.black),
-                                  ),
+                                  Expanded(
+                                    flex: 6,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          projectModel.title,
+                                          style: const TextStyle(
+                                              fontSize: 40,
+                                              fontWeight: FontWeight.w400,
+                                              color: Colors.black),
+                                        ),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        Text(
+                                          projectModel.company,
+                                          style: const TextStyle(
+                                              fontSize: 30,
+                                              fontWeight: FontWeight.w400,
+                                              color: Colors.black),
+                                        ),
+                                      ],
+                                    ),
+                                  )
                                 ],
                               ),
                             )
-                          ],
-                        ),
-                      )
+                          : Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  projectModel.shortBio,
+                                  style: isTabletScreen
+                                      ? const TextStyle(
+                                          fontSize: 28,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.black)
+                                      : const TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.black),
+                                ),
+                                const SizedBox(
+                                  height: 40,
+                                ),
+                                Text(
+                                  projectModel.title,
+                                  style: isTabletScreen
+                                      ? const TextStyle(
+                                          fontSize: 35,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.black)
+                                      : const TextStyle(
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.black),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  projectModel.company,
+                                  style: isTabletScreen
+                                      ? const TextStyle(
+                                          fontSize: 25,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.black)
+                                      : const TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.black),
+                                ),
+                              ],
+                            )
                     ],
                   ),
                 ),
@@ -220,75 +241,161 @@ class _ProjectScreenState extends State<ProjectScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Expanded(
-                              child: Column(
+                        isMobileScreen
+                            ? Column(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const Text(
-                                    "Project type",
-                                    style: TextStyle(
-                                        color: Colors.black54, fontSize: 16),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        "Project type",
+                                        style: TextStyle(
+                                            color: Colors.black54,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 16),
+                                      ),
+                                      const SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text(
+                                        projectModel.projectType,
+                                        style: const TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                    ],
                                   ),
                                   const SizedBox(
-                                    height: 10,
+                                    height: 20,
                                   ),
-                                  Text(
-                                    projectModel.projectType,
-                                    style: const TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w500),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        "Project date",
+                                        style: TextStyle(
+                                            color: Colors.black54,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 16),
+                                      ),
+                                      const SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text(
+                                        projectModel.projectDate,
+                                        style: const TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        "Project duration",
+                                        style: TextStyle(
+                                            color: Colors.black54,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 16),
+                                      ),
+                                      const SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text(
+                                        projectModel.projectDuration,
+                                        style: const TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              )
+                            : Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        const Text(
+                                          "Project type",
+                                          style: TextStyle(
+                                              color: Colors.black54,
+                                              fontSize: 16),
+                                        ),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        Text(
+                                          projectModel.projectType,
+                                          style: const TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        const Text(
+                                          "Project date",
+                                          style: TextStyle(
+                                              color: Colors.black54,
+                                              fontSize: 16),
+                                        ),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        Text(
+                                          projectModel.projectDate,
+                                          style: const TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        const Text(
+                                          "Project duration",
+                                          style: TextStyle(
+                                              color: Colors.black54,
+                                              fontSize: 16),
+                                        ),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        Text(
+                                          projectModel.projectDuration,
+                                          style: const TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ],
                               ),
-                            ),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  const Text(
-                                    "Project date",
-                                    style: TextStyle(
-                                        color: Colors.black54, fontSize: 16),
-                                  ),
-                                  const SizedBox(
-                                    height: 10,
-                                  ),
-                                  Text(
-                                    projectModel.projectDate,
-                                    style: const TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  const Text(
-                                    "Project duration",
-                                    style: TextStyle(
-                                        color: Colors.black54, fontSize: 16),
-                                  ),
-                                  const SizedBox(
-                                    height: 10,
-                                  ),
-                                  Text(
-                                    projectModel.projectDuration,
-                                    style: const TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
                         const SizedBox(
                           height: 50,
                         ),
