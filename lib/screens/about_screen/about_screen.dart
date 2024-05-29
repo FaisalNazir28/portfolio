@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
 import 'package:my_portfolio/utilities/app_images.dart';
@@ -84,53 +85,14 @@ class _AboutScreenState extends State<AboutScreen> {
                                     ),
                                     Row(
                                       children: [
-                                        Container(
-                                          margin:
-                                              const EdgeInsets.only(right: 20),
-                                          padding: const EdgeInsets.all(10),
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            border: Border.all(
-                                                color: Colors.black38),
-                                          ),
-                                          child: const Icon(
-                                              Icons.call_merge_sharp),
-                                        ),
-                                        Container(
-                                          margin:
-                                              const EdgeInsets.only(right: 20),
-                                          padding: const EdgeInsets.all(10),
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            border: Border.all(
-                                                color: Colors.black38),
-                                          ),
-                                          child: const Icon(
-                                              Icons.messenger_outline),
-                                        ),
-                                        Container(
-                                          margin:
-                                              const EdgeInsets.only(right: 20),
-                                          padding: const EdgeInsets.all(10),
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            border: Border.all(
-                                                color: Colors.black38),
-                                          ),
-                                          child: const Icon(
-                                              Icons.data_exploration_sharp),
-                                        ),
-                                        Container(
-                                          margin:
-                                              const EdgeInsets.only(right: 20),
-                                          padding: const EdgeInsets.all(10),
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            border: Border.all(
-                                                color: Colors.black38),
-                                          ),
-                                          child: const Icon(Icons.deblur),
-                                        ),
+                                        externalButtons(
+                                            icon: Ionicons.logo_github),
+                                        externalButtons(
+                                            icon: Ionicons.logo_bitbucket),
+                                        externalButtons(
+                                            icon: Ionicons.logo_stackoverflow),
+                                        externalButtons(
+                                            icon: Ionicons.logo_linkedin),
                                       ],
                                     )
                                   ],
@@ -801,6 +763,18 @@ class _AboutScreenState extends State<AboutScreen> {
           ),
         ],
       ),
+    );
+  }
+
+  Widget externalButtons({required IconData icon}) {
+    return Container(
+      margin: const EdgeInsets.only(right: 20),
+      padding: const EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(color: Colors.black38),
+      ),
+      child: Icon(icon),
     );
   }
 
