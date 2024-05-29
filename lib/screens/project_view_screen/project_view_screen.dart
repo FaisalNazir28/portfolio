@@ -60,7 +60,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 25),
                         height: isMobileScreen
-                            ? MediaQuery.of(context).size.height * .25
+                            ? MediaQuery.of(context).size.height * .30
                             : MediaQuery.of(context).size.height * .45,
                         decoration: BoxDecoration(
                           color: Colors.grey.shade300,
@@ -310,7 +310,8 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             color: Colors.grey.shade300,
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          child: ClipRect(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
                             child: OverflowBox(
                               child: Transform.translate(
                                 offset: const Offset(280, -450),
@@ -993,6 +994,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
   Widget anotherWorkContainer(int currentIndex) {
     var isDesktopScreen = Breakpoints.isLargeScreen(context);
     var isTabletScreen = Breakpoints.isMediumScreen(context);
+    var isMobileScreen = Breakpoints.isSmallScreen(context);
 
     List checkNextIndex() {
       List nextIndex = List.empty(growable: true);
@@ -1030,23 +1032,46 @@ class _ProjectScreenState extends State<ProjectScreen> {
             const SizedBox(
               height: 50,
             ),
-            Row(
-              children: [
-                Expanded(
-                  child: SelectedWorkContainer(
-                      projectData: SelectedProjectData
-                          .selectedProjects[checkNextIndex()[0]]),
-                ),
-                const SizedBox(
-                  width: 50,
-                ),
-                Expanded(
-                  child: SelectedWorkContainer(
-                      projectData: SelectedProjectData
-                          .selectedProjects[checkNextIndex()[1]]),
-                ),
-              ],
-            )
+            isDesktopScreen
+                ? Row(
+                    children: [
+                      Expanded(
+                        child: SelectedWorkContainer(
+                          projectData: SelectedProjectData
+                              .selectedProjects[checkNextIndex()[0]],
+                          isProjectViewScreen: true,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 50,
+                      ),
+                      Expanded(
+                        child: SelectedWorkContainer(
+                          projectData: SelectedProjectData
+                              .selectedProjects[checkNextIndex()[1]],
+                          isProjectViewScreen: true,
+                        ),
+                      ),
+                    ],
+                  )
+                : Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      SelectedWorkContainer(
+                        projectData: SelectedProjectData
+                            .selectedProjects[checkNextIndex()[0]],
+                        isProjectViewScreen: true,
+                      ),
+                      const SizedBox(
+                        height: 40,
+                      ),
+                      SelectedWorkContainer(
+                        projectData: SelectedProjectData
+                            .selectedProjects[checkNextIndex()[1]],
+                        isProjectViewScreen: true,
+                      ),
+                    ],
+                  )
           ],
         ),
       ),

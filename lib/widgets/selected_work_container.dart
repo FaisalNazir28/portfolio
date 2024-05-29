@@ -5,8 +5,13 @@ import 'package:my_portfolio/routes/routes.dart';
 
 class SelectedWorkContainer extends StatefulWidget {
   final SelectedProjectModel projectData;
+  final bool isProjectViewScreen;
 
-  const SelectedWorkContainer({super.key, required this.projectData});
+  const SelectedWorkContainer({
+    super.key,
+    required this.projectData,
+    this.isProjectViewScreen = false,
+  });
 
   @override
   State<SelectedWorkContainer> createState() => _SelectedWorkContainerState();
@@ -35,7 +40,8 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
             },
             child: Container(
               width: MediaQuery.of(context).size.width * .3,
-              height: MediaQuery.of(context).size.height * .7,
+              // height: MediaQuery.of(context).size.height * .85,
+              height: 650,
               padding: const EdgeInsets.all(16.0),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -145,21 +151,36 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
-                            Expanded(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(15),
-                                  child: Image.asset(
-                                    widget.projectData.mainImage,
-                                    fit: BoxFit.cover,
-                                    alignment: Alignment.topCenter,
+                            widget.isProjectViewScreen
+                                ? Container(
+                                    height: 300,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(15),
+                                      child: Image.asset(
+                                        widget.projectData.mainImage,
+                                        fit: BoxFit.cover,
+                                        alignment: Alignment.topCenter,
+                                      ),
+                                    ),
+                                  )
+                                : Expanded(
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(15),
+                                      ),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(15),
+                                        child: Image.asset(
+                                          widget.projectData.mainImage,
+                                          fit: BoxFit.cover,
+                                          alignment: Alignment.topCenter,
+                                        ),
+                                      ),
+                                    ),
                                   ),
-                                ),
-                              ),
-                            ),
                           ],
                         ),
                       ),
@@ -239,6 +260,7 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Container(
                       height: 300.0,
@@ -279,17 +301,27 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                       ),
                     ),
                     const SizedBox(height: 18.0),
-                    Expanded(
-                      child: Text(
-                        widget.projectData.description,
-                        maxLines: 3,
-                        overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(
-                          fontSize: 16.0,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ),
+                    widget.isProjectViewScreen == true
+                        ? Text(
+                            widget.projectData.description,
+                            maxLines: 3,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
+                              fontSize: 16.0,
+                              color: Colors.grey,
+                            ),
+                          )
+                        : Expanded(
+                            child: Text(
+                              widget.projectData.description,
+                              maxLines: 3,
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(
+                                fontSize: 16.0,
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ),
                     const SizedBox(height: 15.0),
                     Row(
                       children: [
