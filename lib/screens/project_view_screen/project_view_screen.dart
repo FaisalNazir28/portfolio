@@ -302,177 +302,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                         const SizedBox(
                           height: 80,
                         ),
-                        Container(
-                          height: isMobileScreen
-                              ? MediaQuery.of(context).size.height * .25
-                              : MediaQuery.of(context).size.height * .45,
-                          decoration: BoxDecoration(
-                            color: Colors.grey.shade300,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: OverflowBox(
-                              child: Transform.translate(
-                                offset: const Offset(280, -450),
-                                child: Transform.rotate(
-                                  alignment: Alignment.topLeft,
-                                  angle: 0.5,
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Expanded(
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.stretch,
-                                          children: [
-                                            const SizedBox(
-                                              height: 100,
-                                            ),
-                                            roundCorneredImageView(
-                                                imagePath:
-                                                    'assets/showcase/art1.png'),
-                                            const SizedBox(
-                                              height: 20,
-                                            ),
-                                            roundCorneredImageView(
-                                                imagePath:
-                                                    'assets/showcase/hmk1.png'),
-                                            const SizedBox(
-                                              height: 20,
-                                            ),
-                                            roundCorneredImageView(
-                                                imagePath:
-                                                    'assets/showcase/hmk2.png'),
-                                          ],
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        width: 50,
-                                      ),
-                                      Expanded(
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.stretch,
-                                          children: [
-                                            roundCorneredImageView(
-                                                imagePath:
-                                                    'assets/showcase/art1.png'),
-                                            const SizedBox(
-                                              height: 20,
-                                            ),
-                                            roundCorneredImageView(
-                                                imagePath:
-                                                    'assets/showcase/hmk1.png'),
-                                            const SizedBox(
-                                              height: 20,
-                                            ),
-                                            roundCorneredImageView(
-                                                imagePath:
-                                                    'assets/showcase/hmk2.png'),
-                                          ],
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        width: 50,
-                                      ),
-                                      Expanded(
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.stretch,
-                                          children: [
-                                            const SizedBox(
-                                              height: 30,
-                                            ),
-                                            roundCorneredImageView(
-                                                imagePath:
-                                                    'assets/showcase/art1.png'),
-                                            const SizedBox(
-                                              height: 20,
-                                            ),
-                                            roundCorneredImageView(
-                                                imagePath:
-                                                    'assets/showcase/hmk1.png'),
-                                            const SizedBox(
-                                              height: 20,
-                                            ),
-                                            roundCorneredImageView(
-                                                imagePath:
-                                                    'assets/showcase/hmk2.png'),
-                                          ],
-                                        ),
-                                      ),
-                                      // Expanded(
-                                      //   flex: 3,
-                                      //   child: Container(
-                                      //     height: double.infinity,
-                                      //     width: double.infinity,
-                                      //     margin: const EdgeInsets.only(top: 30),
-                                      //     // color: widget.firstImageBG ?? Colors.white,
-                                      //     color: Colors.white,
-                                      //     child: Image.asset(
-                                      //       // widget.firstImage,
-                                      //       'assets/showcase/art1.png',
-                                      //       fit: BoxFit.fitWidth,
-                                      //       alignment: Alignment.topCenter,
-                                      //     ),
-                                      //   ),
-                                      // ),
-                                      // const SizedBox(
-                                      //   width: 20,
-                                      // ),
-                                      // Expanded(
-                                      //   flex: 3,
-                                      //   child: Container(
-                                      //     height: double.infinity,
-                                      //     width: double.infinity,
-                                      //     // color: widget.secondImageBG ?? Colors.white,
-                                      //     color: Colors.white,
-                                      //     child: Image.asset(
-                                      //       // widget.secondImage,
-                                      //       'assets/showcase/hmk1.png',
-                                      //       fit: BoxFit.fitWidth,
-                                      //       alignment: Alignment.center,
-                                      //     ),
-                                      //   ),
-                                      // ),
-                                      // const SizedBox(
-                                      //   width: 20,
-                                      // ),
-                                      // Expanded(
-                                      //   flex: 2,
-                                      //   child: Container(
-                                      //     height: double.infinity,
-                                      //     width: double.infinity,
-                                      //     // color: widget.thirdImageBG ?? Colors.white,
-                                      //     color: Colors.white,
-                                      //     child: Image.asset(
-                                      //       // widget.thirdImage,
-                                      //       'assets/showcase/hmk2.png',
-                                      //       fit: BoxFit.fitWidth,
-                                      //       alignment: Alignment.center,
-                                      //     ),
-                                      //   ),
-                                      // ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
+                        projectScreensContainer(),
                         const SizedBox(
                           height: 80,
                         ),
@@ -550,19 +380,212 @@ class _ProjectScreenState extends State<ProjectScreen> {
     );
   }
 
-  Widget roundCorneredImageView({required String imagePath}) {
+  Widget projectScreensContainer() {
+    var isMobileScreen = Breakpoints.isSmallScreen(context);
+
+    Widget roundCorneredImageView({required String imagePath}) {
+      return Container(
+        height: 250,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(15),
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(15),
+          child: Image.asset(
+            imagePath,
+            fit: BoxFit.fitWidth,
+            alignment: Alignment.center,
+          ),
+        ),
+      );
+    }
+
     return Container(
-      height: 250,
+      height: isMobileScreen
+          ? MediaQuery.of(context).size.height * .45
+          : MediaQuery.of(context).size.height * .45,
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
+        color: Colors.grey.shade300,
+        borderRadius: BorderRadius.circular(20),
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(15),
-        child: Image.asset(
-          imagePath,
-          fit: BoxFit.fitWidth,
-          alignment: Alignment.center,
+        borderRadius: BorderRadius.circular(20),
+        child: OverflowBox(
+          child: Transform.translate(
+            offset: isMobileScreen
+                ? const Offset(280, -540)
+                : const Offset(280, -450),
+            child: Transform.rotate(
+              alignment: Alignment.topLeft,
+              angle: 0.5,
+              child: isMobileScreen
+                  ? Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 180,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              const SizedBox(
+                                height: 180,
+                              ),
+                              roundCorneredImageView(
+                                  imagePath: 'assets/showcase/art1.png'),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              roundCorneredImageView(
+                                  imagePath: 'assets/showcase/hmk1.png'),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              roundCorneredImageView(
+                                  imagePath: 'assets/showcase/hmk2.png'),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        SizedBox(
+                          width: 190,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              const SizedBox(
+                                height: 300,
+                              ),
+                              roundCorneredImageView(
+                                  imagePath: 'assets/showcase/art1.png'),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              roundCorneredImageView(
+                                  imagePath: 'assets/showcase/hmk1.png'),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              roundCorneredImageView(
+                                  imagePath: 'assets/showcase/hmk2.png'),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        SizedBox(
+                          width: 190,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              const SizedBox(
+                                height: 100,
+                              ),
+                              roundCorneredImageView(
+                                  imagePath: 'assets/showcase/art1.png'),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              roundCorneredImageView(
+                                  imagePath: 'assets/showcase/hmk1.png'),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              roundCorneredImageView(
+                                  imagePath: 'assets/showcase/hmk2.png'),
+                            ],
+                          ),
+                        ),
+                      ],
+                    )
+                  : Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              const SizedBox(
+                                height: 100,
+                              ),
+                              roundCorneredImageView(
+                                  imagePath: 'assets/showcase/art1.png'),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              roundCorneredImageView(
+                                  imagePath: 'assets/showcase/hmk1.png'),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              roundCorneredImageView(
+                                  imagePath: 'assets/showcase/hmk2.png'),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 50,
+                        ),
+                        Expanded(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              roundCorneredImageView(
+                                  imagePath: 'assets/showcase/art1.png'),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              roundCorneredImageView(
+                                  imagePath: 'assets/showcase/hmk1.png'),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              roundCorneredImageView(
+                                  imagePath: 'assets/showcase/hmk2.png'),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 50,
+                        ),
+                        Expanded(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              const SizedBox(
+                                height: 30,
+                              ),
+                              roundCorneredImageView(
+                                  imagePath: 'assets/showcase/art1.png'),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              roundCorneredImageView(
+                                  imagePath: 'assets/showcase/hmk1.png'),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              roundCorneredImageView(
+                                  imagePath: 'assets/showcase/hmk2.png'),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+            ),
+          ),
         ),
       ),
     );
@@ -994,7 +1017,6 @@ class _ProjectScreenState extends State<ProjectScreen> {
   Widget anotherWorkContainer(int currentIndex) {
     var isDesktopScreen = Breakpoints.isLargeScreen(context);
     var isTabletScreen = Breakpoints.isMediumScreen(context);
-    var isMobileScreen = Breakpoints.isSmallScreen(context);
 
     List checkNextIndex() {
       List nextIndex = List.empty(growable: true);
