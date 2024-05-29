@@ -1,0 +1,12 @@
+com.faisal.my_portfolio.app-jetified-annotation-experimental-1.1.0-0 C:\Users\fnvm\.gradle\caches\transforms-3\09db32a73384ac2dccccf916d7dc0262\transformed\jetified-annotation-experimental-1.1.0\res
+com.faisal.my_portfolio.app-core-1.6.0-1 C:\Users\fnvm\.gradle\caches\transforms-3\168e459aae59caaab0d2c703cf9d67ab\transformed\core-1.6.0\res
+com.faisal.my_portfolio.app-jetified-window-1.0.0-beta04-2 C:\Users\fnvm\.gradle\caches\transforms-3\29fe38a5fd6c3bf46cd8e59c2b63489e\transformed\jetified-window-1.0.0-beta04\res
+com.faisal.my_portfolio.app-jetified-window-java-1.0.0-beta04-3 C:\Users\fnvm\.gradle\caches\transforms-3\978180320ed1d29d66a82edc9d24751e\transformed\jetified-window-java-1.0.0-beta04\res
+com.faisal.my_portfolio.app-debug-4 C:\Users\fnvm\AndroidStudioProjects\my_portfolio\android\app\src\debug\res
+com.faisal.my_portfolio.app-main-5 C:\Users\fnvm\AndroidStudioProjects\my_portfolio\android\app\src\main\res
+com.faisal.my_portfolio.app-pngs-6 C:\Users\fnvm\AndroidStudioProjects\my_portfolio\build\app\generated\res\pngs\debug
+com.faisal.my_portfolio.app-resValues-7 C:\Users\fnvm\AndroidStudioProjects\my_portfolio\build\app\generated\res\resValues\debug
+com.faisal.my_portfolio.app-rs-8 C:\Users\fnvm\AndroidStudioProjects\my_portfolio\build\app\generated\res\rs\debug
+com.faisal.my_portfolio.app-mergeDebugResources-9 C:\Users\fnvm\AndroidStudioProjects\my_portfolio\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.faisal.my_portfolio.app-mergeDebugResources-10 C:\Users\fnvm\AndroidStudioProjects\my_portfolio\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.faisal.my_portfolio.app-merged_res-11 C:\Users\fnvm\AndroidStudioProjects\my_portfolio\build\app\intermediates\merged_res\debug

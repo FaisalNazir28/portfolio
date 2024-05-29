@@ -1,0 +1,10 @@
+C:/Users/fnvm/AndroidStudioProjects/my_portfolio/build/windows/x64/CMakeFiles/INSTALL.dir
+C:/Users/fnvm/AndroidStudioProjects/my_portfolio/build/windows/x64/CMakeFiles/ALL_BUILD.dir
+C:/Users/fnvm/AndroidStudioProjects/my_portfolio/build/windows/x64/CMakeFiles/ZERO_CHECK.dir
+C:/Users/fnvm/AndroidStudioProjects/my_portfolio/build/windows/x64/flutter/CMakeFiles/flutter_wrapper_plugin.dir
+C:/Users/fnvm/AndroidStudioProjects/my_portfolio/build/windows/x64/flutter/CMakeFiles/flutter_wrapper_app.dir
+C:/Users/fnvm/AndroidStudioProjects/my_portfolio/build/windows/x64/flutter/CMakeFiles/flutter_assemble.dir
+C:/Users/fnvm/AndroidStudioProjects/my_portfolio/build/windows/x64/flutter/CMakeFiles/INSTALL.dir
+C:/Users/fnvm/AndroidStudioProjects/my_portfolio/build/windows/x64/runner/CMakeFiles/my_portfolio.dir
+C:/Users/fnvm/AndroidStudioProjects/my_portfolio/build/windows/x64/runner/CMakeFiles/INSTALL.dir
+C:/Users/fnvm/AndroidStudioProjects/my_portfolio/build/windows/x64/runner/CMakeFiles/ALL_BUILD.dir
