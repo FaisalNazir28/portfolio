@@ -881,8 +881,16 @@ class _AboutScreenState extends State<AboutScreen> {
               height: 50,
             ),
             Wrap(
-              runSpacing: 100,
-              spacing: 100,
+              runSpacing: isDesktopScreen
+                  ? 100
+                  : isTabletScreen
+                      ? 80
+                      : 50,
+              spacing: isDesktopScreen
+                  ? 100
+                  : isTabletScreen
+                      ? 80
+                      : 50,
               children: [
                 IconBoxWidget(
                   icon: AppImages.androidStudio,
@@ -890,7 +898,7 @@ class _AboutScreenState extends State<AboutScreen> {
                 ),
                 IconBoxWidget(
                   icon: AppImages.xcode,
-                  hoverColor: Colors.green,
+                  hoverColor: Colors.blue,
                 ),
                 IconBoxWidget(
                   icon: AppImages.windows,
@@ -959,11 +967,11 @@ class _AboutScreenState extends State<AboutScreen> {
                 ),
                 IconBoxWidget(
                   icon: AppImages.chatGPT,
-                  hoverColor: Colors.green,
+                  hoverColor: Colors.greenAccent,
                 ),
                 IconBoxWidget(
                   icon: AppImages.notion,
-                  hoverColor: Colors.green,
+                  hoverColor: Colors.transparent,
                 ),
                 IconBoxWidget(
                   icon: AppImages.wordpress,
@@ -972,7 +980,7 @@ class _AboutScreenState extends State<AboutScreen> {
                 ),
                 IconBoxWidget(
                   icon: AppImages.elementor,
-                  hoverColor: Colors.green,
+                  hoverColor: Colors.pink,
                 ),
                 IconBoxWidget(
                   icon: AppImages.git,
@@ -981,7 +989,7 @@ class _AboutScreenState extends State<AboutScreen> {
                 ),
                 IconBoxWidget(
                   icon: AppImages.github,
-                  hoverColor: Colors.green,
+                  hoverColor: Colors.transparent,
                 ),
                 IconBoxWidget(
                   icon: AppImages.bitbucket,
@@ -1055,7 +1063,7 @@ class _AboutScreenState extends State<AboutScreen> {
                 ),
                 IconBoxWidget(
                   icon: AppImages.medium,
-                  hoverColor: Colors.green,
+                  hoverColor: Colors.transparent,
                 ),
                 IconBoxWidget(
                   icon: AppImages.skype,
@@ -1069,7 +1077,7 @@ class _AboutScreenState extends State<AboutScreen> {
                 ),
                 IconBoxWidget(
                   icon: AppImages.discord,
-                  hoverColor: Colors.green,
+                  hoverColor: Colors.blue.shade800,
                 ),
                 IconBoxWidget(
                   icon: AppImages.facebook,
@@ -1114,6 +1122,9 @@ class IconBoxWidget extends StatefulWidget {
 class _IconBoxWidget extends State<IconBoxWidget> {
   @override
   Widget build(BuildContext context) {
+    var isDesktopScreen = Breakpoints.isLargeScreen(context);
+    var isTabletScreen = Breakpoints.isMediumScreen(context);
+
     return InkWell(
       overlayColor: MaterialStateProperty.all(Colors.transparent),
       onTap: () {},
@@ -1126,8 +1137,16 @@ class _IconBoxWidget extends State<IconBoxWidget> {
         widget.hoveredIcon.isNotEmpty && widget.isHovered
             ? widget.hoveredIcon
             : widget.icon,
-        width: 60,
-        height: 60,
+        width: isDesktopScreen
+            ? 60
+            : isTabletScreen
+                ? 50
+                : 35,
+        height: isDesktopScreen
+            ? 60
+            : isTabletScreen
+                ? 50
+                : 35,
         color: widget.hoveredIcon.isEmpty && widget.isHovered
             ? widget.hoverColor
             : widget.defaultColor == true
