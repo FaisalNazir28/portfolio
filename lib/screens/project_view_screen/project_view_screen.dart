@@ -707,7 +707,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Container(
-                  padding: const EdgeInsets.only(left: 10),
+                  padding: const EdgeInsets.only(left: 5),
                   height: MediaQuery.of(context).size.height * .4,
                   decoration: BoxDecoration(
                     color: Colors.grey.shade300,
@@ -718,7 +718,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SizedBox(
-                        width: 200,
+                        width: 180,
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -729,14 +729,14 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               imageAlignment: Alignment.topCenter,
                             ),
                             const SizedBox(
-                              height: 15,
+                              height: 10,
                             ),
                             tabletView(
                               imagePath: 'assets/showcase/art1.png',
                               imageAlignment: Alignment.center,
                             ),
                             const SizedBox(
-                              height: 15,
+                              height: 10,
                             ),
                             tabletView(
                               imagePath: 'assets/showcase/art1.png',
@@ -746,10 +746,10 @@ class _ProjectScreenState extends State<ProjectScreen> {
                         ),
                       ),
                       const SizedBox(
-                        width: 15,
+                        width: 10,
                       ),
                       SizedBox(
-                        width: 200,
+                        width: 180,
                         child: Transform.translate(
                           offset: const Offset(0, -65),
                           child: Column(
@@ -761,14 +761,14 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 imageAlignment: Alignment.topCenter,
                               ),
                               const SizedBox(
-                                height: 15,
+                                height: 10,
                               ),
                               tabletView(
                                 imagePath: 'assets/showcase/art1.png',
                                 imageAlignment: Alignment.center,
                               ),
                               const SizedBox(
-                                height: 15,
+                                height: 10,
                               ),
                               tabletView(
                                 imagePath: 'assets/showcase/art1.png',
@@ -779,10 +779,10 @@ class _ProjectScreenState extends State<ProjectScreen> {
                         ),
                       ),
                       const SizedBox(
-                        width: 15,
+                        width: 10,
                       ),
                       SizedBox(
-                        width: 200,
+                        width: 180,
                         child: Transform.translate(
                           offset: const Offset(0, -30),
                           child: Column(
@@ -794,14 +794,14 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 imageAlignment: Alignment.topCenter,
                               ),
                               const SizedBox(
-                                height: 15,
+                                height: 10,
                               ),
                               tabletView(
                                 imagePath: 'assets/showcase/art1.png',
                                 imageAlignment: Alignment.center,
                               ),
                               const SizedBox(
-                                height: 15,
+                                height: 10,
                               ),
                               tabletView(
                                 imagePath: 'assets/showcase/art1.png',
@@ -1106,9 +1106,13 @@ class _ProjectScreenState extends State<ProjectScreen> {
     required Alignment imageAlignment,
     DeviceInfo? device,
   }) {
+    var isMobileScreen = Breakpoints.isSmallScreen(context);
+
     return Container(
       margin: EdgeInsets.only(top: hasInitialMargin == true ? 15 : 0),
-      height: (MediaQuery.of(context).size.height * .4) / 2.5,
+      height: isMobileScreen
+          ? 140
+          : (MediaQuery.of(context).size.height * .4) / 2.5,
       child: DeviceFrame(
         orientation: Orientation.landscape,
         device: device ?? Devices.ios.iPad12InchesGen4,
