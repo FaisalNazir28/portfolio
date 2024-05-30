@@ -148,53 +148,14 @@ class _AboutScreenState extends State<AboutScreen> {
                                   ),
                                   Row(
                                     children: [
-                                      Container(
-                                        margin:
-                                            const EdgeInsets.only(right: 20),
-                                        padding: const EdgeInsets.all(10),
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          border:
-                                              Border.all(color: Colors.black38),
-                                        ),
-                                        child:
-                                            const Icon(Icons.call_merge_sharp),
-                                      ),
-                                      Container(
-                                        margin:
-                                            const EdgeInsets.only(right: 20),
-                                        padding: const EdgeInsets.all(10),
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          border:
-                                              Border.all(color: Colors.black38),
-                                        ),
-                                        child:
-                                            const Icon(Icons.messenger_outline),
-                                      ),
-                                      Container(
-                                        margin:
-                                            const EdgeInsets.only(right: 20),
-                                        padding: const EdgeInsets.all(10),
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          border:
-                                              Border.all(color: Colors.black38),
-                                        ),
-                                        child: const Icon(
-                                            Icons.data_exploration_sharp),
-                                      ),
-                                      Container(
-                                        margin:
-                                            const EdgeInsets.only(right: 20),
-                                        padding: const EdgeInsets.all(10),
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          border:
-                                              Border.all(color: Colors.black38),
-                                        ),
-                                        child: const Icon(Icons.deblur),
-                                      ),
+                                      externalButtons(
+                                          icon: Ionicons.logo_github),
+                                      externalButtons(
+                                          icon: Ionicons.logo_bitbucket),
+                                      externalButtons(
+                                          icon: Ionicons.logo_stackoverflow),
+                                      externalButtons(
+                                          icon: Ionicons.logo_linkedin),
                                     ],
                                   )
                                 ],
