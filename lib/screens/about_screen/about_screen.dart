@@ -4,6 +4,7 @@ import 'package:ionicons/ionicons.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
 import 'package:my_portfolio/utilities/app_images.dart';
+import 'package:my_portfolio/utilities/constants.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
 import 'package:my_portfolio/widgets/experience_tile.dart';
 import 'package:my_portfolio/widgets/footer.dart';
@@ -11,6 +12,7 @@ import 'package:my_portfolio/widgets/header.dart';
 import 'package:my_portfolio/widgets/horizontal_scrollbar_tile.dart';
 import 'package:my_portfolio/widgets/review_widget.dart';
 import 'package:my_portfolio/widgets/showcase_container.dart';
+import 'dart:html' as html;
 
 class AboutScreen extends StatefulWidget {
   const AboutScreen({super.key});
@@ -399,34 +401,42 @@ class _AboutScreenState extends State<AboutScreen> {
                                   ),
                                   Row(
                                     children: [
-                                      Container(
-                                        margin:
-                                            const EdgeInsets.only(right: 20),
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 18, vertical: 10),
-                                        decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius:
-                                              BorderRadius.circular(8),
-                                          border: Border.all(
-                                            color: Colors.black26,
+                                      InkWell(
+                                        overlayColor: MaterialStateProperty.all(
+                                            Colors.transparent),
+                                        onTap: () {
+                                          downloadResume();
+                                        },
+                                        child: Container(
+                                          margin:
+                                              const EdgeInsets.only(right: 20),
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 18, vertical: 10),
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                            border: Border.all(
+                                              color: Colors.black26,
+                                            ),
                                           ),
-                                        ),
-                                        child: const Row(
-                                          children: [
-                                            Icon(
-                                              CupertinoIcons.arrow_down_circle,
-                                              size: 20,
-                                            ),
-                                            SizedBox(
-                                              width: 10,
-                                            ),
-                                            Text(
-                                              "Download my CV",
-                                              style: TextStyle(
-                                                  color: Colors.black),
-                                            ),
-                                          ],
+                                          child: const Row(
+                                            children: [
+                                              Icon(
+                                                CupertinoIcons
+                                                    .arrow_down_circle,
+                                                size: 20,
+                                              ),
+                                              SizedBox(
+                                                width: 10,
+                                              ),
+                                              Text(
+                                                "Download my CV",
+                                                style: TextStyle(
+                                                    color: Colors.black),
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -1032,6 +1042,12 @@ class _AboutScreenState extends State<AboutScreen> {
             ),
           ],
         ));
+  }
+
+  void downloadResume() {
+    html.AnchorElement anchor = html.AnchorElement(href: AppConstants.resume);
+    anchor.download = 'Faisal Nazir Resume - Flutter Developer.pdf';
+    anchor.click();
   }
 }
 
