@@ -5,7 +5,7 @@ import 'package:my_portfolio/widgets/horizontal_scrollbar_tile.dart';
 class AppConstants{
 
   /// resume path
-  static String resume = 'assets/resume/Faisal Nazir Resume - Flutter Developer.pdf';
+  static String resume = 'assets/resume/resume.pdf';
 
   // List<HorizontalScrollBarTile> horizontalScrollBarTile = [
   //   HorizontalScrollBarTile(count: '15', text: 'Websites developed'),
