@@ -36,8 +36,6 @@ class MyApp extends StatelessWidget {
         Routes.caseStudies: (context) => const CaseStudiesScreen(),
         Routes.pageNotFound: (context) => const PageNotFound(),
         Routes.contact: (context) => const ContactPage(),
-
-
         Routes.project: (context) => const ProjectScreen(),
       },
       onUnknownRoute: (unknownRoute) {
