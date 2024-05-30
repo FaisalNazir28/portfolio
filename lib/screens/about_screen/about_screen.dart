@@ -1038,11 +1038,10 @@ class _AboutScreenState extends State<AboutScreen> {
 class IconBoxWidget extends StatefulWidget {
   final String icon;
   final bool defaultColor;
-  bool isHovered = false;
   final Color hoverColor;
   final String hoveredIcon;
 
-  IconBoxWidget({
+  const IconBoxWidget({
     super.key,
     required this.icon,
     this.defaultColor = false,
@@ -1055,6 +1054,8 @@ class IconBoxWidget extends StatefulWidget {
 }
 
 class _IconBoxWidget extends State<IconBoxWidget> {
+  bool isHovered = false;
+
   @override
   Widget build(BuildContext context) {
     var isDesktopScreen = Breakpoints.isLargeScreen(context);
@@ -1065,11 +1066,14 @@ class _IconBoxWidget extends State<IconBoxWidget> {
       onTap: () {},
       onHover: (value) {
         setState(() {
-          widget.isHovered = value;
+          if (widget.hoveredIcon.isNotEmpty ||
+              widget.hoverColor != Colors.transparent) {
+            isHovered = value;
+          }
         });
       },
       child: Image.asset(
-        widget.hoveredIcon.isNotEmpty && widget.isHovered
+        widget.hoveredIcon.isNotEmpty && isHovered
             ? widget.hoveredIcon
             : widget.icon,
         width: isDesktopScreen
@@ -1082,11 +1086,11 @@ class _IconBoxWidget extends State<IconBoxWidget> {
             : isTabletScreen
                 ? 50
                 : 35,
-        color: widget.hoveredIcon.isEmpty && widget.isHovered
+        color: widget.hoveredIcon.isEmpty && isHovered
             ? widget.hoverColor
             : widget.defaultColor == true
                 ? null
-                : widget.hoveredIcon.isNotEmpty && widget.isHovered
+                : widget.hoveredIcon.isNotEmpty && isHovered
                     ? null
                     : Colors.black87,
       ),
