@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/widgets/horizontal_scrollbar_tile.dart';
+import 'dart:ui_web' as ui;
 
 class AppConstants{
 
   /// resume path
   static String resume = 'assets/resume/resume.pdf';
+  static String resumeWeb = ui.assetManager.getAssetUrl('assets/resume/resume.pdf');
 
   // List<HorizontalScrollBarTile> horizontalScrollBarTile = [
   //   HorizontalScrollBarTile(count: '15', text: 'Websites developed'),

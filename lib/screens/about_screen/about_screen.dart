@@ -1045,7 +1045,7 @@ class _AboutScreenState extends State<AboutScreen> {
   }
 
   void downloadResume() {
-    html.AnchorElement anchor = html.AnchorElement(href: AppConstants.resume);
+    html.AnchorElement anchor = html.AnchorElement(href: AppConstants.resumeWeb);
     anchor.download = 'Faisal Nazir Resume - Flutter Developer.pdf';
     anchor.click();
   }
