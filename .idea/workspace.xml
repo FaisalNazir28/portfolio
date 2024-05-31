@@ -5,130 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9454b67-0d59-4afe-9daa-ee6c4a3d5102" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/AssetManifest.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/AssetManifest.bin.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/AssetManifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/FontManifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/NOTICES" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/logo/404.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logo/404.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/logo/artache.jfif" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logo/artache.jfif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/logo/gdsc.webp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logo/gdsc.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/logo/gdsc1.webp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logo/gdsc1.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/logo/pel.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logo/pel.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/logo/pel1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logo/pel1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/logo/pieas.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logo/pieas.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/logo/pieas1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logo/pieas1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/logo/soloinsight.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logo/soloinsight.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/logo/wordpress.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logo/wordpress.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/adobe.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/adobe.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/adobe_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/adobe_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/adobexd.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/adobexd.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/adobexd_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/adobexd_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/androidstudio.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/androidstudio.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/anydesk.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/anydesk.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/appstore.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/appstore.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/appstore_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/appstore_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/behance.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/behance.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/behance_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/behance_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/bitbucket.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/bitbucket.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/bitbucket_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/bitbucket_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/canva.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/canva.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/chatgpt.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/chatgpt.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/chrome.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/chrome.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/chrome_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/chrome_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/dart.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/dart.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/dart_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/dart_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/discord.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/discord.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/dribble.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/dribble.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/dribble_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/dribble_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/dropbox.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/dropbox.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/dropbox_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/dropbox_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/edge.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/edge.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/edge_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/edge_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/elementor.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/elementor.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/facebook.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/facebook.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/facebook_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/facebook_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/figma.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/figma.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/figma_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/figma_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/firebase.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/firebase.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/firebase_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/firebase_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/firefox.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/firefox.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/firefox_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/firefox_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/fiverr.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/fiverr.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/flutter.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/flutter.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/flutter_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/flutter_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/git.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/git.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/git_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/git_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/github.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/github.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/gitoutlined.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/gitoutlined.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/gmail.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/gmail.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/gmail_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/gmail_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/instagram.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/instagram.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/instagram_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/instagram_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/javascript.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/javascript.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/javascript_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/javascript_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/jira.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/jira.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/jira_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/jira_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/linkedin.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/linkedin.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/linkedin_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/linkedin_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/macos.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/macos.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/medium.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/medium.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/nodejs.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/nodejs.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/nodejs_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/nodejs_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/notion.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/notion.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/outlook.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/outlook.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/outlook_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/outlook_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/photoshop.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/photoshop.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/photoshop_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/photoshop_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/playstore.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/playstore.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/playstore_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/playstore_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/postman.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/postman.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/postman_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/postman_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/skype.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/skype.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/skype_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/skype_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/slack.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/slack.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/slack_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/slack_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/sqlite.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/sqlite.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/sqlite_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/sqlite_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/stackoverflow.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/stackoverflow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/stackoverflow_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/stackoverflow_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/teams.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/teams.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/teams_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/teams_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/teamviewer.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/teamviewer.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/upwork.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/upwork.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/visualstudio.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/visualstudio.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/visualstudio_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/visualstudio_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/vscode.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/vscode.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/vscode_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/vscode_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/whatsapp.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/whatsapp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/windows.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/windows.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/windows_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/windows_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/wordpress.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/wordpress.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/wordpress_colored.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/wordpress_colored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/xcode.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/xcode.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/my_tools_icons/zoom.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/my_tools_icons/zoom.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/profiles/anna_del.jfif" beforeDir="false" afterPath="$PROJECT_DIR$/assets/profiles/anna_del.jfif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/profiles/faisal.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/profiles/faisal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/profiles/flutter.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/profiles/flutter.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/profiles/kender_john.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/profiles/kender_john.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/profiles/mark_lupher.jfif" beforeDir="false" afterPath="$PROJECT_DIR$/assets/profiles/mark_lupher.jfif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/profiles/steve_jon.jfif" beforeDir="false" afterPath="$PROJECT_DIR$/assets/profiles/steve_jon.jfif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/profiles/umar_ayyaz.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/profiles/umar_ayyaz.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/resume/resume.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/resume/resume.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/showcase/art1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/showcase/art1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/showcase/art2.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/showcase/art2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/showcase/barak1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/showcase/barak1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/showcase/barak2.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/showcase/barak2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/showcase/bridges1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/showcase/bridges1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/showcase/bridges2.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/showcase/bridges2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/showcase/hmk1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/showcase/hmk1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets/showcase/hmk2.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/showcase/hmk2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/MaterialIcons-Regular.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/packages/cupertino_icons/assets/CupertinoIcons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/packages/ionicons/assets/fonts/Ionicons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/shaders/ink_sparkle.frag" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717170627123</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Deleted duplicated files">
+      <created>1717171890808</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1717171890808</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
