@@ -392,7 +392,7 @@ class _AboutScreenState extends State<AboutScreen> {
                                     height: 25,
                                   ),
                                   const Text(
-                                    "Verstaile experience across diverse projects and industries,\nbringing adaptability and valuable skills to any task.",
+                                    "Versatile experience across diverse projects and industries,\nbringing adaptability and valuable skills to any task.",
                                     style: TextStyle(
                                         fontSize: 15, color: Colors.black54),
                                   ),
