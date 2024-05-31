@@ -1172,11 +1172,13 @@ class _ProjectScreenState extends State<ProjectScreen> {
       child: DeviceFrame(
         orientation: Orientation.landscape,
         device: device ?? Devices.ios.iPad12InchesGen4,
-        screen: Image.asset(
-          imagePath,
-          fit: BoxFit.fitWidth,
-          alignment: imageAlignment,
+        screen: Container(
           color: backgroundColor,
+          child: Image.asset(
+            imagePath,
+            fit: BoxFit.fitWidth,
+            alignment: imageAlignment,
+          ),
         ),
       ),
     );
