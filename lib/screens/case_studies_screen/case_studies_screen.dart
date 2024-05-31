@@ -101,6 +101,7 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
                                     MediaQuery.of(context).size.width * .04,
                                 vertical: 100),
                     child: ListView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       itemCount: SelectedProjectData.selectedProjects.length,
                       itemBuilder: (context, index) {

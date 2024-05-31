@@ -490,11 +490,12 @@ class _ProjectScreenState extends State<ProjectScreen> {
   Widget projectScreensContainer({required SelectedProjectModel projectModel}) {
     var isMobileScreen = Breakpoints.isSmallScreen(context);
 
-    Widget roundCorneredImageView({required String imagePath}) {
+    Widget roundCorneredImageView(
+        {required String imagePath, required Color backgroundColor}) {
       return Container(
         height: 250,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: backgroundColor,
           borderRadius: BorderRadius.circular(15),
         ),
         child: ClipRRect(
@@ -542,17 +543,23 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 height: 180,
                               ),
                               roundCorneredImageView(
-                                  imagePath: projectModel.thirdImage),
+                                imagePath: projectModel.thirdImage,
+                                backgroundColor: projectModel.thirdImageBG!,
+                              ),
                               const SizedBox(
                                 height: 10,
                               ),
                               roundCorneredImageView(
-                                  imagePath: projectModel.mainImage),
+                                imagePath: projectModel.mainImage,
+                                backgroundColor: projectModel.mainImageBG!,
+                              ),
                               const SizedBox(
                                 height: 10,
                               ),
                               roundCorneredImageView(
-                                  imagePath: projectModel.secondImage),
+                                imagePath: projectModel.secondImage,
+                                backgroundColor: projectModel.secondImageBG!,
+                              ),
                             ],
                           ),
                         ),
@@ -568,17 +575,23 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 height: 300,
                               ),
                               roundCorneredImageView(
-                                  imagePath: projectModel.secondImage),
+                                imagePath: projectModel.secondImage,
+                                backgroundColor: projectModel.secondImageBG!,
+                              ),
                               const SizedBox(
                                 height: 10,
                               ),
                               roundCorneredImageView(
-                                  imagePath: projectModel.thirdImage),
+                                imagePath: projectModel.thirdImage,
+                                backgroundColor: projectModel.thirdImageBG!,
+                              ),
                               const SizedBox(
                                 height: 10,
                               ),
                               roundCorneredImageView(
-                                  imagePath: projectModel.mainImage),
+                                imagePath: projectModel.mainImage,
+                                backgroundColor: projectModel.mainImageBG!,
+                              ),
                             ],
                           ),
                         ),
@@ -594,17 +607,23 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 height: 100,
                               ),
                               roundCorneredImageView(
-                                  imagePath: projectModel.mainImage),
+                                imagePath: projectModel.mainImage,
+                                backgroundColor: projectModel.mainImageBG!,
+                              ),
                               const SizedBox(
                                 height: 10,
                               ),
                               roundCorneredImageView(
-                                  imagePath: projectModel.secondImage),
+                                imagePath: projectModel.secondImage,
+                                backgroundColor: projectModel.secondImageBG!,
+                              ),
                               const SizedBox(
                                 height: 10,
                               ),
                               roundCorneredImageView(
-                                  imagePath: projectModel.thirdImage),
+                                imagePath: projectModel.thirdImage,
+                                backgroundColor: projectModel.thirdImageBG!,
+                              ),
                             ],
                           ),
                         ),
@@ -624,17 +643,23 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 height: 100,
                               ),
                               roundCorneredImageView(
-                                  imagePath: projectModel.thirdImage),
+                                imagePath: projectModel.thirdImage,
+                                backgroundColor: projectModel.thirdImageBG!,
+                              ),
                               const SizedBox(
                                 height: 20,
                               ),
                               roundCorneredImageView(
-                                  imagePath: projectModel.mainImage),
+                                imagePath: projectModel.mainImage,
+                                backgroundColor: projectModel.mainImageBG!,
+                              ),
                               const SizedBox(
                                 height: 20,
                               ),
                               roundCorneredImageView(
-                                  imagePath: projectModel.secondImage),
+                                imagePath: projectModel.secondImage,
+                                backgroundColor: projectModel.secondImageBG!,
+                              ),
                             ],
                           ),
                         ),
@@ -648,17 +673,23 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               roundCorneredImageView(
-                                  imagePath: projectModel.secondImage),
+                                imagePath: projectModel.secondImage,
+                                backgroundColor: projectModel.secondImageBG!,
+                              ),
                               const SizedBox(
                                 height: 20,
                               ),
                               roundCorneredImageView(
-                                  imagePath: projectModel.thirdImage),
+                                imagePath: projectModel.thirdImage,
+                                backgroundColor: projectModel.thirdImageBG!,
+                              ),
                               const SizedBox(
                                 height: 20,
                               ),
                               roundCorneredImageView(
-                                  imagePath: projectModel.mainImage),
+                                imagePath: projectModel.mainImage,
+                                backgroundColor: projectModel.mainImageBG!,
+                              ),
                             ],
                           ),
                         ),
@@ -675,17 +706,23 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 height: 30,
                               ),
                               roundCorneredImageView(
-                                  imagePath: projectModel.mainImage),
+                                imagePath: projectModel.mainImage,
+                                backgroundColor: projectModel.mainImageBG!,
+                              ),
                               const SizedBox(
                                 height: 20,
                               ),
                               roundCorneredImageView(
-                                  imagePath: projectModel.secondImage),
+                                imagePath: projectModel.secondImage,
+                                backgroundColor: projectModel.secondImageBG!,
+                              ),
                               const SizedBox(
                                 height: 20,
                               ),
                               roundCorneredImageView(
-                                  imagePath: projectModel.thirdImage),
+                                imagePath: projectModel.thirdImage,
+                                backgroundColor: projectModel.thirdImageBG!,
+                              ),
                             ],
                           ),
                         ),
@@ -726,6 +763,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             tabletView(
                               hasInitialMargin: true,
                               imagePath: projectModel.mainImage,
+                              backgroundColor: projectModel.mainImageBG!,
                               imageAlignment: Alignment.topCenter,
                             ),
                             const SizedBox(
@@ -733,6 +771,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             ),
                             tabletView(
                               imagePath: projectModel.secondImage,
+                              backgroundColor: projectModel.secondImageBG!,
                               imageAlignment: Alignment.center,
                             ),
                             const SizedBox(
@@ -740,6 +779,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             ),
                             tabletView(
                               imagePath: projectModel.thirdImage,
+                              backgroundColor: projectModel.thirdImageBG!,
                               imageAlignment: Alignment.bottomCenter,
                             ),
                           ],
@@ -758,6 +798,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             children: [
                               tabletView(
                                 imagePath: projectModel.thirdImage,
+                                backgroundColor: projectModel.thirdImageBG!,
                                 imageAlignment: Alignment.topCenter,
                               ),
                               const SizedBox(
@@ -765,6 +806,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               ),
                               tabletView(
                                 imagePath: projectModel.secondImage,
+                                backgroundColor: projectModel.secondImageBG!,
                                 imageAlignment: Alignment.center,
                               ),
                               const SizedBox(
@@ -772,6 +814,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               ),
                               tabletView(
                                 imagePath: projectModel.mainImage,
+                                backgroundColor: projectModel.mainImageBG!,
                                 imageAlignment: Alignment.bottomCenter,
                               ),
                             ],
@@ -791,6 +834,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             children: [
                               tabletView(
                                 imagePath: projectModel.secondImage,
+                                backgroundColor: projectModel.secondImageBG!,
                                 imageAlignment: Alignment.topCenter,
                               ),
                               const SizedBox(
@@ -798,6 +842,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               ),
                               tabletView(
                                 imagePath: projectModel.mainImage,
+                                backgroundColor: projectModel.mainImageBG!,
                                 imageAlignment: Alignment.center,
                               ),
                               const SizedBox(
@@ -805,6 +850,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               ),
                               tabletView(
                                 imagePath: projectModel.thirdImage,
+                                backgroundColor: projectModel.thirdImageBG!,
                                 imageAlignment: Alignment.bottomCenter,
                               ),
                             ],
@@ -923,6 +969,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               tabletView(
                                 hasInitialMargin: true,
                                 imagePath: projectModel.mainImage,
+                                backgroundColor: projectModel.mainImageBG!,
                                 imageAlignment: Alignment.topCenter,
                               ),
                               const SizedBox(
@@ -930,6 +977,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               ),
                               tabletView(
                                 imagePath: projectModel.secondImage,
+                                backgroundColor: projectModel.secondImageBG!,
                                 imageAlignment: Alignment.center,
                               ),
                               const SizedBox(
@@ -937,6 +985,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               ),
                               tabletView(
                                 imagePath: projectModel.thirdImage,
+                                backgroundColor: projectModel.thirdImageBG!,
                                 imageAlignment: Alignment.bottomCenter,
                               ),
                             ],
@@ -955,6 +1004,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               children: [
                                 tabletView(
                                   imagePath: projectModel.thirdImage,
+                                  backgroundColor: projectModel.thirdImageBG!,
                                   imageAlignment: Alignment.topCenter,
                                 ),
                                 const SizedBox(
@@ -962,6 +1012,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 ),
                                 tabletView(
                                   imagePath: projectModel.secondImage,
+                                  backgroundColor: projectModel.secondImageBG!,
                                   imageAlignment: Alignment.center,
                                 ),
                                 const SizedBox(
@@ -969,6 +1020,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 ),
                                 tabletView(
                                   imagePath: projectModel.mainImage,
+                                  backgroundColor: projectModel.mainImageBG!,
                                   imageAlignment: Alignment.bottomCenter,
                                 ),
                               ],
@@ -988,6 +1040,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               children: [
                                 tabletView(
                                   imagePath: projectModel.secondImage,
+                                  backgroundColor: projectModel.secondImageBG!,
                                   imageAlignment: Alignment.topCenter,
                                 ),
                                 const SizedBox(
@@ -995,6 +1048,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 ),
                                 tabletView(
                                   imagePath: projectModel.mainImage,
+                                  backgroundColor: projectModel.mainImageBG!,
                                   imageAlignment: Alignment.center,
                                 ),
                                 const SizedBox(
@@ -1002,6 +1056,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 ),
                                 tabletView(
                                   imagePath: projectModel.thirdImage,
+                                  backgroundColor: projectModel.thirdImageBG!,
                                   imageAlignment: Alignment.bottomCenter,
                                 ),
                               ],
@@ -1103,6 +1158,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
   Widget tabletView({
     bool hasInitialMargin = false,
     required String imagePath,
+    required Color backgroundColor,
     required Alignment imageAlignment,
     DeviceInfo? device,
   }) {
@@ -1120,6 +1176,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
           imagePath,
           fit: BoxFit.fitWidth,
           alignment: imageAlignment,
+          color: backgroundColor,
         ),
       ),
     );
