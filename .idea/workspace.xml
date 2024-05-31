@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9454b67-0d59-4afe-9daa-ee6c4a3d5102" name="Changes" comment="Passed bg colors of projects to project_view_screen.dart">
+    <list default="true" id="f9454b67-0d59-4afe-9daa-ee6c4a3d5102" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/project_view_screen/project_view_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/project_view_screen/project_view_screen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717159134487</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Tablet view color override issue fixed.">
+      <created>1717160144245</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1717160144246</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -117,6 +124,7 @@
     <MESSAGE value="UI fix" />
     <MESSAGE value="Implemented external link opening through out the app" />
     <MESSAGE value="Passed bg colors of projects to project_view_screen.dart" />
-    <option name="LAST_COMMIT_MESSAGE" value="Passed bg colors of projects to project_view_screen.dart" />
+    <MESSAGE value="Tablet view color override issue fixed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Tablet view color override issue fixed." />
   </component>
 </project>
