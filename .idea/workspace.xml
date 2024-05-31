@@ -4,11 +4,122 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9454b67-0d59-4afe-9daa-ee6c4a3d5102" name="Changes" comment="Tablet view color override issue fixed.">
+    <list default="true" id="f9454b67-0d59-4afe-9daa-ee6c4a3d5102" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/login_screen/login_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/login_screen/login_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utilities/constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utilities/constants.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logo/404.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logo/artache.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logo/gdsc.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logo/gdsc1.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logo/pel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logo/pel1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logo/pieas.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logo/pieas1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logo/soloinsight.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logo/wordpress.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/adobe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/adobe_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/adobexd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/adobexd_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/androidstudio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/anydesk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/appstore.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/appstore_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/behance.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/behance_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/bitbucket.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/bitbucket_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/canva.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/chatgpt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/chrome.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/chrome_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/dart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/dart_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/discord.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/dribble.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/dribble_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/dropbox.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/dropbox_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/edge.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/edge_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/elementor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/facebook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/facebook_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/figma.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/figma_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/firebase.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/firebase_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/firefox.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/firefox_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/fiverr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/flutter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/flutter_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/git.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/git_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/github.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/gitoutlined.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/gmail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/gmail_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/instagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/instagram_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/javascript.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/javascript_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/jira.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/jira_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/linkedin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/linkedin_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/macos.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/medium.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/nodejs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/nodejs_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/notion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/outlook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/outlook_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/photoshop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/photoshop_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/playstore.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/playstore_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/postman.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/postman_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/skype.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/skype_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/slack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/slack_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/sqlite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/sqlite_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/stackoverflow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/stackoverflow_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/teams.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/teams_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/teamviewer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/upwork.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/visualstudio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/visualstudio_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/vscode.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/vscode_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/whatsapp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/windows.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/windows_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/wordpress.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/wordpress_colored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/xcode.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/my_tools_icons/zoom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/profiles/anna_del.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/profiles/faisal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/profiles/flutter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/profiles/kender_john.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/profiles/mark_lupher.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/profiles/steve_jon.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/profiles/umar_ayyaz.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/resume/resume.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/showcase/art1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/showcase/art2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/showcase/barak1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/showcase/barak2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/showcase/bridges1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/showcase/bridges2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/showcase/hmk1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/showcase/hmk2.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,18 +151,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "cidr.known.project.marker": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "io.flutter.reload.alreadyRun": "true",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
@@ -123,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717161222293</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="App version added">
+      <created>1717166994525</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1717166994525</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -134,6 +252,7 @@
     <MESSAGE value="Implemented external link opening through out the app" />
     <MESSAGE value="Passed bg colors of projects to project_view_screen.dart" />
     <MESSAGE value="Tablet view color override issue fixed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Tablet view color override issue fixed." />
+    <MESSAGE value="App version added" />
+    <option name="LAST_COMMIT_MESSAGE" value="App version added" />
   </component>
 </project>
