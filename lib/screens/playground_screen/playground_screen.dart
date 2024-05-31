@@ -2,12 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
+import 'package:my_portfolio/utilities/constants.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
 import 'package:my_portfolio/widgets/footer.dart';
 import 'package:my_portfolio/widgets/header.dart';
 import 'package:my_portfolio/widgets/horizontal_scrollbar_tile.dart';
 import 'package:my_portfolio/widgets/review_widget.dart';
 import 'package:my_portfolio/widgets/showcase_container.dart';
+import 'dart:html' as html;
 
 class PlayGroundScreen extends StatefulWidget {
   const PlayGroundScreen({super.key});
@@ -104,7 +106,9 @@ class _PlayGroundScreenState extends State<PlayGroundScreen> {
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
                                         externalButtons(
-                                            icon: Ionicons.logo_github),
+                                          link: AppConstants.github,
+                                          icon: Ionicons.logo_github,
+                                        ),
                                         externalButtons(
                                             icon: Ionicons.logo_bitbucket),
                                       ],
@@ -168,7 +172,9 @@ class _PlayGroundScreenState extends State<PlayGroundScreen> {
                                 ),
                                 Row(
                                   children: [
-                                    externalButtons(icon: Ionicons.logo_github),
+                                    externalButtons(
+                                        link: AppConstants.github,
+                                        icon: Ionicons.logo_github),
                                     externalButtons(
                                         icon: Ionicons.logo_bitbucket),
                                   ],
@@ -240,32 +246,36 @@ class _PlayGroundScreenState extends State<PlayGroundScreen> {
                           height: 80,
                         ),
                         Center(
-                          child: Container(
-                            margin: const EdgeInsets.only(right: 20),
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 18, vertical: 10),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
-                              border: Border.all(
-                                color: Colors.black26,
+                          child: InkWell(
+                            onTap: () {
+                              openLinkInNewWindows(AppConstants.github);
+                            },
+                            child: Container(
+                              margin: const EdgeInsets.only(right: 20),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 18, vertical: 10),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(
+                                  color: Colors.black26,
+                                ),
                               ),
-                            ),
-                            child: const Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Icon(
-                                  CupertinoIcons
-                                      .square_stack_3d_down_dottedline,
-                                  size: 20,
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Text(
-                                  "View more on Github",
-                                  style: TextStyle(color: Colors.black),
-                                ),
-                              ],
+                              child: const Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                    Ionicons.logo_github,
+                                    size: 20,
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Text(
+                                    "View more on Github",
+                                    style: TextStyle(color: Colors.black),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -306,15 +316,27 @@ class _PlayGroundScreenState extends State<PlayGroundScreen> {
     );
   }
 
-  Widget externalButtons({required IconData icon}) {
-    return Container(
-      margin: const EdgeInsets.only(right: 20),
-      padding: const EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        border: Border.all(color: Colors.black38),
+  void openLinkInNewWindows(String link) {
+    html.window.open(link, 'new_tab');
+  }
+
+  Widget externalButtons({required IconData icon, String? link}) {
+    return InkWell(
+      overlayColor: MaterialStateProperty.all(Colors.transparent),
+      onTap: () {
+        if (link!.isNotEmpty) {
+          openLinkInNewWindows(link);
+        }
+      },
+      child: Container(
+        margin: const EdgeInsets.only(right: 20),
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          border: Border.all(color: Colors.black38),
+        ),
+        child: Icon(icon),
       ),
-      child: Icon(icon),
     );
   }
 }

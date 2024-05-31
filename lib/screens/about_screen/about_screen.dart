@@ -88,7 +88,9 @@ class _AboutScreenState extends State<AboutScreen> {
                                     Row(
                                       children: [
                                         externalButtons(
-                                            icon: Ionicons.logo_github),
+                                          link: AppConstants.github,
+                                          icon: Ionicons.logo_github,
+                                        ),
                                         externalButtons(
                                             icon: Ionicons.logo_bitbucket),
                                         externalButtons(
@@ -151,7 +153,9 @@ class _AboutScreenState extends State<AboutScreen> {
                                   Row(
                                     children: [
                                       externalButtons(
-                                          icon: Ionicons.logo_github),
+                                        link: AppConstants.github,
+                                        icon: Ionicons.logo_github,
+                                      ),
                                       externalButtons(
                                           icon: Ionicons.logo_bitbucket),
                                       externalButtons(
@@ -737,15 +741,27 @@ class _AboutScreenState extends State<AboutScreen> {
     );
   }
 
-  Widget externalButtons({required IconData icon}) {
-    return Container(
-      margin: const EdgeInsets.only(right: 20),
-      padding: const EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        border: Border.all(color: Colors.black38),
+  void openLinkInNewWindows(String link) {
+    html.window.open(link, 'new_tab');
+  }
+
+  Widget externalButtons({required IconData icon, String? link}) {
+    return InkWell(
+      overlayColor: MaterialStateProperty.all(Colors.transparent),
+      onTap: () {
+        if (link!.isNotEmpty) {
+          openLinkInNewWindows(link);
+        }
+      },
+      child: Container(
+        margin: const EdgeInsets.only(right: 20),
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          border: Border.all(color: Colors.black38),
+        ),
+        child: Icon(icon),
       ),
-      child: Icon(icon),
     );
   }
 
@@ -1045,7 +1061,8 @@ class _AboutScreenState extends State<AboutScreen> {
   }
 
   void downloadResume() {
-    html.AnchorElement anchor = html.AnchorElement(href: AppConstants.resumeWeb);
+    html.AnchorElement anchor =
+        html.AnchorElement(href: AppConstants.resumeWeb);
     anchor.download = 'Faisal Nazir Resume - Flutter Developer.pdf';
     anchor.click();
   }
