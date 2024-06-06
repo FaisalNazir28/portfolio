@@ -12,6 +12,7 @@ import 'screens/client_screen/client_screen.dart';
 import 'screens/login_screen/login_screen.dart';
 
 bool isLoggedIn = false;
+bool initialLaunch = true;
 
 void main() {
   runApp(const MyApp());
