@@ -1,4 +1,8 @@
 class AppImages {
+
+  ///background images
+  static String loginBackground = 'assets/backgrounds/login_background.jpg';
+
   ///tool icons
   static String adobe = 'assets/my_tools_icons/adobe.png';
   static String adobeColored = 'assets/my_tools_icons/adobe_colored.png';
