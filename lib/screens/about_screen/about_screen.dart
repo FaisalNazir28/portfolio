@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
 import 'package:my_portfolio/utilities/app_images.dart';
@@ -23,6 +24,12 @@ class AboutScreen extends StatefulWidget {
 
 class _AboutScreenState extends State<AboutScreen> {
   final ScrollController scrollController = ScrollController();
+
+  @override
+  void initState() {
+    initialLaunch = false;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -299,7 +306,7 @@ class _AboutScreenState extends State<AboutScreen> {
                                   height: 25,
                                 ),
                                 const Text(
-                                  "Verstaile experience across diverse projects and industries,\nbringing adaptability and valuable skills to any task.",
+                                  "Versatile experience across diverse projects and industries,\nbringing adaptability and valuable skills to any task.",
                                   style: TextStyle(
                                       fontSize: 15, color: Colors.black54),
                                 ),
@@ -362,7 +369,7 @@ class _AboutScreenState extends State<AboutScreen> {
                                 const ExperienceTile(
                                     companyLogo: "assets/logo/soloinsight.jpeg",
                                     title:
-                                        "Flutter Developer at Soloinsight Inc.",
+                                        "SWE Flutter Applications at Soloinsight Inc",
                                     startDate: "March 2020",
                                     endDate: "Present"),
                                 const ExperienceTile(
@@ -370,11 +377,28 @@ class _AboutScreenState extends State<AboutScreen> {
                                     title: "Webmaster at Artache Magazine",
                                     startDate: "July 2023",
                                     endDate: "Present"),
-                                const ExperienceTile(
-                                    companyLogo: "assets/logo/wordpress.png",
+                                ExperienceTile(
+                                    companyLogo: AppImages.fiverr,
                                     title: "Wordpress Developer at Fiverr",
                                     startDate: "October 2018",
                                     endDate: "Present"),
+                                const ExperienceTile(
+                                    companyLogo: "assets/logo/gdsc1.webp",
+                                    title:
+                                        "Google DSC Ambassador at GDSC - PUCIT",
+                                    startDate: "October 2021",
+                                    endDate: "October 2022"),
+                                const ExperienceTile(
+                                    companyLogo: "assets/logo/pel1.png",
+                                    title: "Android Developer at PEL",
+                                    startDate: "October 2018",
+                                    endDate: "November 2018"),
+                                const ExperienceTile(
+                                    companyLogo: "assets/logo/wordpress.png",
+                                    title:
+                                        "Wordpress Developer at ECOM Technologies",
+                                    startDate: "September 2018",
+                                    endDate: "October 2018"),
                               ],
                             ),
                           ],
@@ -448,36 +472,53 @@ class _AboutScreenState extends State<AboutScreen> {
                                 ],
                               ),
                             ),
-                            const Expanded(
+                            Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
                                 children: [
-                                  Text(
+                                  const Text(
                                     "WORKING EXPERIENCE",
                                     style: TextStyle(
                                         fontSize: 30,
                                         fontWeight: FontWeight.w500),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 50,
                                   ),
-                                  ExperienceTile(
+                                  const ExperienceTile(
                                       companyLogo:
                                           "assets/logo/soloinsight.jpeg",
                                       title:
-                                          "Flutter Developer at Soloinsight Inc.",
+                                          "SWE Flutter Applications at Soloinsight Inc",
                                       startDate: "March 2020",
                                       endDate: "Present"),
-                                  ExperienceTile(
+                                  const ExperienceTile(
                                       companyLogo: "assets/logo/artache.jfif",
                                       title: "Webmaster at Artache Magazine",
                                       startDate: "July 2023",
                                       endDate: "Present"),
                                   ExperienceTile(
-                                      companyLogo: "assets/logo/wordpress.png",
+                                      companyLogo: AppImages.fiverr,
                                       title: "Wordpress Developer at Fiverr",
                                       startDate: "October 2018",
                                       endDate: "Present"),
+                                  const ExperienceTile(
+                                      companyLogo: "assets/logo/gdsc1.webp",
+                                      title:
+                                          "Google DSC Ambassador at GDSC - PUCIT",
+                                      startDate: "October 2021",
+                                      endDate: "October 2022"),
+                                  const ExperienceTile(
+                                      companyLogo: "assets/logo/pel1.png",
+                                      title: "Android Developer at PEL",
+                                      startDate: "October 2018",
+                                      endDate: "November 2018"),
+                                  const ExperienceTile(
+                                      companyLogo: "assets/logo/wordpress.png",
+                                      title:
+                                          "Wordpress Developer at ECOM Technologies",
+                                      startDate: "September 2018",
+                                      endDate: "October 2018"),
                                 ],
                               ),
                             ),
@@ -578,18 +619,18 @@ class _AboutScreenState extends State<AboutScreen> {
                                         companyLogo: "assets/logo/pieas1.jpg",
                                         title:
                                             "Best Website Design Award by PIEAS",
-                                        startDate: "March 2021"),
+                                        startDate: "March 2022"),
                                     const ExperienceTile(
                                         companyLogo:
                                             "assets/logo/soloinsight.jpeg",
                                         title:
-                                            "Information Security Training by Soloinsight",
-                                        startDate: "January 2022"),
+                                            "Information Security Training by Soloinsight Inc",
+                                        startDate: "January 2024"),
                                     const ExperienceTile(
                                         companyLogo:
                                             "assets/logo/soloinsight.jpeg",
                                         title:
-                                            "Application Security Training by Soloinsight",
+                                            "Application Security Training by Soloinsight Inc",
                                         startDate: "April 2023"),
                                   ],
                                 )
@@ -671,18 +712,18 @@ class _AboutScreenState extends State<AboutScreen> {
                                           companyLogo: "assets/logo/pieas1.jpg",
                                           title:
                                               "Best Website Design Award by PIEAS",
-                                          startDate: "March 2021"),
+                                          startDate: "March 2022"),
                                       ExperienceTile(
                                           companyLogo:
                                               "assets/logo/soloinsight.jpeg",
                                           title:
-                                              "Information Security Training by Soloinsight",
-                                          startDate: "January 2022"),
+                                              "Information Security Training by Soloinsight Inc",
+                                          startDate: "January 2024"),
                                       ExperienceTile(
                                           companyLogo:
                                               "assets/logo/soloinsight.jpeg",
                                           title:
-                                              "Application Security Training by Soloinsight",
+                                              "Application Security Training by Soloinsight Inc",
                                           startDate: "April 2023"),
                                     ],
                                   ),

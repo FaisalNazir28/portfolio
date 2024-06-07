@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/utilities/constants.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
@@ -20,6 +21,12 @@ class PlayGroundScreen extends StatefulWidget {
 
 class _PlayGroundScreenState extends State<PlayGroundScreen> {
   final ScrollController scrollController = ScrollController();
+
+  @override
+  void initState() {
+    initialLaunch = false;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

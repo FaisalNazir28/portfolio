@@ -1,6 +1,7 @@
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/models/selected_project_data.dart';
 import 'package:my_portfolio/models/selected_works_model.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
@@ -19,6 +20,12 @@ class ProjectScreen extends StatefulWidget {
 
 class _ProjectScreenState extends State<ProjectScreen> {
   final ScrollController scrollController = ScrollController();
+
+  @override
+  void initState() {
+    initialLaunch = false;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

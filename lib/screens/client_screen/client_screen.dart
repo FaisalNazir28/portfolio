@@ -12,6 +12,12 @@ class ClientScreen extends StatefulWidget {
 
 class _ClientScreenState extends State<ClientScreen> {
   @override
+  void initState() {
+    initialLaunch = false;
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return isLoggedIn
         ? Scaffold(
@@ -27,7 +33,7 @@ class _ClientScreenState extends State<ClientScreen> {
                   ),
                   InkWell(
                     onTap: () {
-                      isLoggedIn=false;
+                      isLoggedIn = false;
                       Navigator.pushNamed(context, Routes.home);
                     },
                     child: Container(

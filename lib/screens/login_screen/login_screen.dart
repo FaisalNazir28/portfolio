@@ -21,6 +21,12 @@ class _LoginScreenState extends State<LoginScreen> {
   bool loading = false;
 
   @override
+  void initState() {
+    initialLaunch = false;
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     var isTabletScreen = Breakpoints.isMediumScreen(context);
     var isMobileScreen = Breakpoints.isSmallScreen(context);

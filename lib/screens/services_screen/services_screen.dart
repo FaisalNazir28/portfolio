@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
 import 'package:my_portfolio/widgets/footer.dart';
@@ -17,6 +18,12 @@ class ServicesScreen extends StatefulWidget {
 
 class _ServicesScreenState extends State<ServicesScreen> {
   final ScrollController scrollController = ScrollController();
+
+  @override
+  void initState() {
+    initialLaunch = false;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/models/selected_project_data.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
+import 'package:my_portfolio/utilities/app_images.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
 import 'package:my_portfolio/widgets/experience_tile.dart';
 import 'package:my_portfolio/widgets/footer.dart';
@@ -26,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 4), () {
       initialLaunch = false;
       setState(() {});
     });
@@ -313,7 +314,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         MediaQuery.of(context).size.width * .04,
                                     vertical: 60),
                         child: isDesktopScreen
-                            ? const Row(
+                            ? Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Expanded(
@@ -321,23 +322,23 @@ class _HomeScreenState extends State<HomeScreen> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.stretch,
                                       children: [
-                                        Text(
+                                        const Text(
                                           "Working experience",
                                           style: TextStyle(
                                               fontSize: 40,
                                               fontWeight: FontWeight.w500),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 50,
                                         ),
-                                        ExperienceTile(
+                                        const ExperienceTile(
                                             companyLogo:
                                                 "assets/logo/soloinsight.jpeg",
                                             title:
-                                                "Flutter Developer at Soloinsight Inc.",
+                                                "SWE Flutter Applications at Soloinsight Inc",
                                             startDate: "March 2020",
                                             endDate: "Present"),
-                                        ExperienceTile(
+                                        const ExperienceTile(
                                             companyLogo:
                                                 "assets/logo/artache.jfif",
                                             title:
@@ -345,35 +346,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                             startDate: "July 2023",
                                             endDate: "Present"),
                                         ExperienceTile(
-                                            companyLogo:
-                                                "assets/logo/wordpress.png",
+                                            companyLogo: AppImages.fiverr,
                                             title:
                                                 "Wordpress Developer at Fiverr",
                                             startDate: "October 2018",
                                             endDate: "Present"),
-                                        ExperienceTile(
-                                            companyLogo:
-                                                "assets/logo/gdsc1.webp",
-                                            title:
-                                                "Google DSC Ambassador at GDSC - PUCIT",
-                                            startDate: "October 2021",
-                                            endDate: "October 2022"),
-                                        ExperienceTile(
-                                            companyLogo: "assets/logo/pel1.png",
-                                            title: "Android Developer at PEL",
-                                            startDate: "October 2018",
-                                            endDate: "November 2018"),
-                                        ExperienceTile(
-                                            companyLogo:
-                                                "assets/logo/wordpress.png",
-                                            title:
-                                                "Wordpress Developer at ECOM Technologies",
-                                            startDate: "September 2018",
-                                            endDate: "October 2018"),
                                       ],
                                     ),
                                   ),
-                                  Expanded(
+                                  const Expanded(
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.stretch,
@@ -394,18 +375,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 "assets/logo/pieas1.jpg",
                                             title:
                                                 "Best Website Design Award by PIEAS",
-                                            startDate: "March 2021"),
+                                            startDate: "March 2022"),
                                         ExperienceTile(
                                             companyLogo:
                                                 "assets/logo/soloinsight.jpeg",
                                             title:
-                                                "Information Security Training by Soloinsight",
-                                            startDate: "January 2022"),
+                                                "Information Security Training by Soloinsight Inc",
+                                            startDate: "January 2024"),
                                         ExperienceTile(
                                             companyLogo:
                                                 "assets/logo/soloinsight.jpeg",
                                             title:
-                                                "Application Security Training by Soloinsight",
+                                                "Application Security Training by Soloinsight Inc",
                                             startDate: "April 2023"),
                                       ],
                                     ),
@@ -434,7 +415,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           companyLogo:
                                               "assets/logo/soloinsight.jpeg",
                                           title:
-                                              "Flutter Developer at Soloinsight Inc.",
+                                              "SWE Flutter Applications at Soloinsight Inc",
                                           startDate: "March 2020",
                                           endDate: "Present"),
                                       const ExperienceTile(
@@ -444,31 +425,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                               "Webmaster at Artache Magazine",
                                           startDate: "July 2023",
                                           endDate: "Present"),
-                                      const ExperienceTile(
-                                          companyLogo:
-                                              "assets/logo/wordpress.png",
+                                      ExperienceTile(
+                                          companyLogo: AppImages.fiverr,
                                           title:
                                               "Wordpress Developer at Fiverr",
                                           startDate: "October 2018",
                                           endDate: "Present"),
-                                      const ExperienceTile(
-                                          companyLogo: "assets/logo/gdsc1.webp",
-                                          title:
-                                              "Google DSC Ambassador at GDSC - PUCIT",
-                                          startDate: "October 2021",
-                                          endDate: "October 2022"),
-                                      const ExperienceTile(
-                                          companyLogo: "assets/logo/pel1.png",
-                                          title: "Android Developer at PEL",
-                                          startDate: "October 2018",
-                                          endDate: "November 2018"),
-                                      const ExperienceTile(
-                                          companyLogo:
-                                              "assets/logo/wordpress.png",
-                                          title:
-                                              "Wordpress Developer at ECOM Technologies",
-                                          startDate: "September 2018",
-                                          endDate: "October 2018"),
                                     ],
                                   ),
                                   const SizedBox(
@@ -493,18 +455,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                           companyLogo: "assets/logo/pieas1.jpg",
                                           title:
                                               "Best Website Design Award by PIEAS",
-                                          startDate: "March 2021"),
+                                          startDate: "March 2022"),
                                       const ExperienceTile(
                                           companyLogo:
                                               "assets/logo/soloinsight.jpeg",
                                           title:
-                                              "Information Security Training by Soloinsight",
-                                          startDate: "January 2022"),
+                                              "Information Security Training by Soloinsight Inc",
+                                          startDate: "January 2024"),
                                       const ExperienceTile(
                                           companyLogo:
                                               "assets/logo/soloinsight.jpeg",
                                           title:
-                                              "Application Security Training by Soloinsight",
+                                              "Application Security Training by Soloinsight Inc",
                                           startDate: "April 2023"),
                                     ],
                                   )

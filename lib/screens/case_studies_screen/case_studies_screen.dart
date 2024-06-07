@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/models/selected_project_data.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
@@ -18,6 +19,12 @@ class CaseStudiesScreen extends StatefulWidget {
 
 class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
   final ScrollController scrollController = ScrollController();
+
+  @override
+  void initState() {
+    initialLaunch = false;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

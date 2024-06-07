@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
 import 'package:my_portfolio/widgets/footer.dart';
@@ -16,6 +17,12 @@ class ContactPage extends StatefulWidget {
 class _ContactPageState extends State<ContactPage> {
   final ScrollController scrollController = ScrollController();
   bool isSentMessage = false;
+
+  @override
+  void initState() {
+    initialLaunch = false;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
