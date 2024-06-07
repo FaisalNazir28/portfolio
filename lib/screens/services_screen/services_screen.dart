@@ -140,7 +140,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                "50+",
+                                                "60+",
                                                 style: TextStyle(
                                                     fontSize: 25,
                                                     fontWeight:
@@ -167,7 +167,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                "80+",
+                                                "70+",
                                                 style: TextStyle(
                                                     fontSize: 25,
                                                     fontWeight:
@@ -260,7 +260,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  "50+",
+                                                  "60+",
                                                   style: TextStyle(
                                                       fontSize: 30,
                                                       fontWeight:
@@ -287,7 +287,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  "80+",
+                                                  "70+",
                                                   style: TextStyle(
                                                       fontSize: 30,
                                                       fontWeight:

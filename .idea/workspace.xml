@@ -5,29 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9454b67-0d59-4afe-9daa-ee6c4a3d5102" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/logo/gdscColored.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/logo/pieasColored.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/my_tools_icons/unsplash.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/logo/gdsc.webp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logo/gdsc.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/logo/gdsc1.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/logo/pel.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logo/pel.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/logo/pel1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/logo/pieas.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logo/pieas.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/logo/pieas1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/profiles/flutter.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logo/flutter.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/web" beforeDir="false" afterPath="$PROJECT_DIR$/build/web" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/selected_project_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/selected_project_data.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/404_page/404_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/404_page/404_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/about_screen/about_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/about_screen/about_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/contact_screen/contact_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/contact_screen/contact_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/home_screen/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/home_screen/home_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/playground_screen/playground_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/playground_screen/playground_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/services_screen/services_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/services_screen/services_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utilities/app_images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utilities/app_images.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/custom_drawer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/custom_drawer.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/footer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/footer.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/review_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/review_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/horizontal_scrollbar_tile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/horizontal_scrollbar_tile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/stats_chart.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/stats_chart.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717743865063</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Defined all resources in app images class and used from it.">
+      <created>1717747684602</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1717747684602</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -234,6 +227,7 @@
     <MESSAGE value="Added background in login screen" />
     <MESSAGE value="Added initial loader on first launch for non-mobile devices." />
     <MESSAGE value="-Initial loader issue fixed in case when reload is initiaed from screens other than home.&#10;-Updated work experience in home screen and about screen." />
-    <option name="LAST_COMMIT_MESSAGE" value="-Initial loader issue fixed in case when reload is initiaed from screens other than home.&#10;-Updated work experience in home screen and about screen." />
+    <MESSAGE value="Defined all resources in app images class and used from it." />
+    <option name="LAST_COMMIT_MESSAGE" value="Defined all resources in app images class and used from it." />
   </component>
 </project>

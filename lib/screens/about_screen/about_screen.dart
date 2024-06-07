@@ -248,22 +248,22 @@ class _AboutScreenState extends State<AboutScreen> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     myValues(
-                                      icon: CupertinoIcons.star_circle,
+                                      icon: Ionicons.ribbon_outline,
                                       title: "Focus on super high-quality",
                                       rightGap: true,
                                     ),
                                     myValues(
-                                      icon: CupertinoIcons.square_grid_2x2,
+                                      icon: Ionicons.grid_outline,
                                       title: "Unique work and all yours",
                                       rightGap: true,
                                     ),
                                     myValues(
-                                      icon: Icons.flash_on_outlined,
+                                      icon: Ionicons.flash_outline,
                                       title: "Super fast delivery work",
                                       rightGap: true,
                                     ),
                                     myValues(
-                                      icon: CupertinoIcons.person_3,
+                                      icon: CupertinoIcons.group,
                                       title: "Collaboration number one",
                                     ),
                                   ],

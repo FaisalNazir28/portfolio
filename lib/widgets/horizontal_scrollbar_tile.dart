@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 
 class HorizontalScrollBarTile extends StatefulWidget {
@@ -23,12 +24,12 @@ class _HorizontalScrollBarTileState extends State<HorizontalScrollBarTile> {
             children: [
               Row(
                 children: [
-                  statTileMobile(count: '15', text: 'Websites developed'),
+                  statTileMobile(count: '20', text: 'Websites developed'),
                   statTileMobile(
                       count: '',
                       text: '',
                       icon: const Icon(
-                        CupertinoIcons.textformat_abc_dottedunderline,
+                        Ionicons.logo_web_component,
                         size: 40,
                       )),
                 ],
@@ -39,10 +40,10 @@ class _HorizontalScrollBarTileState extends State<HorizontalScrollBarTile> {
                       count: '',
                       text: '',
                       icon: const Icon(
-                        CupertinoIcons.airplane,
+                        Ionicons.apps,
                         size: 40,
                       )),
-                  statTileMobile(count: '33', text: 'Projects finished'),
+                  statTileMobile(count: '60', text: 'Projects finished'),
                 ],
               ),
             ],
@@ -55,36 +56,36 @@ class _HorizontalScrollBarTileState extends State<HorizontalScrollBarTile> {
               itemBuilder: (context, index) {
                 return Row(
                   children: [
-                    statTile(count: '15', text: 'Websites developed'),
+                    statTile(count: '20', text: 'Websites developed'),
                     statTile(
                         count: '',
                         text: '',
                         icon: const Icon(
-                          CupertinoIcons.textformat_abc_dottedunderline,
+                          Ionicons.logo_web_component,
                           size: 40,
                         )),
-                    statTile(count: '33', text: 'Projects finished'),
+                    statTile(count: '60', text: 'Projects finished'),
                     statTile(
                         count: '',
                         text: '',
                         icon: const Icon(
-                          CupertinoIcons.airplane,
+                          Ionicons.apps,
                           size: 40,
                         )),
-                    statTile(count: '9', text: 'Apps Built'),
+                    statTile(count: '50', text: 'Apps Built'),
                     statTile(
                         count: '',
                         text: '',
                         icon: const Icon(
-                          Icons.code_off_sharp,
+                          Ionicons.logo_apple_ar,
                           size: 40,
                         )),
-                    statTile(count: '17', text: 'Recognitions'),
+                    statTile(count: '13', text: 'Recognitions'),
                     statTile(
                         count: '',
                         text: '',
                         icon: const Icon(
-                          Icons.five_g_sharp,
+                          Ionicons.ribbon,
                           size: 40,
                         )),
                   ],

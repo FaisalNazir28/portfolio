@@ -1,13 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
 
 class StatsChart extends StatefulWidget {
   final bool? showWorkButton;
 
-  const StatsChart(
-      {super.key, this.showWorkButton = true,});
+  const StatsChart({
+    super.key,
+    this.showWorkButton = true,
+  });
 
   @override
   State<StatsChart> createState() => _StatsChartState();
@@ -21,16 +24,15 @@ class _StatsChartState extends State<StatsChart> {
 
     return Container(
       margin: isDesktopScreen
+          ? EdgeInsets.symmetric(
+              horizontal: MediaQuery.of(context).size.width * .2, vertical: 100)
+          : isTabletScreen
               ? EdgeInsets.symmetric(
-                  horizontal: MediaQuery.of(context).size.width * .2,
+                  horizontal: MediaQuery.of(context).size.width * .1,
                   vertical: 100)
-              : isTabletScreen
-                  ? EdgeInsets.symmetric(
-                      horizontal: MediaQuery.of(context).size.width * .1,
-                      vertical: 100)
-                  : EdgeInsets.symmetric(
-                      horizontal: MediaQuery.of(context).size.width * .04,
-                      vertical: 70),
+              : EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * .04,
+                  vertical: 70),
       child: isDesktopScreen
           ? Row(
               children: [
@@ -110,18 +112,15 @@ class _StatsChartState extends State<StatsChart> {
                       IntrinsicHeight(
                         child: Row(
                           children: [
-                            Expanded(
-                                child: statIconBox(icon: CupertinoIcons.flame)),
+                            Expanded(child: statIconBox(icon: Ionicons.flower)),
                             Expanded(
                               child: statDetailBox(
-                                  title: "50+", subtitle: "Projects\nfinished"),
+                                  title: "60+", subtitle: "Projects\nfinished"),
                             ),
-                            Expanded(
-                                child: statIconBox(
-                                    icon: CupertinoIcons.chart_pie_fill)),
+                            Expanded(child: statIconBox(icon: Ionicons.ribbon)),
                             Expanded(
                               child: statDetailBox(
-                                  title: "35+",
+                                  title: "20+",
                                   subtitle: "Websites\ndeveloped"),
                             ),
                           ],
@@ -134,17 +133,14 @@ class _StatsChartState extends State<StatsChart> {
                               child: statDetailBox(
                                   title: "70+", subtitle: "Happy\nclients"),
                             ),
-                            Expanded(
-                                child:
-                                    statIconBox(icon: CupertinoIcons.sparkles)),
+                            Expanded(child: statIconBox(icon: Ionicons.apps)),
                             Expanded(
                               child: statDetailBox(
                                   title: "4+", subtitle: "Years\nexperience"),
                             ),
                             Expanded(
                               child: statIconBox(
-                                  icon: CupertinoIcons
-                                      .arrow_up_arrow_down_circle_fill),
+                                  icon: Ionicons.logo_web_component),
                             ),
                           ],
                         ),
@@ -230,19 +226,17 @@ class _StatsChartState extends State<StatsChart> {
                           child: Row(
                             children: [
                               Expanded(
-                                  child:
-                                      statIconBox(icon: CupertinoIcons.flame)),
+                                  child: statIconBox(icon: Ionicons.flower)),
                               Expanded(
                                 child: statDetailBox(
-                                    title: "50+",
+                                    title: "60+",
                                     subtitle: "Projects\nfinished"),
                               ),
                               Expanded(
-                                  child: statIconBox(
-                                      icon: CupertinoIcons.chart_pie_fill)),
+                                  child: statIconBox(icon: Ionicons.ribbon)),
                               Expanded(
                                 child: statDetailBox(
-                                    title: "35+",
+                                    title: "20+",
                                     subtitle: "Websites\ndeveloped"),
                               ),
                             ],
@@ -255,17 +249,14 @@ class _StatsChartState extends State<StatsChart> {
                                   child: statDetailBox(
                                       title: "70+",
                                       subtitle: "Happy\nclients")),
-                              Expanded(
-                                  child: statIconBox(
-                                      icon: CupertinoIcons.sparkles)),
+                              Expanded(child: statIconBox(icon: Ionicons.apps)),
                               Expanded(
                                 child: statDetailBox(
                                     title: "4+", subtitle: "Years\nexperience"),
                               ),
                               Expanded(
                                 child: statIconBox(
-                                    icon: CupertinoIcons
-                                        .arrow_up_arrow_down_circle_fill),
+                                    icon: Ionicons.logo_web_component),
                               ),
                             ],
                           ),
@@ -348,12 +339,10 @@ class _StatsChartState extends State<StatsChart> {
                         IntrinsicHeight(
                           child: Row(
                             children: [
-                              Expanded(
-                                  child:
-                                      statIconBox(icon: CupertinoIcons.flame)),
+                              Expanded(child: statIconBox(icon: Ionicons.apps)),
                               Expanded(
                                 child: statDetailBox(
-                                    title: "50+",
+                                    title: "60+",
                                     subtitle: "Projects\nfinished"),
                               ),
                             ],
@@ -364,12 +353,12 @@ class _StatsChartState extends State<StatsChart> {
                             children: [
                               Expanded(
                                 child: statDetailBox(
-                                    title: "35+",
+                                    title: "20+",
                                     subtitle: "Websites\ndeveloped"),
                               ),
                               Expanded(
                                   child: statIconBox(
-                                      icon: CupertinoIcons.chart_pie_fill)),
+                                      icon: Ionicons.logo_web_component)),
                             ],
                           ),
                         ),
@@ -377,8 +366,7 @@ class _StatsChartState extends State<StatsChart> {
                           child: Row(
                             children: [
                               Expanded(
-                                  child: statIconBox(
-                                      icon: CupertinoIcons.sparkles)),
+                                  child: statIconBox(icon: Ionicons.flower)),
                               Expanded(
                                   child: statDetailBox(
                                       title: "70+",
@@ -394,9 +382,7 @@ class _StatsChartState extends State<StatsChart> {
                                     title: "4+", subtitle: "Years\nexperience"),
                               ),
                               Expanded(
-                                child: statIconBox(
-                                    icon: CupertinoIcons
-                                        .arrow_up_arrow_down_circle_fill),
+                                child: statIconBox(icon: Ionicons.ribbon),
                               ),
                             ],
                           ),
