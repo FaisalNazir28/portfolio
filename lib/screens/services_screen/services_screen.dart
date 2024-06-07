@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
+import 'package:my_portfolio/utilities/app_images.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
 import 'package:my_portfolio/widgets/footer.dart';
 import 'package:my_portfolio/widgets/header.dart';
@@ -107,9 +108,9 @@ class _ServicesScreenState extends State<ServicesScreen> {
                                     MediaQuery.of(context).size.width * .04,
                                 vertical: 60),
                     child: isMobileScreen
-                        ? const Column(
+                        ? Column(
                             children: [
-                              Column(
+                              const Column(
                                 mainAxisSize: MainAxisSize.min,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -189,7 +190,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
                                   )
                                 ],
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 50,
                               ),
                               Column(
@@ -199,16 +200,16 @@ class _ServicesScreenState extends State<ServicesScreen> {
                                     title: 'Full pages Website design',
                                     description:
                                         'Creating immersive and engaging full-page website designs that captivate audiences and deliver a seamless user experience.',
-                                    mainImage: 'assets/showcase/art1.png',
-                                    detailImage: 'assets/showcase/art1.png',
+                                    mainImage: AppImages.artache1,
+                                    detailImage: AppImages.artache1,
                                     initialContainer: true,
                                   ),
                                   MiniShowcaseContainer(
                                     title: 'Portfolio Websites',
                                     description:
                                         'Intuitively designed portfolio websites for esteemed users helping people showcase their work and skills.',
-                                    mainImage: 'assets/showcase/hmk1.png',
-                                    detailImage: 'assets/showcase/hmk2.png',
+                                    mainImage: AppImages.hmk1,
+                                    detailImage: AppImages.hmk2,
                                     detailImageBG: Colors.black,
                                   ),
                                 ],
@@ -313,7 +314,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
                               SizedBox(
                                 width: isDesktopScreen ? 20 : 50,
                               ),
-                              const Expanded(
+                              Expanded(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
@@ -321,16 +322,16 @@ class _ServicesScreenState extends State<ServicesScreen> {
                                       title: 'Full pages Website design',
                                       description:
                                           'Creating immersive and engaging full-page website designs that captivate audiences and deliver a seamless user experience.',
-                                      mainImage: 'assets/showcase/art1.png',
-                                      detailImage: 'assets/showcase/art1.png',
+                                      mainImage: AppImages.artache1,
+                                      detailImage: AppImages.artache1,
                                       initialContainer: true,
                                     ),
                                     MiniShowcaseContainer(
                                       title: 'Portfolio Websites',
                                       description:
                                           'Intuitively designed portfolio websites for esteemed users helping people showcase their work and skills.',
-                                      mainImage: 'assets/showcase/hmk1.png',
-                                      detailImage: 'assets/showcase/hmk2.png',
+                                      mainImage: AppImages.hmk1,
+                                      detailImage: AppImages.hmk2,
                                       detailImageBG: Colors.black,
                                     ),
                                   ],

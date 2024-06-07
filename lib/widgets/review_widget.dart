@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
+import 'package:my_portfolio/utilities/app_images.dart';
 
 class Review {
   final String username;
@@ -26,35 +27,35 @@ class ReviewWidget extends StatelessWidget {
       'Manager',
       'Gourmet Gulf',
       'We hired Faisal for Application Development, and the results were outstanding. His design sense and technical expertise are top-notch. Highly recommend his services!',
-      'assets/profiles/umar_ayyaz.jpeg',
+      AppImages.umarAyyaz,
     ),
     Review(
       'Sarah Martinez',
       'E-commerce Manager',
       'Global Trends Inc.',
       'Faisal truly understands the balance between aesthetics and functionality. Our new website not only looks fantastic but also performs seamlessly. Fantastic job!',
-      'assets/profiles/kender_john.jpg',
+      AppImages.kenderJohn,
     ),
     Review(
       'John Johnson',
       'Marketing Director',
       'Stellar Brands',
       'Faisal is an exceptional website developer who transformed our online presence. His creativity and attention to detail exceeded our expectations. Stellar work!',
-      'assets/profiles/mark_lupher.jfif',
+      AppImages.markLupher,
     ),
     Review(
       'Robert Fox',
       'Creative Director',
       'Visionary Ventures',
       'Faisal has an incredible knack for capturing brand essence through design. Our website now reflects our identity perfectly, thanks to his skillful work. Highly recommended!',
-      'assets/profiles/steve_jon.jfif',
+      AppImages.steveJon,
     ),
     Review(
       'Michael Chen',
       'Founder',
       'Innovate Labs',
       'Awesome work, keep it up!',
-      'assets/profiles/anna_del.jfif',
+      AppImages.annaDel,
     ),
     // Add more reviews as needed
   ];

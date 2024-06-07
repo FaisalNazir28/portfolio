@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
+import 'package:my_portfolio/utilities/app_images.dart';
 import 'package:my_portfolio/widgets/dateTime.dart';
 
 class CustomFooter extends StatefulWidget {
@@ -128,17 +129,16 @@ class _CustomFooterState extends State<CustomFooter> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Row(
+                  Row(
                     children: [
                       CircleAvatar(
                         radius: 12,
-                        backgroundImage:
-                            AssetImage('assets/profiles/faisal.png'),
+                        backgroundImage: AssetImage(AppImages.faisal),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 8,
                       ),
-                      Text(
+                      const Text(
                         "Faisal Nazir",
                         style: TextStyle(
                             fontSize: 20,
@@ -174,7 +174,7 @@ class _CustomFooterState extends State<CustomFooter> {
                         child: Row(
                           children: [
                             Image.asset(
-                              'assets/profiles/flutter.png',
+                              AppImages.flutterLogo,
                               scale: 35,
                             ),
                             const SizedBox(

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
+import 'package:my_portfolio/utilities/app_images.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
 import 'package:my_portfolio/widgets/footer.dart';
 import 'package:my_portfolio/widgets/header.dart';
@@ -355,11 +356,11 @@ class _ContactPageState extends State<ContactPage> {
                                               children: [
                                                 Stack(
                                                   children: [
-                                                    const CircleAvatar(
+                                                    CircleAvatar(
                                                       radius: 18,
                                                       backgroundImage:
                                                           AssetImage(
-                                                        'assets/profiles/faisal.png',
+                                                        AppImages.faisal,
                                                       ),
                                                     ),
                                                     Container(
@@ -656,11 +657,11 @@ class _ContactPageState extends State<ContactPage> {
                                                   children: [
                                                     Stack(
                                                       children: [
-                                                        const CircleAvatar(
+                                                        CircleAvatar(
                                                           radius: 20,
                                                           backgroundImage:
                                                               AssetImage(
-                                                            'assets/profiles/faisal.png',
+                                                            AppImages.faisal,
                                                           ),
                                                         ),
                                                         Container(

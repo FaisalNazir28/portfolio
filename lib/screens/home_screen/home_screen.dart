@@ -81,20 +81,20 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: isDesktopScreen
                           ? Row(
                               children: [
-                                const Expanded(
+                                Expanded(
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
                                       CircleAvatar(
                                         radius: 30,
-                                        backgroundImage: AssetImage(
-                                            'assets/profiles/faisal.png'),
+                                        backgroundImage:
+                                            AssetImage(AppImages.faisal),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 30,
                                       ),
-                                      Text(
+                                      const Text(
                                         "Hello! I'm Faisal Nazir",
                                         style: TextStyle(
                                             fontSize: 60,
@@ -197,10 +197,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const CircleAvatar(
+                                    CircleAvatar(
                                       radius: 30,
-                                      backgroundImage: AssetImage(
-                                          'assets/profiles/faisal.png'),
+                                      backgroundImage:
+                                          AssetImage(AppImages.faisal),
                                     ),
                                     const SizedBox(
                                       height: 30,
@@ -331,16 +331,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                         const SizedBox(
                                           height: 50,
                                         ),
-                                        const ExperienceTile(
+                                        ExperienceTile(
                                             companyLogo:
-                                                "assets/logo/soloinsight.jpeg",
+                                                AppImages.soloinsightLogo,
                                             title:
                                                 "SWE Flutter Applications at Soloinsight Inc",
                                             startDate: "March 2020",
                                             endDate: "Present"),
-                                        const ExperienceTile(
+                                        ExperienceTile(
                                             companyLogo:
-                                                "assets/logo/artache.jfif",
+                                                AppImages.artAcheMagazineLogo,
                                             title:
                                                 "Webmaster at Artache Magazine",
                                             startDate: "July 2023",
@@ -354,12 +354,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ],
                                     ),
                                   ),
-                                  const Expanded(
+                                  Expanded(
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.stretch,
                                       children: [
-                                        Text(
+                                        const Text(
                                           maxLines: 1,
                                           overflow: TextOverflow.fade,
                                           "Awards & Recognitions",
@@ -367,24 +367,23 @@ class _HomeScreenState extends State<HomeScreen> {
                                               fontSize: 40,
                                               fontWeight: FontWeight.w500),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 50,
                                         ),
                                         ExperienceTile(
-                                            companyLogo:
-                                                "assets/logo/pieas1.jpg",
+                                            companyLogo: AppImages.pieasLogo,
                                             title:
                                                 "Best Website Design Award by PIEAS",
                                             startDate: "March 2022"),
                                         ExperienceTile(
                                             companyLogo:
-                                                "assets/logo/soloinsight.jpeg",
+                                                AppImages.soloinsightLogo,
                                             title:
                                                 "Information Security Training by Soloinsight Inc",
                                             startDate: "January 2024"),
                                         ExperienceTile(
                                             companyLogo:
-                                                "assets/logo/soloinsight.jpeg",
+                                                AppImages.soloinsightLogo,
                                             title:
                                                 "Application Security Training by Soloinsight Inc",
                                             startDate: "April 2023"),
@@ -411,16 +410,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                       const SizedBox(
                                         height: 50,
                                       ),
-                                      const ExperienceTile(
+                                      ExperienceTile(
                                           companyLogo:
-                                              "assets/logo/soloinsight.jpeg",
+                                              AppImages.soloinsightLogo,
                                           title:
                                               "SWE Flutter Applications at Soloinsight Inc",
                                           startDate: "March 2020",
                                           endDate: "Present"),
-                                      const ExperienceTile(
+                                      ExperienceTile(
                                           companyLogo:
-                                              "assets/logo/artache.jfif",
+                                              AppImages.artAcheMagazineLogo,
                                           title:
                                               "Webmaster at Artache Magazine",
                                           startDate: "July 2023",
@@ -451,20 +450,20 @@ class _HomeScreenState extends State<HomeScreen> {
                                       const SizedBox(
                                         height: 50,
                                       ),
-                                      const ExperienceTile(
-                                          companyLogo: "assets/logo/pieas1.jpg",
+                                      ExperienceTile(
+                                          companyLogo: AppImages.pieasLogo,
                                           title:
                                               "Best Website Design Award by PIEAS",
                                           startDate: "March 2022"),
-                                      const ExperienceTile(
+                                      ExperienceTile(
                                           companyLogo:
-                                              "assets/logo/soloinsight.jpeg",
+                                              AppImages.soloinsightLogo,
                                           title:
                                               "Information Security Training by Soloinsight Inc",
                                           startDate: "January 2024"),
-                                      const ExperienceTile(
+                                      ExperienceTile(
                                           companyLogo:
-                                              "assets/logo/soloinsight.jpeg",
+                                              AppImages.soloinsightLogo,
                                           title:
                                               "Application Security Training by Soloinsight Inc",
                                           startDate: "April 2023"),
@@ -532,36 +531,28 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ],
                             ),
-                            const ShowcaseContainer(
+                            ShowcaseContainer(
                               title: 'Portfolio Websites',
                               description:
                                   'Intuitively designed portfolio websites for esteemed users helping people showcase their work and skills.',
                               initialIcon: CupertinoIcons.desktopcomputer,
-                              firstContainerMainImage:
-                                  'assets/showcase/hmk1.png',
-                              firstContainerDetailImage:
-                                  'assets/showcase/hmk2.png',
-                              secondContainerMainImage:
-                                  'assets/showcase/bridges1.png',
-                              secondContainerDetailImage:
-                                  'assets/showcase/bridges2.png',
+                              firstContainerMainImage: AppImages.hmk1,
+                              firstContainerDetailImage: AppImages.hmk2,
+                              secondContainerMainImage: AppImages.bridges1,
+                              secondContainerDetailImage: AppImages.bridges2,
                               firstContainerDetailImageBG: Colors.black,
                               secondContainerMainImageBG: Colors.black,
                               secondContainerDetailImageBG: Colors.black,
                             ),
-                            const ShowcaseContainer(
+                            ShowcaseContainer(
                               title: 'Full pages website design',
                               description:
                                   'Creating immersive and engaging full-page website designs that captivate audiences and deliver a seamless user experience.',
                               initialIcon: Icons.desktop_windows_outlined,
-                              firstContainerMainImage:
-                                  'assets/showcase/art1.png',
-                              firstContainerDetailImage:
-                                  'assets/showcase/art1.png',
-                              secondContainerMainImage:
-                                  'assets/showcase/barak1.png',
-                              secondContainerDetailImage:
-                                  'assets/showcase/barak2.png',
+                              firstContainerMainImage: AppImages.artache1,
+                              firstContainerDetailImage: AppImages.artache1,
+                              secondContainerMainImage: AppImages.barak1,
+                              secondContainerDetailImage: AppImages.barak2,
                             ),
                           ],
                         ),
@@ -699,9 +690,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         color: Colors.white,
                         shape: BoxShape.circle,
                       ),
-                      child: const CircleAvatar(
-                        backgroundImage:
-                            AssetImage('assets/profiles/faisal.png'),
+                      child: CircleAvatar(
+                        backgroundImage: AssetImage(AppImages.faisal),
                       ),
                     ),
                     const SizedBox(

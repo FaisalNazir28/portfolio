@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/routes/routes.dart';
+import 'package:my_portfolio/utilities/app_images.dart';
 
 class CustomEndDrawer extends StatefulWidget {
   const CustomEndDrawer({super.key});
@@ -20,9 +21,9 @@ class _CustomEndDrawerState extends State<CustomEndDrawer> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const CircleAvatar(
+                CircleAvatar(
                   radius: 30,
-                  backgroundImage: AssetImage('assets/profiles/faisal.png'),
+                  backgroundImage: AssetImage(AppImages.faisal),
                 ),
                 GestureDetector(
                   onTap: () => Scaffold.of(context).closeEndDrawer(),

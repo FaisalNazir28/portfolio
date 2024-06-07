@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
+import 'package:my_portfolio/utilities/app_images.dart';
 import 'package:my_portfolio/utilities/constants.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
 import 'package:my_portfolio/widgets/footer.dart';
@@ -204,46 +205,40 @@ class _PlayGroundScreenState extends State<PlayGroundScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const ShowcaseContainer(
+                        ShowcaseContainer(
                           title: 'Portfolio Websites',
                           description:
                               'Intuitively designed portfolio websites for esteemed users helping people showcase their work and skills.',
                           initialIcon: CupertinoIcons.desktopcomputer,
-                          firstContainerMainImage: 'assets/showcase/hmk1.png',
-                          firstContainerDetailImage: 'assets/showcase/hmk2.png',
-                          secondContainerMainImage:
-                              'assets/showcase/bridges1.png',
-                          secondContainerDetailImage:
-                              'assets/showcase/bridges2.png',
+                          firstContainerMainImage: AppImages.hmk1,
+                          firstContainerDetailImage: AppImages.hmk2,
+                          secondContainerMainImage: AppImages.bridges1,
+                          secondContainerDetailImage: AppImages.bridges2,
                           firstContainerDetailImageBG: Colors.black,
                           secondContainerMainImageBG: Colors.black,
                           secondContainerDetailImageBG: Colors.black,
                           hideTitles: true,
                         ),
-                        const ShowcaseContainer(
+                        ShowcaseContainer(
                           title: 'Full pages website design',
                           description:
                               'Creating immersive and engaging full-page website designs that captivate audiences and deliver a seamless user experience.',
                           initialIcon: Icons.desktop_windows_outlined,
-                          firstContainerMainImage: 'assets/showcase/art1.png',
-                          firstContainerDetailImage: 'assets/showcase/art1.png',
-                          secondContainerMainImage:
-                              'assets/showcase/barak1.png',
-                          secondContainerDetailImage:
-                              'assets/showcase/barak2.png',
+                          firstContainerMainImage: AppImages.artache1,
+                          firstContainerDetailImage: AppImages.artache1,
+                          secondContainerMainImage: AppImages.barak1,
+                          secondContainerDetailImage: AppImages.barak2,
                           hideTitles: true,
                         ),
-                        const ShowcaseContainer(
+                        ShowcaseContainer(
                           title: 'Portfolio Websites',
                           description:
                               'Intuitively designed portfolio websites for esteemed users helping people showcase their work and skills.',
                           initialIcon: CupertinoIcons.desktopcomputer,
-                          firstContainerMainImage: 'assets/showcase/hmk1.png',
-                          firstContainerDetailImage: 'assets/showcase/hmk2.png',
-                          secondContainerMainImage:
-                              'assets/showcase/bridges1.png',
-                          secondContainerDetailImage:
-                              'assets/showcase/bridges2.png',
+                          firstContainerMainImage: AppImages.hmk1,
+                          firstContainerDetailImage: AppImages.hmk2,
+                          secondContainerMainImage: AppImages.bridges1,
+                          secondContainerDetailImage: AppImages.bridges2,
                           firstContainerDetailImageBG: Colors.black,
                           secondContainerMainImageBG: Colors.black,
                           secondContainerDetailImageBG: Colors.black,

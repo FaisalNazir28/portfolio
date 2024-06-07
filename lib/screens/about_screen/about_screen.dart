@@ -57,10 +57,9 @@ class _AboutScreenState extends State<AboutScreen> {
                     child: isDesktopScreen
                         ? Row(
                             children: [
-                              const CircleAvatar(
+                              CircleAvatar(
                                 radius: 180,
-                                backgroundImage:
-                                    AssetImage('assets/profiles/faisal.png'),
+                                backgroundImage: AssetImage(AppImages.faisal),
                               ),
                               const SizedBox(
                                 width: 50,
@@ -116,8 +115,7 @@ class _AboutScreenState extends State<AboutScreen> {
                             children: [
                               CircleAvatar(
                                 radius: isMobileScreen ? 60 : 100,
-                                backgroundImage: const AssetImage(
-                                    'assets/profiles/faisal.png'),
+                                backgroundImage: AssetImage(AppImages.faisal),
                               ),
                               const SizedBox(
                                 height: 30,
@@ -366,14 +364,14 @@ class _AboutScreenState extends State<AboutScreen> {
                                 const SizedBox(
                                   height: 50,
                                 ),
-                                const ExperienceTile(
-                                    companyLogo: "assets/logo/soloinsight.jpeg",
+                                ExperienceTile(
+                                    companyLogo: AppImages.soloinsightLogo,
                                     title:
                                         "SWE Flutter Applications at Soloinsight Inc",
                                     startDate: "March 2020",
                                     endDate: "Present"),
-                                const ExperienceTile(
-                                    companyLogo: "assets/logo/artache.jfif",
+                                ExperienceTile(
+                                    companyLogo: AppImages.artAcheMagazineLogo,
                                     title: "Webmaster at Artache Magazine",
                                     startDate: "July 2023",
                                     endDate: "Present"),
@@ -382,19 +380,19 @@ class _AboutScreenState extends State<AboutScreen> {
                                     title: "Wordpress Developer at Fiverr",
                                     startDate: "October 2018",
                                     endDate: "Present"),
-                                const ExperienceTile(
-                                    companyLogo: "assets/logo/gdsc1.webp",
+                                ExperienceTile(
+                                    companyLogo: AppImages.gdscLogo,
                                     title:
                                         "Google DSC Ambassador at GDSC - PUCIT",
                                     startDate: "October 2021",
                                     endDate: "October 2022"),
-                                const ExperienceTile(
-                                    companyLogo: "assets/logo/pel1.png",
+                                ExperienceTile(
+                                    companyLogo: AppImages.pelLogo,
                                     title: "Android Developer at PEL",
                                     startDate: "October 2018",
                                     endDate: "November 2018"),
-                                const ExperienceTile(
-                                    companyLogo: "assets/logo/wordpress.png",
+                                ExperienceTile(
+                                    companyLogo: AppImages.wordpressLogo,
                                     title:
                                         "Wordpress Developer at ECOM Technologies",
                                     startDate: "September 2018",
@@ -485,15 +483,15 @@ class _AboutScreenState extends State<AboutScreen> {
                                   const SizedBox(
                                     height: 50,
                                   ),
-                                  const ExperienceTile(
-                                      companyLogo:
-                                          "assets/logo/soloinsight.jpeg",
+                                  ExperienceTile(
+                                      companyLogo: AppImages.soloinsightLogo,
                                       title:
                                           "SWE Flutter Applications at Soloinsight Inc",
                                       startDate: "March 2020",
                                       endDate: "Present"),
-                                  const ExperienceTile(
-                                      companyLogo: "assets/logo/artache.jfif",
+                                  ExperienceTile(
+                                      companyLogo:
+                                          AppImages.artAcheMagazineLogo,
                                       title: "Webmaster at Artache Magazine",
                                       startDate: "July 2023",
                                       endDate: "Present"),
@@ -502,19 +500,19 @@ class _AboutScreenState extends State<AboutScreen> {
                                       title: "Wordpress Developer at Fiverr",
                                       startDate: "October 2018",
                                       endDate: "Present"),
-                                  const ExperienceTile(
-                                      companyLogo: "assets/logo/gdsc1.webp",
+                                  ExperienceTile(
+                                      companyLogo: AppImages.gdscLogo,
                                       title:
                                           "Google DSC Ambassador at GDSC - PUCIT",
                                       startDate: "October 2021",
                                       endDate: "October 2022"),
-                                  const ExperienceTile(
-                                      companyLogo: "assets/logo/pel1.png",
+                                  ExperienceTile(
+                                      companyLogo: AppImages.pelLogo,
                                       title: "Android Developer at PEL",
                                       startDate: "October 2018",
                                       endDate: "November 2018"),
-                                  const ExperienceTile(
-                                      companyLogo: "assets/logo/wordpress.png",
+                                  ExperienceTile(
+                                      companyLogo: AppImages.wordpressLogo,
                                       title:
                                           "Wordpress Developer at ECOM Technologies",
                                       startDate: "September 2018",
@@ -615,20 +613,18 @@ class _AboutScreenState extends State<AboutScreen> {
                                     const SizedBox(
                                       height: 50,
                                     ),
-                                    const ExperienceTile(
-                                        companyLogo: "assets/logo/pieas1.jpg",
+                                    ExperienceTile(
+                                        companyLogo: AppImages.pieasLogo,
                                         title:
                                             "Best Website Design Award by PIEAS",
                                         startDate: "March 2022"),
-                                    const ExperienceTile(
-                                        companyLogo:
-                                            "assets/logo/soloinsight.jpeg",
+                                    ExperienceTile(
+                                        companyLogo: AppImages.soloinsightLogo,
                                         title:
                                             "Information Security Training by Soloinsight Inc",
                                         startDate: "January 2024"),
-                                    const ExperienceTile(
-                                        companyLogo:
-                                            "assets/logo/soloinsight.jpeg",
+                                    ExperienceTile(
+                                        companyLogo: AppImages.soloinsightLogo,
                                         title:
                                             "Application Security Training by Soloinsight Inc",
                                         startDate: "April 2023"),
@@ -694,34 +690,34 @@ class _AboutScreenState extends State<AboutScreen> {
                                     ],
                                   ),
                                 ),
-                                const Expanded(
+                                Expanded(
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.stretch,
                                     children: [
-                                      Text(
+                                      const Text(
                                         "AWARDS & RECOGNITION",
                                         style: TextStyle(
                                             fontSize: 30,
                                             fontWeight: FontWeight.w500),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 50,
                                       ),
                                       ExperienceTile(
-                                          companyLogo: "assets/logo/pieas1.jpg",
+                                          companyLogo: AppImages.pieasLogo,
                                           title:
                                               "Best Website Design Award by PIEAS",
                                           startDate: "March 2022"),
                                       ExperienceTile(
                                           companyLogo:
-                                              "assets/logo/soloinsight.jpeg",
+                                              AppImages.soloinsightLogo,
                                           title:
                                               "Information Security Training by Soloinsight Inc",
                                           startDate: "January 2024"),
                                       ExperienceTile(
                                           companyLogo:
-                                              "assets/logo/soloinsight.jpeg",
+                                              AppImages.soloinsightLogo,
                                           title:
                                               "Application Security Training by Soloinsight Inc",
                                           startDate: "April 2023"),
@@ -730,17 +726,15 @@ class _AboutScreenState extends State<AboutScreen> {
                                 )
                               ],
                             ),
-                      const ShowcaseContainer(
+                      ShowcaseContainer(
                         title: 'Portfolio Websites',
                         description:
                             'Intuitively designed portfolio websites for esteemed users helping people showcase their work and skills.',
                         initialIcon: CupertinoIcons.desktopcomputer,
-                        firstContainerMainImage: 'assets/showcase/hmk1.png',
-                        firstContainerDetailImage: 'assets/showcase/hmk2.png',
-                        secondContainerMainImage:
-                            'assets/showcase/bridges1.png',
-                        secondContainerDetailImage:
-                            'assets/showcase/bridges2.png',
+                        firstContainerMainImage: AppImages.hmk1,
+                        firstContainerDetailImage: AppImages.hmk2,
+                        secondContainerMainImage: AppImages.bridges1,
+                        secondContainerDetailImage: AppImages.bridges2,
                         firstContainerDetailImageBG: Colors.black,
                         secondContainerMainImageBG: Colors.black,
                         secondContainerDetailImageBG: Colors.black,
@@ -1052,6 +1046,10 @@ class _AboutScreenState extends State<AboutScreen> {
                   icon: AppImages.dribble,
                   hoverColor: Colors.green,
                   hoveredIcon: AppImages.dribbleColored,
+                ),
+                IconBoxWidget(
+                  icon: AppImages.unsplash,
+                  hoverColor: Colors.transparent,
                 ),
                 IconBoxWidget(
                   icon: AppImages.dropbox,

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/routes/routes.dart';
+import 'package:my_portfolio/utilities/app_images.dart';
 
 class PageNotFound extends StatefulWidget {
   const PageNotFound({super.key});
@@ -25,7 +26,7 @@ class _PageNotFoundState extends State<PageNotFound> {
                         width: MediaQuery.of(context).size.width * .50,
                         height: MediaQuery.of(context).size.width * .50,
                         child: Image.asset(
-                          'assets/logo/404.png',
+                          AppImages.notFound,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -104,7 +105,7 @@ class _PageNotFoundState extends State<PageNotFound> {
                         width: MediaQuery.of(context).size.height * .45,
                         height: MediaQuery.of(context).size.height * .45,
                         child: Image.asset(
-                          'assets/logo/404.png',
+                          AppImages.notFound,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -175,17 +176,17 @@ class _PageNotFoundState extends State<PageNotFound> {
           ),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-            child: const Row(
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Icon(
+                const Icon(
                   Icons.superscript_sharp,
                   size: 40,
                 ),
                 CircleAvatar(
                   radius: 20,
-                  backgroundImage: AssetImage('assets/profiles/faisal.png'),
+                  backgroundImage: AssetImage(AppImages.faisal),
                 ),
               ],
             ),

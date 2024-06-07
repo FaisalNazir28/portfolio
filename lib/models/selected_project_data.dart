@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/models/selected_works_model.dart';
+import 'package:my_portfolio/utilities/app_images.dart';
 
 class SelectedProjectData {
   static List<SelectedProjectModel> selectedProjects = [
     SelectedProjectModel(
       index: 0,
-      mainImage: 'assets/showcase/hmk1.png',
-      secondImage: 'assets/showcase/hmk1.png',
-      thirdImage: 'assets/showcase/hmk2.png',
+      mainImage: AppImages.hmk1,
+      secondImage: AppImages.hmk1,
+      thirdImage: AppImages.hmk2,
       mainImageBG: Colors.black,
       secondImageBG: Colors.black,
       thirdImageBG: Colors.black,
@@ -31,9 +32,9 @@ class SelectedProjectData {
     ),
     SelectedProjectModel(
       index: 1,
-      mainImage: 'assets/showcase/art1.png',
-      secondImage: 'assets/showcase/art1.png',
-      thirdImage: 'assets/showcase/art2.png',
+      mainImage: AppImages.artache1,
+      secondImage: AppImages.artache1,
+      thirdImage: AppImages.artache2,
       mainImageBG: Colors.white,
       secondImageBG: Colors.white,
       thirdImageBG: Colors.white,
@@ -57,9 +58,9 @@ class SelectedProjectData {
     ),
     SelectedProjectModel(
       index: 2,
-      mainImage: 'assets/showcase/bridges1.png',
-      secondImage: 'assets/showcase/bridges2.png',
-      thirdImage: 'assets/showcase/bridges2.png',
+      mainImage: AppImages.bridges1,
+      secondImage: AppImages.bridges2,
+      thirdImage: AppImages.bridges2,
       mainImageBG: Colors.black,
       secondImageBG: Colors.black,
       thirdImageBG: Colors.black,
@@ -83,9 +84,9 @@ class SelectedProjectData {
     ),
     SelectedProjectModel(
       index: 3,
-      mainImage: 'assets/showcase/barak1.png',
-      secondImage: 'assets/showcase/barak1.png',
-      thirdImage: 'assets/showcase/barak2.png',
+      mainImage: AppImages.barak1,
+      secondImage: AppImages.barak1,
+      thirdImage: AppImages.barak2,
       mainImageBG: Colors.white,
       secondImageBG: Colors.white,
       thirdImageBG: Colors.white,
