@@ -4,16 +4,60 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9454b67-0d59-4afe-9daa-ee6c4a3d5102" name="Changes" comment="">
+    <list default="true" id="f9454b67-0d59-4afe-9daa-ee6c4a3d5102" name="Changes" comment="-Updated stats overall in the portfolio. (icons, stats)&#10;-Deploy version -&gt; 2.0">
+      <change afterPath="$PROJECT_DIR$/assets/showcase/andres_steinkogler/as1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/andres_steinkogler/as2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/andres_steinkogler/as3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/andres_steinkogler/as4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/andres_steinkogler/as5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/andres_steinkogler/as6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/andres_steinkogler/as7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/artache/art1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/artache/art10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/artache/art11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/artache/art2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/artache/art3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/artache/art4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/artache/art5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/artache/art6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/artache/art7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/artache/art8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/artache/art9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/barak/barak1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/barak/barak2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/barak/barak3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/barak/barak4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/barak/barak5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/barak/barak6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/barak/barak7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/bridges/bridges1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/bridges/bridges2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/bridges/bridges3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/bridges/bridges4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/hmk/hmk1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/hmk/hmk2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/hmk/hmk3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/hmk/hmk4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/showcase/hmk/hmk5.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/showcase/art1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/showcase/art2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/showcase/barak1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/showcase/barak2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/showcase/bridges1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/showcase/bridges2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/showcase/hmk1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/showcase/hmk2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/logo/gdsc.webp" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/assets/logo/gdsc.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/logo/gdsc1.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/logo/pel.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/assets/logo/pel.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/logo/pel1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/logo/pieas.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/assets/logo/pieas.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/logo/pieas1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/profiles/flutter.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/web" beforeDir="false" afterPath="$PROJECT_DIR$/build/web" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/about_screen/about_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/about_screen/about_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/services_screen/services_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/services_screen/services_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/horizontal_scrollbar_tile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/horizontal_scrollbar_tile.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/stats_chart.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/stats_chart.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utilities/app_images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utilities/app_images.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,16 +104,16 @@
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
     "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "C:/Users/fnvm/AndroidStudioProjects/my_portfolio/assets/my_tools_icons",
+    "last_opened_file_path": "C:/Users/fnvm/AndroidStudioProjects/my_portfolio/assets/showcase",
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\fnvm\AndroidStudioProjects\my_portfolio\assets\showcase" />
       <recent name="C:\Users\fnvm\AndroidStudioProjects\my_portfolio\assets\my_tools_icons" />
       <recent name="C:\Users\fnvm\AndroidStudioProjects\my_portfolio\assets\logo" />
-      <recent name="C:\Users\fnvm\AndroidStudioProjects\my_portfolio\assets\showcase" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\fnvm\AndroidStudioProjects\my_portfolio\assets\logo" />
@@ -211,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717747684602</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="-Updated stats overall in the portfolio. (icons, stats)&#10;-Deploy version -&gt; 2.0">
+      <created>1717766113616</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1717766113616</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -228,6 +279,7 @@
     <MESSAGE value="Added initial loader on first launch for non-mobile devices." />
     <MESSAGE value="-Initial loader issue fixed in case when reload is initiaed from screens other than home.&#10;-Updated work experience in home screen and about screen." />
     <MESSAGE value="Defined all resources in app images class and used from it." />
-    <option name="LAST_COMMIT_MESSAGE" value="Defined all resources in app images class and used from it." />
+    <MESSAGE value="-Updated stats overall in the portfolio. (icons, stats)&#10;-Deploy version -&gt; 2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="-Updated stats overall in the portfolio. (icons, stats)&#10;-Deploy version -&gt; 2.0" />
   </component>
 </project>

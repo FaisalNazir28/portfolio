@@ -23,14 +23,49 @@ class AppImages {
   static String umarAyyaz = 'assets/profiles/umar_ayyaz.jpeg';
 
   ///showcase images
-  static String artache1 = 'assets/showcase/art1.png';
-  static String artache2 = 'assets/showcase/art2.png';
-  static String barak1 = 'assets/showcase/barak1.png';
-  static String barak2 = 'assets/showcase/barak2.png';
-  static String bridges1 = 'assets/showcase/bridges1.png';
-  static String bridges2 = 'assets/showcase/bridges2.png';
-  static String hmk1 = 'assets/showcase/hmk1.png';
-  static String hmk2 = 'assets/showcase/hmk2.png';
+  /// images for andres steinkogler website
+  static String andres1 = 'assets/showcase/andres_steinkogler/as1.png';
+  static String andres2 = 'assets/showcase/andres_steinkogler/as2.png';
+  static String andres3 = 'assets/showcase/andres_steinkogler/as3.png';
+  static String andres4 = 'assets/showcase/andres_steinkogler/as4.png';
+  static String andres5 = 'assets/showcase/andres_steinkogler/as5.png';
+  static String andres6 = 'assets/showcase/andres_steinkogler/as6.png';
+  static String andres7 = 'assets/showcase/andres_steinkogler/as7.png';
+
+  /// images for artache magazine website
+  static String artache1 = 'assets/showcase/artache/art1.png';
+  static String artache2 = 'assets/showcase/artache/art2.png';
+  static String artache3 = 'assets/showcase/artache/art3.png';
+  static String artache4 = 'assets/showcase/artache/art4.png';
+  static String artache5 = 'assets/showcase/artache/art5.png';
+  static String artache6 = 'assets/showcase/artache/art6.png';
+  static String artache7 = 'assets/showcase/artache/art7.png';
+  static String artache8 = 'assets/showcase/artache/art8.png';
+  static String artache9 = 'assets/showcase/artache/art9.png';
+  static String artache10 = 'assets/showcase/artache/art10.png';
+  static String artache11 = 'assets/showcase/artache/art11.png';
+
+  /// images for barak website
+  static String barak1 = 'assets/showcase/barak/barak1.png';
+  static String barak2 = 'assets/showcase/barak/barak2.png';
+  static String barak3 = 'assets/showcase/barak/barak3.png';
+  static String barak4 = 'assets/showcase/barak/barak4.png';
+  static String barak5 = 'assets/showcase/barak/barak5.png';
+  static String barak6 = 'assets/showcase/barak/barak6.png';
+  static String barak7 = 'assets/showcase/barak/barak7.png';
+
+  /// images for bridges website
+  static String bridges1 = 'assets/showcase/bridges/bridges1.png';
+  static String bridges2 = 'assets/showcase/bridges/bridges2.png';
+  static String bridges3 = 'assets/showcase/bridges/bridges3.png';
+  static String bridges4 = 'assets/showcase/bridges/bridges4.png';
+
+  /// images for hmk website
+  static String hmk1 = 'assets/showcase/hmk/hmk1.png';
+  static String hmk2 = 'assets/showcase/hmk/hmk2.png';
+  static String hmk3 = 'assets/showcase/hmk/hmk3.png';
+  static String hmk4 = 'assets/showcase/hmk/hmk4.png';
+  static String hmk5 = 'assets/showcase/hmk/hmk5.png';
 
   ///tool icons
   static String adobe = 'assets/my_tools_icons/adobe.png';
