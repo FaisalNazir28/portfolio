@@ -20,6 +20,13 @@ class SelectedProjectModel {
   final String extraImage1;
   final String extraImage2;
   final String extraImage3;
+  final String extraImage4;
+  final String extraImage5;
+  final String extraImage6;
+  final String extraImage7;
+  final String extraImage8;
+  final String extraImage9;
+  final String extraImage10;
   final String mobileView;
 
   SelectedProjectModel({
@@ -42,6 +49,13 @@ class SelectedProjectModel {
     required this.extraImage1,
     required this.extraImage2,
     required this.extraImage3,
+    required this.extraImage4,
+    required this.extraImage5,
+    required this.extraImage6,
+    required this.extraImage7,
+    required this.extraImage8,
+    required this.extraImage9,
+    required this.extraImage10,
     required this.mobileView,
   });
 }
