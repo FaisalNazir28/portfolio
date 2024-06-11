@@ -538,8 +538,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               initialIcon: CupertinoIcons.desktopcomputer,
                               firstContainerMainImage: AppImages.hmk1,
                               firstContainerDetailImage: AppImages.hmk2,
-                              secondContainerMainImage: AppImages.bridges1,
-                              secondContainerDetailImage: AppImages.bridges2,
+                              secondContainerMainImage: AppImages.andres1,
+                              secondContainerDetailImage: AppImages.andres3,
+                              firstContainerMainImageBG: Colors.black,
                               firstContainerDetailImageBG: Colors.black,
                               secondContainerMainImageBG: Colors.black,
                               secondContainerDetailImageBG: Colors.black,
@@ -550,7 +551,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   'Creating immersive and engaging full-page website designs that captivate audiences and deliver a seamless user experience.',
                               initialIcon: Icons.desktop_windows_outlined,
                               firstContainerMainImage: AppImages.artache1,
-                              firstContainerDetailImage: AppImages.artache1,
+                              firstContainerDetailImage: AppImages.artache2,
                               secondContainerMainImage: AppImages.barak1,
                               secondContainerDetailImage: AppImages.barak2,
                             ),
@@ -622,7 +623,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   mainAxisSpacing: 50.0,
                                 ),
                                 itemCount:
-                                    SelectedProjectData.selectedProjects.length,
+                                    4,
                                 itemBuilder: (context, index) {
                                   return SelectedWorkContainer(
                                       projectData: SelectedProjectData
