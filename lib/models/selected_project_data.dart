@@ -14,17 +14,17 @@ class SelectedProjectData {
       thirdImageBG: Colors.black,
       title: 'HMK',
       company: 'Hamza Majeed Khan',
-      projectDate: 'March 2023',
+      projectDate: 'March 2022',
       projectType: 'Portfolio Development',
       projectDuration: '2 months',
       shortBio:
           'Utilizing captivating imagery to enhance the overall user experience',
       description:
-          'This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.',
+          'In the vibrant realm of digital design, our development team embarked on a journey to establish a compelling online showcase for a distinguished designer and artist. Our mission was to encapsulate the essence of creativity and professionalism, curating a platform that not only mirrored the artist\'s vision but also delivered a seamless and captivating user experience. This case study unravels the complexities we encountered, the innovative strategies we employed, and the resounding success we achieved in elevating the digital presence of our esteemed client.',
       challengesFaced:
-          'This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.',
+          'To address the array of challenges, our development team embraced a multifaceted strategy. Initiating with extensive consultations, we collaborated closely with the client to discern their unique strengths, showcase key projects, and pinpoint the target audience. Guided by a user-centric design philosophy, we meticulously crafted an intuitive navigation system, categorizing projects by type and scale. Incorporating dynamic visual elements such as high-quality images and interactive project timelines, we aimed to captivate visitors and offer an immersive exploration. Amidst challenges like integrating data from external sources and addressing theme issues to meet the discerning eye of an artist, our team remained steadfast. Additionally, prioritizing seamless accessibility, we devoted meticulous attention to optimizing the website for responsiveness across all devices, ensuring a seamless browsing experience for users spanning desktops, tablets, and smartphones.',
       results:
-          'This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.',
+          'Despite the hurdles faced, the project achieved remarkable success, presenting a professional and cohesive presentation of Hamza\'s artistic journey. The website\'s launch has garnered positive feedback, effectively showcasing Hamza\'s skills and achievements to a wider audience, thereby enhancing his visibility and recognition within the creative industry.',
       extraImage1: AppImages.hmk4,
       extraImage2: AppImages.hmk5,
       extraImage3: '',
@@ -49,15 +49,15 @@ class SelectedProjectData {
       company: 'Digital Magazine',
       projectDate: 'September 2023',
       projectType: 'Digital Web Magazine',
-      projectDuration: '5 months',
+      projectDuration: '6 months',
       shortBio:
-          'Utilizing captivating imagery to enhance the overall user experience',
+          'Digitally elevating artistry, extending its global reach professionally',
       description:
-          'This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience. This exploration centers on crafting an engaging layout, selecting an appealing color palette.',
+          'Artache Magazine is a pioneering digital platform at the forefront of the local industry, merging the worlds of art and literature into an innovative digital magazine format. It serves as a global showcase for artists and writers, providing a dynamic space for them to share their creative endeavors with a diverse audience. Through its digital medium, Artache Magazine aims to elevate the appreciation of art while fostering creativity and collaboration.',
       challengesFaced:
-          'This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.',
+          'Navigating the creation of Artache Magazine posed several challenges. Firstly, identifying and engaging the target audience presented a significant hurdle, as we aimed to appeal to a broad demographic of art and literature enthusiasts. Secondly, sourcing content from artists worldwide proved to be a logistical challenge, requiring extensive outreach and coordination. Additionally, implementing a technical infrastructure capable of managing the influx of diverse content while ensuring a seamless user experience presented its own set of complexities.',
       results:
-          'This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.',
+          'Despite these challenges, Artache Magazine has achieved remarkable success since its inception. The platform has successfully curated an extensive collection of artwork and literary pieces from artists around the globe, providing a vibrant showcase for creative expression. Its launch has sparked a newfound enthusiasm for art and literature, fostering a global community of creators and enthusiasts. Artache Magazine continues to make a positive impact by amplifying the voices of artists and writers worldwide and pushing the boundaries of digital creativity.',
       extraImage1: AppImages.artache4,
       extraImage2: AppImages.artache5,
       extraImage3: AppImages.artache6,
@@ -80,17 +80,17 @@ class SelectedProjectData {
       thirdImageBG: Colors.white,
       title: 'Andreas Steinkogler',
       company: 'Filmmaker',
-      projectDate: 'October 2021',
+      projectDate: 'October 2020',
       projectType: 'Portfolio Website',
-      projectDuration: '1 month',
+      projectDuration: '2 months',
       shortBio:
-          'Utilizing captivating imagery to enhance the overall user experience',
+          'Step into Steinkogler\'s world of impactful filmmaking and composition',
       description:
-          'This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.',
+          'The Andreas Steinkogler website stands as a testament to creative versatility and professional prowess. Through a seamless integration of artistic vision and technical expertise, it serves as an immersive portal into Andreas\'s multifaceted talents and offerings. From captivating films to visually stunning artworks, the website encapsulates the breadth and depth of Andreas\'s creative portfolio, inviting visitors to explore and engage with his diverse range of services.',
       challengesFaced:
-          'This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience. This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience. This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience. This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.',
+          'In the creation of Andreas Steinkogler\'s website, several challenges emerged, requiring innovative solutions and meticulous attention to detail. Chief among these challenges was the task of effectively delivering Andreas\'s capabilities to the targeted audience. Additionally, integrating samples of Andreas\'s work into the website while maintaining professional aesthetics and showcasing a diverse range of client projects from around the globe posed logistical hurdles. Despite these challenges, the project team remained steadfast, ultimately overcoming obstacles to deliver a polished and impactful digital platform.',
       results:
-          'This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience. This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.',
+          'The launch of the Andreas Steinkogler website has yielded significant results, establishing a professional online presence for Andreas and garnering positive feedback from audiences worldwide. The website\'s immersive design and seamless navigation have facilitated increased visibility and recognition within the film industry and beyond. Moreover, the platform has fostered fruitful collaborations and opportunities, connecting Andreas with clients from diverse backgrounds and geographical locations. As a testament to its success, the website continues to serve as a vibrant hub for creative expression and professional services in the realms of filmmaking and visual artistry.',
       extraImage1: AppImages.andres4,
       extraImage2: AppImages.andres5,
       extraImage3: AppImages.andres6,
@@ -114,16 +114,16 @@ class SelectedProjectData {
       title: 'Barak IP',
       company: 'Intellectual Law Firm',
       projectDate: 'October 2021',
-      projectType: 'Corporation Website',
+      projectType: 'Corporate Website',
       projectDuration: '1 month',
       shortBio:
-          'Utilizing captivating imagery to enhance the overall user experience',
+          'Championing renowned brands, safeguarding their intellectual property rights',
       description:
-          'This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.',
+          'At the forefront of intellectual property law, Barak IP is dedicated to safeguarding the creative and innovative assets of individuals and businesses globally. With a focus on excellence and client-centered service, the firm offers tailored solutions to protect and enforce intellectual property rights.',
       challengesFaced:
-          'This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience. This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience. This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience. This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.',
+          'In establishing its online presence, Barak IP encountered various obstacles, including attracting a diverse client base and effectively communicating its specialized services. Educating prospective clients about the significance of intellectual property rights and the firm\'s role proved to be crucial challenges.',
       results:
-          'This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience. This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.',
+          'Despite these hurdles, the launch of the Barak IP website has yielded significant results, reinforcing the firm\'s reputation as a trusted legal partner. The website\'s intuitive design and informative content have enhanced visibility within the legal community, garnering praise and fostering meaningful connections. Barak IP continues to make a profound impact by championing intellectual property rights and empowering clients to thrive in an ever-evolving landscape.',
       extraImage1: AppImages.barak4,
       extraImage2: AppImages.barak5,
       extraImage3: AppImages.barak6,
@@ -147,16 +147,15 @@ class SelectedProjectData {
       title: 'Bridges Interactive',
       company: 'Gaming Portfolio',
       projectDate: 'January 2022',
-      projectType: 'Web Application',
-      projectDuration: '4 months',
-      shortBio:
-          'Utilizing captivating imagery to enhance the overall user experience',
+      projectType: 'Website Development',
+      projectDuration: '2 months',
+      shortBio: 'Connecting games with users through innovative platforms',
       description:
-          'This exploration centers on crafting an engaging layout, selecting an appealing color palette.',
+          'The website serves as a central hub for showcasing their diverse game library, announcing upcoming releases, and engaging with gaming enthusiasts worldwide. With a commitment to excellence and innovation, Bridges Interactive strives to deliver immersive gaming experiences that captivate and inspire players of all ages.',
       challengesFaced:
-          'This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.',
+          'During development, Bridges Interactive encountered several hurdles. These included ensuring that announcements regarding new games and titles reached a global audience effectively. Additionally, expanding the reach and visibility of Bridges Interactive to foster growth and engagement proved to be a significant challenge. Moreover, providing seamless access to their games through their proprietary platform while ensuring user convenience and satisfaction posed another obstacle to overcome.',
       results:
-          'This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.This exploration centers on crafting an engaging layout, selecting an appealing color palette, and utilizing captivating imagery to enhance the overall user experience.',
+          'Despite these challenges, the launch of the Bridges Interactive website has yielded significant results, bolstering the company\'s online presence and fostering engagement within the gaming community. The website\'s positive growth impact has led to increased visibility and recognition, resulting in expanded opportunities for Bridges Interactive. Additionally, by providing seamless access to their games through their proprietary platform, Bridges Interactive has enhanced the gaming experience for users while ensuring convenience and satisfaction.',
       extraImage1: AppImages.bridges4,
       extraImage2: '',
       extraImage3: '',
