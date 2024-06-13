@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9454b67-0d59-4afe-9daa-ee6c4a3d5102" name="Changes" comment="-Code Refactored and implemented custom button for reuse&#10;-Deploy version -&gt; 2.2">
-      <change afterPath="$PROJECT_DIR$/lib/widgets/custom_app_button.dart" afterDir="false" />
+    <list default="true" id="f9454b67-0d59-4afe-9daa-ee6c4a3d5102" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web" beforeDir="false" afterPath="$PROJECT_DIR$/build/web" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/about_screen/about_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/about_screen/about_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/home_screen/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/home_screen/home_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utilities/constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utilities/constants.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/stats_chart.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/stats_chart.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/custom_app_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/custom_app_button.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1718091812204</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="-Code Refactored and implemented custom button for reuse&#10;-Deploy version -&gt; 2.2">
+      <created>1718268594704</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1718268594704</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -258,6 +261,7 @@
     <MESSAGE value="-Added compressed images for showcase and initialized in app_images.dart&#10;-Deploy version -&gt; 2.1" />
     <MESSAGE value="-Used compressed images for showcase&#10;-Deploy version -&gt; 2.1" />
     <MESSAGE value="-Used extra images for showcase in overall portfolio&#10;-Deploy version -&gt; 2.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="-Used extra images for showcase in overall portfolio&#10;-Deploy version -&gt; 2.1" />
+    <MESSAGE value="-Code Refactored and implemented custom button for reuse&#10;-Deploy version -&gt; 2.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="-Code Refactored and implemented custom button for reuse&#10;-Deploy version -&gt; 2.2" />
   </component>
 </project>

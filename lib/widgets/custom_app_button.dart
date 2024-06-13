@@ -26,7 +26,7 @@ class _CustomAppButtonState extends State<CustomAppButton> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => widget.onTap,
+      onTap: widget.onTap,
       overlayColor: MaterialStateProperty.all(Colors.transparent),
       child: Container(
         margin: widget.hasRightMargin ? const EdgeInsets.only(right: 20) : null,
