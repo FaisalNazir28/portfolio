@@ -4,25 +4,14 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9454b67-0d59-4afe-9daa-ee6c4a3d5102" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/BrowsingTopicsState" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/BrowsingTopicsState" afterDir="false" />
+    <list default="true" id="f9454b67-0d59-4afe-9daa-ee6c4a3d5102" name="Changes" comment="-Code Refactored and implemented custom button for reuse&#10;-Deploy version -&gt; 2.2">
+      <change afterPath="$PROJECT_DIR$/lib/widgets/custom_app_button.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/showcase/art1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/showcase/art2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/showcase/barak1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/showcase/barak2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/showcase/bridges1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/showcase/bridges2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/showcase/hmk1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/showcase/hmk2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/selected_project_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/selected_project_data.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/web" beforeDir="false" afterPath="$PROJECT_DIR$/build/web" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/about_screen/about_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/about_screen/about_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/home_screen/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/home_screen/home_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/playground_screen/playground_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/playground_screen/playground_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/project_view_screen/project_view_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/project_view_screen/project_view_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utilities/constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utilities/constants.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/stats_chart.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/stats_chart.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1718024631962</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="-Used extra images for showcase in overall portfolio&#10;-Deploy version -&gt; 2.1">
+      <created>1718091812204</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1718091812204</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -261,6 +257,7 @@
     <MESSAGE value="-Updated stats overall in the portfolio. (icons, stats)&#10;-Deploy version -&gt; 2.0" />
     <MESSAGE value="-Added compressed images for showcase and initialized in app_images.dart&#10;-Deploy version -&gt; 2.1" />
     <MESSAGE value="-Used compressed images for showcase&#10;-Deploy version -&gt; 2.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="-Used compressed images for showcase&#10;-Deploy version -&gt; 2.1" />
+    <MESSAGE value="-Used extra images for showcase in overall portfolio&#10;-Deploy version -&gt; 2.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="-Used extra images for showcase in overall portfolio&#10;-Deploy version -&gt; 2.1" />
   </component>
 </project>

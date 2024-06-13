@@ -6,6 +6,7 @@ import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
 import 'package:my_portfolio/utilities/app_images.dart';
 import 'package:my_portfolio/utilities/constants.dart';
+import 'package:my_portfolio/widgets/custom_app_button.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
 import 'package:my_portfolio/widgets/experience_tile.dart';
 import 'package:my_portfolio/widgets/footer.dart';
@@ -565,28 +566,11 @@ class _AboutScreenState extends State<AboutScreen> {
                                     ),
                                     Row(
                                       children: [
-                                        InkWell(
-                                          onTap: () {
-                                            Navigator.pushNamed(
-                                                context, Routes.caseStudies);
-                                          },
-                                          child: Container(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 18, vertical: 10),
-                                            decoration: BoxDecoration(
-                                              color: Colors.white,
-                                              borderRadius:
-                                                  BorderRadius.circular(8),
-                                              border: Border.all(
-                                                color: Colors.black26,
-                                              ),
-                                            ),
-                                            child: const Text(
-                                              "See my work",
-                                              style: TextStyle(
-                                                  color: Colors.black),
-                                            ),
-                                          ),
+                                        CustomAppButton(
+                                          onTap: () => Navigator.pushNamed(
+                                              context, Routes.caseStudies),
+                                          text: 'See my work',
+                                          shrinkPadding: true,
                                         ),
                                       ],
                                     )
@@ -660,30 +644,11 @@ class _AboutScreenState extends State<AboutScreen> {
                                       ),
                                       Row(
                                         children: [
-                                          InkWell(
-                                            onTap: () {
-                                              Navigator.pushNamed(
-                                                  context, Routes.caseStudies);
-                                            },
-                                            child: Container(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 18,
-                                                      vertical: 10),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius:
-                                                    BorderRadius.circular(8),
-                                                border: Border.all(
-                                                  color: Colors.black26,
-                                                ),
-                                              ),
-                                              child: const Text(
-                                                "See my work",
-                                                style: TextStyle(
-                                                    color: Colors.black),
-                                              ),
-                                            ),
+                                          CustomAppButton(
+                                            onTap: () => Navigator.pushNamed(
+                                                context, Routes.caseStudies),
+                                            text: 'See my work',
+                                            shrinkPadding: true,
                                           ),
                                         ],
                                       )

@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/models/selected_project_data.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
 import 'package:my_portfolio/utilities/app_images.dart';
+import 'package:my_portfolio/widgets/custom_app_button.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
 import 'package:my_portfolio/widgets/experience_tile.dart';
 import 'package:my_portfolio/widgets/footer.dart';
@@ -12,8 +14,6 @@ import 'package:my_portfolio/widgets/review_widget.dart';
 import 'package:my_portfolio/widgets/selected_work_container.dart';
 import 'package:my_portfolio/widgets/showcase_container.dart';
 import 'package:my_portfolio/widgets/stats_chart.dart';
-
-import '../../main.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -133,56 +133,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ),
                                       Row(
                                         children: [
-                                          InkWell(
-                                            onTap: () {
-                                              Navigator.pushNamed(
-                                                  context, Routes.contact);
-                                            },
-                                            child: Container(
-                                              margin: const EdgeInsets.only(
-                                                  right: 20),
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 22,
-                                                      vertical: 13),
-                                              decoration: BoxDecoration(
-                                                  color: Colors.black,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          12)),
-                                              child: const Text(
-                                                "Talk with me",
-                                                style: TextStyle(
-                                                    fontSize: 16,
-                                                    color: Colors.white),
-                                              ),
-                                            ),
+                                          CustomAppButton(
+                                            onTap: () => Navigator.pushNamed(
+                                                context, Routes.contact),
+                                            text: 'Talk with me',
+                                            blackButton: true,
+                                            hasRightMargin: true,
                                           ),
-                                          InkWell(
-                                            onTap: () {
-                                              Navigator.pushNamed(
-                                                  context, Routes.caseStudies);
-                                            },
-                                            child: Container(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 22,
-                                                      vertical: 13),
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius:
-                                                    BorderRadius.circular(12),
-                                                border: Border.all(
-                                                  color: Colors.black26,
-                                                ),
-                                              ),
-                                              child: const Text(
-                                                "See my work",
-                                                style: TextStyle(
-                                                    fontSize: 16,
-                                                    color: Colors.black),
-                                              ),
-                                            ),
+                                          CustomAppButton(
+                                            onTap: () => Navigator.pushNamed(
+                                                context, Routes.caseStudies),
+                                            text: 'See my work',
                                           ),
                                         ],
                                       )
@@ -243,51 +204,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                     Row(
                                       children: [
-                                        InkWell(
-                                          onTap: () {
-                                            Navigator.pushNamed(
-                                                context, Routes.contact);
-                                          },
-                                          child: Container(
-                                            margin: const EdgeInsets.only(
-                                                right: 20),
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 22, vertical: 13),
-                                            decoration: BoxDecoration(
-                                                color: Colors.black,
-                                                borderRadius:
-                                                    BorderRadius.circular(12)),
-                                            child: const Text(
-                                              "Talk with me",
-                                              style: TextStyle(
-                                                  fontSize: 16,
-                                                  color: Colors.white),
-                                            ),
-                                          ),
+                                        CustomAppButton(
+                                          onTap: () => Navigator.pushNamed(
+                                              context, Routes.contact),
+                                          text: 'Talk with me',
+                                          blackButton: true,
+                                          hasRightMargin: true,
                                         ),
-                                        InkWell(
-                                          onTap: () {
-                                            Navigator.pushNamed(
-                                                context, Routes.caseStudies);
-                                          },
-                                          child: Container(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 22, vertical: 13),
-                                            decoration: BoxDecoration(
-                                              color: Colors.white,
-                                              borderRadius:
-                                                  BorderRadius.circular(12),
-                                              border: Border.all(
-                                                color: Colors.black26,
-                                              ),
-                                            ),
-                                            child: const Text(
-                                              "See my work",
-                                              style: TextStyle(
-                                                  fontSize: 16,
-                                                  color: Colors.black),
-                                            ),
-                                          ),
+                                        CustomAppButton(
+                                          onTap: () => Navigator.pushNamed(
+                                              context, Routes.caseStudies),
+                                          text: 'See my work',
                                         ),
                                       ],
                                     )
@@ -508,26 +435,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                           : FontWeight.w500,
                                       color: Colors.black),
                                 ),
-                                InkWell(
-                                  onTap: () {
-                                    Navigator.pushNamed(
-                                        context, Routes.caseStudies);
-                                  },
-                                  child: Container(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 18, vertical: 10),
-                                    decoration: BoxDecoration(
-                                      color: const Color(0xfff5f5f0),
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: Colors.black26,
-                                      ),
-                                    ),
-                                    child: const Text(
-                                      "See my work",
-                                      style: TextStyle(color: Colors.black),
-                                    ),
-                                  ),
+                                CustomAppButton(
+                                  onTap: () => Navigator.pushNamed(
+                                      context, Routes.caseStudies),
+                                  text: 'See my work',
+                                  greyButton: true,
+                                  shrinkPadding: true,
                                 ),
                               ],
                             ),
@@ -622,8 +535,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   crossAxisSpacing: 50.0,
                                   mainAxisSpacing: 50.0,
                                 ),
-                                itemCount:
-                                    4,
+                                itemCount: 4,
                                 itemBuilder: (context, index) {
                                   return SelectedWorkContainer(
                                       projectData: SelectedProjectData
