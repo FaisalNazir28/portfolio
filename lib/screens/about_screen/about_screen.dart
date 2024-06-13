@@ -314,32 +314,41 @@ class _AboutScreenState extends State<AboutScreen> {
                                 ),
                                 Row(
                                   children: [
-                                    Container(
-                                      margin: const EdgeInsets.only(right: 20),
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 18, vertical: 10),
-                                      decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius: BorderRadius.circular(8),
-                                        border: Border.all(
-                                          color: Colors.black26,
+                                    InkWell(
+                                      overlayColor: MaterialStateProperty.all(
+                                          Colors.transparent),
+                                      onTap: () {
+                                        downloadResume();
+                                      },
+                                      child: Container(
+                                        margin:
+                                            const EdgeInsets.only(right: 20),
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 18, vertical: 10),
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                          border: Border.all(
+                                            color: Colors.black26,
+                                          ),
                                         ),
-                                      ),
-                                      child: const Row(
-                                        children: [
-                                          Icon(
-                                            CupertinoIcons.arrow_down_circle,
-                                            size: 20,
-                                          ),
-                                          SizedBox(
-                                            width: 10,
-                                          ),
-                                          Text(
-                                            "Download my CV",
-                                            style:
-                                                TextStyle(color: Colors.black),
-                                          ),
-                                        ],
+                                        child: const Row(
+                                          children: [
+                                            Icon(
+                                              CupertinoIcons.arrow_down_circle,
+                                              size: 20,
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            Text(
+                                              "Download my CV",
+                                              style: TextStyle(
+                                                  color: Colors.black),
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ],
