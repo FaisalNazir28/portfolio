@@ -113,7 +113,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                       Text(
                         widget.projectData.description,
                         maxLines: 4,
-                        overflow: TextOverflow.fade,
+                        overflow: TextOverflow.ellipsis,
                         style: const TextStyle(
                             fontSize: 17.0, color: Colors.black54),
                       ),
@@ -283,7 +283,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                         Text(
                           widget.projectData.description,
                           maxLines: 3,
-                          overflow: TextOverflow.fade,
+                          overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
                               fontSize: 17.0, color: Colors.black54),
                         ),
