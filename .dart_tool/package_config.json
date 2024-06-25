@@ -51,9 +51,9 @@
     },
     {
       "name": "flutter",
-      "rootUri": "file:///C:/src/flutter_windows_2.5.2-stable/flutter/packages/flutter",
+      "rootUri": "file:///C:/src/flutter/packages/flutter",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.3"
     },
     {
       "name": "flutter_lints",
@@ -63,9 +63,9 @@
     },
     {
       "name": "flutter_test",
-      "rootUri": "file:///C:/src/flutter_windows_2.5.2-stable/flutter/packages/flutter_test",
+      "rootUri": "file:///C:/src/flutter/packages/flutter_test",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.3"
     },
     {
       "name": "freezed_annotation",
@@ -93,21 +93,21 @@
     },
     {
       "name": "leak_tracker",
-      "rootUri": "file:///C:/Users/fnvm/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker-10.0.0",
+      "rootUri": "file:///C:/Users/fnvm/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker-10.0.4",
       "packageUri": "lib/",
-      "languageVersion": "3.1"
+      "languageVersion": "3.2"
     },
     {
       "name": "leak_tracker_flutter_testing",
-      "rootUri": "file:///C:/Users/fnvm/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker_flutter_testing-2.0.1",
+      "rootUri": "file:///C:/Users/fnvm/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker_flutter_testing-3.0.3",
       "packageUri": "lib/",
-      "languageVersion": "3.1"
+      "languageVersion": "3.2"
     },
     {
       "name": "leak_tracker_testing",
-      "rootUri": "file:///C:/Users/fnvm/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker_testing-2.0.1",
+      "rootUri": "file:///C:/Users/fnvm/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker_testing-3.0.1",
       "packageUri": "lib/",
-      "languageVersion": "3.1"
+      "languageVersion": "3.2"
     },
     {
       "name": "lints",
@@ -129,7 +129,7 @@
     },
     {
       "name": "meta",
-      "rootUri": "file:///C:/Users/fnvm/AppData/Local/Pub/Cache/hosted/pub.dev/meta-1.11.0",
+      "rootUri": "file:///C:/Users/fnvm/AppData/Local/Pub/Cache/hosted/pub.dev/meta-1.12.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -140,8 +140,14 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "segmented_button_slide",
+      "rootUri": "file:///C:/Users/fnvm/AppData/Local/Pub/Cache/hosted/pub.dev/segmented_button_slide-1.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
       "name": "sky_engine",
-      "rootUri": "file:///C:/src/flutter_windows_2.5.2-stable/flutter/bin/cache/pkg/sky_engine",
+      "rootUri": "file:///C:/src/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -177,7 +183,7 @@
     },
     {
       "name": "test_api",
-      "rootUri": "file:///C:/Users/fnvm/AppData/Local/Pub/Cache/hosted/pub.dev/test_api-0.6.1",
+      "rootUri": "file:///C:/Users/fnvm/AppData/Local/Pub/Cache/hosted/pub.dev/test_api-0.7.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -189,9 +195,9 @@
     },
     {
       "name": "vm_service",
-      "rootUri": "file:///C:/Users/fnvm/AppData/Local/Pub/Cache/hosted/pub.dev/vm_service-13.0.0",
+      "rootUri": "file:///C:/Users/fnvm/AppData/Local/Pub/Cache/hosted/pub.dev/vm_service-14.2.1",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.3"
     },
     {
       "name": "my_portfolio",
@@ -200,7 +206,10 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-06-13T10:26:53.405396Z",
+  "generated": "2024-06-25T14:23:15.731615Z",
   "generator": "pub",
-  "generatorVersion": "3.3.4"
+  "generatorVersion": "3.4.3",
+  "flutterRoot": "file:///C:/src/flutter",
+  "flutterVersion": "3.22.2",
+  "pubCache": "file:///C:/Users/fnvm/AppData/Local/Pub/Cache"
 }
