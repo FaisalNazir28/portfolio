@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
 import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/models/selected_project_data.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
@@ -19,6 +20,17 @@ class CaseStudiesScreen extends StatefulWidget {
 
 class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
   final ScrollController scrollController = ScrollController();
+
+  int itemsToShow = 5;
+
+  void loadMoreItems() {
+    setState(() {
+      itemsToShow += 3;
+      if (itemsToShow > SelectedProjectData.selectedProjects.length) {
+        itemsToShow = SelectedProjectData.selectedProjects.length;
+      }
+    });
+  }
 
   @override
   void initState() {
@@ -107,16 +119,37 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
                                 horizontal:
                                     MediaQuery.of(context).size.width * .04,
                                 vertical: 100),
-                    child: ListView.builder(
-                      physics: const NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemCount: SelectedProjectData.selectedProjects.length,
-                      itemBuilder: (context, index) {
-                        return DetailedShowcaseContainer(
-                          projectData:
-                              SelectedProjectData.selectedProjects[index],
-                        );
-                      },
+                    child: Column(
+                      children: [
+                        ListView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemCount: itemsToShow,
+                          itemBuilder: (context, index) {
+                            return DetailedShowcaseContainer(
+                              projectData:
+                                  SelectedProjectData.selectedProjects[index],
+                            );
+                          },
+                        ),
+                        if (itemsToShow <
+                            SelectedProjectData.selectedProjects.length)
+                          const SizedBox(
+                            height: 50,
+                          ),
+                        if (itemsToShow <
+                            SelectedProjectData.selectedProjects.length)
+                          InkWell(
+                            onTap: () => loadMoreItems(),
+                            overlayColor: WidgetStateProperty.all(
+                              Colors.transparent,
+                            ),
+                            child: const Icon(
+                              Ionicons.arrow_down_circle_outline,
+                              size: 30,
+                            ),
+                          ),
+                      ],
                     ),
                   ),
                 ),
