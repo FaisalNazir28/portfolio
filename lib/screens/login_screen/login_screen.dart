@@ -249,7 +249,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     ),
                                     const Spacer(),
                                     InkWell(
-                                      overlayColor: MaterialStateProperty.all(
+                                      overlayColor: WidgetStateProperty.all(
                                           Colors.transparent),
                                       onTap: () {
                                         Navigator.pushNamed(
@@ -406,7 +406,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       left: 20,
                       child: InkWell(
                         overlayColor:
-                            MaterialStateProperty.all(Colors.transparent),
+                            WidgetStateProperty.all(Colors.transparent),
                         onTap: () {
                           Navigator.pushNamed(context, Routes.home);
                         },

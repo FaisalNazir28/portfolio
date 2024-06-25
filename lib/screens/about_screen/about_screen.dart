@@ -315,7 +315,7 @@ class _AboutScreenState extends State<AboutScreen> {
                                 Row(
                                   children: [
                                     InkWell(
-                                      overlayColor: MaterialStateProperty.all(
+                                      overlayColor: WidgetStateProperty.all(
                                           Colors.transparent),
                                       onTap: () {
                                         downloadResume();
@@ -438,7 +438,7 @@ class _AboutScreenState extends State<AboutScreen> {
                                   Row(
                                     children: [
                                       InkWell(
-                                        overlayColor: MaterialStateProperty.all(
+                                        overlayColor: WidgetStateProperty.all(
                                             Colors.transparent),
                                         onTap: () {
                                           downloadResume();
@@ -757,7 +757,7 @@ class _AboutScreenState extends State<AboutScreen> {
 
   Widget externalButtons({required IconData icon, String? link}) {
     return InkWell(
-      overlayColor: MaterialStateProperty.all(Colors.transparent),
+      overlayColor: WidgetStateProperty.all(Colors.transparent),
       onTap: () {
         if (link!.isNotEmpty) {
           openLinkInNewWindows(link);
@@ -1109,7 +1109,7 @@ class _IconBoxWidget extends State<IconBoxWidget> {
     var isTabletScreen = Breakpoints.isMediumScreen(context);
 
     return InkWell(
-      overlayColor: MaterialStateProperty.all(Colors.transparent),
+      overlayColor: WidgetStateProperty.all(Colors.transparent),
       onTap: () {},
       onHover: (value) {
         setState(() {

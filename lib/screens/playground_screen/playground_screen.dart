@@ -326,7 +326,7 @@ class _PlayGroundScreenState extends State<PlayGroundScreen> {
 
   Widget externalButtons({required IconData icon, String? link}) {
     return InkWell(
-      overlayColor: MaterialStateProperty.all(Colors.transparent),
+      overlayColor: WidgetStateProperty.all(Colors.transparent),
       onTap: () {
         if (link!.isNotEmpty) {
           openLinkInNewWindows(link);

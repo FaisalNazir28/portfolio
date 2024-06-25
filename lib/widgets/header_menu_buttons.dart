@@ -12,9 +12,9 @@ class HeaderButton extends StatelessWidget {
       onPressed: onTap,
       style: ButtonStyle(
         overlayColor:
-            MaterialStateProperty.all<Color>(Colors.black.withOpacity(0.05)),
-        foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-        textStyle: MaterialStateProperty.all<TextStyle>(
+            WidgetStateProperty.all<Color>(Colors.black.withOpacity(0.05)),
+        foregroundColor: WidgetStateProperty.all<Color>(Colors.black),
+        textStyle: WidgetStateProperty.all<TextStyle>(
           const TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.w400,
