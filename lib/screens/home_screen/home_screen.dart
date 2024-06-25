@@ -539,7 +539,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 itemBuilder: (context, index) {
                                   return SelectedWorkContainer(
                                       projectData: SelectedProjectData
-                                          .selectedProjects[index]);
+                                          .selectedWebProjects[index]);
                                 }),
                           ],
                         ),

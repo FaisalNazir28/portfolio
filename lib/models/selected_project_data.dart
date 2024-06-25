@@ -3,7 +3,7 @@ import 'package:my_portfolio/models/selected_works_model.dart';
 import 'package:my_portfolio/utilities/app_images.dart';
 
 class SelectedProjectData {
-  static List<SelectedProjectModel> selectedProjects = [
+  static List<SelectedProjectModel> selectedWebProjects = [
     SelectedProjectModel(
       index: 0,
       mainImage: AppImages.hmk1,
@@ -169,4 +169,8 @@ class SelectedProjectData {
       mobileView: '',
     ),
   ];
+
+  static List<SelectedProjectModel> selectedMobileProjects = [];
+
+  static List<SelectedProjectModel> selectedHybridProjects = [];
 }

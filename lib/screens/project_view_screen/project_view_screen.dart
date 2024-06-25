@@ -1245,10 +1245,10 @@ class _ProjectScreenState extends State<ProjectScreen> {
 
     List checkNextIndex() {
       List nextIndex = List.empty(growable: true);
-      if (currentIndex == SelectedProjectData.selectedProjects.first.index) {
+      if (currentIndex == SelectedProjectData.selectedWebProjects.first.index) {
         nextIndex = [currentIndex + 1, currentIndex + 2];
       } else if (currentIndex ==
-          SelectedProjectData.selectedProjects.last.index) {
+          SelectedProjectData.selectedWebProjects.last.index) {
         nextIndex = [currentIndex - 2, currentIndex - 1];
       } else {
         nextIndex = [currentIndex - 1, currentIndex + 1];
@@ -1285,7 +1285,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                       Expanded(
                         child: SelectedWorkContainer(
                           projectData: SelectedProjectData
-                              .selectedProjects[checkNextIndex()[0]],
+                              .selectedWebProjects[checkNextIndex()[0]],
                           isProjectViewScreen: true,
                         ),
                       ),
@@ -1295,7 +1295,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                       Expanded(
                         child: SelectedWorkContainer(
                           projectData: SelectedProjectData
-                              .selectedProjects[checkNextIndex()[1]],
+                              .selectedWebProjects[checkNextIndex()[1]],
                           isProjectViewScreen: true,
                         ),
                       ),
@@ -1306,7 +1306,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                     children: [
                       SelectedWorkContainer(
                         projectData: SelectedProjectData
-                            .selectedProjects[checkNextIndex()[0]],
+                            .selectedWebProjects[checkNextIndex()[0]],
                         isProjectViewScreen: true,
                       ),
                       const SizedBox(
@@ -1314,7 +1314,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                       ),
                       SelectedWorkContainer(
                         projectData: SelectedProjectData
-                            .selectedProjects[checkNextIndex()[1]],
+                            .selectedWebProjects[checkNextIndex()[1]],
                         isProjectViewScreen: true,
                       ),
                     ],

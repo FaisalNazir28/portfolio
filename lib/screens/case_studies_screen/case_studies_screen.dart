@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/models/selected_project_data.dart';
+import 'package:my_portfolio/models/selected_works_model.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
 import 'package:my_portfolio/widgets/detailed_showcase_container.dart';
@@ -23,13 +24,39 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
   final ScrollController scrollController = ScrollController();
 
   int selectedOption = 0;
-  int itemsToShow = 5;
+  int webProjectsToShow = 5;
+  int mobileProjectsToShow = 1;
+  int hybridProjectsToShow = 1;
 
-  void loadMoreItems() {
+  void loadMoreWebProjects() {
     setState(() {
-      itemsToShow += 3;
-      if (itemsToShow > SelectedProjectData.selectedProjects.length) {
-        itemsToShow = SelectedProjectData.selectedProjects.length;
+      webProjectsToShow += 3;
+      if (webProjectsToShow > SelectedProjectData.selectedWebProjects.length) {
+        webProjectsToShow = SelectedProjectData.selectedWebProjects.length;
+      }
+    });
+  }
+
+  void loadMoreMobileProjects(
+      List<SelectedProjectModel> list, int projectsToShow) {
+    setState(() {
+      mobileProjectsToShow += 3;
+      if (mobileProjectsToShow >
+          SelectedProjectData.selectedMobileProjects.length) {
+        mobileProjectsToShow =
+            SelectedProjectData.selectedMobileProjects.length;
+      }
+    });
+  }
+
+  void loadMoreHybridProjects(
+      List<SelectedProjectModel> list, int projectsToShow) {
+    setState(() {
+      hybridProjectsToShow += 3;
+      if (hybridProjectsToShow >
+          SelectedProjectData.selectedHybridProjects.length) {
+        hybridProjectsToShow =
+            SelectedProjectData.selectedHybridProjects.length;
       }
     });
   }
@@ -159,34 +186,54 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
                         const SizedBox(
                           height: 100,
                         ),
-                        ListView.builder(
-                          physics: const NeverScrollableScrollPhysics(),
-                          shrinkWrap: true,
-                          itemCount: itemsToShow,
-                          itemBuilder: (context, index) {
-                            return DetailedShowcaseContainer(
-                              projectData:
-                                  SelectedProjectData.selectedProjects[index],
-                            );
-                          },
-                        ),
-                        if (itemsToShow <
-                            SelectedProjectData.selectedProjects.length)
-                          const SizedBox(
-                            height: 50,
-                          ),
-                        if (itemsToShow <
-                            SelectedProjectData.selectedProjects.length)
-                          InkWell(
-                            onTap: () => loadMoreItems(),
-                            overlayColor: WidgetStateProperty.all(
-                              Colors.transparent,
-                            ),
-                            child: const Icon(
-                              Ionicons.arrow_down_circle_outline,
-                              size: 30,
-                            ),
-                          ),
+                        selectedOption == 0
+                            ? Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  ListView.builder(
+                                    physics:
+                                        const NeverScrollableScrollPhysics(),
+                                    shrinkWrap: true,
+                                    itemCount: SelectedProjectData
+                                                .selectedWebProjects.length <
+                                            webProjectsToShow
+                                        ? SelectedProjectData
+                                            .selectedWebProjects.length
+                                        : webProjectsToShow,
+                                    itemBuilder: (context, index) {
+                                      return DetailedShowcaseContainer(
+                                        projectData: SelectedProjectData
+                                            .selectedWebProjects[index],
+                                      );
+                                    },
+                                  ),
+                                  if (webProjectsToShow <
+                                      SelectedProjectData
+                                          .selectedWebProjects.length)
+                                    InkWell(
+                                      onTap: () => loadMoreWebProjects(),
+                                      overlayColor: WidgetStateProperty.all(
+                                        Colors.transparent,
+                                      ),
+                                      child: Container(
+                                        margin: const EdgeInsets.only(top: 50),
+                                        child: const Icon(
+                                          Ionicons.arrow_down_circle_outline,
+                                          size: 30,
+                                        ),
+                                      ),
+                                    ),
+                                ],
+                              )
+                            : selectedOption == 1
+                                ? const Center(
+                                    child: Text(
+                                        "Mobile Apps to be showcased soon!"),
+                                  )
+                                : const Center(
+                                    child: Text(
+                                        "Hybrid Apps to be showcased soon!"),
+                                  ),
                       ],
                     ),
                   ),
