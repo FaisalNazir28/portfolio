@@ -10,6 +10,7 @@ import 'package:my_portfolio/widgets/footer.dart';
 import 'package:my_portfolio/widgets/header.dart';
 import 'package:my_portfolio/widgets/review_widget.dart';
 import 'package:my_portfolio/widgets/stats_chart.dart';
+import 'package:segmented_button_slide/segmented_button_slide.dart';
 
 class CaseStudiesScreen extends StatefulWidget {
   const CaseStudiesScreen({super.key});
@@ -21,6 +22,7 @@ class CaseStudiesScreen extends StatefulWidget {
 class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
   final ScrollController scrollController = ScrollController();
 
+  int selectedOption = 0;
   int itemsToShow = 5;
 
   void loadMoreItems() {
@@ -121,6 +123,42 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
                                 vertical: 100),
                     child: Column(
                       children: [
+                        SegmentedButtonSlide(
+                          entries: const [
+                            SegmentedButtonSlideEntry(
+                              icon: Ionicons.logo_web_component,
+                              label: "Web Apps",
+                            ),
+                            SegmentedButtonSlideEntry(
+                              icon: Ionicons.phone_portrait,
+                              label: "Mobile Apps",
+                            ),
+                            SegmentedButtonSlideEntry(
+                              icon: Ionicons.planet,
+                              label: "Hybrid Apps",
+                            ),
+                          ],
+                          selectedEntry: selectedOption,
+                          onChange: (selected) =>
+                              setState(() => selectedOption = selected),
+                          colors: SegmentedButtonSlideColors(
+                              barColor: Colors.grey.withOpacity(0.2),
+                              backgroundSelectedColor: Colors.black87,
+                              foregroundSelectedColor: Colors.white,
+                              foregroundUnselectedColor: Colors.black,
+                              hoverColor: Colors.grey.withOpacity(0.8)),
+                          slideShadow: const [
+                            BoxShadow(
+                                color: Colors.grey,
+                                blurRadius: 5,
+                                spreadRadius: 1)
+                          ],
+                          margin: const EdgeInsets.symmetric(horizontal: 100),
+                          height: 60,
+                        ),
+                        const SizedBox(
+                          height: 100,
+                        ),
                         ListView.builder(
                           physics: const NeverScrollableScrollPhysics(),
                           shrinkWrap: true,
