@@ -151,18 +151,18 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
                     child: Column(
                       children: [
                         SegmentedButtonSlide(
-                          entries: const [
+                          entries: [
                             SegmentedButtonSlideEntry(
                               icon: Ionicons.logo_web_component,
-                              label: "Web Apps",
+                              label: isMobileScreen ? 'Web' : "Web Apps",
                             ),
                             SegmentedButtonSlideEntry(
                               icon: Ionicons.phone_portrait,
-                              label: "Mobile Apps",
+                              label: isMobileScreen ? 'Mobile' : "Mobile Apps",
                             ),
                             SegmentedButtonSlideEntry(
                               icon: Ionicons.planet,
-                              label: "Hybrid Apps",
+                              label: isMobileScreen ? 'Hybrid' : "Hybrid Apps",
                             ),
                           ],
                           selectedEntry: selectedOption,
@@ -180,8 +180,17 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
                                 blurRadius: 5,
                                 spreadRadius: 1)
                           ],
-                          margin: const EdgeInsets.symmetric(horizontal: 100),
-                          height: 60,
+                          margin: EdgeInsets.symmetric(
+                              horizontal: isDesktopScreen
+                                  ? 100
+                                  : isTabletScreen
+                                      ? 40
+                                      : 15),
+                          height: isDesktopScreen
+                              ? 60
+                              : isTabletScreen
+                                  ? 55
+                                  : 50,
                         ),
                         const SizedBox(
                           height: 100,
