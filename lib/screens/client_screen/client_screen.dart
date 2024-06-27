@@ -21,14 +21,14 @@ class _ClientScreenState extends State<ClientScreen> {
   Widget build(BuildContext context) {
     return isLoggedIn
         ? Scaffold(
-            body: Container(
+            body: SizedBox(
               width: double.infinity,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const Text("Client Screen"),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   InkWell(
@@ -37,12 +37,12 @@ class _ClientScreenState extends State<ClientScreen> {
                       Navigator.pushNamed(context, Routes.home);
                     },
                     child: Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 18, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 18, vertical: 10),
                       decoration: BoxDecoration(
                           color: Colors.black,
                           borderRadius: BorderRadius.circular(8)),
-                      child: Text(
+                      child: const Text(
                         "Logout",
                         style: TextStyle(color: Colors.white),
                       ),

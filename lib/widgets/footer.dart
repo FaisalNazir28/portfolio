@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
 import 'package:my_portfolio/utilities/app_images.dart';
-import 'package:my_portfolio/widgets/dateTime.dart';
+import 'package:my_portfolio/widgets/date_time.dart';
 
 class CustomFooter extends StatefulWidget {
   final bool? miniFooter;
