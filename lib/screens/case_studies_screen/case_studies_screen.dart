@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/models/selected_project_data.dart';
-import 'package:my_portfolio/models/selected_works_model.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
 import 'package:my_portfolio/widgets/detailed_showcase_container.dart';
@@ -37,8 +36,7 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
     });
   }
 
-  void loadMoreMobileProjects(
-      List<SelectedProjectModel> list, int projectsToShow) {
+  void loadMoreMobileProjects() {
     setState(() {
       mobileProjectsToShow += 3;
       if (mobileProjectsToShow >
@@ -49,8 +47,7 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
     });
   }
 
-  void loadMoreHybridProjects(
-      List<SelectedProjectModel> list, int projectsToShow) {
+  void loadMoreHybridProjects() {
     setState(() {
       hybridProjectsToShow += 3;
       if (hybridProjectsToShow >
