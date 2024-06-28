@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/models/selected_works_model.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
@@ -5,10 +6,12 @@ import 'package:my_portfolio/routes/routes.dart';
 
 class DetailedShowcaseContainer extends StatefulWidget {
   final SelectedProjectModel projectData;
+  final bool isMobileProjectShowcase;
 
   const DetailedShowcaseContainer({
     super.key,
     required this.projectData,
+    this.isMobileProjectShowcase = false,
   });
 
   @override
@@ -22,404 +25,669 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
     var isTabletScreen = Breakpoints.isMediumScreen(context);
     var isMobileScreen = Breakpoints.isSmallScreen(context);
 
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        if (widget.projectData.index != 0)
-          const SizedBox(
-            height: 100,
-          ),
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
-          height: isMobileScreen
-              ? MediaQuery.of(context).size.height * .25
-              : MediaQuery.of(context).size.height * .45,
-          decoration: BoxDecoration(
-            color: Colors.grey.shade300,
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return widget.isMobileProjectShowcase
+        ? Column(
             children: [
-              Expanded(
-                flex: 3,
-                child: Container(
-                  height: double.infinity,
-                  width: double.infinity,
-                  margin: const EdgeInsets.only(top: 30),
-                  color: widget.projectData.mainImageBG,
-                  child: Image.asset(
-                    widget.projectData.mainImage,
-                    fit: BoxFit.fitWidth,
-                    alignment: Alignment.topCenter,
-                  ),
+              if (widget.projectData.index != 0)
+                const SizedBox(
+                  height: 120,
                 ),
-              ),
-              const SizedBox(
-                width: 20,
-              ),
-              Expanded(
-                flex: 3,
-                child: Container(
-                  height: double.infinity,
-                  width: double.infinity,
-                  color: widget.projectData.secondImageBG,
-                  child: Image.asset(
-                    widget.projectData.secondImage,
-                    fit: BoxFit.fitWidth,
-                    alignment: Alignment.center,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                width: 20,
-              ),
-              Expanded(
-                flex: 2,
-                child: Container(
-                  height: double.infinity,
-                  width: double.infinity,
-                  color: widget.projectData.thirdImageBG,
-                  child: Image.asset(
-                    widget.projectData.thirdImage,
-                    fit: BoxFit.fitWidth,
-                    alignment: Alignment.center,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-        const SizedBox(
-          height: 50,
-        ),
-        isMobileScreen
-            ? Column(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        widget.projectData.title,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 25,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        widget.projectData.description,
-                        maxLines: 4,
-                        overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(
-                            fontSize: 17.0, color: Colors.black54),
-                      ),
-                      const SizedBox(
-                        height: 25,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, Routes.project,
-                              arguments: widget.projectData);
-                        },
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 20,
-                            vertical: 12,
-                          ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            border: Border.all(
-                              color: Colors.black26,
-                            ),
-                          ),
-                          child: const Text(
-                            "View detail work",
-                            style: TextStyle(
-                              fontSize: 16,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 25,
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        flex: 2,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Text(
-                                  "Client",
-                                  style: TextStyle(
-                                      color: Colors.black54, fontSize: 16),
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                Text(
-                                  widget.projectData.company,
-                                  style: const TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 30,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Text(
-                                  "Project date",
-                                  style: TextStyle(
-                                      color: Colors.black54, fontSize: 16),
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                Text(
-                                  widget.projectData.projectDate,
-                                  style: const TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 20,
-                      ),
-                      Expanded(
-                        flex: 2,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Text(
-                                  "Project type",
-                                  style: TextStyle(
-                                      color: Colors.black54, fontSize: 16),
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                Text(
-                                  widget.projectData.projectType,
-                                  style: const TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 30,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Text(
-                                  "Project duration",
-                                  style: TextStyle(
-                                      color: Colors.black54, fontSize: 16),
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                Text(
-                                  widget.projectData.projectDuration,
-                                  style: const TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              )
-            : Row(
+              Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(
                     flex: 4,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          widget.projectData.title,
-                          style: isTabletScreen
-                              ? const TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 45,
-                                )
-                              : const TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 45,
-                                ),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Text(
-                          widget.projectData.description,
-                          maxLines: 3,
-                          overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
-                              fontSize: 17.0, color: Colors.black54),
-                        ),
-                        const SizedBox(
-                          height: 40,
-                        ),
-                        InkWell(
-                          onTap: () {
-                            Navigator.pushNamed(context, Routes.project,
-                                arguments: widget.projectData);
-                          },
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 20,
-                              vertical: 12,
-                            ),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
-                              border: Border.all(
-                                color: Colors.black26,
-                              ),
-                            ),
-                            child: const Text(
-                              "View detail work",
-                              style: TextStyle(
-                                fontSize: 16,
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 25),
+                      height: isMobileScreen
+                          ? MediaQuery.of(context).size.height * .25
+                          : MediaQuery.of(context).size.height * .45,
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade300,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            flex: 3,
+                            child: Container(
+                              height: double.infinity,
+                              width: double.infinity,
+                              margin: const EdgeInsets.only(top: 30),
+                              color: widget.projectData.mainImageBG,
+                              child: Image.asset(
+                                widget.projectData.mainImage,
+                                fit: BoxFit.fitWidth,
+                                alignment: Alignment.topCenter,
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Expanded(
+                            flex: 3,
+                            child: Container(
+                              height: double.infinity,
+                              width: double.infinity,
+                              color: widget.projectData.secondImageBG,
+                              child: Image.asset(
+                                widget.projectData.secondImage,
+                                fit: BoxFit.fitWidth,
+                                alignment: Alignment.center,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   const SizedBox(
-                    width: 50,
+                    width: 30,
                   ),
                   Expanded(
-                    flex: 2,
+                    flex: 5,
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
                           children: [
-                            const Text(
-                              "Client",
-                              style: TextStyle(
-                                  color: Colors.black54, fontSize: 16),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    widget.projectData.title,
+                                    style: const TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 45,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  Text(
+                                    widget.projectData.description,
+                                    maxLines: 4,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: const TextStyle(
+                                        fontSize: 17.0, color: Colors.black54),
+                                  ),
+                                ],
+                              ),
                             ),
                             const SizedBox(
-                              height: 10,
+                              width: 20,
                             ),
-                            Text(
-                              widget.projectData.company,
-                              style: const TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.w500),
+                            Container(
+                              width: 100,
+                              decoration: BoxDecoration(
+                                color: Colors.black87,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              padding: const EdgeInsets.symmetric(
+                                vertical: 15,
+                                horizontal: 15,
+                              ),
+                              child: const Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Icon(
+                                    CupertinoIcons.arrow_up_right,
+                                    color: Colors.white,
+                                    size: 40,
+                                  ),
+                                  SizedBox(
+                                    height: 15,
+                                  ),
+                                  Text(
+                                    "Explore this project",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
                         ),
                         const SizedBox(
-                          height: 30,
+                          height: 50,
                         ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                        Row(
                           children: [
-                            const Text(
-                              "Project date",
-                              style: TextStyle(
-                                  color: Colors.black54, fontSize: 16),
+                            Expanded(
+                              flex: 2,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        "Client",
+                                        style: TextStyle(
+                                            color: Colors.black54,
+                                            fontSize: 15),
+                                      ),
+                                      const SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text(
+                                        widget.projectData.company,
+                                        style: const TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    height: 30,
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        "Project date",
+                                        style: TextStyle(
+                                            color: Colors.black54,
+                                            fontSize: 15),
+                                      ),
+                                      const SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text(
+                                        widget.projectData.projectDate,
+                                        style: const TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
                             const SizedBox(
-                              height: 10,
+                              width: 10,
                             ),
-                            Text(
-                              widget.projectData.projectDate,
-                              style: const TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.w500),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                  Expanded(
-                    flex: 2,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              "Project type",
-                              style: TextStyle(
-                                  color: Colors.black54, fontSize: 16),
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              widget.projectData.projectType,
-                              style: const TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.w500),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 30,
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              "Project duration",
-                              style: TextStyle(
-                                  color: Colors.black54, fontSize: 16),
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              widget.projectData.projectDuration,
-                              style: const TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.w500),
+                            Expanded(
+                              flex: 2,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        "Project type",
+                                        style: TextStyle(
+                                            color: Colors.black54,
+                                            fontSize: 15),
+                                      ),
+                                      const SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text(
+                                        widget.projectData.projectType,
+                                        style: const TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    height: 30,
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        "Project duration",
+                                        style: TextStyle(
+                                            color: Colors.black54,
+                                            fontSize: 15),
+                                      ),
+                                      const SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text(
+                                        widget.projectData.projectDuration,
+                                        style: const TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
-                        ),
+                        )
                       ],
                     ),
                   ),
                 ],
               ),
-      ],
-    );
+            ],
+          )
+        : Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              if (widget.projectData.index != 0)
+                const SizedBox(
+                  height: 100,
+                ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                height: isMobileScreen
+                    ? MediaQuery.of(context).size.height * .25
+                    : MediaQuery.of(context).size.height * .45,
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade300,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      flex: 3,
+                      child: Container(
+                        height: double.infinity,
+                        width: double.infinity,
+                        margin: const EdgeInsets.only(top: 30),
+                        color: widget.projectData.mainImageBG,
+                        child: Image.asset(
+                          widget.projectData.mainImage,
+                          fit: BoxFit.fitWidth,
+                          alignment: Alignment.topCenter,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Expanded(
+                      flex: 3,
+                      child: Container(
+                        height: double.infinity,
+                        width: double.infinity,
+                        color: widget.projectData.secondImageBG,
+                        child: Image.asset(
+                          widget.projectData.secondImage,
+                          fit: BoxFit.fitWidth,
+                          alignment: Alignment.center,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Expanded(
+                      flex: 2,
+                      child: Container(
+                        height: double.infinity,
+                        width: double.infinity,
+                        color: widget.projectData.thirdImageBG,
+                        child: Image.asset(
+                          widget.projectData.thirdImage,
+                          fit: BoxFit.fitWidth,
+                          alignment: Alignment.center,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              isMobileScreen
+                  ? Column(
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              widget.projectData.title,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 25,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              widget.projectData.description,
+                              maxLines: 4,
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(
+                                  fontSize: 17.0, color: Colors.black54),
+                            ),
+                            const SizedBox(
+                              height: 25,
+                            ),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, Routes.project,
+                                    arguments: widget.projectData);
+                              },
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                  vertical: 12,
+                                ),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8),
+                                  border: Border.all(
+                                    color: Colors.black26,
+                                  ),
+                                ),
+                                child: const Text(
+                                  "View detail work",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 25,
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              flex: 2,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        "Client",
+                                        style: TextStyle(
+                                            color: Colors.black54,
+                                            fontSize: 16),
+                                      ),
+                                      const SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text(
+                                        widget.projectData.company,
+                                        style: const TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    height: 30,
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        "Project date",
+                                        style: TextStyle(
+                                            color: Colors.black54,
+                                            fontSize: 16),
+                                      ),
+                                      const SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text(
+                                        widget.projectData.projectDate,
+                                        style: const TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 20,
+                            ),
+                            Expanded(
+                              flex: 2,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        "Project type",
+                                        style: TextStyle(
+                                            color: Colors.black54,
+                                            fontSize: 16),
+                                      ),
+                                      const SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text(
+                                        widget.projectData.projectType,
+                                        style: const TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    height: 30,
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        "Project duration",
+                                        style: TextStyle(
+                                            color: Colors.black54,
+                                            fontSize: 16),
+                                      ),
+                                      const SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text(
+                                        widget.projectData.projectDuration,
+                                        style: const TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    )
+                  : Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          flex: 4,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                widget.projectData.title,
+                                style: isTabletScreen
+                                    ? const TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 45,
+                                      )
+                                    : const TextStyle(
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 45,
+                                      ),
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              Text(
+                                widget.projectData.description,
+                                maxLines: 3,
+                                overflow: TextOverflow.ellipsis,
+                                style: const TextStyle(
+                                    fontSize: 17.0, color: Colors.black54),
+                              ),
+                              const SizedBox(
+                                height: 40,
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  Navigator.pushNamed(context, Routes.project,
+                                      arguments: widget.projectData);
+                                },
+                                child: Container(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 20,
+                                    vertical: 12,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(
+                                      color: Colors.black26,
+                                    ),
+                                  ),
+                                  child: const Text(
+                                    "View detail work",
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 50,
+                        ),
+                        Expanded(
+                          flex: 2,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    "Client",
+                                    style: TextStyle(
+                                        color: Colors.black54, fontSize: 16),
+                                  ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    widget.projectData.company,
+                                    style: const TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 30,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    "Project date",
+                                    style: TextStyle(
+                                        color: Colors.black54, fontSize: 16),
+                                  ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    widget.projectData.projectDate,
+                                    style: const TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        Expanded(
+                          flex: 2,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    "Project type",
+                                    style: TextStyle(
+                                        color: Colors.black54, fontSize: 16),
+                                  ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    widget.projectData.projectType,
+                                    style: const TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 30,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    "Project duration",
+                                    style: TextStyle(
+                                        color: Colors.black54, fontSize: 16),
+                                  ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    widget.projectData.projectDuration,
+                                    style: const TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+            ],
+          );
   }
 }

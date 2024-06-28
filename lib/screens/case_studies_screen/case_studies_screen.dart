@@ -24,7 +24,7 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
 
   int selectedOption = 0;
   int webProjectsToShow = 5;
-  int mobileProjectsToShow = 1;
+  int mobileProjectsToShow = 5;
   int hybridProjectsToShow = 1;
 
   void loadMoreWebProjects() {
@@ -232,9 +232,47 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
                                 ],
                               )
                             : selectedOption == 1
-                                ? const Center(
-                                    child: Text(
-                                        "Mobile Apps to be showcased soon!"),
+                                ? Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      ListView.builder(
+                                        physics:
+                                            const NeverScrollableScrollPhysics(),
+                                        shrinkWrap: true,
+                                        itemCount: SelectedProjectData
+                                                    .selectedMobileProjects
+                                                    .length <
+                                                mobileProjectsToShow
+                                            ? SelectedProjectData
+                                                .selectedMobileProjects.length
+                                            : mobileProjectsToShow,
+                                        itemBuilder: (context, index) {
+                                          return DetailedShowcaseContainer(
+                                            projectData: SelectedProjectData
+                                                .selectedMobileProjects[index],
+                                            isMobileProjectShowcase: true,
+                                          );
+                                        },
+                                      ),
+                                      if (mobileProjectsToShow <
+                                          SelectedProjectData
+                                              .selectedMobileProjects.length)
+                                        InkWell(
+                                          onTap: () => loadMoreMobileProjects(),
+                                          overlayColor: WidgetStateProperty.all(
+                                            Colors.transparent,
+                                          ),
+                                          child: Container(
+                                            margin:
+                                                const EdgeInsets.only(top: 50),
+                                            child: const Icon(
+                                              Ionicons
+                                                  .arrow_down_circle_outline,
+                                              size: 30,
+                                            ),
+                                          ),
+                                        ),
+                                    ],
                                   )
                                 : const Center(
                                     child: Text(
