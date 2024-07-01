@@ -1,3 +1,4 @@
+import 'package:device_frame/device_frame.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/models/selected_works_model.dart';
@@ -30,7 +31,6 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
   }
 
   Widget mobileShowcaseContainer() {
-    var isMobileScreen = Breakpoints.isSmallScreen(context);
     return Column(
       children: [
         if (widget.projectData.index != 0)
@@ -41,50 +41,16 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              flex: 4,
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                height: isMobileScreen
-                    ? MediaQuery.of(context).size.height * .25
-                    : MediaQuery.of(context).size.height * .45,
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade300,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(
-                      flex: 3,
-                      child: Container(
-                        height: double.infinity,
-                        width: double.infinity,
-                        margin: const EdgeInsets.only(top: 30),
-                        color: widget.projectData.mainImageBG,
-                        child: Image.asset(
-                          widget.projectData.mainImage,
-                          fit: BoxFit.fitWidth,
-                          alignment: Alignment.topCenter,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    Expanded(
-                      flex: 3,
-                      child: Container(
-                        height: double.infinity,
-                        width: double.infinity,
-                        color: widget.projectData.secondImageBG,
-                        child: Image.asset(
-                          widget.projectData.secondImage,
-                          fit: BoxFit.fitWidth,
-                          alignment: Alignment.center,
-                        ),
-                      ),
-                    ),
-                  ],
+              flex: 2,
+              child: DeviceFrame(
+                device: Devices.ios.iPhone13ProMax,
+                screen: Container(
+                  color: widget.projectData.mainImageBG,
+                  child: Image.asset(
+                    widget.projectData.mainImage,
+                    fit: BoxFit.fitWidth,
+                    alignment: Alignment.topLeft,
+                  ),
                 ),
               ),
             ),
@@ -92,7 +58,24 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
               width: 30,
             ),
             Expanded(
-              flex: 5,
+              flex: 2,
+              child: DeviceFrame(
+                device: Devices.ios.iPhone13ProMax,
+                screen: Container(
+                  color: widget.projectData.secondImageBG,
+                  child: Image.asset(
+                    widget.projectData.secondImage,
+                    fit: BoxFit.fitWidth,
+                    alignment: Alignment.topLeft,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(
+              width: 30,
+            ),
+            Expanded(
+              flex: 7,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.start,
