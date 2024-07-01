@@ -20,6 +20,8 @@ class DetailedShowcaseContainer extends StatefulWidget {
 }
 
 class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
+  bool hover = false;
+
   @override
   Widget build(BuildContext context) {
     return widget.isMobileProjectShowcase
@@ -116,6 +118,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                               widget.projectData.description,
                               maxLines: 4,
                               overflow: TextOverflow.ellipsis,
+                              textAlign: TextAlign.justify,
                               style: const TextStyle(
                                   fontSize: 17.0, color: Colors.black54),
                             ),
@@ -125,35 +128,46 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                       const SizedBox(
                         width: 20,
                       ),
-                      Container(
-                        width: 100,
-                        decoration: BoxDecoration(
-                          color: Colors.black87,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 15,
-                          horizontal: 15,
-                        ),
-                        child: const Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Icon(
-                              CupertinoIcons.arrow_up_right,
-                              color: Colors.white,
-                              size: 40,
-                            ),
-                            SizedBox(
-                              height: 15,
-                            ),
-                            Text(
-                              "Explore this project",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w400),
-                            ),
-                          ],
+                      InkWell(
+                        onHover: (v) {
+                          setState(() {
+                            hover = v;
+                          });
+                        },
+                        onTap: () {},
+                        child: Container(
+                          width: 100,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(
+                                  color:
+                                      hover ? Colors.black87 : Colors.black45,
+                                  width: 2)),
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 15,
+                            horizontal: 15,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Icon(
+                                CupertinoIcons.arrow_up_right,
+                                color: hover ? Colors.black87 : Colors.black45,
+                                size: 40,
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              Text(
+                                "Explore this project",
+                                style: TextStyle(
+                                    color:
+                                        hover ? Colors.black87 : Colors.black45,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],
