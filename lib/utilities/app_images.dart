@@ -67,6 +67,34 @@ class AppImages {
   static String hmk4 = 'assets/showcase/hmk/hmk4.png';
   static String hmk5 = 'assets/showcase/hmk/hmk5.png';
 
+  /// images for calorie counter app
+  static String calorie1 = 'assets/showcase/calorie_counter/calorie1.PNG';
+  static String calorie2 = 'assets/showcase/calorie_counter/calorie2.PNG';
+
+  /// images for climate app
+  static String climate1 = 'assets/showcase/climate/climate1.PNG';
+
+  /// images for dock management app
+  static String dock1 = 'assets/showcase/dock_management/dock1.PNG';
+  static String dock2 = 'assets/showcase/dock_management/dock2.PNG';
+
+  /// images for gdsc app
+  static String gdsc1 = 'assets/showcase/gdsc/gdsc1.PNG';
+
+  /// images for mask reminder app
+  static String mask1 = 'assets/showcase/mask_reminder/mask1.PNG';
+  static String mask2 = 'assets/showcase/mask_reminder/mask2.PNG';
+
+  /// images for restofe app
+  static String restofe1 = 'assets/showcase/restofe/restofe1.PNG';
+  static String restofe2 = 'assets/showcase/restofe/restofe2.PNG';
+  static String restofe3 = 'assets/showcase/restofe/restofe3.PNG';
+  static String restofe4 = 'assets/showcase/restofe/restofe4.PNG';
+  static String restofe5 = 'assets/showcase/restofe/restofe5.PNG';
+  static String restofe6 = 'assets/showcase/restofe/restofe6.PNG';
+  static String restofe7 = 'assets/showcase/restofe/restofe7.PNG';
+  static String restofe8 = 'assets/showcase/restofe/restofe8.PNG';
+
   ///tool icons
   static String adobe = 'assets/my_tools_icons/adobe.png';
   static String adobeColored = 'assets/my_tools_icons/adobe_colored.png';

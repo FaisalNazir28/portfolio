@@ -71,6 +71,12 @@ flutter:
     - assets/showcase/barak/
     - assets/showcase/bridges/
     - assets/showcase/hmk/
+    - assets/showcase/calorie_counter/
+    - assets/showcase/climate/
+    - assets/showcase/dock_management/
+    - assets/showcase/gdsc/
+    - assets/showcase/mask_reminder/
+    - assets/showcase/restofe/
     - assets/my_tools_icons/
     - assets/resume/
     - assets/backgrounds/
