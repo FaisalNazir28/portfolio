@@ -1,6 +1,7 @@
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
 import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/models/selected_project_data.dart';
 import 'package:my_portfolio/models/selected_works_model.dart';
@@ -20,11 +21,23 @@ class ProjectScreen extends StatefulWidget {
 
 class _ProjectScreenState extends State<ProjectScreen> {
   final ScrollController scrollController = ScrollController();
+  final ScrollController horizontalScrollController = ScrollController();
 
   @override
   void initState() {
     initialLaunch = false;
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    horizontalScrollController.dispose();
+    super.dispose();
+  }
+
+  void _onHorizontalDragUpdate(DragUpdateDetails details) {
+    horizontalScrollController
+        .jumpTo(horizontalScrollController.offset - details.primaryDelta!);
   }
 
   @override
@@ -48,7 +61,520 @@ class _ProjectScreenState extends State<ProjectScreen> {
             child: Column(
               children: [
                 isMobileProject
-                    ? const Text("Mobile Showcase Design")
+                    ? Column(
+                        children: [
+                          Container(
+                            margin: isDesktopScreen
+                                ? EdgeInsets.symmetric(
+                                    horizontal:
+                                        MediaQuery.of(context).size.width * .2,
+                                    vertical: 100)
+                                : isTabletScreen
+                                    ? EdgeInsets.symmetric(
+                                        horizontal:
+                                            MediaQuery.of(context).size.width *
+                                                .1,
+                                        vertical: 80)
+                                    : EdgeInsets.symmetric(
+                                        horizontal:
+                                            MediaQuery.of(context).size.width *
+                                                .04,
+                                        vertical: 60),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            projectModel.title,
+                                            style: const TextStyle(
+                                                fontSize: 60,
+                                                fontWeight: FontWeight.w600,
+                                                color: Colors.black),
+                                          ),
+                                          const SizedBox(
+                                            height: 2,
+                                          ),
+                                          Text(
+                                            projectModel.company,
+                                            style: const TextStyle(
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w300,
+                                                color: Colors.black),
+                                          ),
+                                          const SizedBox(
+                                            height: 20,
+                                          ),
+                                          Container(
+                                            decoration: BoxDecoration(
+                                              border: Border.all(
+                                                color: Colors.grey,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                            ),
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 20, vertical: 10),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                const Text(
+                                                  "Built for",
+                                                  style: TextStyle(
+                                                      fontSize: 12,
+                                                      color: Colors.grey),
+                                                ),
+                                                const SizedBox(
+                                                  height: 6,
+                                                ),
+                                                IntrinsicHeight(
+                                                  child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    children: [
+                                                      if (projectModel
+                                                          .builtForAndroid)
+                                                        const Row(
+                                                          children: [
+                                                            Icon(Ionicons
+                                                                .logo_android),
+                                                            SizedBox(
+                                                              width: 5,
+                                                            ),
+                                                            Text(
+                                                              "Android",
+                                                              style: TextStyle(
+                                                                  fontSize: 12,
+                                                                  color: Colors
+                                                                      .grey),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      if (projectModel
+                                                              .builtForAndroid &&
+                                                          projectModel
+                                                              .builtForApple)
+                                                        const SizedBox(
+                                                          width: 10,
+                                                        ),
+                                                      if (projectModel
+                                                              .builtForAndroid &&
+                                                          projectModel
+                                                              .builtForApple)
+                                                        const VerticalDivider(
+                                                          thickness: 2,
+                                                        ),
+                                                      if (projectModel
+                                                              .builtForAndroid &&
+                                                          projectModel
+                                                              .builtForApple)
+                                                        const SizedBox(
+                                                          width: 10,
+                                                        ),
+                                                      if (projectModel
+                                                          .builtForApple)
+                                                        const Row(
+                                                          children: [
+                                                            Icon(Ionicons
+                                                                .logo_apple),
+                                                            SizedBox(
+                                                              width: 5,
+                                                            ),
+                                                            Text(
+                                                              "Apple",
+                                                              style: TextStyle(
+                                                                  fontSize: 12,
+                                                                  color: Colors
+                                                                      .grey),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    projectModel.appIcon.isEmpty
+                                        ? Container(
+                                            height: 250,
+                                            width: 250,
+                                            decoration: BoxDecoration(
+                                              color: projectModel.appThemeColor,
+                                              borderRadius:
+                                                  BorderRadius.circular(50),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: projectModel
+                                                      .appThemeColor!
+                                                      .withOpacity(0.2),
+                                                  spreadRadius: 1,
+                                                  blurRadius: 3,
+                                                  offset: const Offset(0, 5),
+                                                )
+                                              ],
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                projectModel.title[0],
+                                                style: const TextStyle(
+                                                  fontSize: 100,
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
+                                          )
+                                        : Container(
+                                            height: 250,
+                                            width: 250,
+                                            decoration: BoxDecoration(
+                                              color: Colors.blue.shade900,
+                                              borderRadius:
+                                                  BorderRadius.circular(50),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: Colors.blue.shade900
+                                                      .withOpacity(0.2),
+                                                  spreadRadius: 1,
+                                                  blurRadius: 3,
+                                                  offset: const Offset(0, 5),
+                                                )
+                                              ],
+                                            ),
+                                            child: const SizedBox(),
+                                          ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 120,
+                                ),
+                                IntrinsicHeight(
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            color: Colors.white,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 20, vertical: 10),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            const Text(
+                                              "Project Date",
+                                              style: TextStyle(
+                                                  fontSize: 12,
+                                                  color: Colors.grey),
+                                            ),
+                                            const SizedBox(
+                                              height: 6,
+                                            ),
+                                            Text(
+                                              projectModel.projectDate,
+                                              style: const TextStyle(
+                                                fontSize: 18,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 50,
+                                      ),
+                                      const VerticalDivider(
+                                        thickness: 1,
+                                      ),
+                                      const SizedBox(
+                                        width: 50,
+                                      ),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            color: Colors.white,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 20, vertical: 10),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            const Text(
+                                              "Project Type",
+                                              style: TextStyle(
+                                                  fontSize: 12,
+                                                  color: Colors.grey),
+                                            ),
+                                            const SizedBox(
+                                              height: 6,
+                                            ),
+                                            Text(
+                                              projectModel.projectType,
+                                              style: const TextStyle(
+                                                fontSize: 18,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 50,
+                                      ),
+                                      const VerticalDivider(
+                                        thickness: 1,
+                                      ),
+                                      const SizedBox(
+                                        width: 50,
+                                      ),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            color: Colors.white,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 20, vertical: 10),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            const Text(
+                                              "Project Duration",
+                                              style: TextStyle(
+                                                  fontSize: 12,
+                                                  color: Colors.grey),
+                                            ),
+                                            const SizedBox(
+                                              height: 6,
+                                            ),
+                                            Text(
+                                              projectModel.projectDuration,
+                                              style: const TextStyle(
+                                                fontSize: 18,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 120,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      projectModel.shortBio,
+                                      style: const TextStyle(
+                                        fontSize: 30,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 120,
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      "About this app",
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 30,
+                                    ),
+                                    Text(
+                                      projectModel.description,
+                                      style: const TextStyle(
+                                        color: Colors.black54,
+                                        fontSize: 17,
+                                      ),
+                                      textAlign: TextAlign.justify,
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 80,
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      "App Preview",
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 30,
+                                    ),
+                                    SingleChildScrollView(
+                                      scrollDirection: Axis.horizontal,
+                                      controller: horizontalScrollController,
+                                      child: GestureDetector(
+                                        onHorizontalDragUpdate:
+                                            _onHorizontalDragUpdate,
+                                        behavior: HitTestBehavior.translucent,
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            if (projectModel
+                                                .mainImage.isNotEmpty)
+                                              mobileAppPreview(
+                                                  mainImage:
+                                                      projectModel.mainImage),
+                                            if (projectModel
+                                                .secondImage.isNotEmpty)
+                                              mobileAppPreview(
+                                                  mainImage:
+                                                      projectModel.secondImage),
+                                            if (projectModel
+                                                .thirdImage.isNotEmpty)
+                                              mobileAppPreview(
+                                                  mainImage:
+                                                      projectModel.thirdImage),
+                                            if (projectModel
+                                                .extraImage1.isNotEmpty)
+                                              mobileAppPreview(
+                                                  mainImage:
+                                                      projectModel.extraImage1),
+                                            if (projectModel
+                                                .extraImage2.isNotEmpty)
+                                              mobileAppPreview(
+                                                  mainImage:
+                                                      projectModel.extraImage2),
+                                            if (projectModel
+                                                .extraImage3.isNotEmpty)
+                                              mobileAppPreview(
+                                                  mainImage:
+                                                      projectModel.extraImage3),
+                                            if (projectModel
+                                                .extraImage4.isNotEmpty)
+                                              mobileAppPreview(
+                                                  mainImage:
+                                                      projectModel.extraImage4),
+                                            if (projectModel
+                                                .extraImage5.isNotEmpty)
+                                              mobileAppPreview(
+                                                  mainImage:
+                                                      projectModel.extraImage5),
+                                            if (projectModel
+                                                .extraImage6.isNotEmpty)
+                                              mobileAppPreview(
+                                                  mainImage:
+                                                      projectModel.extraImage6),
+                                            if (projectModel
+                                                .extraImage7.isNotEmpty)
+                                              mobileAppPreview(
+                                                  mainImage:
+                                                      projectModel.extraImage7),
+                                            if (projectModel
+                                                .extraImage8.isNotEmpty)
+                                              mobileAppPreview(
+                                                  mainImage:
+                                                      projectModel.extraImage8),
+                                            if (projectModel
+                                                .extraImage9.isNotEmpty)
+                                              mobileAppPreview(
+                                                  mainImage:
+                                                      projectModel.extraImage9),
+                                            if (projectModel
+                                                .extraImage10.isNotEmpty)
+                                              mobileAppPreview(
+                                                  mainImage: projectModel
+                                                      .extraImage10),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 120,
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      "Challenges Faced",
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 30,
+                                    ),
+                                    Text(
+                                      projectModel.challengesFaced,
+                                      style: const TextStyle(
+                                        color: Colors.black54,
+                                        fontSize: 17,
+                                      ),
+                                      textAlign: TextAlign.justify,
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 80,
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      "Results and Impact",
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 30,
+                                    ),
+                                    Text(
+                                      projectModel.results,
+                                      style: const TextStyle(
+                                        color: Colors.black54,
+                                        fontSize: 17,
+                                      ),
+                                      textAlign: TextAlign.justify,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      )
                     : Column(
                         children: [
                           Container(
@@ -1368,6 +1894,24 @@ class _ProjectScreenState extends State<ProjectScreen> {
                     ],
                   )
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget mobileAppPreview({required String mainImage}) {
+    return Container(
+      margin: const EdgeInsets.only(right: 80),
+      height: MediaQuery.of(context).size.height * .45,
+      child: DeviceFrame(
+        device: Devices.ios.iPhone13ProMax,
+        screen: Container(
+          color: Colors.white,
+          child: Image.asset(
+            mainImage,
+            fit: BoxFit.fitWidth,
+            alignment: Alignment.topLeft,
+          ),
         ),
       ),
     );

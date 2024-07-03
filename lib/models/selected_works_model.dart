@@ -28,6 +28,10 @@ class SelectedProjectModel {
   final String extraImage9;
   final String extraImage10;
   final String mobileView;
+  final String appIcon;
+  final Color? appThemeColor;
+  final bool builtForAndroid;
+  final bool builtForApple;
 
   SelectedProjectModel({
     required this.index,
@@ -57,5 +61,9 @@ class SelectedProjectModel {
     required this.extraImage9,
     required this.extraImage10,
     required this.mobileView,
+    required this.appIcon,
+    required this.appThemeColor,
+    required this.builtForAndroid,
+    required this.builtForApple,
   });
 }

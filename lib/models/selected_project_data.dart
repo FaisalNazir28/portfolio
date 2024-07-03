@@ -36,6 +36,10 @@ class SelectedProjectData {
       extraImage9: '',
       extraImage10: '',
       mobileView: '',
+      appIcon: '',
+      appThemeColor: Colors.white,
+      builtForAndroid: false,
+      builtForApple: false,
     ),
     SelectedProjectModel(
       index: 1,
@@ -69,6 +73,10 @@ class SelectedProjectData {
       extraImage9: AppImages.artache11,
       extraImage10: '',
       mobileView: '',
+      appIcon: '',
+      appThemeColor: Colors.white,
+      builtForAndroid: false,
+      builtForApple: false,
     ),
     SelectedProjectModel(
       index: 2,
@@ -102,6 +110,10 @@ class SelectedProjectData {
       extraImage9: '',
       extraImage10: '',
       mobileView: '',
+      appIcon: '',
+      appThemeColor: Colors.white,
+      builtForAndroid: false,
+      builtForApple: false,
     ),
     SelectedProjectModel(
       index: 3,
@@ -135,6 +147,10 @@ class SelectedProjectData {
       extraImage9: '',
       extraImage10: '',
       mobileView: '',
+      appIcon: '',
+      appThemeColor: Colors.white,
+      builtForAndroid: false,
+      builtForApple: false,
     ),
     SelectedProjectModel(
       index: 4,
@@ -167,6 +183,10 @@ class SelectedProjectData {
       extraImage9: '',
       extraImage10: '',
       mobileView: '',
+      appIcon: '',
+      appThemeColor: Colors.white,
+      builtForAndroid: false,
+      builtForApple: false,
     ),
   ];
 
@@ -203,6 +223,10 @@ class SelectedProjectData {
       extraImage9: '',
       extraImage10: '',
       mobileView: '',
+      appIcon: '',
+      appThemeColor: Colors.blue.shade900,
+      builtForAndroid: true,
+      builtForApple: true,
     ),
     SelectedProjectModel(
       index: 1,
@@ -236,6 +260,10 @@ class SelectedProjectData {
       extraImage9: '',
       extraImage10: '',
       mobileView: '',
+      appIcon: '',
+      appThemeColor: Colors.indigo,
+      builtForAndroid: true,
+      builtForApple: false,
     ),
     SelectedProjectModel(
       index: 2,
@@ -269,6 +297,10 @@ class SelectedProjectData {
       extraImage9: '',
       extraImage10: '',
       mobileView: '',
+      appIcon: '',
+      appThemeColor: Colors.indigoAccent.shade200,
+      builtForAndroid: true,
+      builtForApple: true,
     ),
     SelectedProjectModel(
       index: 3,
@@ -302,6 +334,10 @@ class SelectedProjectData {
       extraImage9: '',
       extraImage10: '',
       mobileView: '',
+      appIcon: '',
+      appThemeColor: Colors.red,
+      builtForAndroid: true,
+      builtForApple: false,
     ),
     SelectedProjectModel(
       index: 4,
@@ -334,6 +370,10 @@ class SelectedProjectData {
       extraImage9: '',
       extraImage10: '',
       mobileView: '',
+      appIcon: '',
+      appThemeColor: Colors.blue,
+      builtForAndroid: true,
+      builtForApple: true,
     ),
     SelectedProjectModel(
       index: 5,
@@ -366,6 +406,10 @@ class SelectedProjectData {
       extraImage9: '',
       extraImage10: '',
       mobileView: '',
+      appIcon: '',
+      appThemeColor: Colors.black87,
+      builtForAndroid: true,
+      builtForApple: true,
     ),
   ];
 
