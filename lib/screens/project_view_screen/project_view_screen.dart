@@ -42,8 +42,6 @@ class _ProjectScreenState extends State<ProjectScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var isDesktopScreen = Breakpoints.isLargeScreen(context);
-    var isTabletScreen = Breakpoints.isMediumScreen(context);
     var isMobileScreen = Breakpoints.isSmallScreen(context);
 
     final arguments = ModalRoute.of(context)!.settings.arguments as Map;
@@ -61,977 +59,8 @@ class _ProjectScreenState extends State<ProjectScreen> {
             child: Column(
               children: [
                 isMobileProject
-                    ? Column(
-                        children: [
-                          Container(
-                            margin: isDesktopScreen
-                                ? EdgeInsets.symmetric(
-                                    horizontal:
-                                        MediaQuery.of(context).size.width * .2,
-                                    vertical: 100)
-                                : isTabletScreen
-                                    ? EdgeInsets.symmetric(
-                                        horizontal:
-                                            MediaQuery.of(context).size.width *
-                                                .1,
-                                        vertical: 80)
-                                    : EdgeInsets.symmetric(
-                                        horizontal:
-                                            MediaQuery.of(context).size.width *
-                                                .04,
-                                        vertical: 60),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Row(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Expanded(
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            projectModel.title,
-                                            style: const TextStyle(
-                                                fontSize: 60,
-                                                fontWeight: FontWeight.w600,
-                                                color: Colors.black),
-                                          ),
-                                          const SizedBox(
-                                            height: 2,
-                                          ),
-                                          Text(
-                                            projectModel.company,
-                                            style: const TextStyle(
-                                                fontSize: 18,
-                                                fontWeight: FontWeight.w300,
-                                                color: Colors.black),
-                                          ),
-                                          const SizedBox(
-                                            height: 20,
-                                          ),
-                                          Container(
-                                            decoration: BoxDecoration(
-                                              border: Border.all(
-                                                color: Colors.grey,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                            ),
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 20, vertical: 10),
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                const Text(
-                                                  "Built for",
-                                                  style: TextStyle(
-                                                      fontSize: 12,
-                                                      color: Colors.grey),
-                                                ),
-                                                const SizedBox(
-                                                  height: 6,
-                                                ),
-                                                IntrinsicHeight(
-                                                  child: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    mainAxisSize:
-                                                        MainAxisSize.min,
-                                                    children: [
-                                                      if (projectModel
-                                                          .builtForAndroid)
-                                                        const Row(
-                                                          children: [
-                                                            Icon(Ionicons
-                                                                .logo_android),
-                                                            SizedBox(
-                                                              width: 5,
-                                                            ),
-                                                            Text(
-                                                              "Android",
-                                                              style: TextStyle(
-                                                                  fontSize: 12,
-                                                                  color: Colors
-                                                                      .grey),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      if (projectModel
-                                                              .builtForAndroid &&
-                                                          projectModel
-                                                              .builtForApple)
-                                                        const SizedBox(
-                                                          width: 10,
-                                                        ),
-                                                      if (projectModel
-                                                              .builtForAndroid &&
-                                                          projectModel
-                                                              .builtForApple)
-                                                        const VerticalDivider(
-                                                          thickness: 2,
-                                                        ),
-                                                      if (projectModel
-                                                              .builtForAndroid &&
-                                                          projectModel
-                                                              .builtForApple)
-                                                        const SizedBox(
-                                                          width: 10,
-                                                        ),
-                                                      if (projectModel
-                                                          .builtForApple)
-                                                        const Row(
-                                                          children: [
-                                                            Icon(Ionicons
-                                                                .logo_apple),
-                                                            SizedBox(
-                                                              width: 5,
-                                                            ),
-                                                            Text(
-                                                              "Apple",
-                                                              style: TextStyle(
-                                                                  fontSize: 12,
-                                                                  color: Colors
-                                                                      .grey),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                    ),
-                                    projectModel.appIcon.isEmpty
-                                        ? Container(
-                                            height: 250,
-                                            width: 250,
-                                            decoration: BoxDecoration(
-                                              color: projectModel.appThemeColor,
-                                              borderRadius:
-                                                  BorderRadius.circular(50),
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  color: projectModel
-                                                      .appThemeColor!
-                                                      .withOpacity(0.2),
-                                                  spreadRadius: 1,
-                                                  blurRadius: 3,
-                                                  offset: const Offset(0, 5),
-                                                )
-                                              ],
-                                            ),
-                                            child: Center(
-                                              child: Text(
-                                                projectModel.title[0],
-                                                style: const TextStyle(
-                                                  fontSize: 100,
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                            ),
-                                          )
-                                        : Container(
-                                            height: 250,
-                                            width: 250,
-                                            decoration: BoxDecoration(
-                                              color: Colors.blue.shade900,
-                                              borderRadius:
-                                                  BorderRadius.circular(50),
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  color: Colors.blue.shade900
-                                                      .withOpacity(0.2),
-                                                  spreadRadius: 1,
-                                                  blurRadius: 3,
-                                                  offset: const Offset(0, 5),
-                                                )
-                                              ],
-                                            ),
-                                            child: const SizedBox(),
-                                          ),
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 120,
-                                ),
-                                IntrinsicHeight(
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          border: Border.all(
-                                            color: Colors.white,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                        ),
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 20, vertical: 10),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            const Text(
-                                              "Project Date",
-                                              style: TextStyle(
-                                                  fontSize: 12,
-                                                  color: Colors.grey),
-                                            ),
-                                            const SizedBox(
-                                              height: 6,
-                                            ),
-                                            Text(
-                                              projectModel.projectDate,
-                                              style: const TextStyle(
-                                                fontSize: 18,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        width: 50,
-                                      ),
-                                      const VerticalDivider(
-                                        thickness: 1,
-                                      ),
-                                      const SizedBox(
-                                        width: 50,
-                                      ),
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          border: Border.all(
-                                            color: Colors.white,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                        ),
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 20, vertical: 10),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            const Text(
-                                              "Project Type",
-                                              style: TextStyle(
-                                                  fontSize: 12,
-                                                  color: Colors.grey),
-                                            ),
-                                            const SizedBox(
-                                              height: 6,
-                                            ),
-                                            Text(
-                                              projectModel.projectType,
-                                              style: const TextStyle(
-                                                fontSize: 18,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        width: 50,
-                                      ),
-                                      const VerticalDivider(
-                                        thickness: 1,
-                                      ),
-                                      const SizedBox(
-                                        width: 50,
-                                      ),
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          border: Border.all(
-                                            color: Colors.white,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                        ),
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 20, vertical: 10),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            const Text(
-                                              "Project Duration",
-                                              style: TextStyle(
-                                                  fontSize: 12,
-                                                  color: Colors.grey),
-                                            ),
-                                            const SizedBox(
-                                              height: 6,
-                                            ),
-                                            Text(
-                                              projectModel.projectDuration,
-                                              style: const TextStyle(
-                                                fontSize: 18,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 120,
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      projectModel.shortBio,
-                                      style: const TextStyle(
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.w400,
-                                        color: Colors.black,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 120,
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Text(
-                                      "About this app",
-                                      style: TextStyle(
-                                        fontSize: 18,
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      height: 30,
-                                    ),
-                                    Text(
-                                      projectModel.description,
-                                      style: const TextStyle(
-                                        color: Colors.black54,
-                                        fontSize: 17,
-                                      ),
-                                      textAlign: TextAlign.justify,
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 80,
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Text(
-                                      "App Preview",
-                                      style: TextStyle(
-                                        fontSize: 18,
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      height: 30,
-                                    ),
-                                    SingleChildScrollView(
-                                      scrollDirection: Axis.horizontal,
-                                      controller: horizontalScrollController,
-                                      child: GestureDetector(
-                                        onHorizontalDragUpdate:
-                                            _onHorizontalDragUpdate,
-                                        behavior: HitTestBehavior.translucent,
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            if (projectModel
-                                                .mainImage.isNotEmpty)
-                                              mobileAppPreview(
-                                                  mainImage:
-                                                      projectModel.mainImage),
-                                            if (projectModel
-                                                .secondImage.isNotEmpty)
-                                              mobileAppPreview(
-                                                  mainImage:
-                                                      projectModel.secondImage),
-                                            if (projectModel
-                                                .thirdImage.isNotEmpty)
-                                              mobileAppPreview(
-                                                  mainImage:
-                                                      projectModel.thirdImage),
-                                            if (projectModel
-                                                .extraImage1.isNotEmpty)
-                                              mobileAppPreview(
-                                                  mainImage:
-                                                      projectModel.extraImage1),
-                                            if (projectModel
-                                                .extraImage2.isNotEmpty)
-                                              mobileAppPreview(
-                                                  mainImage:
-                                                      projectModel.extraImage2),
-                                            if (projectModel
-                                                .extraImage3.isNotEmpty)
-                                              mobileAppPreview(
-                                                  mainImage:
-                                                      projectModel.extraImage3),
-                                            if (projectModel
-                                                .extraImage4.isNotEmpty)
-                                              mobileAppPreview(
-                                                  mainImage:
-                                                      projectModel.extraImage4),
-                                            if (projectModel
-                                                .extraImage5.isNotEmpty)
-                                              mobileAppPreview(
-                                                  mainImage:
-                                                      projectModel.extraImage5),
-                                            if (projectModel
-                                                .extraImage6.isNotEmpty)
-                                              mobileAppPreview(
-                                                  mainImage:
-                                                      projectModel.extraImage6),
-                                            if (projectModel
-                                                .extraImage7.isNotEmpty)
-                                              mobileAppPreview(
-                                                  mainImage:
-                                                      projectModel.extraImage7),
-                                            if (projectModel
-                                                .extraImage8.isNotEmpty)
-                                              mobileAppPreview(
-                                                  mainImage:
-                                                      projectModel.extraImage8),
-                                            if (projectModel
-                                                .extraImage9.isNotEmpty)
-                                              mobileAppPreview(
-                                                  mainImage:
-                                                      projectModel.extraImage9),
-                                            if (projectModel
-                                                .extraImage10.isNotEmpty)
-                                              mobileAppPreview(
-                                                  mainImage: projectModel
-                                                      .extraImage10),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 120,
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Text(
-                                      "Challenges Faced",
-                                      style: TextStyle(
-                                        fontSize: 18,
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      height: 30,
-                                    ),
-                                    Text(
-                                      projectModel.challengesFaced,
-                                      style: const TextStyle(
-                                        color: Colors.black54,
-                                        fontSize: 17,
-                                      ),
-                                      textAlign: TextAlign.justify,
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 80,
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Text(
-                                      "Results and Impact",
-                                      style: TextStyle(
-                                        fontSize: 18,
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      height: 30,
-                                    ),
-                                    Text(
-                                      projectModel.results,
-                                      style: const TextStyle(
-                                        color: Colors.black54,
-                                        fontSize: 17,
-                                      ),
-                                      textAlign: TextAlign.justify,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      )
-                    : Column(
-                        children: [
-                          Container(
-                            margin: isDesktopScreen
-                                ? EdgeInsets.symmetric(
-                                    horizontal:
-                                        MediaQuery.of(context).size.width * .2,
-                                    vertical: 100)
-                                : isTabletScreen
-                                    ? EdgeInsets.symmetric(
-                                        horizontal:
-                                            MediaQuery.of(context).size.width *
-                                                .1,
-                                        vertical: 80)
-                                    : EdgeInsets.symmetric(
-                                        horizontal:
-                                            MediaQuery.of(context).size.width *
-                                                .04,
-                                        vertical: 60),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 25),
-                                  height: isMobileScreen
-                                      ? MediaQuery.of(context).size.height * .30
-                                      : MediaQuery.of(context).size.height *
-                                          .45,
-                                  decoration: BoxDecoration(
-                                    color: Colors.grey.shade300,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Expanded(
-                                        flex: 3,
-                                        child: Container(
-                                          height: double.infinity,
-                                          width: double.infinity,
-                                          margin:
-                                              const EdgeInsets.only(top: 30),
-                                          color: projectModel.mainImageBG,
-                                          child: Image.asset(
-                                            projectModel.mainImage,
-                                            fit: BoxFit.fitWidth,
-                                            alignment: Alignment.topCenter,
-                                          ),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        width: 20,
-                                      ),
-                                      Expanded(
-                                        flex: 3,
-                                        child: Container(
-                                          height: double.infinity,
-                                          width: double.infinity,
-                                          color: projectModel.secondImageBG,
-                                          child: Image.asset(
-                                            projectModel.secondImage,
-                                            fit: BoxFit.fitWidth,
-                                            alignment: Alignment.center,
-                                          ),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        width: 20,
-                                      ),
-                                      Expanded(
-                                        flex: 2,
-                                        child: Container(
-                                          height: double.infinity,
-                                          width: double.infinity,
-                                          color: projectModel.thirdImageBG,
-                                          child: Image.asset(
-                                            projectModel.thirdImage,
-                                            fit: BoxFit.fitWidth,
-                                            alignment: Alignment.center,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: isDesktopScreen ? 80 : 50,
-                                ),
-                                isDesktopScreen
-                                    ? Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 40),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Expanded(
-                                              flex: 5,
-                                              child: Text(
-                                                projectModel.shortBio,
-                                                style: const TextStyle(
-                                                    fontSize: 30,
-                                                    fontWeight: FontWeight.w400,
-                                                    color: Colors.black),
-                                              ),
-                                            ),
-                                            const SizedBox(
-                                              width: 80,
-                                            ),
-                                            Expanded(
-                                              flex: 6,
-                                              child: Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    projectModel.title,
-                                                    style: const TextStyle(
-                                                        fontSize: 40,
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                        color: Colors.black),
-                                                  ),
-                                                  const SizedBox(
-                                                    height: 10,
-                                                  ),
-                                                  Text(
-                                                    projectModel.company,
-                                                    style: const TextStyle(
-                                                        fontSize: 30,
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                        color: Colors.black),
-                                                  ),
-                                                ],
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                      )
-                                    : Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            projectModel.shortBio,
-                                            style: isTabletScreen
-                                                ? const TextStyle(
-                                                    fontSize: 28,
-                                                    fontWeight: FontWeight.w500,
-                                                    color: Colors.black)
-                                                : const TextStyle(
-                                                    fontSize: 20,
-                                                    fontWeight: FontWeight.w400,
-                                                    color: Colors.black),
-                                          ),
-                                          const SizedBox(
-                                            height: 40,
-                                          ),
-                                          Text(
-                                            projectModel.title,
-                                            style: isTabletScreen
-                                                ? const TextStyle(
-                                                    fontSize: 35,
-                                                    fontWeight: FontWeight.w400,
-                                                    color: Colors.black)
-                                                : const TextStyle(
-                                                    fontSize: 30,
-                                                    fontWeight: FontWeight.w400,
-                                                    color: Colors.black),
-                                          ),
-                                          const SizedBox(
-                                            height: 10,
-                                          ),
-                                          Text(
-                                            projectModel.company,
-                                            style: isTabletScreen
-                                                ? const TextStyle(
-                                                    fontSize: 25,
-                                                    fontWeight: FontWeight.w400,
-                                                    color: Colors.black)
-                                                : const TextStyle(
-                                                    fontSize: 20,
-                                                    fontWeight: FontWeight.w400,
-                                                    color: Colors.black),
-                                          ),
-                                        ],
-                                      )
-                              ],
-                            ),
-                          ),
-                          Container(
-                            color: const Color(0xfff5f5f0),
-                            child: Container(
-                              margin: isDesktopScreen
-                                  ? EdgeInsets.symmetric(
-                                      horizontal:
-                                          MediaQuery.of(context).size.width *
-                                              .2,
-                                      vertical: 100)
-                                  : isTabletScreen
-                                      ? EdgeInsets.symmetric(
-                                          horizontal: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              .1,
-                                          vertical: 80)
-                                      : EdgeInsets.symmetric(
-                                          horizontal: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              .04,
-                                          vertical: 60),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  isMobileScreen
-                                      ? Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                const Text(
-                                                  "Project type",
-                                                  style: TextStyle(
-                                                      color: Colors.black54,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      fontSize: 16),
-                                                ),
-                                                const SizedBox(
-                                                  height: 10,
-                                                ),
-                                                Text(
-                                                  projectModel.projectType,
-                                                  style: const TextStyle(
-                                                      fontSize: 20,
-                                                      fontWeight:
-                                                          FontWeight.w600),
-                                                ),
-                                              ],
-                                            ),
-                                            const SizedBox(
-                                              height: 20,
-                                            ),
-                                            Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                const Text(
-                                                  "Project date",
-                                                  style: TextStyle(
-                                                      color: Colors.black54,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      fontSize: 16),
-                                                ),
-                                                const SizedBox(
-                                                  height: 10,
-                                                ),
-                                                Text(
-                                                  projectModel.projectDate,
-                                                  style: const TextStyle(
-                                                      fontSize: 20,
-                                                      fontWeight:
-                                                          FontWeight.w600),
-                                                ),
-                                              ],
-                                            ),
-                                            const SizedBox(
-                                              height: 20,
-                                            ),
-                                            Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                const Text(
-                                                  "Project duration",
-                                                  style: TextStyle(
-                                                      color: Colors.black54,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      fontSize: 16),
-                                                ),
-                                                const SizedBox(
-                                                  height: 10,
-                                                ),
-                                                Text(
-                                                  projectModel.projectDuration,
-                                                  style: const TextStyle(
-                                                      fontSize: 20,
-                                                      fontWeight:
-                                                          FontWeight.w600),
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        )
-                                      : Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Expanded(
-                                              child: Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  const Text(
-                                                    "Project type",
-                                                    style: TextStyle(
-                                                        color: Colors.black54,
-                                                        fontSize: 16),
-                                                  ),
-                                                  const SizedBox(
-                                                    height: 10,
-                                                  ),
-                                                  Text(
-                                                    projectModel.projectType,
-                                                    style: const TextStyle(
-                                                        fontSize: 20,
-                                                        fontWeight:
-                                                            FontWeight.w500),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            Expanded(
-                                              child: Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  const Text(
-                                                    "Project date",
-                                                    style: TextStyle(
-                                                        color: Colors.black54,
-                                                        fontSize: 16),
-                                                  ),
-                                                  const SizedBox(
-                                                    height: 10,
-                                                  ),
-                                                  Text(
-                                                    projectModel.projectDate,
-                                                    style: const TextStyle(
-                                                        fontSize: 20,
-                                                        fontWeight:
-                                                            FontWeight.w500),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            Expanded(
-                                              child: Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  const Text(
-                                                    "Project duration",
-                                                    style: TextStyle(
-                                                        color: Colors.black54,
-                                                        fontSize: 16),
-                                                  ),
-                                                  const SizedBox(
-                                                    height: 10,
-                                                  ),
-                                                  Text(
-                                                    projectModel
-                                                        .projectDuration,
-                                                    style: const TextStyle(
-                                                        fontSize: 20,
-                                                        fontWeight:
-                                                            FontWeight.w500),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                  const SizedBox(
-                                    height: 50,
-                                  ),
-                                  Text(
-                                    projectModel.description,
-                                    style: const TextStyle(
-                                      color: Colors.black54,
-                                      fontSize: 17,
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    height: 80,
-                                  ),
-                                  projectScreensContainer(
-                                      projectModel: projectModel),
-                                  const SizedBox(
-                                    height: 80,
-                                  ),
-                                  const Text(
-                                    'Challenge Faced:',
-                                    style: TextStyle(
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                  const SizedBox(
-                                    height: 20,
-                                  ),
-                                  Text(
-                                    projectModel.challengesFaced,
-                                    style: const TextStyle(
-                                      color: Colors.black54,
-                                      fontSize: 17,
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    height: 80,
-                                  ),
-                                  const Text(
-                                    'Results and Impact:',
-                                    style: TextStyle(
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                  const SizedBox(
-                                    height: 20,
-                                  ),
-                                  Text(
-                                    projectModel.results,
-                                    style: const TextStyle(
-                                      color: Colors.black54,
-                                      fontSize: 17,
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    height: 80,
-                                  ),
-                                  devicePortfolioShowcase(projectModel),
-                                ],
-                              ),
-                            ),
-                          ),
-                          anotherWorkContainer(
-                              projectModel.index, isMobileProject),
-                        ],
-                      ),
+                    ? mobileAppShowcase(projectModel)
+                    : webAppShowcase(projectModel, isMobileProject),
                 ReviewWidget(defaultColor: true),
                 const CustomFooter(),
               ],
@@ -1061,6 +90,867 @@ class _ProjectScreenState extends State<ProjectScreen> {
           ),
         ],
       ),
+    );
+  }
+
+  Widget mobileAppShowcase(SelectedProjectModel projectModel) {
+    var isDesktopScreen = Breakpoints.isLargeScreen(context);
+    var isTabletScreen = Breakpoints.isMediumScreen(context);
+
+    return Column(
+      children: [
+        Container(
+          margin: isDesktopScreen
+              ? EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * .2,
+                  vertical: 100)
+              : isTabletScreen
+                  ? EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * .1,
+                      vertical: 80)
+                  : EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * .04,
+                      vertical: 60),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          projectModel.title,
+                          style: const TextStyle(
+                              fontSize: 60,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black),
+                        ),
+                        const SizedBox(
+                          height: 2,
+                        ),
+                        Text(
+                          projectModel.company,
+                          style: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w300,
+                              color: Colors.black),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.grey,
+                            ),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "Built for",
+                                style:
+                                    TextStyle(fontSize: 12, color: Colors.grey),
+                              ),
+                              const SizedBox(
+                                height: 6,
+                              ),
+                              IntrinsicHeight(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    if (projectModel.builtForAndroid)
+                                      const Row(
+                                        children: [
+                                          Icon(Ionicons.logo_android),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Text(
+                                            "Android",
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                color: Colors.grey),
+                                          ),
+                                        ],
+                                      ),
+                                    if (projectModel.builtForAndroid &&
+                                        projectModel.builtForApple)
+                                      const SizedBox(
+                                        width: 10,
+                                      ),
+                                    if (projectModel.builtForAndroid &&
+                                        projectModel.builtForApple)
+                                      const VerticalDivider(
+                                        thickness: 2,
+                                      ),
+                                    if (projectModel.builtForAndroid &&
+                                        projectModel.builtForApple)
+                                      const SizedBox(
+                                        width: 10,
+                                      ),
+                                    if (projectModel.builtForApple)
+                                      const Row(
+                                        children: [
+                                          Icon(Ionicons.logo_apple),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Text(
+                                            "Apple",
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                color: Colors.grey),
+                                          ),
+                                        ],
+                                      ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  projectModel.appIcon.isEmpty
+                      ? Container(
+                          height: 250,
+                          width: 250,
+                          decoration: BoxDecoration(
+                            color: projectModel.appThemeColor,
+                            borderRadius: BorderRadius.circular(50),
+                            boxShadow: [
+                              BoxShadow(
+                                color: projectModel.appThemeColor!
+                                    .withOpacity(0.2),
+                                spreadRadius: 1,
+                                blurRadius: 3,
+                                offset: const Offset(0, 5),
+                              )
+                            ],
+                          ),
+                          child: Center(
+                            child: Text(
+                              projectModel.title[0],
+                              style: const TextStyle(
+                                fontSize: 100,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        )
+                      : Container(
+                          height: 250,
+                          width: 250,
+                          decoration: BoxDecoration(
+                            color: Colors.blue.shade900,
+                            borderRadius: BorderRadius.circular(50),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.blue.shade900.withOpacity(0.2),
+                                spreadRadius: 1,
+                                blurRadius: 3,
+                                offset: const Offset(0, 5),
+                              )
+                            ],
+                          ),
+                          child: const SizedBox(),
+                        ),
+                ],
+              ),
+              const SizedBox(
+                height: 120,
+              ),
+              IntrinsicHeight(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.white,
+                        ),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "Project Date",
+                            style: TextStyle(fontSize: 12, color: Colors.grey),
+                          ),
+                          const SizedBox(
+                            height: 6,
+                          ),
+                          Text(
+                            projectModel.projectDate,
+                            style: const TextStyle(
+                              fontSize: 18,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 50,
+                    ),
+                    const VerticalDivider(
+                      thickness: 1,
+                    ),
+                    const SizedBox(
+                      width: 50,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.white,
+                        ),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "Project Type",
+                            style: TextStyle(fontSize: 12, color: Colors.grey),
+                          ),
+                          const SizedBox(
+                            height: 6,
+                          ),
+                          Text(
+                            projectModel.projectType,
+                            style: const TextStyle(
+                              fontSize: 18,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 50,
+                    ),
+                    const VerticalDivider(
+                      thickness: 1,
+                    ),
+                    const SizedBox(
+                      width: 50,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.white,
+                        ),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "Project Duration",
+                            style: TextStyle(fontSize: 12, color: Colors.grey),
+                          ),
+                          const SizedBox(
+                            height: 6,
+                          ),
+                          Text(
+                            projectModel.projectDuration,
+                            style: const TextStyle(
+                              fontSize: 18,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 120,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    projectModel.shortBio,
+                    style: const TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 120,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "About this app",
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Text(
+                    projectModel.description,
+                    style: const TextStyle(
+                      color: Colors.black54,
+                      fontSize: 17,
+                    ),
+                    textAlign: TextAlign.justify,
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 80,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "App Preview",
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    controller: horizontalScrollController,
+                    child: GestureDetector(
+                      onHorizontalDragUpdate: _onHorizontalDragUpdate,
+                      behavior: HitTestBehavior.translucent,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          if (projectModel.mainImage.isNotEmpty)
+                            mobileAppPreview(mainImage: projectModel.mainImage),
+                          if (projectModel.secondImage.isNotEmpty)
+                            mobileAppPreview(
+                                mainImage: projectModel.secondImage),
+                          if (projectModel.thirdImage.isNotEmpty)
+                            mobileAppPreview(
+                                mainImage: projectModel.thirdImage),
+                          if (projectModel.extraImage1.isNotEmpty)
+                            mobileAppPreview(
+                                mainImage: projectModel.extraImage1),
+                          if (projectModel.extraImage2.isNotEmpty)
+                            mobileAppPreview(
+                                mainImage: projectModel.extraImage2),
+                          if (projectModel.extraImage3.isNotEmpty)
+                            mobileAppPreview(
+                                mainImage: projectModel.extraImage3),
+                          if (projectModel.extraImage4.isNotEmpty)
+                            mobileAppPreview(
+                                mainImage: projectModel.extraImage4),
+                          if (projectModel.extraImage5.isNotEmpty)
+                            mobileAppPreview(
+                                mainImage: projectModel.extraImage5),
+                          if (projectModel.extraImage6.isNotEmpty)
+                            mobileAppPreview(
+                                mainImage: projectModel.extraImage6),
+                          if (projectModel.extraImage7.isNotEmpty)
+                            mobileAppPreview(
+                                mainImage: projectModel.extraImage7),
+                          if (projectModel.extraImage8.isNotEmpty)
+                            mobileAppPreview(
+                                mainImage: projectModel.extraImage8),
+                          if (projectModel.extraImage9.isNotEmpty)
+                            mobileAppPreview(
+                                mainImage: projectModel.extraImage9),
+                          if (projectModel.extraImage10.isNotEmpty)
+                            mobileAppPreview(
+                                mainImage: projectModel.extraImage10),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 120,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "Challenges Faced",
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Text(
+                    projectModel.challengesFaced,
+                    style: const TextStyle(
+                      color: Colors.black54,
+                      fontSize: 17,
+                    ),
+                    textAlign: TextAlign.justify,
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 80,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "Results and Impact",
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Text(
+                    projectModel.results,
+                    style: const TextStyle(
+                      color: Colors.black54,
+                      fontSize: 17,
+                    ),
+                    textAlign: TextAlign.justify,
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget webAppShowcase(
+      SelectedProjectModel projectModel, bool isMobileProject) {
+    var isDesktopScreen = Breakpoints.isLargeScreen(context);
+    var isTabletScreen = Breakpoints.isMediumScreen(context);
+    var isMobileScreen = Breakpoints.isSmallScreen(context);
+
+    return Column(
+      children: [
+        Container(
+          margin: isDesktopScreen
+              ? EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * .2,
+                  vertical: 100)
+              : isTabletScreen
+                  ? EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * .1,
+                      vertical: 80)
+                  : EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * .04,
+                      vertical: 60),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                height: isMobileScreen
+                    ? MediaQuery.of(context).size.height * .30
+                    : MediaQuery.of(context).size.height * .45,
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade300,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      flex: 3,
+                      child: Container(
+                        height: double.infinity,
+                        width: double.infinity,
+                        margin: const EdgeInsets.only(top: 30),
+                        color: projectModel.mainImageBG,
+                        child: Image.asset(
+                          projectModel.mainImage,
+                          fit: BoxFit.fitWidth,
+                          alignment: Alignment.topCenter,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Expanded(
+                      flex: 3,
+                      child: Container(
+                        height: double.infinity,
+                        width: double.infinity,
+                        color: projectModel.secondImageBG,
+                        child: Image.asset(
+                          projectModel.secondImage,
+                          fit: BoxFit.fitWidth,
+                          alignment: Alignment.center,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Expanded(
+                      flex: 2,
+                      child: Container(
+                        height: double.infinity,
+                        width: double.infinity,
+                        color: projectModel.thirdImageBG,
+                        child: Image.asset(
+                          projectModel.thirdImage,
+                          fit: BoxFit.fitWidth,
+                          alignment: Alignment.center,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: isDesktopScreen ? 80 : 50,
+              ),
+              isDesktopScreen
+                  ? Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 40),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            flex: 5,
+                            child: Text(
+                              projectModel.shortBio,
+                              style: const TextStyle(
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 80,
+                          ),
+                          Expanded(
+                            flex: 6,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  projectModel.title,
+                                  style: const TextStyle(
+                                      fontSize: 40,
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.black),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  projectModel.company,
+                                  style: const TextStyle(
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.black),
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    )
+                  : Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          projectModel.shortBio,
+                          style: isTabletScreen
+                              ? const TextStyle(
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.black)
+                              : const TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black),
+                        ),
+                        const SizedBox(
+                          height: 40,
+                        ),
+                        Text(
+                          projectModel.title,
+                          style: isTabletScreen
+                              ? const TextStyle(
+                                  fontSize: 35,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black)
+                              : const TextStyle(
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          projectModel.company,
+                          style: isTabletScreen
+                              ? const TextStyle(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black)
+                              : const TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black),
+                        ),
+                      ],
+                    )
+            ],
+          ),
+        ),
+        Container(
+          color: const Color(0xfff5f5f0),
+          child: Container(
+            margin: isDesktopScreen
+                ? EdgeInsets.symmetric(
+                    horizontal: MediaQuery.of(context).size.width * .2,
+                    vertical: 100)
+                : isTabletScreen
+                    ? EdgeInsets.symmetric(
+                        horizontal: MediaQuery.of(context).size.width * .1,
+                        vertical: 80)
+                    : EdgeInsets.symmetric(
+                        horizontal: MediaQuery.of(context).size.width * .04,
+                        vertical: 60),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                isMobileScreen
+                    ? Column(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "Project type",
+                                style: TextStyle(
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 16),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Text(
+                                projectModel.projectType,
+                                style: const TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.w600),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "Project date",
+                                style: TextStyle(
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 16),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Text(
+                                projectModel.projectDate,
+                                style: const TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.w600),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "Project duration",
+                                style: TextStyle(
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 16),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Text(
+                                projectModel.projectDuration,
+                                style: const TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.w600),
+                              ),
+                            ],
+                          ),
+                        ],
+                      )
+                    : Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  "Project type",
+                                  style: TextStyle(
+                                      color: Colors.black54, fontSize: 16),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  projectModel.projectType,
+                                  style: const TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  "Project date",
+                                  style: TextStyle(
+                                      color: Colors.black54, fontSize: 16),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  projectModel.projectDate,
+                                  style: const TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  "Project duration",
+                                  style: TextStyle(
+                                      color: Colors.black54, fontSize: 16),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  projectModel.projectDuration,
+                                  style: const TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                const SizedBox(
+                  height: 50,
+                ),
+                Text(
+                  projectModel.description,
+                  style: const TextStyle(
+                    color: Colors.black54,
+                    fontSize: 17,
+                  ),
+                ),
+                const SizedBox(
+                  height: 80,
+                ),
+                projectScreensContainer(projectModel: projectModel),
+                const SizedBox(
+                  height: 80,
+                ),
+                const Text(
+                  'Challenge Faced:',
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  projectModel.challengesFaced,
+                  style: const TextStyle(
+                    color: Colors.black54,
+                    fontSize: 17,
+                  ),
+                ),
+                const SizedBox(
+                  height: 80,
+                ),
+                const Text(
+                  'Results and Impact:',
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  projectModel.results,
+                  style: const TextStyle(
+                    color: Colors.black54,
+                    fontSize: 17,
+                  ),
+                ),
+                const SizedBox(
+                  height: 80,
+                ),
+                devicePortfolioShowcase(projectModel),
+              ],
+            ),
+          ),
+        ),
+        anotherWorkContainer(projectModel.index, isMobileProject),
+      ],
     );
   }
 
