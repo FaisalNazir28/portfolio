@@ -114,8 +114,14 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                           ),
                           InkWell(
                             onTap: () => Navigator.pushNamed(
-                                context, Routes.project,
-                                arguments: widget.projectData),
+                              context,
+                              Routes.project,
+                              arguments: {
+                                "projectData": widget.projectData,
+                                "isMobileProject":
+                                    widget.isMobileProjectShowcase,
+                              },
+                            ),
                             child: Container(
                               width: 100,
                               decoration: BoxDecoration(
@@ -349,8 +355,14 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                                 });
                               },
                               onTap: () => Navigator.pushNamed(
-                                  context, Routes.project,
-                                  arguments: widget.projectData),
+                                context,
+                                Routes.project,
+                                arguments: {
+                                  "projectData": widget.projectData,
+                                  "isMobileProject":
+                                      widget.isMobileProjectShowcase,
+                                },
+                              ),
                               child: Container(
                                 width: 100,
                                 decoration: BoxDecoration(
@@ -620,8 +632,14 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, Routes.project,
-                              arguments: widget.projectData);
+                          Navigator.pushNamed(
+                            context,
+                            Routes.project,
+                            arguments: {
+                              "projectData": widget.projectData,
+                              "isMobileProject": widget.isMobileProjectShowcase,
+                            },
+                          );
                         },
                         child: Container(
                           padding: const EdgeInsets.symmetric(
@@ -790,8 +808,15 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                         ),
                         InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, Routes.project,
-                                arguments: widget.projectData);
+                            Navigator.pushNamed(
+                              context,
+                              Routes.project,
+                              arguments: {
+                                "projectData": widget.projectData,
+                                "isMobileProject":
+                                    widget.isMobileProjectShowcase,
+                              },
+                            );
                           },
                           child: Container(
                             padding: const EdgeInsets.symmetric(

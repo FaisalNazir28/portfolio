@@ -6,10 +6,12 @@ import 'package:my_portfolio/routes/routes.dart';
 class SelectedWorkContainer extends StatefulWidget {
   final SelectedProjectModel projectData;
   final bool isProjectViewScreen;
+  final bool isMobileProject;
 
   const SelectedWorkContainer({
     super.key,
     required this.projectData,
+    required this.isMobileProject,
     this.isProjectViewScreen = false,
   });
 
@@ -114,8 +116,14 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                     bottom: isHovered ? 16.0 : -52.0,
                     child: InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, Routes.project,
-                            arguments: widget.projectData);
+                        Navigator.pushNamed(
+                          context,
+                          Routes.project,
+                          arguments: {
+                            "projectData": widget.projectData,
+                            "isMobileProject": widget.isMobileProject,
+                          },
+                        );
                       },
                       child: Container(
                         padding: const EdgeInsets.symmetric(
@@ -230,8 +238,14 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                             const SizedBox(height: 15.0),
                             InkWell(
                               onTap: () {
-                                Navigator.pushNamed(context, Routes.project,
-                                    arguments: widget.projectData);
+                                Navigator.pushNamed(
+                                  context,
+                                  Routes.project,
+                                  arguments: {
+                                    "projectData": widget.projectData,
+                                    "isMobileProject": widget.isMobileProject,
+                                  },
+                                );
                               },
                               child: Container(
                                 padding: const EdgeInsets.symmetric(
@@ -327,8 +341,14 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                       children: [
                         InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, Routes.project,
-                                arguments: widget.projectData);
+                            Navigator.pushNamed(
+                              context,
+                              Routes.project,
+                              arguments: {
+                                "projectData": widget.projectData,
+                                "isMobileProject": widget.isMobileProject,
+                              },
+                            );
                           },
                           child: Container(
                             padding: const EdgeInsets.symmetric(

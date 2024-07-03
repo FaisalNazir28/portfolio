@@ -1,4 +1,4 @@
-class Routes{
+class Routes {
   static String home = '/';
   static String about = '/about';
   static String login = '/login';

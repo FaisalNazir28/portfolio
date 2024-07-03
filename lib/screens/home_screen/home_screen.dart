@@ -538,8 +538,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                 itemCount: 4,
                                 itemBuilder: (context, index) {
                                   return SelectedWorkContainer(
-                                      projectData: SelectedProjectData
-                                          .selectedWebProjects[index]);
+                                    projectData: SelectedProjectData
+                                        .selectedWebProjects[index],
+                                    isMobileProject: false,
+                                  );
                                 }),
                           ],
                         ),
