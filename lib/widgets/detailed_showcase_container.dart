@@ -113,12 +113,9 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                             width: 20,
                           ),
                           InkWell(
-                            onHover: (v) {
-                              setState(() {
-                                hover = v;
-                              });
-                            },
-                            onTap: () {},
+                            onTap: () => Navigator.pushNamed(
+                                context, Routes.project,
+                                arguments: widget.projectData),
                             child: Container(
                               width: 100,
                               decoration: BoxDecoration(
@@ -351,7 +348,9 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                                   hover = v;
                                 });
                               },
-                              onTap: () {},
+                              onTap: () => Navigator.pushNamed(
+                                  context, Routes.project,
+                                  arguments: widget.projectData),
                               child: Container(
                                 width: 100,
                                 decoration: BoxDecoration(
