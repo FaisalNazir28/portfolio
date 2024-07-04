@@ -6,6 +6,7 @@ import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/models/selected_project_data.dart';
 import 'package:my_portfolio/models/selected_works_model.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
+import 'package:my_portfolio/utilities/app_images.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
 import 'package:my_portfolio/widgets/footer.dart';
 import 'package:my_portfolio/widgets/header.dart';
@@ -253,18 +254,30 @@ class _ProjectScreenState extends State<ProjectScreen> {
                           height: 250,
                           width: 250,
                           decoration: BoxDecoration(
-                            color: Colors.blue.shade900,
+                            color: Colors.white,
                             borderRadius: BorderRadius.circular(50),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.blue.shade900.withOpacity(0.2),
+                                color: Colors.grey.shade900.withOpacity(0.2),
                                 spreadRadius: 1,
                                 blurRadius: 3,
                                 offset: const Offset(0, 5),
                               )
                             ],
                           ),
-                          child: const SizedBox(),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(50),
+                            child: Center(
+                              child: Padding(
+                                padding: projectModel.hasPadding
+                                    ? const EdgeInsets.all(20)
+                                    : EdgeInsets.zero,
+                                child: Image.asset(
+                                  projectModel.appIcon,
+                                ),
+                              ),
+                            ),
+                          ),
                         ),
                 ],
               ),

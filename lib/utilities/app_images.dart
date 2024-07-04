@@ -88,6 +88,7 @@ class AppImages {
   static String climate2 = 'assets/showcase/climate/climate2.png';
   static String climate3 = 'assets/showcase/climate/climate3.png';
   static String climate4 = 'assets/showcase/climate/climate4.png';
+  static String climateAppLogo = 'assets/showcase/climate/climate_logo.png';
 
   /// images for dock management app
   static String dock1 = 'assets/showcase/dock_management/dock1.PNG';
@@ -100,6 +101,7 @@ class AppImages {
   static String gdsc4 = 'assets/showcase/gdsc/gdsc4.png';
   static String gdsc5 = 'assets/showcase/gdsc/gdsc5.png';
   static String gdsc6 = 'assets/showcase/gdsc/gdsc6.png';
+  static String gdscAppLogo = 'assets/showcase/gdsc/gdsc_logo.png';
 
   /// images for mask reminder app
   static String mask1 = 'assets/showcase/mask_reminder/mask1.png';
@@ -146,6 +148,7 @@ class AppImages {
   static String counter1 = 'assets/showcase/counter/counter1.png';
   static String counter2 = 'assets/showcase/counter/counter2.png';
   static String counter3 = 'assets/showcase/counter/counter3.png';
+  static String counterAppLogo = 'assets/showcase/counter/counter_logo.jpg';
 
   /// images for language translator app
   static String translator1 =
@@ -166,6 +169,8 @@ class AppImages {
       'assets/showcase/language_translator/translator8.png';
   static String translator9 =
       'assets/showcase/language_translator/translator9.png';
+  static String translatorAppLogo =
+      'assets/showcase/language_translator/translator_logo.jpg';
 
   /// images for sceo vehicle portal app
   static String vp1 = 'assets/showcase/sceo_vp/vp1.png';
@@ -174,6 +179,7 @@ class AppImages {
   static String vp4 = 'assets/showcase/sceo_vp/vp4.png';
   static String vp5 = 'assets/showcase/sceo_vp/vp5.png';
   static String vp6 = 'assets/showcase/sceo_vp/vp6.png';
+  static String vpAppLogo = 'assets/showcase/sceo_vp/vp_logo.png';
 
   /// images for sceo admin portal app
   static String ap1 = 'assets/showcase/sceo_ap/ap1.png';
@@ -183,6 +189,7 @@ class AppImages {
   static String ap5 = 'assets/showcase/sceo_ap/ap5.png';
   static String ap6 = 'assets/showcase/sceo_ap/ap6.png';
   static String ap7 = 'assets/showcase/sceo_ap/ap7.png';
+  static String apAppLogo = 'assets/showcase/sceo_ap/ap_logo.png';
 
   /// images for sceo sms app
   static String sms1 = 'assets/showcase/sceo_sms/sms1.png';
@@ -190,6 +197,7 @@ class AppImages {
   static String sms3 = 'assets/showcase/sceo_sms/sms3.png';
   static String sms4 = 'assets/showcase/sceo_sms/sms4.png';
   static String sms5 = 'assets/showcase/sceo_sms/sms5.png';
+  static String smsAppLogo = 'assets/showcase/sceo_sms/sms_logo.png';
 
   ///tool icons
   static String adobe = 'assets/my_tools_icons/adobe.png';

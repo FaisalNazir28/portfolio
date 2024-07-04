@@ -36,6 +36,7 @@ class SelectedProjectModel {
   final String extraImage17;
   final String mobileView;
   final String appIcon;
+  final bool hasPadding;
   final Color? appThemeColor;
   final bool builtForAndroid;
   final bool builtForApple;
@@ -76,6 +77,7 @@ class SelectedProjectModel {
     required this.extraImage17,
     required this.mobileView,
     required this.appIcon,
+    this.hasPadding = true,
     required this.appThemeColor,
     required this.builtForAndroid,
     required this.builtForApple,
