@@ -27,6 +27,13 @@ class SelectedProjectModel {
   final String extraImage8;
   final String extraImage9;
   final String extraImage10;
+  final String extraImage11;
+  final String extraImage12;
+  final String extraImage13;
+  final String extraImage14;
+  final String extraImage15;
+  final String extraImage16;
+  final String extraImage17;
   final String mobileView;
   final String appIcon;
   final Color? appThemeColor;
@@ -60,6 +67,13 @@ class SelectedProjectModel {
     required this.extraImage8,
     required this.extraImage9,
     required this.extraImage10,
+    required this.extraImage11,
+    required this.extraImage12,
+    required this.extraImage13,
+    required this.extraImage14,
+    required this.extraImage15,
+    required this.extraImage16,
+    required this.extraImage17,
     required this.mobileView,
     required this.appIcon,
     required this.appThemeColor,

@@ -68,32 +68,128 @@ class AppImages {
   static String hmk5 = 'assets/showcase/hmk/hmk5.png';
 
   /// images for calorie counter app
-  static String calorie1 = 'assets/showcase/calorie_counter/calorie1.PNG';
-  static String calorie2 = 'assets/showcase/calorie_counter/calorie2.PNG';
+  static String calorie1 = 'assets/showcase/calorie_counter/calorie1.png';
+  static String calorie2 = 'assets/showcase/calorie_counter/calorie2.png';
+  static String calorie3 = 'assets/showcase/calorie_counter/calorie3.png';
+  static String calorie4 = 'assets/showcase/calorie_counter/calorie4.png';
+  static String calorie5 = 'assets/showcase/calorie_counter/calorie5.png';
+  static String calorie6 = 'assets/showcase/calorie_counter/calorie6.png';
+  static String calorie7 = 'assets/showcase/calorie_counter/calorie7.png';
+  static String calorie8 = 'assets/showcase/calorie_counter/calorie8.png';
+  static String calorie9 = 'assets/showcase/calorie_counter/calorie9.png';
+  static String calorie10 = 'assets/showcase/calorie_counter/calorie10.png';
+  static String calorie11 = 'assets/showcase/calorie_counter/calorie11.png';
+  static String calorie12 = 'assets/showcase/calorie_counter/calorie12.png';
+  static String calorie13 = 'assets/showcase/calorie_counter/calorie13.png';
+  static String calorie14 = 'assets/showcase/calorie_counter/calorie14.png';
 
   /// images for climate app
   static String climate1 = 'assets/showcase/climate/climate1.PNG';
+  static String climate2 = 'assets/showcase/climate/climate2.png';
+  static String climate3 = 'assets/showcase/climate/climate3.png';
+  static String climate4 = 'assets/showcase/climate/climate4.png';
 
   /// images for dock management app
   static String dock1 = 'assets/showcase/dock_management/dock1.PNG';
   static String dock2 = 'assets/showcase/dock_management/dock2.PNG';
 
   /// images for gdsc app
-  static String gdsc1 = 'assets/showcase/gdsc/gdsc1.PNG';
+  static String gdsc1 = 'assets/showcase/gdsc/gdsc1.png';
+  static String gdsc2 = 'assets/showcase/gdsc/gdsc2.png';
+  static String gdsc3 = 'assets/showcase/gdsc/gdsc3.png';
+  static String gdsc4 = 'assets/showcase/gdsc/gdsc4.png';
+  static String gdsc5 = 'assets/showcase/gdsc/gdsc5.png';
+  static String gdsc6 = 'assets/showcase/gdsc/gdsc6.png';
 
   /// images for mask reminder app
-  static String mask1 = 'assets/showcase/mask_reminder/mask1.PNG';
-  static String mask2 = 'assets/showcase/mask_reminder/mask2.PNG';
+  static String mask1 = 'assets/showcase/mask_reminder/mask1.png';
+  static String mask2 = 'assets/showcase/mask_reminder/mask2.png';
+  static String mask3 = 'assets/showcase/mask_reminder/mask3.png';
+  static String mask4 = 'assets/showcase/mask_reminder/mask4.png';
+  static String mask5 = 'assets/showcase/mask_reminder/mask5.png';
+  static String mask6 = 'assets/showcase/mask_reminder/mask6.png';
+  static String mask7 = 'assets/showcase/mask_reminder/mask7.png';
+  static String mask8 = 'assets/showcase/mask_reminder/mask8.png';
+  static String mask9 = 'assets/showcase/mask_reminder/mask9.png';
+  static String mask10 = 'assets/showcase/mask_reminder/mask10.png';
+  static String mask11 = 'assets/showcase/mask_reminder/mask11.png';
+  static String mask12 = 'assets/showcase/mask_reminder/mask12.png';
+  static String mask13 = 'assets/showcase/mask_reminder/mask13.png';
+  static String mask14 = 'assets/showcase/mask_reminder/mask14.png';
+  static String mask15 = 'assets/showcase/mask_reminder/mask15.png';
+  static String mask16 = 'assets/showcase/mask_reminder/mask16.png';
+  static String mask17 = 'assets/showcase/mask_reminder/mask17.png';
+  static String mask18 = 'assets/showcase/mask_reminder/mask18.png';
+  static String mask19 = 'assets/showcase/mask_reminder/mask19.png';
+  static String mask20 = 'assets/showcase/mask_reminder/mask20.png';
 
   /// images for restofe app
-  static String restofe1 = 'assets/showcase/restofe/restofe1.PNG';
-  static String restofe2 = 'assets/showcase/restofe/restofe2.PNG';
-  static String restofe3 = 'assets/showcase/restofe/restofe3.PNG';
-  static String restofe4 = 'assets/showcase/restofe/restofe4.PNG';
-  static String restofe5 = 'assets/showcase/restofe/restofe5.PNG';
-  static String restofe6 = 'assets/showcase/restofe/restofe6.PNG';
-  static String restofe7 = 'assets/showcase/restofe/restofe7.PNG';
-  static String restofe8 = 'assets/showcase/restofe/restofe8.PNG';
+  static String restofe1 = 'assets/showcase/restofe/restofe1.png';
+  static String restofe2 = 'assets/showcase/restofe/restofe2.png';
+  static String restofe3 = 'assets/showcase/restofe/restofe3.png';
+  static String restofe4 = 'assets/showcase/restofe/restofe4.png';
+  static String restofe5 = 'assets/showcase/restofe/restofe5.png';
+  static String restofe6 = 'assets/showcase/restofe/restofe6.png';
+  static String restofe7 = 'assets/showcase/restofe/restofe7.png';
+  static String restofe8 = 'assets/showcase/restofe/restofe8.png';
+  static String restofe9 = 'assets/showcase/restofe/restofe9.png';
+  static String restofe10 = 'assets/showcase/restofe/restofe10.png';
+  static String restofe11 = 'assets/showcase/restofe/restofe11.png';
+  static String restofe12 = 'assets/showcase/restofe/restofe12.png';
+  static String restofe13 = 'assets/showcase/restofe/restofe13.png';
+  static String restofe14 = 'assets/showcase/restofe/restofe14.png';
+
+  /// images for calculator app
+  static String calculator1 = 'assets/showcase/calculator/calculator1.png';
+
+  /// images for counter app
+  static String counter1 = 'assets/showcase/counter/counter1.png';
+  static String counter2 = 'assets/showcase/counter/counter2.png';
+  static String counter3 = 'assets/showcase/counter/counter3.png';
+
+  /// images for language translator app
+  static String translator1 =
+      'assets/showcase/language_translator/translator1.png';
+  static String translator2 =
+      'assets/showcase/language_translator/translator2.png';
+  static String translator3 =
+      'assets/showcase/language_translator/translator3.png';
+  static String translator4 =
+      'assets/showcase/language_translator/translator4.png';
+  static String translator5 =
+      'assets/showcase/language_translator/translator5.png';
+  static String translator6 =
+      'assets/showcase/language_translator/translator6.png';
+  static String translator7 =
+      'assets/showcase/language_translator/translator7.png';
+  static String translator8 =
+      'assets/showcase/language_translator/translator8.png';
+  static String translator9 =
+      'assets/showcase/language_translator/translator9.png';
+
+  /// images for sceo vehicle portal app
+  static String vp1 = 'assets/showcase/sceo_vp/vp1.png';
+  static String vp2 = 'assets/showcase/sceo_vp/vp2.png';
+  static String vp3 = 'assets/showcase/sceo_vp/vp3.png';
+  static String vp4 = 'assets/showcase/sceo_vp/vp4.png';
+  static String vp5 = 'assets/showcase/sceo_vp/vp5.png';
+  static String vp6 = 'assets/showcase/sceo_vp/vp6.png';
+
+  /// images for sceo admin portal app
+  static String ap1 = 'assets/showcase/sceo_ap/ap1.png';
+  static String ap2 = 'assets/showcase/sceo_ap/ap2.png';
+  static String ap3 = 'assets/showcase/sceo_ap/ap3.png';
+  static String ap4 = 'assets/showcase/sceo_ap/ap4.png';
+  static String ap5 = 'assets/showcase/sceo_ap/ap5.png';
+  static String ap6 = 'assets/showcase/sceo_ap/ap6.png';
+  static String ap7 = 'assets/showcase/sceo_ap/ap7.png';
+
+  /// images for sceo sms app
+  static String sms1 = 'assets/showcase/sceo_sms/sms1.png';
+  static String sms2 = 'assets/showcase/sceo_sms/sms2.png';
+  static String sms3 = 'assets/showcase/sceo_sms/sms3.png';
+  static String sms4 = 'assets/showcase/sceo_sms/sms4.png';
+  static String sms5 = 'assets/showcase/sceo_sms/sms5.png';
 
   ///tool icons
   static String adobe = 'assets/my_tools_icons/adobe.png';

@@ -77,6 +77,12 @@ flutter:
     - assets/showcase/gdsc/
     - assets/showcase/mask_reminder/
     - assets/showcase/restofe/
+    - assets/showcase/calculator/
+    - assets/showcase/counter/
+    - assets/showcase/language_translator/
+    - assets/showcase/sceo_ap/
+    - assets/showcase/sceo_vp/
+    - assets/showcase/sceo_sms/
     - assets/my_tools_icons/
     - assets/resume/
     - assets/backgrounds/
