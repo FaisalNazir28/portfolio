@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -241,6 +243,62 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               ),
                             ],
                           ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        const Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Ionicons.thumbs_up,
+                              size: 20,
+                              color: Colors.blue,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "0",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Icon(
+                              CupertinoIcons.star_fill,
+                              size: 20,
+                              color: Colors.yellow,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "0",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Icon(
+                              Ionicons.heart,
+                              size: 20,
+                              color: Colors.red,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "0",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                          ],
                         )
                       ],
                     ),
