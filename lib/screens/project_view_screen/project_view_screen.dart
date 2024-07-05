@@ -96,6 +96,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
   Widget mobileAppShowcase(SelectedProjectModel projectModel) {
     var isDesktopScreen = Breakpoints.isLargeScreen(context);
     var isTabletScreen = Breakpoints.isMediumScreen(context);
+    var isMobileScreen = Breakpoints.isSmallScreen(context);
 
     return Column(
       children: [
@@ -113,7 +114,6 @@ class _ProjectScreenState extends State<ProjectScreen> {
                       vertical: 60),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -124,8 +124,12 @@ class _ProjectScreenState extends State<ProjectScreen> {
                       children: [
                         Text(
                           projectModel.title,
-                          style: const TextStyle(
-                              fontSize: 60,
+                          style: TextStyle(
+                              fontSize: isDesktopScreen
+                                  ? 60
+                                  : isTabletScreen
+                                      ? 45
+                                      : 35,
                               fontWeight: FontWeight.w600,
                               color: Colors.black),
                         ),
@@ -134,8 +138,12 @@ class _ProjectScreenState extends State<ProjectScreen> {
                         ),
                         Text(
                           projectModel.company,
-                          style: const TextStyle(
-                              fontSize: 18,
+                          style: TextStyle(
+                              fontSize: isDesktopScreen
+                                  ? 18
+                                  : isTabletScreen
+                                      ? 17
+                                      : 15,
                               fontWeight: FontWeight.w300,
                               color: Colors.black),
                         ),
@@ -149,15 +157,17 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             ),
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 10),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: isMobileScreen ? 14 : 20,
+                              vertical: isMobileScreen ? 8 : 10),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Text(
+                              Text(
                                 "Built for",
-                                style:
-                                    TextStyle(fontSize: 12, color: Colors.grey),
+                                style: TextStyle(
+                                    fontSize: isMobileScreen ? 11 : 12,
+                                    color: Colors.grey),
                               ),
                               const SizedBox(
                                 height: 6,
@@ -168,24 +178,28 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     if (projectModel.builtForAndroid)
-                                      const Row(
+                                      Row(
                                         children: [
-                                          Icon(Ionicons.logo_android),
-                                          SizedBox(
+                                          Icon(
+                                            Ionicons.logo_android,
+                                            size: isMobileScreen ? 18 : 22,
+                                          ),
+                                          const SizedBox(
                                             width: 5,
                                           ),
                                           Text(
                                             "Android",
                                             style: TextStyle(
-                                                fontSize: 12,
+                                                fontSize:
+                                                    isMobileScreen ? 11 : 12,
                                                 color: Colors.grey),
                                           ),
                                         ],
                                       ),
                                     if (projectModel.builtForAndroid &&
                                         projectModel.builtForApple)
-                                      const SizedBox(
-                                        width: 10,
+                                      SizedBox(
+                                        width: isMobileScreen ? 6 : 10,
                                       ),
                                     if (projectModel.builtForAndroid &&
                                         projectModel.builtForApple)
@@ -194,20 +208,24 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                       ),
                                     if (projectModel.builtForAndroid &&
                                         projectModel.builtForApple)
-                                      const SizedBox(
-                                        width: 10,
+                                      SizedBox(
+                                        width: isMobileScreen ? 6 : 10,
                                       ),
                                     if (projectModel.builtForApple)
-                                      const Row(
+                                      Row(
                                         children: [
-                                          Icon(Ionicons.logo_apple),
-                                          SizedBox(
+                                          Icon(
+                                            Ionicons.logo_apple,
+                                            size: isMobileScreen ? 18 : 22,
+                                          ),
+                                          const SizedBox(
                                             width: 5,
                                           ),
                                           Text(
                                             "Apple",
                                             style: TextStyle(
-                                                fontSize: 12,
+                                                fontSize:
+                                                    isMobileScreen ? 11 : 12,
                                                 color: Colors.grey),
                                           ),
                                         ],
@@ -221,13 +239,25 @@ class _ProjectScreenState extends State<ProjectScreen> {
                       ],
                     ),
                   ),
+                  const SizedBox(
+                    width: 30,
+                  ),
                   projectModel.appIcon.isEmpty
                       ? Container(
-                          height: 250,
-                          width: 250,
+                          height: isDesktopScreen
+                              ? 250
+                              : isTabletScreen
+                                  ? 200
+                                  : 130,
+                          width: isDesktopScreen
+                              ? 250
+                              : isTabletScreen
+                                  ? 200
+                                  : 130,
                           decoration: BoxDecoration(
                             color: projectModel.appThemeColor,
-                            borderRadius: BorderRadius.circular(50),
+                            borderRadius:
+                                BorderRadius.circular(isMobileScreen ? 25 : 50),
                             boxShadow: [
                               BoxShadow(
                                 color: projectModel.appThemeColor!
@@ -241,8 +271,8 @@ class _ProjectScreenState extends State<ProjectScreen> {
                           child: Center(
                             child: Text(
                               projectModel.title[0],
-                              style: const TextStyle(
-                                fontSize: 100,
+                              style: TextStyle(
+                                fontSize: isMobileScreen ? 70 : 100,
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -250,11 +280,20 @@ class _ProjectScreenState extends State<ProjectScreen> {
                           ),
                         )
                       : Container(
-                          height: 250,
-                          width: 250,
+                          height: isDesktopScreen
+                              ? 250
+                              : isTabletScreen
+                                  ? 200
+                                  : 130,
+                          width: isDesktopScreen
+                              ? 250
+                              : isTabletScreen
+                                  ? 200
+                                  : 130,
                           decoration: BoxDecoration(
                             color: Colors.white,
-                            borderRadius: BorderRadius.circular(50),
+                            borderRadius:
+                                BorderRadius.circular(isMobileScreen ? 25 : 50),
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.grey.shade900.withOpacity(0.2),
@@ -265,7 +304,8 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             ],
                           ),
                           child: ClipRRect(
-                            borderRadius: BorderRadius.circular(50),
+                            borderRadius:
+                                BorderRadius.circular(isMobileScreen ? 25 : 50),
                             child: Center(
                               child: Padding(
                                 padding: projectModel.hasPadding
@@ -287,15 +327,14 @@ class _ProjectScreenState extends State<ProjectScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.white,
-                        ),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 10),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: isMobileScreen
+                              ? 14
+                              : isTabletScreen
+                                  ? 16
+                                  : 20,
+                          vertical: 10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -308,31 +347,42 @@ class _ProjectScreenState extends State<ProjectScreen> {
                           ),
                           Text(
                             projectModel.projectDate,
-                            style: const TextStyle(
-                              fontSize: 18,
+                            style: TextStyle(
+                              fontSize: isMobileScreen
+                                  ? 15
+                                  : isTabletScreen
+                                      ? 16.5
+                                      : 18,
                             ),
                           ),
                         ],
                       ),
                     ),
-                    const SizedBox(
-                      width: 50,
+                    SizedBox(
+                      width: isDesktopScreen
+                          ? 50
+                          : isTabletScreen
+                              ? 20
+                              : 6,
                     ),
                     const VerticalDivider(
                       thickness: 1,
                     ),
-                    const SizedBox(
-                      width: 50,
+                    SizedBox(
+                      width: isDesktopScreen
+                          ? 50
+                          : isTabletScreen
+                              ? 20
+                              : 6,
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.white,
-                        ),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 10),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: isMobileScreen
+                              ? 14
+                              : isTabletScreen
+                                  ? 16
+                                  : 20,
+                          vertical: 10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -345,31 +395,42 @@ class _ProjectScreenState extends State<ProjectScreen> {
                           ),
                           Text(
                             projectModel.projectType,
-                            style: const TextStyle(
-                              fontSize: 18,
+                            style: TextStyle(
+                              fontSize: isMobileScreen
+                                  ? 15
+                                  : isTabletScreen
+                                      ? 16.5
+                                      : 18,
                             ),
                           ),
                         ],
                       ),
                     ),
-                    const SizedBox(
-                      width: 50,
+                    SizedBox(
+                      width: isDesktopScreen
+                          ? 50
+                          : isTabletScreen
+                              ? 20
+                              : 6,
                     ),
                     const VerticalDivider(
                       thickness: 1,
                     ),
-                    const SizedBox(
-                      width: 50,
+                    SizedBox(
+                      width: isDesktopScreen
+                          ? 50
+                          : isTabletScreen
+                              ? 20
+                              : 6,
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.white,
-                        ),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 10),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: isMobileScreen
+                              ? 14
+                              : isTabletScreen
+                                  ? 16
+                                  : 20,
+                          vertical: 10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -382,8 +443,12 @@ class _ProjectScreenState extends State<ProjectScreen> {
                           ),
                           Text(
                             projectModel.projectDuration,
-                            style: const TextStyle(
-                              fontSize: 18,
+                            style: TextStyle(
+                              fontSize: isMobileScreen
+                                  ? 15
+                                  : isTabletScreen
+                                      ? 16.5
+                                      : 18,
                             ),
                           ),
                         ],
@@ -398,12 +463,27 @@ class _ProjectScreenState extends State<ProjectScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    projectModel.shortBio,
-                    style: const TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black,
+                  Expanded(
+                    child: Text(
+                      projectModel.shortBio,
+                      style: isDesktopScreen
+                          ? const TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black,
+                            )
+                          : isTabletScreen
+                              ? const TextStyle(
+                                  fontSize: 27,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black,
+                                )
+                              : const TextStyle(
+                                  fontSize: 23,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black,
+                                ),
+                      textAlign: TextAlign.center,
                     ),
                   ),
                 ],
