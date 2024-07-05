@@ -661,160 +661,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
               const SizedBox(
                 height: 120,
               ),
-              IntrinsicHeight(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      "Like\nthe\nwork?",
-                      style: TextStyle(
-                          fontSize: 100,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.black),
-                    ),
-                    const SizedBox(
-                      width: 80,
-                    ),
-                    const VerticalDivider(
-                      thickness: 1,
-                      color: Colors.grey,
-                    ),
-                    const SizedBox(
-                      width: 80,
-                    ),
-                    Expanded(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          const SizedBox(
-                            height: 30,
-                          ),
-                          Row(
-                            children: [
-                              Tooltip(
-                                margin: const EdgeInsets.only(top: 10),
-                                decoration: BoxDecoration(
-                                    color: Colors.blue,
-                                    borderRadius: BorderRadius.circular(5)),
-                                message: "Like",
-                                textStyle: const TextStyle(color: Colors.white),
-                                child: InkWell(
-                                  overlayColor: WidgetStateProperty.all(
-                                    Colors.transparent,
-                                  ),
-                                  onTap: () {
-                                    setState(() {
-                                      isLiked = true;
-                                    });
-                                  },
-                                  child: Icon(
-                                    Ionicons.thumbs_up,
-                                    size: 50,
-                                    color: isLiked ? Colors.blue : Colors.black,
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                width: 40,
-                              ),
-                              Tooltip(
-                                margin: const EdgeInsets.only(top: 10),
-                                decoration: BoxDecoration(
-                                    color: Colors.yellow,
-                                    borderRadius: BorderRadius.circular(5)),
-                                message: "Star",
-                                textStyle: const TextStyle(color: Colors.black),
-                                child: InkWell(
-                                  overlayColor: WidgetStateProperty.all(
-                                    Colors.transparent,
-                                  ),
-                                  onTap: () {
-                                    setState(() {
-                                      isStarred = true;
-                                    });
-                                  },
-                                  child: Icon(
-                                    CupertinoIcons.star_fill,
-                                    size: 50,
-                                    color: isStarred
-                                        ? Colors.yellow
-                                        : Colors.black,
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                width: 40,
-                              ),
-                              Tooltip(
-                                margin: const EdgeInsets.only(top: 10),
-                                decoration: BoxDecoration(
-                                    color: Colors.red,
-                                    borderRadius: BorderRadius.circular(5)),
-                                message: "Love",
-                                textStyle: const TextStyle(color: Colors.white),
-                                child: InkWell(
-                                  overlayColor: WidgetStateProperty.all(
-                                    Colors.transparent,
-                                  ),
-                                  onTap: () {
-                                    setState(() {
-                                      isLoved = true;
-                                    });
-                                  },
-                                  child: Icon(
-                                    Ionicons.heart,
-                                    size: 50,
-                                    color: isLoved ? Colors.red : Colors.black,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 50,
-                          ),
-                          const Text(
-                            "Reach out to me and discuss your app idea or simply leave me a appreciation string! ",
-                            style: TextStyle(
-                                fontSize: 30,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black),
-                          ),
-                          const SizedBox(
-                            height: 25,
-                          ),
-                          const Text(
-                            "Mention the application code provided below in your message if you need something like this application.",
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w400),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            "Application code: ${projectModel.title}",
-                            style: const TextStyle(
-                              fontSize: 16,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 25,
-                          ),
-                          CustomAppButton(
-                            onTap: () =>
-                                Navigator.pushNamed(context, Routes.contact),
-                            text: 'Send message',
-                            blackButton: true,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              likeTheWorkContainer(projectModel.title),
             ],
           ),
         ),
@@ -2080,6 +1927,309 @@ class _ProjectScreenState extends State<ProjectScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  Widget likeTheWorkContainer(String title) {
+    var isTabletScreen = Breakpoints.isMediumScreen(context);
+    var isMobileScreen = Breakpoints.isSmallScreen(context);
+
+    return IntrinsicHeight(
+      child: isMobileScreen
+          ? Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Text(
+                  "Like the work?",
+                  style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.black),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Divider(
+                  thickness: 1,
+                  color: Colors.grey,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    Tooltip(
+                      margin: const EdgeInsets.only(top: 1),
+                      decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(5)),
+                      message: "Like",
+                      textStyle: const TextStyle(color: Colors.white),
+                      child: InkWell(
+                        overlayColor: WidgetStateProperty.all(
+                          Colors.transparent,
+                        ),
+                        onTap: () {
+                          setState(() {
+                            isLiked = true;
+                          });
+                        },
+                        child: Icon(
+                          Ionicons.thumbs_up,
+                          size: 28,
+                          color: isLiked ? Colors.blue : Colors.black,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Tooltip(
+                      margin: const EdgeInsets.only(top: 1),
+                      decoration: BoxDecoration(
+                          color: Colors.yellow,
+                          borderRadius: BorderRadius.circular(5)),
+                      message: "Star",
+                      textStyle: const TextStyle(color: Colors.white),
+                      child: InkWell(
+                        overlayColor: WidgetStateProperty.all(
+                          Colors.transparent,
+                        ),
+                        onTap: () {
+                          setState(() {
+                            isStarred = true;
+                          });
+                        },
+                        child: Icon(
+                          CupertinoIcons.star_fill,
+                          size: 28,
+                          color: isStarred ? Colors.yellow : Colors.black,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Tooltip(
+                      margin: const EdgeInsets.only(top: 1),
+                      decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.circular(5)),
+                      message: "Love",
+                      textStyle: const TextStyle(color: Colors.white),
+                      child: InkWell(
+                        overlayColor: WidgetStateProperty.all(
+                          Colors.transparent,
+                        ),
+                        onTap: () {
+                          setState(() {
+                            isLoved = true;
+                          });
+                        },
+                        child: Icon(
+                          Ionicons.heart,
+                          size: 28,
+                          color: isLoved ? Colors.red : Colors.black,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                const Text(
+                  "Reach out to me and discuss your app idea or simply leave me a appreciation string! ",
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Text(
+                  "Mention the application code provided below in your message if you need something like this application.",
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  "Application code: $title",
+                  style: const TextStyle(
+                    fontSize: 15,
+                  ),
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
+                Row(
+                  children: [
+                    CustomAppButton(
+                      onTap: () => Navigator.pushNamed(context, Routes.contact),
+                      text: 'Send message',
+                      blackButton: true,
+                      shrinkPadding: true,
+                    ),
+                  ],
+                ),
+              ],
+            )
+          : Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Like\nthe\nwork?",
+                  style: TextStyle(
+                      fontSize: isTabletScreen ? 70 : 100,
+                      fontWeight:
+                          isTabletScreen ? FontWeight.w600 : FontWeight.w700,
+                      color: Colors.black),
+                ),
+                SizedBox(
+                  width: isTabletScreen ? 45 : 80,
+                ),
+                const VerticalDivider(
+                  thickness: 1,
+                  color: Colors.grey,
+                ),
+                SizedBox(
+                  width: isTabletScreen ? 45 : 80,
+                ),
+                Expanded(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height: isTabletScreen ? 15 : 30,
+                      ),
+                      Row(
+                        children: [
+                          Tooltip(
+                            margin: const EdgeInsets.only(top: 10),
+                            decoration: BoxDecoration(
+                                color: Colors.blue,
+                                borderRadius: BorderRadius.circular(5)),
+                            message: "Like",
+                            textStyle: const TextStyle(color: Colors.white),
+                            child: InkWell(
+                              overlayColor: WidgetStateProperty.all(
+                                Colors.transparent,
+                              ),
+                              onTap: () {
+                                setState(() {
+                                  isLiked = true;
+                                });
+                              },
+                              child: Icon(
+                                Ionicons.thumbs_up,
+                                size: isTabletScreen ? 35 : 50,
+                                color: isLiked ? Colors.blue : Colors.black,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 40,
+                          ),
+                          Tooltip(
+                            margin: const EdgeInsets.only(top: 10),
+                            decoration: BoxDecoration(
+                                color: Colors.yellow,
+                                borderRadius: BorderRadius.circular(5)),
+                            message: "Star",
+                            textStyle: const TextStyle(color: Colors.black),
+                            child: InkWell(
+                              overlayColor: WidgetStateProperty.all(
+                                Colors.transparent,
+                              ),
+                              onTap: () {
+                                setState(() {
+                                  isStarred = true;
+                                });
+                              },
+                              child: Icon(
+                                CupertinoIcons.star_fill,
+                                size: isTabletScreen ? 35 : 50,
+                                color: isStarred ? Colors.yellow : Colors.black,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 40,
+                          ),
+                          Tooltip(
+                            margin: const EdgeInsets.only(top: 10),
+                            decoration: BoxDecoration(
+                                color: Colors.red,
+                                borderRadius: BorderRadius.circular(5)),
+                            message: "Love",
+                            textStyle: const TextStyle(color: Colors.white),
+                            child: InkWell(
+                              overlayColor: WidgetStateProperty.all(
+                                Colors.transparent,
+                              ),
+                              onTap: () {
+                                setState(() {
+                                  isLoved = true;
+                                });
+                              },
+                              child: Icon(
+                                Ionicons.heart,
+                                size: isTabletScreen ? 35 : 50,
+                                color: isLoved ? Colors.red : Colors.black,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: isTabletScreen ? 35 : 50,
+                      ),
+                      Text(
+                        "Reach out to me and discuss your app idea or simply leave me a appreciation string! ",
+                        style: TextStyle(
+                            fontSize: isTabletScreen ? 22 : 30,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.black),
+                      ),
+                      SizedBox(
+                        height: isTabletScreen ? 18 : 25,
+                      ),
+                      Text(
+                        "Mention the application code provided below in your message if you need something like this application.",
+                        style: TextStyle(
+                            fontSize: isTabletScreen ? 14 : 18,
+                            fontWeight: FontWeight.w400),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "Application code: $title",
+                        style: TextStyle(
+                          fontSize: isTabletScreen ? 14 : 16,
+                        ),
+                      ),
+                      SizedBox(
+                        height: isTabletScreen ? 20 : 25,
+                      ),
+                      CustomAppButton(
+                        onTap: () =>
+                            Navigator.pushNamed(context, Routes.contact),
+                        text: 'Send message',
+                        blackButton: true,
+                        shrinkPadding: isTabletScreen ? true : false,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
     );
   }
 }
