@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -388,138 +386,197 @@ class _ProjectScreenState extends State<ProjectScreen> {
                 height: 120,
               ),
               IntrinsicHeight(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: isMobileScreen
-                              ? 14
-                              : isTabletScreen
-                                  ? 16
-                                  : 20,
-                          vertical: 10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                child: isMobileScreen
+                    ? Padding(
+                        padding: const EdgeInsets.only(left: 0, right: 0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 10),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      "Project Date",
+                                      style: TextStyle(
+                                          fontSize: 12, color: Colors.grey),
+                                    ),
+                                    const SizedBox(
+                                      height: 6,
+                                    ),
+                                    Text(
+                                      projectModel.projectDate,
+                                      style: const TextStyle(
+                                        fontSize: 15,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            const VerticalDivider(
+                              thickness: 1,
+                            ),
+                            const SizedBox(
+                              width: 15,
+                            ),
+                            Expanded(
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 10),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      "Project Type",
+                                      style: TextStyle(
+                                          fontSize: 12, color: Colors.grey),
+                                    ),
+                                    const SizedBox(
+                                      height: 6,
+                                    ),
+                                    Text(
+                                      projectModel.projectType,
+                                      style: const TextStyle(
+                                        fontSize: 15,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            const VerticalDivider(
+                              thickness: 1,
+                            ),
+                            const SizedBox(
+                              width: 15,
+                            ),
+                            Expanded(
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 10),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      "Project Duration",
+                                      style: TextStyle(
+                                          fontSize: 12, color: Colors.grey),
+                                    ),
+                                    const SizedBox(
+                                      height: 6,
+                                    ),
+                                    Text(
+                                      projectModel.projectDuration,
+                                      style: const TextStyle(
+                                        fontSize: 15,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    : Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text(
-                            "Project Date",
-                            style: TextStyle(fontSize: 12, color: Colors.grey),
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: isTabletScreen ? 16 : 20,
+                                vertical: 10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  "Project Date",
+                                  style: TextStyle(
+                                      fontSize: 12, color: Colors.grey),
+                                ),
+                                const SizedBox(
+                                  height: 6,
+                                ),
+                                Text(
+                                  projectModel.projectDate,
+                                  style: TextStyle(
+                                    fontSize: isTabletScreen ? 16.5 : 18,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                          const SizedBox(
-                            height: 6,
+                          SizedBox(
+                            width: isDesktopScreen ? 50 : 20,
                           ),
-                          Text(
-                            projectModel.projectDate,
-                            style: TextStyle(
-                              fontSize: isMobileScreen
-                                  ? 15
-                                  : isTabletScreen
-                                      ? 16.5
-                                      : 18,
+                          const VerticalDivider(
+                            thickness: 1,
+                          ),
+                          SizedBox(
+                            width: isDesktopScreen ? 50 : 20,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: isTabletScreen ? 16 : 20,
+                                vertical: 10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  "Project Type",
+                                  style: TextStyle(
+                                      fontSize: 12, color: Colors.grey),
+                                ),
+                                const SizedBox(
+                                  height: 6,
+                                ),
+                                Text(
+                                  projectModel.projectType,
+                                  style: TextStyle(
+                                    fontSize: isTabletScreen ? 16.5 : 18,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            width: isDesktopScreen ? 50 : 20,
+                          ),
+                          const VerticalDivider(
+                            thickness: 1,
+                          ),
+                          SizedBox(
+                            width: isDesktopScreen ? 50 : 20,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: isTabletScreen ? 16 : 20,
+                                vertical: 10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  "Project Duration",
+                                  style: TextStyle(
+                                      fontSize: 12, color: Colors.grey),
+                                ),
+                                const SizedBox(
+                                  height: 6,
+                                ),
+                                Text(
+                                  projectModel.projectDuration,
+                                  style: TextStyle(
+                                    fontSize: isTabletScreen ? 16.5 : 18,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ],
                       ),
-                    ),
-                    SizedBox(
-                      width: isDesktopScreen
-                          ? 50
-                          : isTabletScreen
-                              ? 20
-                              : 6,
-                    ),
-                    const VerticalDivider(
-                      thickness: 1,
-                    ),
-                    SizedBox(
-                      width: isDesktopScreen
-                          ? 50
-                          : isTabletScreen
-                              ? 20
-                              : 6,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: isMobileScreen
-                              ? 14
-                              : isTabletScreen
-                                  ? 16
-                                  : 20,
-                          vertical: 10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            "Project Type",
-                            style: TextStyle(fontSize: 12, color: Colors.grey),
-                          ),
-                          const SizedBox(
-                            height: 6,
-                          ),
-                          Text(
-                            projectModel.projectType,
-                            style: TextStyle(
-                              fontSize: isMobileScreen
-                                  ? 15
-                                  : isTabletScreen
-                                      ? 16.5
-                                      : 18,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: isDesktopScreen
-                          ? 50
-                          : isTabletScreen
-                              ? 20
-                              : 6,
-                    ),
-                    const VerticalDivider(
-                      thickness: 1,
-                    ),
-                    SizedBox(
-                      width: isDesktopScreen
-                          ? 50
-                          : isTabletScreen
-                              ? 20
-                              : 6,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: isMobileScreen
-                              ? 14
-                              : isTabletScreen
-                                  ? 16
-                                  : 20,
-                          vertical: 10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            "Project Duration",
-                            style: TextStyle(fontSize: 12, color: Colors.grey),
-                          ),
-                          const SizedBox(
-                            height: 6,
-                          ),
-                          Text(
-                            projectModel.projectDuration,
-                            style: TextStyle(
-                              fontSize: isMobileScreen
-                                  ? 15
-                                  : isTabletScreen
-                                      ? 16.5
-                                      : 18,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
               ),
               const SizedBox(
                 height: 120,
