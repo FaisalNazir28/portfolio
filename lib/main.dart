@@ -10,11 +10,16 @@ import 'package:my_portfolio/screens/project_view_screen/project_view_screen.dar
 import 'package:my_portfolio/screens/services_screen/services_screen.dart';
 import 'screens/client_screen/client_screen.dart';
 import 'screens/login_screen/login_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 bool isLoggedIn = false;
 bool initialLaunch = true;
 
-void main() {
+void main() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
