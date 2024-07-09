@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 
 class Authentication {
   final auth = FirebaseAuth.instance;
@@ -17,7 +16,6 @@ class Authentication {
       );
       onSuccess();
     } on FirebaseAuthException catch (e) {
-      debugPrint("Invalid Credentials");
       onError();
     }
   }

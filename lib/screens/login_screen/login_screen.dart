@@ -20,6 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool loading = false;
+  bool isError = false;
 
   @override
   void initState() {
@@ -205,6 +206,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                     onError: () {
                                                       setState(() {
                                                         loading = false;
+                                                        showError();
                                                       });
                                                     },
                                                   );
@@ -306,6 +308,25 @@ class _LoginScreenState extends State<LoginScreen> {
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
+                                      if (isError)
+                                        const Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            Icon(
+                                              Ionicons.alert_outline,
+                                              color: Colors.red,
+                                            ),
+                                            Text(
+                                              "Invalid Credentials",
+                                              style: TextStyle(
+                                                  color: Colors.red,
+                                                  fontWeight: FontWeight.w500,
+                                                  fontSize: 16),
+                                            ),
+                                          ],
+                                        ),
+                                      if (isError) const Spacer(),
                                       TextFormField(
                                         cursorColor: Colors.black87,
                                         controller: _emailController,
@@ -408,6 +429,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                       onError: () {
                                                         setState(() {
                                                           loading = false;
+                                                          showError();
                                                         });
                                                       },
                                                     );
@@ -471,7 +493,28 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                       ),
-                    )
+                    ),
+                  if (isMobileScreen && isError)
+                    const Positioned(
+                      top: 25,
+                      right: 30,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Icon(
+                            Ionicons.alert_outline,
+                            color: Colors.red,
+                          ),
+                          Text(
+                            "Invalid Credentials",
+                            style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 14),
+                          ),
+                        ],
+                      ),
+                    ),
                 ],
               ),
             ),
@@ -492,5 +535,16 @@ class _LoginScreenState extends State<LoginScreen> {
         ],
       ),
     );
+  }
+
+  void showError() {
+    setState(() {
+      isError = true;
+      Future.delayed(const Duration(seconds: 3), () {
+        setState(() {
+          isError = false;
+        });
+      });
+    });
   }
 }
