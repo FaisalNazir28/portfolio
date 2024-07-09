@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
+import 'package:my_portfolio/services/authentication.dart';
 import 'package:my_portfolio/widgets/date_time.dart';
 import 'package:my_portfolio/widgets/header_menu_buttons.dart';
 
@@ -101,10 +102,18 @@ class _HeaderState extends State<CustomHeader> {
               ),
             const Spacer(),
             Tooltip(
+              margin: const EdgeInsets.only(top: 10),
               message: 'Client Login',
+              decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(5),
+              ),
               child: InkWell(
+                overlayColor: WidgetStateProperty.all(Colors.transparent),
                 onTap: () {
-                  Navigator.pushNamed(context, Routes.login);
+                  Authentication().userState() == true
+                      ? Navigator.pushNamed(context, Routes.client)
+                      : Navigator.pushNamed(context, Routes.login);
                 },
                 child: Container(
                   height: 45,
@@ -114,8 +123,10 @@ class _HeaderState extends State<CustomHeader> {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(color: Colors.grey)),
-                  child: const Icon(
-                    CupertinoIcons.lock_fill,
+                  child: Icon(
+                    Authentication().userState() == true
+                        ? CupertinoIcons.lock_open_fill
+                        : CupertinoIcons.lock_fill,
                     color: Colors.black,
                   ),
                 ),
