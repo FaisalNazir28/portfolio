@@ -4,6 +4,7 @@ import 'package:ionicons/ionicons.dart';
 import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
+import 'package:my_portfolio/services/authentication.dart';
 import 'package:my_portfolio/utilities/app_images.dart';
 import 'package:my_portfolio/utilities/constants.dart';
 
@@ -24,6 +25,13 @@ class _LoginScreenState extends State<LoginScreen> {
   void initState() {
     initialLaunch = false;
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
   }
 
   @override
@@ -176,10 +184,30 @@ class _LoginScreenState extends State<LoginScreen> {
                                                 await Future.delayed(
                                                     const Duration(seconds: 3));
                                                 setState(() {
-                                                  loading = false;
-                                                  isLoggedIn = true;
-                                                  Navigator.pushNamed(
-                                                      context, Routes.client);
+                                                  Authentication().loginUser(
+                                                    email:
+                                                        _emailController.text,
+                                                    password:
+                                                        _passwordController
+                                                            .text,
+                                                    onSuccess: () {
+                                                      setState(() {
+                                                        Navigator.pushNamed(
+                                                            context,
+                                                            Routes.client);
+                                                        loading = false;
+                                                        _emailController
+                                                            .clear();
+                                                        _passwordController
+                                                            .clear();
+                                                      });
+                                                    },
+                                                    onError: () {
+                                                      setState(() {
+                                                        loading = false;
+                                                      });
+                                                    },
+                                                  );
                                                 });
                                               }
                                             },
@@ -359,10 +387,30 @@ class _LoginScreenState extends State<LoginScreen> {
                                                       const Duration(
                                                           seconds: 3));
                                                   setState(() {
-                                                    loading = false;
-                                                    isLoggedIn = true;
-                                                    Navigator.pushNamed(
-                                                        context, Routes.client);
+                                                    Authentication().loginUser(
+                                                      email:
+                                                          _emailController.text,
+                                                      password:
+                                                          _passwordController
+                                                              .text,
+                                                      onSuccess: () {
+                                                        setState(() {
+                                                          Navigator.pushNamed(
+                                                              context,
+                                                              Routes.client);
+                                                          loading = false;
+                                                          _emailController
+                                                              .clear();
+                                                          _passwordController
+                                                              .clear();
+                                                        });
+                                                      },
+                                                      onError: () {
+                                                        setState(() {
+                                                          loading = false;
+                                                        });
+                                                      },
+                                                    );
                                                   });
                                                 }
                                               },

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/routes/routes.dart';
 import 'package:my_portfolio/screens/login_screen/login_screen.dart';
+import 'package:my_portfolio/services/authentication.dart';
 
 class ClientScreen extends StatefulWidget {
   const ClientScreen({super.key});
@@ -19,7 +20,7 @@ class _ClientScreenState extends State<ClientScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return isLoggedIn
+    return Authentication().userState()==true
         ? Scaffold(
             body: SizedBox(
               width: double.infinity,
@@ -33,8 +34,8 @@ class _ClientScreenState extends State<ClientScreen> {
                   ),
                   InkWell(
                     onTap: () {
-                      isLoggedIn = false;
                       Navigator.pushNamed(context, Routes.home);
+                      Authentication().logOutUser();
                     },
                     child: Container(
                       padding: const EdgeInsets.symmetric(
