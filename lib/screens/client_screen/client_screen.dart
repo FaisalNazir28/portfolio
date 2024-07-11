@@ -20,7 +20,7 @@ class _ClientScreenState extends State<ClientScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Authentication().userState()==true
+    return Authentication().userState() == true
         ? Scaffold(
             body: SizedBox(
               width: double.infinity,
@@ -29,6 +29,19 @@ class _ClientScreenState extends State<ClientScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const Text("Client Screen"),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Text("uid==> ${Authentication.userModel.uid}"),
+                  Text("name==> ${Authentication.userModel.name}"),
+                  Text("email==> ${Authentication.userModel.email}"),
+                  Text("phone==> ${Authentication.userModel.phone}"),
+                  Text("company==> ${Authentication.userModel.company}"),
+                  Text("is active==> ${Authentication.userModel.isActive}"),
+                  Text("is admin==> ${Authentication.userModel.isAdmin}"),
+                  Text(
+                    "designation==> ${Authentication.userModel.designation}",
+                  ),
                   const SizedBox(
                     height: 30,
                   ),

@@ -181,10 +181,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                                   .validate()) {
                                                 setState(() {
                                                   loading = true;
-                                                });
-                                                await Future.delayed(
-                                                    const Duration(seconds: 3));
-                                                setState(() {
                                                   Authentication().loginUser(
                                                     email:
                                                         _emailController.text,
@@ -403,11 +399,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                                     .validate()) {
                                                   setState(() {
                                                     loading = true;
-                                                  });
-                                                  await Future.delayed(
-                                                      const Duration(
-                                                          seconds: 3));
-                                                  setState(() {
                                                     Authentication().loginUser(
                                                       email:
                                                           _emailController.text,

@@ -1,10 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:my_portfolio/models/user_model.dart';
+import 'package:my_portfolio/services/firebase_collections.dart';
 
 class Authentication {
   final auth = FirebaseAuth.instance;
-  final _fireStore = FirebaseFirestore.instance;
+  static UserModel userModel = UserModel();
 
   Future<void> loginUser({
     required String email,
@@ -17,31 +19,29 @@ class Authentication {
         email: email,
         password: password,
       );
+      await getData(credentials.user!.uid);
       onSuccess();
     } on FirebaseAuthException catch (e) {
       onError();
     }
   }
 
-  Future<void> registerUser() async {
+  Future<void> registerUser(UserModel userModel) async {
     UserCredential userCredential = await auth.createUserWithEmailAndPassword(
         email: 'dummy@123.com', password: '123456789');
 
     if (userCredential.user != null) {
       var userID = await auth.currentUser!.uid;
-      _fireStore.collection('users').doc(userID).set(UserModel(
-            uid: userID,
-            email: "dummy@123.com",
-            name: "Dummy Me",
-            phone: "555-555-555",
-            designation: "Robot",
-            company: "Anonymous",
-            isActive: false,
-            isAdmin: true,
-          ).toJson());
+      FbCollections.users.doc(userModel.uid).set(userModel.toJson());
     } else {
       print("User not created!");
     }
+  }
+
+  Future<void> getData(String uid) async {
+    await FbCollections.users.doc(uid).get().then((DocumentSnapshot ds) {
+      userModel = UserModel.fromJson(ds.data() as Map<String, dynamic>);
+    }, onError: (e) => debugPrint("Error fetching Data: $e"));
   }
 
   void logOutUser() async {
