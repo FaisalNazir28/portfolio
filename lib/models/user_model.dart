@@ -3,6 +3,7 @@ class UserModel {
   String email;
   String name;
   String phone;
+  String profilePicture;
   String designation;
   String company;
   bool isActive;
@@ -13,6 +14,7 @@ class UserModel {
     this.email = "",
     this.name = "",
     this.phone = "",
+    this.profilePicture = "",
     this.designation = "",
     this.company = "",
     this.isActive = false,
@@ -25,6 +27,7 @@ class UserModel {
       final email = json['email'] ?? "";
       final name = json['name'] ?? "";
       final phone = json['phone'] ?? "";
+      final profilePicture = json['profile'] ?? "";
       final designation = json['designation'] ?? "";
       final company = json['company'] ?? "";
       final isActive = json['isActive'] ?? false;
@@ -35,6 +38,7 @@ class UserModel {
         email: email,
         name: name,
         phone: phone,
+        profilePicture: profilePicture,
         designation: designation,
         company: company,
         isActive: isActive,
@@ -50,6 +54,7 @@ class UserModel {
       'email': email,
       'name': name,
       'phone': phone,
+      'profilePicture': profilePicture,
       'designation': designation,
       'company': company,
       'isActive': isActive,
