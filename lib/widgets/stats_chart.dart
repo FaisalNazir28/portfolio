@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
-import 'package:my_portfolio/controllers/stats_controller.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
 import 'package:my_portfolio/services/stats_service.dart';
@@ -489,11 +488,11 @@ class _StatsChartState extends State<StatsChart> {
                       fontSize: 20, fontWeight: FontWeight.w600),
                 )
               : Shimmer.fromColors(
-                  baseColor: Colors.black87,
+                  baseColor: Colors.black38,
                   highlightColor: Colors.white30,
                   child: Container(
                     decoration: const BoxDecoration(
-                      color: Colors.black87,
+                      color: Colors.black38,
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
                     width: 40,
