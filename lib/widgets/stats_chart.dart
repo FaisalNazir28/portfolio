@@ -1,8 +1,12 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:my_portfolio/models/stats_model.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
+import 'package:my_portfolio/services/firebase_collections.dart';
 import 'package:my_portfolio/widgets/custom_app_button.dart';
+import 'package:shimmer/shimmer.dart';
 
 class StatsChart extends StatefulWidget {
   final bool? showWorkButton;
@@ -17,6 +21,8 @@ class StatsChart extends StatefulWidget {
 }
 
 class _StatsChartState extends State<StatsChart> {
+  StatsModel statsModel = StatsModel();
+
   @override
   Widget build(BuildContext context) {
     var isDesktopScreen = Breakpoints.isLargeScreen(context);
@@ -88,14 +94,39 @@ class _StatsChartState extends State<StatsChart> {
                           children: [
                             Expanded(child: statIconBox(icon: Ionicons.flower)),
                             Expanded(
-                              child: statDetailBox(
-                                  title: "60+", subtitle: "Projects\nfinished"),
+                              child: FutureBuilder(
+                                future: getAllStats(),
+                                builder: (context, snapshot) {
+                                  var stats = snapshot.data;
+                                  if (snapshot.connectionState ==
+                                      ConnectionState.waiting) {
+                                    return statDetailBox(
+                                        subtitle: "Projects\nfinished");
+                                  } else {
+                                    return statDetailBox(
+                                        title: "${stats!.projectsFinished}+",
+                                        subtitle: "Projects\nfinished");
+                                  }
+                                },
+                              ),
                             ),
                             Expanded(child: statIconBox(icon: Ionicons.ribbon)),
                             Expanded(
-                              child: statDetailBox(
-                                  title: "20+",
-                                  subtitle: "Websites\ndeveloped"),
+                              child: FutureBuilder(
+                                future: getAllStats(),
+                                builder: (context, snapshot) {
+                                  var stats = snapshot.data;
+                                  if (snapshot.connectionState ==
+                                      ConnectionState.waiting) {
+                                    return statDetailBox(
+                                        subtitle: "Websites\ndeveloped");
+                                  } else {
+                                    return statDetailBox(
+                                        title: "${stats!.websitesDeveloped}+",
+                                        subtitle: "Websites\ndeveloped");
+                                  }
+                                },
+                              ),
                             ),
                           ],
                         ),
@@ -104,13 +135,39 @@ class _StatsChartState extends State<StatsChart> {
                         child: Row(
                           children: [
                             Expanded(
-                              child: statDetailBox(
-                                  title: "70+", subtitle: "Happy\nclients"),
+                              child: FutureBuilder(
+                                future: getAllStats(),
+                                builder: (context, snapshot) {
+                                  var stats = snapshot.data;
+                                  if (snapshot.connectionState ==
+                                      ConnectionState.waiting) {
+                                    return statDetailBox(
+                                        subtitle: "Happy\nclients");
+                                  } else {
+                                    return statDetailBox(
+                                        title: "${stats!.happyClients}+",
+                                        subtitle: "Happy\nclients");
+                                  }
+                                },
+                              ),
                             ),
                             Expanded(child: statIconBox(icon: Ionicons.apps)),
                             Expanded(
-                              child: statDetailBox(
-                                  title: "4+", subtitle: "Years\nexperience"),
+                              child: FutureBuilder(
+                                future: getAllStats(),
+                                builder: (context, snapshot) {
+                                  var stats = snapshot.data;
+                                  if (snapshot.connectionState ==
+                                      ConnectionState.waiting) {
+                                    return statDetailBox(
+                                        subtitle: "Years\nexperience");
+                                  } else {
+                                    return statDetailBox(
+                                        title: "${stats!.yearsExperience}+",
+                                        subtitle: "Years\nexperience");
+                                  }
+                                },
+                              ),
                             ),
                             Expanded(
                               child: statIconBox(
@@ -178,16 +235,40 @@ class _StatsChartState extends State<StatsChart> {
                               Expanded(
                                   child: statIconBox(icon: Ionicons.flower)),
                               Expanded(
-                                child: statDetailBox(
-                                    title: "60+",
-                                    subtitle: "Projects\nfinished"),
+                                child: FutureBuilder(
+                                  future: getAllStats(),
+                                  builder: (context, snapshot) {
+                                    var stats = snapshot.data;
+                                    if (snapshot.connectionState ==
+                                        ConnectionState.waiting) {
+                                      return statDetailBox(
+                                          subtitle: "Projects\nfinished");
+                                    } else {
+                                      return statDetailBox(
+                                          title: "${stats!.projectsFinished}+",
+                                          subtitle: "Projects\nfinished");
+                                    }
+                                  },
+                                ),
                               ),
                               Expanded(
                                   child: statIconBox(icon: Ionicons.ribbon)),
                               Expanded(
-                                child: statDetailBox(
-                                    title: "20+",
-                                    subtitle: "Websites\ndeveloped"),
+                                child: FutureBuilder(
+                                  future: getAllStats(),
+                                  builder: (context, snapshot) {
+                                    var stats = snapshot.data;
+                                    if (snapshot.connectionState ==
+                                        ConnectionState.waiting) {
+                                      return statDetailBox(
+                                          subtitle: "Websites\ndeveloped");
+                                    } else {
+                                      return statDetailBox(
+                                          title: "${stats!.websitesDeveloped}+",
+                                          subtitle: "Websites\ndeveloped");
+                                    }
+                                  },
+                                ),
                               ),
                             ],
                           ),
@@ -196,13 +277,39 @@ class _StatsChartState extends State<StatsChart> {
                           child: Row(
                             children: [
                               Expanded(
-                                  child: statDetailBox(
-                                      title: "70+",
-                                      subtitle: "Happy\nclients")),
+                                child: FutureBuilder(
+                                  future: getAllStats(),
+                                  builder: (context, snapshot) {
+                                    var stats = snapshot.data;
+                                    if (snapshot.connectionState ==
+                                        ConnectionState.waiting) {
+                                      return statDetailBox(
+                                          subtitle: "Happy\nclients");
+                                    } else {
+                                      return statDetailBox(
+                                          title: "${stats!.happyClients}+",
+                                          subtitle: "Happy\nclients");
+                                    }
+                                  },
+                                ),
+                              ),
                               Expanded(child: statIconBox(icon: Ionicons.apps)),
                               Expanded(
-                                child: statDetailBox(
-                                    title: "4+", subtitle: "Years\nexperience"),
+                                child: FutureBuilder(
+                                  future: getAllStats(),
+                                  builder: (context, snapshot) {
+                                    var stats = snapshot.data;
+                                    if (snapshot.connectionState ==
+                                        ConnectionState.waiting) {
+                                      return statDetailBox(
+                                          subtitle: "Years\nexperience");
+                                    } else {
+                                      return statDetailBox(
+                                          title: "${stats!.yearsExperience}+",
+                                          subtitle: "Years\nexperience");
+                                    }
+                                  },
+                                ),
                               ),
                               Expanded(
                                 child: statIconBox(
@@ -267,9 +374,21 @@ class _StatsChartState extends State<StatsChart> {
                             children: [
                               Expanded(child: statIconBox(icon: Ionicons.apps)),
                               Expanded(
-                                child: statDetailBox(
-                                    title: "60+",
-                                    subtitle: "Projects\nfinished"),
+                                child: FutureBuilder(
+                                  future: getAllStats(),
+                                  builder: (context, snapshot) {
+                                    var stats = snapshot.data;
+                                    if (snapshot.connectionState ==
+                                        ConnectionState.waiting) {
+                                      return statDetailBox(
+                                          subtitle: "Projects\nfinished");
+                                    } else {
+                                      return statDetailBox(
+                                          title: "${stats!.projectsFinished}+",
+                                          subtitle: "Projects\nfinished");
+                                    }
+                                  },
+                                ),
                               ),
                             ],
                           ),
@@ -278,9 +397,21 @@ class _StatsChartState extends State<StatsChart> {
                           child: Row(
                             children: [
                               Expanded(
-                                child: statDetailBox(
-                                    title: "20+",
-                                    subtitle: "Websites\ndeveloped"),
+                                child: FutureBuilder(
+                                  future: getAllStats(),
+                                  builder: (context, snapshot) {
+                                    var stats = snapshot.data;
+                                    if (snapshot.connectionState ==
+                                        ConnectionState.waiting) {
+                                      return statDetailBox(
+                                          subtitle: "Websites\ndeveloped");
+                                    } else {
+                                      return statDetailBox(
+                                          title: "${stats!.websitesDeveloped}+",
+                                          subtitle: "Websites\ndeveloped");
+                                    }
+                                  },
+                                ),
                               ),
                               Expanded(
                                   child: statIconBox(
@@ -294,9 +425,22 @@ class _StatsChartState extends State<StatsChart> {
                               Expanded(
                                   child: statIconBox(icon: Ionicons.flower)),
                               Expanded(
-                                  child: statDetailBox(
-                                      title: "70+",
-                                      subtitle: "Happy\nclients")),
+                                child: FutureBuilder(
+                                  future: getAllStats(),
+                                  builder: (context, snapshot) {
+                                    var stats = snapshot.data;
+                                    if (snapshot.connectionState ==
+                                        ConnectionState.waiting) {
+                                      return statDetailBox(
+                                          subtitle: "Happy\nclients");
+                                    } else {
+                                      return statDetailBox(
+                                          title: "${stats!.happyClients}+",
+                                          subtitle: "Happy\nclients");
+                                    }
+                                  },
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -304,8 +448,21 @@ class _StatsChartState extends State<StatsChart> {
                           child: Row(
                             children: [
                               Expanded(
-                                child: statDetailBox(
-                                    title: "4+", subtitle: "Years\nexperience"),
+                                child: FutureBuilder(
+                                  future: getAllStats(),
+                                  builder: (context, snapshot) {
+                                    var stats = snapshot.data;
+                                    if (snapshot.connectionState ==
+                                        ConnectionState.waiting) {
+                                      return statDetailBox(
+                                          subtitle: "Years\nexperience");
+                                    } else {
+                                      return statDetailBox(
+                                          title: "${stats!.yearsExperience}+",
+                                          subtitle: "Years\nexperience");
+                                    }
+                                  },
+                                ),
                               ),
                               Expanded(
                                 child: statIconBox(icon: Ionicons.ribbon),
@@ -320,7 +477,7 @@ class _StatsChartState extends State<StatsChart> {
     );
   }
 
-  Widget statDetailBox({required String title, required String subtitle}) {
+  Widget statDetailBox({String? title, required String subtitle}) {
     return Container(
       color: const Color(0xfff5f5f0).withOpacity(0.5),
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 30),
@@ -328,10 +485,24 @@ class _StatsChartState extends State<StatsChart> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            title,
-            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-          ),
+          title != "" && title != null
+              ? Text(
+                  title,
+                  style: const TextStyle(
+                      fontSize: 20, fontWeight: FontWeight.w600),
+                )
+              : Shimmer.fromColors(
+                  baseColor: Colors.black87,
+                  highlightColor: Colors.white30,
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Colors.black87,
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                    ),
+                    width: 40,
+                    height: 22,
+                  ),
+                ),
           const SizedBox(
             height: 10,
           ),
@@ -352,5 +523,18 @@ class _StatsChartState extends State<StatsChart> {
         size: 40,
       ),
     );
+  }
+
+  Future<StatsModel> getAllStats() async {
+    StatsModel statsModel = StatsModel();
+    DocumentSnapshot querySnapshot =
+        await FbCollections.stats.doc('companyStats').get();
+
+    if (querySnapshot.data() != null) {
+      Map<String, dynamic> statData =
+          querySnapshot.data() as Map<String, dynamic>;
+      statsModel = StatsModel.fromJson(statData);
+    }
+    return statsModel;
   }
 }
