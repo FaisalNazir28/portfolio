@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
+import 'package:my_portfolio/services/stats_service.dart';
 import 'package:my_portfolio/utilities/app_images.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
 import 'package:my_portfolio/widgets/footer.dart';
@@ -9,6 +10,7 @@ import 'package:my_portfolio/widgets/header.dart';
 import 'package:my_portfolio/widgets/horizontal_scrollbar_tile.dart';
 import 'package:my_portfolio/widgets/mini_showcase_container.dart';
 import 'package:my_portfolio/widgets/review_widget.dart';
+import 'package:shimmer/shimmer.dart';
 
 class ServicesScreen extends StatefulWidget {
   const ServicesScreen({super.key});
@@ -110,25 +112,25 @@ class _ServicesScreenState extends State<ServicesScreen> {
                     child: isMobileScreen
                         ? Column(
                             children: [
-                              const Column(
+                              Column(
                                 mainAxisSize: MainAxisSize.min,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
+                                  const Text(
                                     "Let me assist you in achieving your goals",
                                     style: TextStyle(
                                         fontSize: 32,
                                         fontWeight: FontWeight.w600),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 25,
                                   ),
-                                  Text(
+                                  const Text(
                                     "I offer expertise in cross-platform development, problem-solving, and strategic planning for tailored solution that match your unique needs.",
                                     style: TextStyle(
                                         fontSize: 15, color: Colors.black54),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 30,
                                   ),
                                   IntrinsicHeight(
@@ -139,17 +141,47 @@ class _ServicesScreenState extends State<ServicesScreen> {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
-                                              Text(
-                                                "60+",
-                                                style: TextStyle(
-                                                    fontSize: 25,
-                                                    fontWeight:
-                                                        FontWeight.w500),
+                                              FutureBuilder(
+                                                future:
+                                                    StatsService.getStatsData(),
+                                                builder: (context, snapshot) {
+                                                  var stats = snapshot.data;
+                                                  if (snapshot
+                                                          .connectionState ==
+                                                      ConnectionState.waiting) {
+                                                    return Shimmer.fromColors(
+                                                      baseColor: Colors.black38,
+                                                      highlightColor:
+                                                          Colors.white30,
+                                                      child: Container(
+                                                        decoration:
+                                                            const BoxDecoration(
+                                                          color: Colors.black38,
+                                                          borderRadius:
+                                                              BorderRadius.all(
+                                                                  Radius
+                                                                      .circular(
+                                                                          10)),
+                                                        ),
+                                                        width: 40,
+                                                        height: 30,
+                                                      ),
+                                                    );
+                                                  } else {
+                                                    return Text(
+                                                      "${stats!.projectsFinished}+",
+                                                      style: const TextStyle(
+                                                          fontSize: 25,
+                                                          fontWeight:
+                                                              FontWeight.w500),
+                                                    );
+                                                  }
+                                                },
                                               ),
-                                              SizedBox(
+                                              const SizedBox(
                                                 height: 5,
                                               ),
-                                              Text(
+                                              const Text(
                                                 "Projects finished",
                                                 style: TextStyle(
                                                     color: Colors.grey,
@@ -158,7 +190,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
                                             ],
                                           ),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 100,
                                         ),
                                         Expanded(
@@ -166,17 +198,47 @@ class _ServicesScreenState extends State<ServicesScreen> {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
-                                              Text(
-                                                "70+",
-                                                style: TextStyle(
-                                                    fontSize: 25,
-                                                    fontWeight:
-                                                        FontWeight.w500),
+                                              FutureBuilder(
+                                                future:
+                                                    StatsService.getStatsData(),
+                                                builder: (context, snapshot) {
+                                                  var stats = snapshot.data;
+                                                  if (snapshot
+                                                          .connectionState ==
+                                                      ConnectionState.waiting) {
+                                                    return Shimmer.fromColors(
+                                                      baseColor: Colors.black38,
+                                                      highlightColor:
+                                                          Colors.white30,
+                                                      child: Container(
+                                                        decoration:
+                                                            const BoxDecoration(
+                                                          color: Colors.black38,
+                                                          borderRadius:
+                                                              BorderRadius.all(
+                                                                  Radius
+                                                                      .circular(
+                                                                          10)),
+                                                        ),
+                                                        width: 40,
+                                                        height: 30,
+                                                      ),
+                                                    );
+                                                  } else {
+                                                    return Text(
+                                                      "${stats!.happyClients}+",
+                                                      style: const TextStyle(
+                                                          fontSize: 25,
+                                                          fontWeight:
+                                                              FontWeight.w500),
+                                                    );
+                                                  }
+                                                },
                                               ),
-                                              SizedBox(
+                                              const SizedBox(
                                                 height: 5,
                                               ),
-                                              Text(
+                                              const Text(
                                                 "Happy clients",
                                                 style: TextStyle(
                                                     color: Colors.grey,
@@ -251,7 +313,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
                                     const SizedBox(
                                       height: 40,
                                     ),
-                                    const IntrinsicHeight(
+                                    IntrinsicHeight(
                                       child: Row(
                                         children: [
                                           Expanded(
@@ -259,17 +321,51 @@ class _ServicesScreenState extends State<ServicesScreen> {
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
-                                                Text(
-                                                  "60+",
-                                                  style: TextStyle(
-                                                      fontSize: 30,
-                                                      fontWeight:
-                                                          FontWeight.w500),
+                                                FutureBuilder(
+                                                  future: StatsService
+                                                      .getStatsData(),
+                                                  builder: (context, snapshot) {
+                                                    var stats = snapshot.data;
+                                                    if (snapshot
+                                                            .connectionState ==
+                                                        ConnectionState
+                                                            .waiting) {
+                                                      return Shimmer.fromColors(
+                                                        baseColor:
+                                                            Colors.black38,
+                                                        highlightColor:
+                                                            Colors.white30,
+                                                        child: Container(
+                                                          decoration:
+                                                              const BoxDecoration(
+                                                            color:
+                                                                Colors.black38,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .all(Radius
+                                                                        .circular(
+                                                                            10)),
+                                                          ),
+                                                          width: 40,
+                                                          height: 40,
+                                                        ),
+                                                      );
+                                                    } else {
+                                                      return Text(
+                                                        "${stats!.projectsFinished}+",
+                                                        style: const TextStyle(
+                                                            fontSize: 30,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w500),
+                                                      );
+                                                    }
+                                                  },
                                                 ),
-                                                SizedBox(
+                                                const SizedBox(
                                                   height: 5,
                                                 ),
-                                                Text(
+                                                const Text(
                                                   "Projects finished",
                                                   style: TextStyle(
                                                       color: Colors.grey,
@@ -278,7 +374,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
                                               ],
                                             ),
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             width: 100,
                                           ),
                                           Expanded(
@@ -286,17 +382,51 @@ class _ServicesScreenState extends State<ServicesScreen> {
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
-                                                Text(
-                                                  "70+",
-                                                  style: TextStyle(
-                                                      fontSize: 30,
-                                                      fontWeight:
-                                                          FontWeight.w500),
+                                                FutureBuilder(
+                                                  future: StatsService
+                                                      .getStatsData(),
+                                                  builder: (context, snapshot) {
+                                                    var stats = snapshot.data;
+                                                    if (snapshot
+                                                            .connectionState ==
+                                                        ConnectionState
+                                                            .waiting) {
+                                                      return Shimmer.fromColors(
+                                                        baseColor:
+                                                            Colors.black38,
+                                                        highlightColor:
+                                                            Colors.white30,
+                                                        child: Container(
+                                                          decoration:
+                                                              const BoxDecoration(
+                                                            color:
+                                                                Colors.black38,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .all(Radius
+                                                                        .circular(
+                                                                            10)),
+                                                          ),
+                                                          width: 40,
+                                                          height: 40,
+                                                        ),
+                                                      );
+                                                    } else {
+                                                      return Text(
+                                                        "${stats!.happyClients}+",
+                                                        style: const TextStyle(
+                                                            fontSize: 30,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w500),
+                                                      );
+                                                    }
+                                                  },
                                                 ),
-                                                SizedBox(
+                                                const SizedBox(
                                                   height: 5,
                                                 ),
-                                                Text(
+                                                const Text(
                                                   "Happy clients",
                                                   style: TextStyle(
                                                       color: Colors.grey,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
+import 'package:my_portfolio/services/stats_service.dart';
+import 'package:shimmer/shimmer.dart';
 
 class HorizontalScrollBarTile extends StatefulWidget {
   const HorizontalScrollBarTile({
@@ -23,7 +25,19 @@ class _HorizontalScrollBarTileState extends State<HorizontalScrollBarTile> {
             children: [
               Row(
                 children: [
-                  statTileMobile(count: '20', text: 'Websites developed'),
+                  FutureBuilder(
+                    future: StatsService.getStatsData(),
+                    builder: (context, snapshot) {
+                      var stats = snapshot.data;
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return statTileMobile(text: 'Websites developed');
+                      } else {
+                        return statTileMobile(
+                            count: stats!.websitesDeveloped,
+                            text: 'Websites developed');
+                      }
+                    },
+                  ),
                   statTileMobile(
                       count: '',
                       text: '',
@@ -42,7 +56,19 @@ class _HorizontalScrollBarTileState extends State<HorizontalScrollBarTile> {
                         Ionicons.apps,
                         size: 40,
                       )),
-                  statTileMobile(count: '60', text: 'Projects finished'),
+                  FutureBuilder(
+                    future: StatsService.getStatsData(),
+                    builder: (context, snapshot) {
+                      var stats = snapshot.data;
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return statTileMobile(text: 'Projects finished');
+                      } else {
+                        return statTileMobile(
+                            count: stats!.projectsFinished,
+                            text: 'Projects finished');
+                      }
+                    },
+                  ),
                 ],
               ),
             ],
@@ -55,7 +81,20 @@ class _HorizontalScrollBarTileState extends State<HorizontalScrollBarTile> {
               itemBuilder: (context, index) {
                 return Row(
                   children: [
-                    statTile(count: '20', text: 'Websites developed'),
+                    FutureBuilder(
+                      future: StatsService.getStatsData(),
+                      builder: (context, snapshot) {
+                        var stats = snapshot.data;
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return statTile(text: 'Websites developed');
+                        } else {
+                          return statTile(
+                              count: stats!.websitesDeveloped,
+                              text: 'Websites developed');
+                        }
+                      },
+                    ),
                     statTile(
                         count: '',
                         text: '',
@@ -63,7 +102,20 @@ class _HorizontalScrollBarTileState extends State<HorizontalScrollBarTile> {
                           Ionicons.logo_web_component,
                           size: 40,
                         )),
-                    statTile(count: '60', text: 'Projects finished'),
+                    FutureBuilder(
+                      future: StatsService.getStatsData(),
+                      builder: (context, snapshot) {
+                        var stats = snapshot.data;
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return statTile(text: 'Projects finished');
+                        } else {
+                          return statTile(
+                              count: stats!.projectsFinished,
+                              text: 'Projects finished');
+                        }
+                      },
+                    ),
                     statTile(
                         count: '',
                         text: '',
@@ -71,7 +123,20 @@ class _HorizontalScrollBarTileState extends State<HorizontalScrollBarTile> {
                           Ionicons.apps,
                           size: 40,
                         )),
-                    statTile(count: '50', text: 'Apps Built'),
+                    FutureBuilder(
+                      future: StatsService.getStatsData(),
+                      builder: (context, snapshot) {
+                        var stats = snapshot.data;
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return statTile(text: 'Apps Built');
+                        } else {
+                          return statTile(
+                              count: stats!.applicationsBuilt,
+                              text: 'Apps Built');
+                        }
+                      },
+                    ),
                     statTile(
                         count: '',
                         text: '',
@@ -79,7 +144,19 @@ class _HorizontalScrollBarTileState extends State<HorizontalScrollBarTile> {
                           Ionicons.logo_apple_ar,
                           size: 40,
                         )),
-                    statTile(count: '13', text: 'Recognitions'),
+                    FutureBuilder(
+                      future: StatsService.getStatsData(),
+                      builder: (context, snapshot) {
+                        var stats = snapshot.data;
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return statTile(text: 'Recognitions');
+                        } else {
+                          return statTile(
+                              count: stats!.recognitions, text: 'Recognitions');
+                        }
+                      },
+                    ),
                     statTile(
                         count: '',
                         text: '',
@@ -96,7 +173,7 @@ class _HorizontalScrollBarTileState extends State<HorizontalScrollBarTile> {
 
   Widget statTile({
     Icon? icon,
-    required String count,
+    String? count,
     required String text,
   }) {
     return Container(
@@ -110,11 +187,24 @@ class _HorizontalScrollBarTileState extends State<HorizontalScrollBarTile> {
       child: icon ??
           Row(
             children: [
-              Text(
-                "$count+",
-                style:
-                    const TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
-              ),
+              count != "" && count != null
+                  ? Text(
+                      "$count+",
+                      style: const TextStyle(
+                          fontSize: 22, fontWeight: FontWeight.w600),
+                    )
+                  : Shimmer.fromColors(
+                      baseColor: Colors.black38,
+                      highlightColor: Colors.white30,
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          color: Colors.black38,
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                        ),
+                        width: 40,
+                        height: 30,
+                      ),
+                    ),
               const SizedBox(
                 width: 10,
               ),
@@ -131,7 +221,7 @@ class _HorizontalScrollBarTileState extends State<HorizontalScrollBarTile> {
 
   Widget statTileMobile({
     Icon? icon,
-    required String count,
+    String? count,
     required String text,
   }) {
     return Expanded(
@@ -145,11 +235,24 @@ class _HorizontalScrollBarTileState extends State<HorizontalScrollBarTile> {
         child: icon ??
             Row(
               children: [
-                Text(
-                  "$count+",
-                  style: const TextStyle(
-                      fontSize: 22, fontWeight: FontWeight.w600),
-                ),
+                count != "" && count != null
+                    ? Text(
+                        "$count+",
+                        style: const TextStyle(
+                            fontSize: 22, fontWeight: FontWeight.w600),
+                      )
+                    : Shimmer.fromColors(
+                        baseColor: Colors.black38,
+                        highlightColor: Colors.white30,
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            color: Colors.black38,
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                          ),
+                          width: 40,
+                          height: 25,
+                        ),
+                      ),
                 const SizedBox(
                   width: 10,
                 ),
