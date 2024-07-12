@@ -8,10 +8,10 @@ import 'package:my_portfolio/screens/page_not_found_screen/page_not_found_screen
 import 'package:my_portfolio/screens/playground_screen/playground_screen.dart';
 import 'package:my_portfolio/screens/project_view_screen/project_view_screen.dart';
 import 'package:my_portfolio/screens/services_screen/services_screen.dart';
+import 'package:my_portfolio/services/firebase_options.dart';
 import 'screens/client_screen/client_screen.dart';
 import 'screens/login_screen/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
 
 bool initialLaunch = true;
 

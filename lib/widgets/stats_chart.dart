@@ -1,10 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
-import 'package:my_portfolio/models/stats_model.dart';
+import 'package:my_portfolio/controllers/stats_controller.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
-import 'package:my_portfolio/services/firebase_collections.dart';
+import 'package:my_portfolio/services/stats_service.dart';
 import 'package:my_portfolio/widgets/custom_app_button.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -21,8 +20,6 @@ class StatsChart extends StatefulWidget {
 }
 
 class _StatsChartState extends State<StatsChart> {
-  StatsModel statsModel = StatsModel();
-
   @override
   Widget build(BuildContext context) {
     var isDesktopScreen = Breakpoints.isLargeScreen(context);
@@ -95,7 +92,7 @@ class _StatsChartState extends State<StatsChart> {
                             Expanded(child: statIconBox(icon: Ionicons.flower)),
                             Expanded(
                               child: FutureBuilder(
-                                future: getAllStats(),
+                                future: StatsService.getStatsData(),
                                 builder: (context, snapshot) {
                                   var stats = snapshot.data;
                                   if (snapshot.connectionState ==
@@ -113,7 +110,7 @@ class _StatsChartState extends State<StatsChart> {
                             Expanded(child: statIconBox(icon: Ionicons.ribbon)),
                             Expanded(
                               child: FutureBuilder(
-                                future: getAllStats(),
+                                future: StatsService.getStatsData(),
                                 builder: (context, snapshot) {
                                   var stats = snapshot.data;
                                   if (snapshot.connectionState ==
@@ -136,7 +133,7 @@ class _StatsChartState extends State<StatsChart> {
                           children: [
                             Expanded(
                               child: FutureBuilder(
-                                future: getAllStats(),
+                                future: StatsService.getStatsData(),
                                 builder: (context, snapshot) {
                                   var stats = snapshot.data;
                                   if (snapshot.connectionState ==
@@ -154,7 +151,7 @@ class _StatsChartState extends State<StatsChart> {
                             Expanded(child: statIconBox(icon: Ionicons.apps)),
                             Expanded(
                               child: FutureBuilder(
-                                future: getAllStats(),
+                                future: StatsService.getStatsData(),
                                 builder: (context, snapshot) {
                                   var stats = snapshot.data;
                                   if (snapshot.connectionState ==
@@ -236,7 +233,7 @@ class _StatsChartState extends State<StatsChart> {
                                   child: statIconBox(icon: Ionicons.flower)),
                               Expanded(
                                 child: FutureBuilder(
-                                  future: getAllStats(),
+                                  future: StatsService.getStatsData(),
                                   builder: (context, snapshot) {
                                     var stats = snapshot.data;
                                     if (snapshot.connectionState ==
@@ -255,7 +252,7 @@ class _StatsChartState extends State<StatsChart> {
                                   child: statIconBox(icon: Ionicons.ribbon)),
                               Expanded(
                                 child: FutureBuilder(
-                                  future: getAllStats(),
+                                  future: StatsService.getStatsData(),
                                   builder: (context, snapshot) {
                                     var stats = snapshot.data;
                                     if (snapshot.connectionState ==
@@ -278,7 +275,7 @@ class _StatsChartState extends State<StatsChart> {
                             children: [
                               Expanded(
                                 child: FutureBuilder(
-                                  future: getAllStats(),
+                                  future: StatsService.getStatsData(),
                                   builder: (context, snapshot) {
                                     var stats = snapshot.data;
                                     if (snapshot.connectionState ==
@@ -296,7 +293,7 @@ class _StatsChartState extends State<StatsChart> {
                               Expanded(child: statIconBox(icon: Ionicons.apps)),
                               Expanded(
                                 child: FutureBuilder(
-                                  future: getAllStats(),
+                                  future: StatsService.getStatsData(),
                                   builder: (context, snapshot) {
                                     var stats = snapshot.data;
                                     if (snapshot.connectionState ==
@@ -375,7 +372,7 @@ class _StatsChartState extends State<StatsChart> {
                               Expanded(child: statIconBox(icon: Ionicons.apps)),
                               Expanded(
                                 child: FutureBuilder(
-                                  future: getAllStats(),
+                                  future: StatsService.getStatsData(),
                                   builder: (context, snapshot) {
                                     var stats = snapshot.data;
                                     if (snapshot.connectionState ==
@@ -398,7 +395,7 @@ class _StatsChartState extends State<StatsChart> {
                             children: [
                               Expanded(
                                 child: FutureBuilder(
-                                  future: getAllStats(),
+                                  future: StatsService.getStatsData(),
                                   builder: (context, snapshot) {
                                     var stats = snapshot.data;
                                     if (snapshot.connectionState ==
@@ -426,7 +423,7 @@ class _StatsChartState extends State<StatsChart> {
                                   child: statIconBox(icon: Ionicons.flower)),
                               Expanded(
                                 child: FutureBuilder(
-                                  future: getAllStats(),
+                                  future: StatsService.getStatsData(),
                                   builder: (context, snapshot) {
                                     var stats = snapshot.data;
                                     if (snapshot.connectionState ==
@@ -449,7 +446,7 @@ class _StatsChartState extends State<StatsChart> {
                             children: [
                               Expanded(
                                 child: FutureBuilder(
-                                  future: getAllStats(),
+                                  future: StatsService.getStatsData(),
                                   builder: (context, snapshot) {
                                     var stats = snapshot.data;
                                     if (snapshot.connectionState ==
@@ -523,18 +520,5 @@ class _StatsChartState extends State<StatsChart> {
         size: 40,
       ),
     );
-  }
-
-  Future<StatsModel> getAllStats() async {
-    StatsModel statsModel = StatsModel();
-    DocumentSnapshot querySnapshot =
-        await FbCollections.stats.doc('companyStats').get();
-
-    if (querySnapshot.data() != null) {
-      Map<String, dynamic> statData =
-          querySnapshot.data() as Map<String, dynamic>;
-      statsModel = StatsModel.fromJson(statData);
-    }
-    return statsModel;
   }
 }
