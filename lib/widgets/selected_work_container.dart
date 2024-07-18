@@ -100,9 +100,7 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                         Text(
                           widget.projectData.description,
                           maxLines: isHovered ? 4 : 2,
-                          overflow: isHovered
-                              ? TextOverflow.ellipsis
-                              : TextOverflow.fade,
+                          overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
                             fontSize: 16.0,
                             color: Colors.grey,
