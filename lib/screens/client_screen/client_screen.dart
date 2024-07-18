@@ -40,7 +40,20 @@ class _ClientScreenState extends State<ClientScreen> {
                   Text("is active==> ${Authentication.userModel.isActive}"),
                   Text("is admin==> ${Authentication.userModel.isAdmin}"),
                   Text(
+                      "profile url==> ${Authentication.userModel.profilePicture}"),
+                  Text(
                     "designation==> ${Authentication.userModel.designation}",
+                  ),
+                  const SizedBox(
+                    height: 80,
+                  ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(100),
+                    child: Image.network(
+                      Authentication.imager,
+                      width: 80,
+                      height: 80,
+                    ),
                   ),
                   const SizedBox(
                     height: 30,
