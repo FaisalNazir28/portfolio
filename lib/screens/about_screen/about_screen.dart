@@ -1,7 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:my_portfolio/controllers/awards_controller.dart';
+import 'package:my_portfolio/controllers/experiences_controller.dart';
 import 'package:my_portfolio/main.dart';
+import 'package:my_portfolio/models/awards_model.dart';
+import 'package:my_portfolio/models/experiences_model.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
 import 'package:my_portfolio/utilities/app_images.dart';
@@ -16,6 +20,8 @@ import 'package:my_portfolio/widgets/review_widget.dart';
 import 'package:my_portfolio/widgets/showcase_container.dart';
 import 'dart:html' as html;
 
+import 'package:shimmer/shimmer.dart';
+
 class AboutScreen extends StatefulWidget {
   const AboutScreen({super.key});
 
@@ -25,6 +31,9 @@ class AboutScreen extends StatefulWidget {
 
 class _AboutScreenState extends State<AboutScreen> {
   final ScrollController scrollController = ScrollController();
+  List<ExperiencesModel> experiencesList =
+      List<ExperiencesModel>.empty(growable: true);
+  List<AwardsModel> awardsList = List<AwardsModel>.empty(growable: true);
 
   @override
   void initState() {
@@ -374,39 +383,57 @@ class _AboutScreenState extends State<AboutScreen> {
                                 const SizedBox(
                                   height: 50,
                                 ),
-                                ExperienceTile(
-                                    companyLogo: AppImages.soloinsightLogo,
-                                    title:
-                                        "SWE Flutter Applications at Soloinsight Inc",
-                                    startDate: "March 2020",
-                                    endDate: "Present"),
-                                ExperienceTile(
-                                    companyLogo: AppImages.artAcheMagazineLogo,
-                                    title: "Webmaster at Artache Magazine",
-                                    startDate: "July 2023",
-                                    endDate: "Present"),
-                                ExperienceTile(
-                                    companyLogo: AppImages.fiverr,
-                                    title: "Wordpress Developer at Fiverr",
-                                    startDate: "October 2018",
-                                    endDate: "Present"),
-                                ExperienceTile(
-                                    companyLogo: AppImages.gdscLogo,
-                                    title:
-                                        "Google DSC Ambassador at GDSC - PUCIT",
-                                    startDate: "October 2021",
-                                    endDate: "October 2022"),
-                                ExperienceTile(
-                                    companyLogo: AppImages.pelLogo,
-                                    title: "Android Developer at PEL",
-                                    startDate: "October 2018",
-                                    endDate: "November 2018"),
-                                ExperienceTile(
-                                    companyLogo: AppImages.wordpressLogo,
-                                    title:
-                                        "Wordpress Developer at ECOM Technologies",
-                                    startDate: "September 2018",
-                                    endDate: "October 2018"),
+                                FutureBuilder(
+                                    future: ExperiencesController()
+                                        .getAllExperiences(),
+                                    builder: (context, snapshot) {
+                                      if (snapshot.connectionState ==
+                                          ConnectionState.waiting) {
+                                        return ListView.builder(
+                                            shrinkWrap: true,
+                                            itemCount: 3,
+                                            itemBuilder: (context, index) {
+                                              return Shimmer.fromColors(
+                                                baseColor: Colors.black38,
+                                                highlightColor: Colors.white30,
+                                                child: Container(
+                                                  margin: const EdgeInsets.only(
+                                                      bottom: 20),
+                                                  decoration:
+                                                      const BoxDecoration(
+                                                    color: Colors.black38,
+                                                    borderRadius:
+                                                        BorderRadius.all(
+                                                            Radius.circular(
+                                                                10)),
+                                                  ),
+                                                  height: 50,
+                                                ),
+                                              );
+                                            });
+                                      } else {
+                                        experiencesList = snapshot.data!;
+                                        experiencesList.sort((b, a) =>
+                                            a.index.compareTo(b.index));
+                                        return ListView.builder(
+                                            physics:
+                                                const NeverScrollableScrollPhysics(),
+                                            shrinkWrap: true,
+                                            itemCount: experiencesList.length,
+                                            itemBuilder: (context, index) {
+                                              return ExperienceTile(
+                                                companyLogo: '',
+                                                title: experiencesList[index]
+                                                    .title,
+                                                startDate:
+                                                    experiencesList[index]
+                                                        .startDate,
+                                                endDate: experiencesList[index]
+                                                    .endDate,
+                                              );
+                                            });
+                                      }
+                                    }),
                               ],
                             ),
                           ],
@@ -493,40 +520,60 @@ class _AboutScreenState extends State<AboutScreen> {
                                   const SizedBox(
                                     height: 50,
                                   ),
-                                  ExperienceTile(
-                                      companyLogo: AppImages.soloinsightLogo,
-                                      title:
-                                          "SWE Flutter Applications at Soloinsight Inc",
-                                      startDate: "March 2020",
-                                      endDate: "Present"),
-                                  ExperienceTile(
-                                      companyLogo:
-                                          AppImages.artAcheMagazineLogo,
-                                      title: "Webmaster at Artache Magazine",
-                                      startDate: "July 2023",
-                                      endDate: "Present"),
-                                  ExperienceTile(
-                                      companyLogo: AppImages.fiverr,
-                                      title: "Wordpress Developer at Fiverr",
-                                      startDate: "October 2018",
-                                      endDate: "Present"),
-                                  ExperienceTile(
-                                      companyLogo: AppImages.gdscLogo,
-                                      title:
-                                          "Google DSC Ambassador at GDSC - PUCIT",
-                                      startDate: "October 2021",
-                                      endDate: "October 2022"),
-                                  ExperienceTile(
-                                      companyLogo: AppImages.pelLogo,
-                                      title: "Android Developer at PEL",
-                                      startDate: "October 2018",
-                                      endDate: "November 2018"),
-                                  ExperienceTile(
-                                      companyLogo: AppImages.wordpressLogo,
-                                      title:
-                                          "Wordpress Developer at ECOM Technologies",
-                                      startDate: "September 2018",
-                                      endDate: "October 2018"),
+                                  FutureBuilder(
+                                      future: ExperiencesController()
+                                          .getAllExperiences(),
+                                      builder: (context, snapshot) {
+                                        if (snapshot.connectionState ==
+                                            ConnectionState.waiting) {
+                                          return ListView.builder(
+                                              shrinkWrap: true,
+                                              itemCount: 3,
+                                              itemBuilder: (context, index) {
+                                                return Shimmer.fromColors(
+                                                  baseColor: Colors.black38,
+                                                  highlightColor:
+                                                      Colors.white30,
+                                                  child: Container(
+                                                    margin:
+                                                        const EdgeInsets.only(
+                                                            bottom: 20),
+                                                    decoration:
+                                                        const BoxDecoration(
+                                                      color: Colors.black38,
+                                                      borderRadius:
+                                                          BorderRadius.all(
+                                                              Radius.circular(
+                                                                  10)),
+                                                    ),
+                                                    height: 50,
+                                                  ),
+                                                );
+                                              });
+                                        } else {
+                                          experiencesList = snapshot.data!;
+                                          experiencesList.sort((b, a) =>
+                                              a.index.compareTo(b.index));
+                                          return ListView.builder(
+                                              physics:
+                                                  const NeverScrollableScrollPhysics(),
+                                              shrinkWrap: true,
+                                              itemCount: experiencesList.length,
+                                              itemBuilder: (context, index) {
+                                                return ExperienceTile(
+                                                  companyLogo: '',
+                                                  title: experiencesList[index]
+                                                      .title,
+                                                  startDate:
+                                                      experiencesList[index]
+                                                          .startDate,
+                                                  endDate:
+                                                      experiencesList[index]
+                                                          .endDate,
+                                                );
+                                              });
+                                        }
+                                      }),
                                 ],
                               ),
                             ),
@@ -606,21 +653,56 @@ class _AboutScreenState extends State<AboutScreen> {
                                     const SizedBox(
                                       height: 50,
                                     ),
-                                    ExperienceTile(
-                                        companyLogo: AppImages.pieasLogo,
-                                        title:
-                                            "Best Website Design Award by PIEAS",
-                                        startDate: "March 2022"),
-                                    ExperienceTile(
-                                        companyLogo: AppImages.soloinsightLogo,
-                                        title:
-                                            "Information Security Training by Soloinsight Inc",
-                                        startDate: "January 2024"),
-                                    ExperienceTile(
-                                        companyLogo: AppImages.soloinsightLogo,
-                                        title:
-                                            "Application Security Training by Soloinsight Inc",
-                                        startDate: "April 2023"),
+                                    FutureBuilder(
+                                        future:
+                                            AwardsController().getAllAwards(),
+                                        builder: (context, snapshot) {
+                                          if (snapshot.connectionState ==
+                                              ConnectionState.waiting) {
+                                            return ListView.builder(
+                                                shrinkWrap: true,
+                                                itemCount: 3,
+                                                itemBuilder: (context, index) {
+                                                  return Shimmer.fromColors(
+                                                    baseColor: Colors.black38,
+                                                    highlightColor:
+                                                        Colors.white30,
+                                                    child: Container(
+                                                      margin:
+                                                          const EdgeInsets.only(
+                                                              bottom: 20),
+                                                      decoration:
+                                                          const BoxDecoration(
+                                                        color: Colors.black38,
+                                                        borderRadius:
+                                                            BorderRadius.all(
+                                                                Radius.circular(
+                                                                    10)),
+                                                      ),
+                                                      height: 50,
+                                                    ),
+                                                  );
+                                                });
+                                          } else {
+                                            awardsList = snapshot.data!;
+                                            awardsList.sort((b, a) =>
+                                                a.index.compareTo(b.index));
+                                            return ListView.builder(
+                                                physics:
+                                                    const NeverScrollableScrollPhysics(),
+                                                shrinkWrap: true,
+                                                itemCount: awardsList.length,
+                                                itemBuilder: (context, index) {
+                                                  return ExperienceTile(
+                                                    companyLogo: '',
+                                                    title:
+                                                        awardsList[index].title,
+                                                    startDate:
+                                                        awardsList[index].date,
+                                                  );
+                                                });
+                                          }
+                                        }),
                                   ],
                                 )
                               ],
@@ -678,23 +760,59 @@ class _AboutScreenState extends State<AboutScreen> {
                                       const SizedBox(
                                         height: 50,
                                       ),
-                                      ExperienceTile(
-                                          companyLogo: AppImages.pieasLogo,
-                                          title:
-                                              "Best Website Design Award by PIEAS",
-                                          startDate: "March 2022"),
-                                      ExperienceTile(
-                                          companyLogo:
-                                              AppImages.soloinsightLogo,
-                                          title:
-                                              "Information Security Training by Soloinsight Inc",
-                                          startDate: "January 2024"),
-                                      ExperienceTile(
-                                          companyLogo:
-                                              AppImages.soloinsightLogo,
-                                          title:
-                                              "Application Security Training by Soloinsight Inc",
-                                          startDate: "April 2023"),
+                                      FutureBuilder(
+                                          future:
+                                              AwardsController().getAllAwards(),
+                                          builder: (context, snapshot) {
+                                            if (snapshot.connectionState ==
+                                                ConnectionState.waiting) {
+                                              return ListView.builder(
+                                                  shrinkWrap: true,
+                                                  itemCount: 3,
+                                                  itemBuilder:
+                                                      (context, index) {
+                                                    return Shimmer.fromColors(
+                                                      baseColor: Colors.black38,
+                                                      highlightColor:
+                                                          Colors.white30,
+                                                      child: Container(
+                                                        margin: const EdgeInsets
+                                                            .only(bottom: 20),
+                                                        decoration:
+                                                            const BoxDecoration(
+                                                          color: Colors.black38,
+                                                          borderRadius:
+                                                              BorderRadius.all(
+                                                                  Radius
+                                                                      .circular(
+                                                                          10)),
+                                                        ),
+                                                        height: 50,
+                                                      ),
+                                                    );
+                                                  });
+                                            } else {
+                                              awardsList = snapshot.data!;
+                                              awardsList.sort((b, a) =>
+                                                  a.index.compareTo(b.index));
+                                              return ListView.builder(
+                                                  physics:
+                                                      const NeverScrollableScrollPhysics(),
+                                                  shrinkWrap: true,
+                                                  itemCount: awardsList.length,
+                                                  itemBuilder:
+                                                      (context, index) {
+                                                    return ExperienceTile(
+                                                      companyLogo: '',
+                                                      title: awardsList[index]
+                                                          .title,
+                                                      startDate:
+                                                          awardsList[index]
+                                                              .date,
+                                                    );
+                                                  });
+                                            }
+                                          }),
                                     ],
                                   ),
                                 )

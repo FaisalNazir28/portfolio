@@ -4,7 +4,7 @@ class ExperiencesModel {
   String title;
   String companyLogo;
   String startDate;
-  String endData;
+  String endDate;
 
   ExperiencesModel({
     this.index = "",
@@ -12,7 +12,7 @@ class ExperiencesModel {
     this.title = "",
     this.companyLogo = "",
     this.startDate = "",
-    this.endData = "",
+    this.endDate = "",
   });
 
   factory ExperiencesModel.fromJson(dynamic json) {
@@ -22,7 +22,7 @@ class ExperiencesModel {
       final title = json['title'] ?? "";
       final companyLogo = json['companyLogo'] ?? "";
       final startDate = json['startDate'] ?? "";
-      final endData = json['endData'] ?? "";
+      final endDate = json['endDate'] ?? "";
 
       return ExperiencesModel(
         index: index,
@@ -30,7 +30,7 @@ class ExperiencesModel {
         title: title,
         companyLogo: companyLogo,
         startDate: startDate,
-        endData: endData,
+        endDate: endDate,
       );
     }
     return ExperiencesModel();
@@ -43,7 +43,7 @@ class ExperiencesModel {
       'title': title,
       'companyLogo': companyLogo,
       'startDate': startDate,
-      'endData': endData,
+      'endDate': endDate,
     };
   }
 }
