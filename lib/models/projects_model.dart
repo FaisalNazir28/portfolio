@@ -15,9 +15,9 @@ class ProjectsModel {
   String projectChallengesFaced;
   String projectResultsAndImpacts;
   String projectStatus;
-  String mainImageBG;
-  String secondImageBG;
-  String thirdImageBG;
+  bool darkMainImageBG;
+  bool darkSecondImageBG;
+  bool darkThirdImageBG;
   String mainImage;
   String secondImage;
   String thirdImage;
@@ -67,9 +67,9 @@ class ProjectsModel {
     this.projectChallengesFaced = "",
     this.projectResultsAndImpacts = "",
     this.projectStatus = "",
-    this.mainImageBG = "",
-    this.secondImageBG = "",
-    this.thirdImageBG = "",
+    this.darkMainImageBG = false,
+    this.darkSecondImageBG = false,
+    this.darkThirdImageBG = false,
     this.mainImage = "",
     this.secondImage = "",
     this.thirdImage = "",
@@ -121,9 +121,9 @@ class ProjectsModel {
       final projectChallengesFaced = json['projectChallengesFaced'] ?? "";
       final projectResultsAndImpacts = json['projectResultsAndImpacts'] ?? "";
       final projectStatus = json['projectStatus'] ?? "";
-      final mainImageBG = json['mainImageBG'] ?? "";
-      final secondImageBG = json['secondImageBG'] ?? "";
-      final thirdImageBG = json['thirdImageBG'] ?? "";
+      final darkMainImageBG = json['darkMainImageBG'] ?? false;
+      final darkSecondImageBG = json['darkSecondImageBG'] ?? false;
+      final darkThirdImageBG = json['darkThirdImageBG'] ?? false;
       final mainImage = json['mainImage'] ?? "";
       final secondImage = json['secondImage'] ?? "";
       final thirdImage = json['thirdImage'] ?? "";
@@ -173,9 +173,9 @@ class ProjectsModel {
         projectChallengesFaced: projectChallengesFaced,
         projectResultsAndImpacts: projectResultsAndImpacts,
         projectStatus: projectStatus,
-        mainImageBG: mainImageBG,
-        secondImageBG: secondImageBG,
-        thirdImageBG: thirdImageBG,
+        darkMainImageBG: darkMainImageBG,
+        darkSecondImageBG: darkSecondImageBG,
+        darkThirdImageBG: darkThirdImageBG,
         mainImage: mainImage,
         secondImage: secondImage,
         thirdImage: thirdImage,
@@ -230,9 +230,9 @@ class ProjectsModel {
       'projectChallengesFaced': projectChallengesFaced,
       'projectResultsAndImpacts': projectResultsAndImpacts,
       'projectStatus': projectStatus,
-      'mainImageBG': mainImageBG,
-      'secondImageBG': secondImageBG,
-      'thirdImageBG': thirdImageBG,
+      'darkMainImageBG': darkMainImageBG,
+      'darkSecondImageBG': darkSecondImageBG,
+      'darkThirdImageBG': darkThirdImageBG,
       'mainImage': mainImage,
       'secondImage': secondImage,
       'thirdImage': thirdImage,

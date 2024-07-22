@@ -3,8 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:my_portfolio/main.dart';
+import 'package:my_portfolio/models/projects_model.dart';
 import 'package:my_portfolio/models/selected_project_data.dart';
-import 'package:my_portfolio/models/selected_works_model.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
 import 'package:my_portfolio/widgets/custom_app_button.dart';
@@ -51,7 +51,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
     var isMobileScreen = Breakpoints.isSmallScreen(context);
 
     final arguments = ModalRoute.of(context)!.settings.arguments as Map;
-    final SelectedProjectModel projectModel = arguments["projectData"];
+    final ProjectsModel projectModel = arguments["projectData"];
     final bool isMobileProject = arguments["isMobileProject"];
 
     return Scaffold(
@@ -99,7 +99,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
     );
   }
 
-  Widget mobileAppShowcase(SelectedProjectModel projectModel) {
+  Widget mobileAppShowcase(ProjectsModel projectModel) {
     var isDesktopScreen = Breakpoints.isLargeScreen(context);
     var isTabletScreen = Breakpoints.isMediumScreen(context);
     var isMobileScreen = Breakpoints.isSmallScreen(context);
@@ -129,7 +129,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          projectModel.title,
+                          projectModel.projectName,
                           style: TextStyle(
                               fontSize: isDesktopScreen
                                   ? 60
@@ -143,7 +143,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                           height: 2,
                         ),
                         Text(
-                          projectModel.company,
+                          projectModel.clientCompany,
                           style: TextStyle(
                               fontSize: isDesktopScreen
                                   ? 18
@@ -317,13 +317,12 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                   ? 200
                                   : 130,
                           decoration: BoxDecoration(
-                            color: projectModel.appThemeColor,
+                            color: Colors.black,
                             borderRadius:
                                 BorderRadius.circular(isMobileScreen ? 25 : 50),
                             boxShadow: [
                               BoxShadow(
-                                color: projectModel.appThemeColor!
-                                    .withOpacity(0.2),
+                                color: Colors.black.withOpacity(0.2),
                                 spreadRadius: 1,
                                 blurRadius: 3,
                                 offset: const Offset(0, 5),
@@ -332,7 +331,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                           ),
                           child: Center(
                             child: Text(
-                              projectModel.title[0],
+                              projectModel.projectName[0],
                               style: TextStyle(
                                 fontSize: isMobileScreen ? 70 : 100,
                                 color: Colors.white,
@@ -370,7 +369,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 BorderRadius.circular(isMobileScreen ? 25 : 50),
                             child: Center(
                               child: Padding(
-                                padding: projectModel.hasPadding
+                                padding: projectModel.iconPadding
                                     ? const EdgeInsets.all(20)
                                     : EdgeInsets.zero,
                                 child: Image.asset(
@@ -586,7 +585,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                 children: [
                   Expanded(
                     child: Text(
-                      projectModel.shortBio,
+                      projectModel.projectShortBio,
                       style: isDesktopScreen
                           ? const TextStyle(
                               fontSize: 30,
@@ -625,7 +624,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                     height: 30,
                   ),
                   Text(
-                    projectModel.description,
+                    projectModel.projectDescription,
                     style: const TextStyle(
                       color: Colors.black54,
                       fontSize: 17,
@@ -739,7 +738,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                     height: 30,
                   ),
                   Text(
-                    projectModel.challengesFaced,
+                    projectModel.projectChallengesFaced,
                     style: const TextStyle(
                       color: Colors.black54,
                       fontSize: 17,
@@ -764,7 +763,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                     height: 30,
                   ),
                   Text(
-                    projectModel.results,
+                    projectModel.projectResultsAndImpacts,
                     style: const TextStyle(
                       color: Colors.black54,
                       fontSize: 17,
@@ -776,7 +775,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
               const SizedBox(
                 height: 120,
               ),
-              likeTheWorkContainer(projectModel.title),
+              likeTheWorkContainer(projectModel.projectName),
             ],
           ),
         ),
@@ -784,8 +783,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
     );
   }
 
-  Widget webAppShowcase(
-      SelectedProjectModel projectModel, bool isMobileProject) {
+  Widget webAppShowcase(ProjectsModel projectModel, bool isMobileProject) {
     var isDesktopScreen = Breakpoints.isLargeScreen(context);
     var isTabletScreen = Breakpoints.isMediumScreen(context);
     var isMobileScreen = Breakpoints.isSmallScreen(context);
@@ -826,7 +824,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                         height: double.infinity,
                         width: double.infinity,
                         margin: const EdgeInsets.only(top: 30),
-                        color: projectModel.mainImageBG,
+                        color: projectModel.darkMainImageBG
+                            ? Colors.black
+                            : Colors.white,
                         child: Image.asset(
                           projectModel.mainImage,
                           fit: BoxFit.fitWidth,
@@ -842,7 +842,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                       child: Container(
                         height: double.infinity,
                         width: double.infinity,
-                        color: projectModel.secondImageBG,
+                        color: projectModel.darkSecondImageBG
+                            ? Colors.black
+                            : Colors.white,
                         child: Image.asset(
                           projectModel.secondImage,
                           fit: BoxFit.fitWidth,
@@ -858,7 +860,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                       child: Container(
                         height: double.infinity,
                         width: double.infinity,
-                        color: projectModel.thirdImageBG,
+                        color: projectModel.darkThirdImageBG
+                            ? Colors.black
+                            : Colors.white,
                         child: Image.asset(
                           projectModel.thirdImage,
                           fit: BoxFit.fitWidth,
@@ -882,7 +886,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                           Expanded(
                             flex: 5,
                             child: Text(
-                              projectModel.shortBio,
+                              projectModel.projectShortBio,
                               style: const TextStyle(
                                   fontSize: 30,
                                   fontWeight: FontWeight.w400,
@@ -898,7 +902,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  projectModel.title,
+                                  projectModel.projectName,
                                   style: const TextStyle(
                                       fontSize: 40,
                                       fontWeight: FontWeight.w400,
@@ -908,7 +912,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                   height: 10,
                                 ),
                                 Text(
-                                  projectModel.company,
+                                  projectModel.clientCompany,
                                   style: const TextStyle(
                                       fontSize: 30,
                                       fontWeight: FontWeight.w400,
@@ -925,7 +929,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          projectModel.shortBio,
+                          projectModel.projectShortBio,
                           style: isTabletScreen
                               ? const TextStyle(
                                   fontSize: 28,
@@ -940,7 +944,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                           height: 40,
                         ),
                         Text(
-                          projectModel.title,
+                          projectModel.projectName,
                           style: isTabletScreen
                               ? const TextStyle(
                                   fontSize: 35,
@@ -955,7 +959,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                           height: 10,
                         ),
                         Text(
-                          projectModel.company,
+                          projectModel.clientCompany,
                           style: isTabletScreen
                               ? const TextStyle(
                                   fontSize: 25,
@@ -1135,7 +1139,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                   height: 50,
                 ),
                 Text(
-                  projectModel.description,
+                  projectModel.projectDescription,
                   style: const TextStyle(
                     color: Colors.black54,
                     fontSize: 17,
@@ -1156,7 +1160,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                   height: 20,
                 ),
                 Text(
-                  projectModel.challengesFaced,
+                  projectModel.projectChallengesFaced,
                   style: const TextStyle(
                     color: Colors.black54,
                     fontSize: 17,
@@ -1173,7 +1177,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                   height: 20,
                 ),
                 Text(
-                  projectModel.results,
+                  projectModel.projectResultsAndImpacts,
                   style: const TextStyle(
                     color: Colors.black54,
                     fontSize: 17,
@@ -1187,12 +1191,13 @@ class _ProjectScreenState extends State<ProjectScreen> {
             ),
           ),
         ),
-        anotherWorkContainer(projectModel.index, isMobileProject),
+        anotherWorkContainer(
+            int.parse(projectModel.projectIndex), isMobileProject),
       ],
     );
   }
 
-  Widget projectScreensContainer({required SelectedProjectModel projectModel}) {
+  Widget projectScreensContainer({required ProjectsModel projectModel}) {
     var isMobileScreen = Breakpoints.isSmallScreen(context);
 
     Widget roundCorneredImageView(
@@ -1249,7 +1254,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               ),
                               roundCorneredImageView(
                                 imagePath: projectModel.thirdImage,
-                                backgroundColor: projectModel.thirdImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                               ),
                               const SizedBox(
                                 height: 10,
@@ -1258,7 +1265,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 imagePath: projectModel.extraImage1.isNotEmpty
                                     ? projectModel.extraImage1
                                     : projectModel.mainImage,
-                                backgroundColor: projectModel.mainImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                               ),
                               const SizedBox(
                                 height: 10,
@@ -1267,7 +1276,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 imagePath: projectModel.extraImage2.isNotEmpty
                                     ? projectModel.extraImage2
                                     : projectModel.secondImage,
-                                backgroundColor: projectModel.secondImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                               ),
                             ],
                           ),
@@ -1287,7 +1298,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 imagePath: projectModel.extraImage2.isNotEmpty
                                     ? projectModel.extraImage2
                                     : projectModel.secondImage,
-                                backgroundColor: projectModel.secondImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                               ),
                               const SizedBox(
                                 height: 10,
@@ -1296,7 +1309,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 imagePath: projectModel.extraImage3.isNotEmpty
                                     ? projectModel.extraImage3
                                     : projectModel.thirdImage,
-                                backgroundColor: projectModel.thirdImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                               ),
                               const SizedBox(
                                 height: 10,
@@ -1305,7 +1320,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 imagePath: projectModel.extraImage4.isNotEmpty
                                     ? projectModel.extraImage4
                                     : projectModel.mainImage,
-                                backgroundColor: projectModel.mainImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                               ),
                             ],
                           ),
@@ -1325,7 +1342,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 imagePath: projectModel.extraImage5.isNotEmpty
                                     ? projectModel.extraImage5
                                     : projectModel.secondImage,
-                                backgroundColor: projectModel.secondImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                               ),
                               const SizedBox(
                                 height: 10,
@@ -1334,14 +1353,18 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 imagePath: projectModel.extraImage6.isNotEmpty
                                     ? projectModel.extraImage6
                                     : projectModel.thirdImage,
-                                backgroundColor: projectModel.thirdImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                               ),
                               const SizedBox(
                                 height: 10,
                               ),
                               roundCorneredImageView(
                                 imagePath: projectModel.thirdImage,
-                                backgroundColor: projectModel.thirdImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                               ),
                             ],
                           ),
@@ -1363,7 +1386,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               ),
                               roundCorneredImageView(
                                 imagePath: projectModel.thirdImage,
-                                backgroundColor: projectModel.thirdImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                               ),
                               const SizedBox(
                                 height: 20,
@@ -1372,7 +1397,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 imagePath: projectModel.extraImage1.isNotEmpty
                                     ? projectModel.extraImage1
                                     : projectModel.mainImage,
-                                backgroundColor: projectModel.mainImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                               ),
                               const SizedBox(
                                 height: 20,
@@ -1381,7 +1408,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 imagePath: projectModel.extraImage2.isNotEmpty
                                     ? projectModel.extraImage2
                                     : projectModel.secondImage,
-                                backgroundColor: projectModel.secondImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                               ),
                             ],
                           ),
@@ -1399,7 +1428,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 imagePath: projectModel.extraImage2.isNotEmpty
                                     ? projectModel.extraImage2
                                     : projectModel.secondImage,
-                                backgroundColor: projectModel.secondImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                               ),
                               const SizedBox(
                                 height: 20,
@@ -1408,7 +1439,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 imagePath: projectModel.extraImage3.isNotEmpty
                                     ? projectModel.extraImage3
                                     : projectModel.thirdImage,
-                                backgroundColor: projectModel.thirdImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                               ),
                               const SizedBox(
                                 height: 20,
@@ -1417,7 +1450,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 imagePath: projectModel.extraImage4.isNotEmpty
                                     ? projectModel.extraImage4
                                     : projectModel.mainImage,
-                                backgroundColor: projectModel.mainImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                               ),
                             ],
                           ),
@@ -1438,7 +1473,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 imagePath: projectModel.extraImage5.isNotEmpty
                                     ? projectModel.extraImage5
                                     : projectModel.secondImage,
-                                backgroundColor: projectModel.secondImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                               ),
                               const SizedBox(
                                 height: 20,
@@ -1447,14 +1484,18 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 imagePath: projectModel.extraImage6.isNotEmpty
                                     ? projectModel.extraImage6
                                     : projectModel.thirdImage,
-                                backgroundColor: projectModel.thirdImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                               ),
                               const SizedBox(
                                 height: 20,
                               ),
                               roundCorneredImageView(
                                 imagePath: projectModel.thirdImage,
-                                backgroundColor: projectModel.thirdImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                               ),
                             ],
                           ),
@@ -1468,7 +1509,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
     );
   }
 
-  Widget devicePortfolioShowcase(SelectedProjectModel projectModel) {
+  Widget devicePortfolioShowcase(ProjectsModel projectModel) {
     var isMobileScreen = Breakpoints.isSmallScreen(context);
 
     return isMobileScreen
@@ -1496,7 +1537,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             tabletView(
                               hasInitialMargin: true,
                               imagePath: projectModel.mainImage,
-                              backgroundColor: projectModel.mainImageBG!,
+                              backgroundColor: projectModel.darkMainImageBG
+                                  ? Colors.black
+                                  : Colors.white,
                               imageAlignment: Alignment.topCenter,
                             ),
                             const SizedBox(
@@ -1504,7 +1547,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             ),
                             tabletView(
                               imagePath: projectModel.secondImage,
-                              backgroundColor: projectModel.secondImageBG!,
+                              backgroundColor: projectModel.darkMainImageBG
+                                  ? Colors.black
+                                  : Colors.white,
                               imageAlignment: Alignment.center,
                             ),
                             const SizedBox(
@@ -1512,7 +1557,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             ),
                             tabletView(
                               imagePath: projectModel.thirdImage,
-                              backgroundColor: projectModel.thirdImageBG!,
+                              backgroundColor: projectModel.darkMainImageBG
+                                  ? Colors.black
+                                  : Colors.white,
                               imageAlignment: Alignment.bottomCenter,
                             ),
                           ],
@@ -1531,7 +1578,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             children: [
                               tabletView(
                                 imagePath: projectModel.thirdImage,
-                                backgroundColor: projectModel.thirdImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                                 imageAlignment: Alignment.topCenter,
                               ),
                               const SizedBox(
@@ -1541,7 +1590,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 imagePath: projectModel.extraImage1.isNotEmpty
                                     ? projectModel.extraImage1
                                     : projectModel.mainImage,
-                                backgroundColor: projectModel.mainImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                                 imageAlignment: Alignment.center,
                               ),
                               const SizedBox(
@@ -1551,7 +1602,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 imagePath: projectModel.extraImage2.isNotEmpty
                                     ? projectModel.extraImage2
                                     : projectModel.secondImage,
-                                backgroundColor: projectModel.secondImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                                 imageAlignment: Alignment.bottomCenter,
                               ),
                             ],
@@ -1573,7 +1626,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 imagePath: projectModel.extraImage3.isNotEmpty
                                     ? projectModel.extraImage3
                                     : projectModel.thirdImage,
-                                backgroundColor: projectModel.thirdImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                                 imageAlignment: Alignment.topCenter,
                               ),
                               const SizedBox(
@@ -1583,7 +1638,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 imagePath: projectModel.extraImage4.isNotEmpty
                                     ? projectModel.extraImage4
                                     : projectModel.mainImage,
-                                backgroundColor: projectModel.mainImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                                 imageAlignment: Alignment.center,
                               ),
                               const SizedBox(
@@ -1593,7 +1650,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 imagePath: projectModel.extraImage5.isNotEmpty
                                     ? projectModel.extraImage5
                                     : projectModel.secondImage,
-                                backgroundColor: projectModel.secondImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                                 imageAlignment: Alignment.bottomCenter,
                               ),
                             ],
@@ -1624,7 +1683,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                           Container(
                             margin: const EdgeInsets.only(
                                 top: 7, left: 7, right: 7),
-                            color: projectModel.mainImageBG,
+                            color: projectModel.darkMainImageBG
+                                ? Colors.black
+                                : Colors.white,
                             height: double.infinity,
                             width: double.infinity,
                             child: Image.asset(
@@ -1636,7 +1697,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                           DeviceFrame(
                             device: Devices.ios.iPhone13ProMax,
                             screen: Container(
-                              color: projectModel.mainImageBG,
+                              color: projectModel.darkMainImageBG
+                                  ? Colors.black
+                                  : Colors.white,
                               child: Image.asset(
                                 projectModel.mainImage,
                                 fit: BoxFit.fitWidth,
@@ -1658,7 +1721,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                           Container(
                             margin: const EdgeInsets.only(
                                 top: 13, left: 13, right: 13),
-                            color: projectModel.mainImageBG,
+                            color: projectModel.darkMainImageBG
+                                ? Colors.black
+                                : Colors.white,
                             height: double.infinity,
                             width: double.infinity,
                             child: Image.asset(
@@ -1671,7 +1736,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             orientation: Orientation.landscape,
                             device: Devices.ios.iPad12InchesGen4,
                             screen: Container(
-                              color: projectModel.mainImageBG,
+                              color: projectModel.darkMainImageBG
+                                  ? Colors.black
+                                  : Colors.white,
                               child: Image.asset(
                                 projectModel.mainImage,
                                 fit: BoxFit.fitWidth,
@@ -1712,7 +1779,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               tabletView(
                                 hasInitialMargin: true,
                                 imagePath: projectModel.mainImage,
-                                backgroundColor: projectModel.mainImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                                 imageAlignment: Alignment.topCenter,
                               ),
                               const SizedBox(
@@ -1720,7 +1789,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               ),
                               tabletView(
                                 imagePath: projectModel.secondImage,
-                                backgroundColor: projectModel.secondImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                                 imageAlignment: Alignment.center,
                               ),
                               const SizedBox(
@@ -1728,7 +1799,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               ),
                               tabletView(
                                 imagePath: projectModel.thirdImage,
-                                backgroundColor: projectModel.thirdImageBG!,
+                                backgroundColor: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                                 imageAlignment: Alignment.bottomCenter,
                               ),
                             ],
@@ -1747,7 +1820,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               children: [
                                 tabletView(
                                   imagePath: projectModel.thirdImage,
-                                  backgroundColor: projectModel.thirdImageBG!,
+                                  backgroundColor: projectModel.darkMainImageBG
+                                      ? Colors.black
+                                      : Colors.white,
                                   imageAlignment: Alignment.topCenter,
                                 ),
                                 const SizedBox(
@@ -1757,7 +1832,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                   imagePath: projectModel.extraImage1.isNotEmpty
                                       ? projectModel.extraImage1
                                       : projectModel.mainImage,
-                                  backgroundColor: projectModel.mainImageBG!,
+                                  backgroundColor: projectModel.darkMainImageBG
+                                      ? Colors.black
+                                      : Colors.white,
                                   imageAlignment: Alignment.center,
                                 ),
                                 const SizedBox(
@@ -1767,7 +1844,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                   imagePath: projectModel.extraImage2.isNotEmpty
                                       ? projectModel.extraImage2
                                       : projectModel.secondImage,
-                                  backgroundColor: projectModel.secondImageBG!,
+                                  backgroundColor: projectModel.darkMainImageBG
+                                      ? Colors.black
+                                      : Colors.white,
                                   imageAlignment: Alignment.bottomCenter,
                                 ),
                               ],
@@ -1789,7 +1868,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                   imagePath: projectModel.extraImage3.isNotEmpty
                                       ? projectModel.extraImage3
                                       : projectModel.thirdImage,
-                                  backgroundColor: projectModel.thirdImageBG!,
+                                  backgroundColor: projectModel.darkMainImageBG
+                                      ? Colors.black
+                                      : Colors.white,
                                   imageAlignment: Alignment.topCenter,
                                 ),
                                 const SizedBox(
@@ -1799,7 +1880,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                   imagePath: projectModel.extraImage4.isNotEmpty
                                       ? projectModel.extraImage4
                                       : projectModel.mainImage,
-                                  backgroundColor: projectModel.mainImageBG!,
+                                  backgroundColor: projectModel.darkMainImageBG
+                                      ? Colors.black
+                                      : Colors.white,
                                   imageAlignment: Alignment.center,
                                 ),
                                 const SizedBox(
@@ -1809,7 +1892,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                   imagePath: projectModel.extraImage5.isNotEmpty
                                       ? projectModel.extraImage5
                                       : projectModel.secondImage,
-                                  backgroundColor: projectModel.secondImageBG!,
+                                  backgroundColor: projectModel.darkMainImageBG
+                                      ? Colors.black
+                                      : Colors.white,
                                   imageAlignment: Alignment.bottomCenter,
                                 ),
                               ],
@@ -1842,7 +1927,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             Container(
                               margin: const EdgeInsets.only(
                                   top: 7, left: 7, right: 7),
-                              color: projectModel.mainImageBG,
+                              color: projectModel.darkMainImageBG
+                                  ? Colors.black
+                                  : Colors.white,
                               height: double.infinity,
                               width: double.infinity,
                               child: Image.asset(
@@ -1854,7 +1941,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             DeviceFrame(
                               device: Devices.ios.iPhone13ProMax,
                               screen: Container(
-                                color: projectModel.mainImageBG,
+                                color: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                                 child: Image.asset(
                                   projectModel.mainImage,
                                   fit: BoxFit.fitWidth,
@@ -1876,7 +1965,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             Container(
                               margin: const EdgeInsets.only(
                                   top: 13, left: 13, right: 13),
-                              color: projectModel.mainImageBG,
+                              color: projectModel.darkMainImageBG
+                                  ? Colors.black
+                                  : Colors.white,
                               height: double.infinity,
                               width: double.infinity,
                               child: Image.asset(
@@ -1889,7 +1980,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               orientation: Orientation.landscape,
                               device: Devices.ios.iPad12InchesGen4,
                               screen: Container(
-                                color: projectModel.mainImageBG,
+                                color: projectModel.darkMainImageBG
+                                    ? Colors.black
+                                    : Colors.white,
                                 child: Image.asset(
                                   projectModel.mainImage,
                                   fit: BoxFit.fitWidth,

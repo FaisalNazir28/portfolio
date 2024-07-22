@@ -4,7 +4,6 @@ import 'package:ionicons/ionicons.dart';
 import 'package:my_portfolio/controllers/projects_controller.dart';
 import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/models/projects_model.dart';
-import 'package:my_portfolio/models/selected_project_data.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
 import 'package:my_portfolio/widgets/detailed_showcase_container.dart';
@@ -33,13 +32,13 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
   int selectedOption = 0;
   int webProjectsToShow = 5;
   int mobileProjectsToShow = 5;
-  int hybridProjectsToShow = 1;
+  int hybridProjectsToShow = 5;
 
   void loadMoreWebProjects() {
     setState(() {
       webProjectsToShow += 3;
-      if (webProjectsToShow > SelectedProjectData.selectedWebProjects.length) {
-        webProjectsToShow = SelectedProjectData.selectedWebProjects.length;
+      if (webProjectsToShow > webProjects!.length) {
+        webProjectsToShow = webProjects!.length;
       }
     });
   }
@@ -47,10 +46,8 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
   void loadMoreMobileProjects() {
     setState(() {
       mobileProjectsToShow += 3;
-      if (mobileProjectsToShow >
-          SelectedProjectData.selectedMobileProjects.length) {
-        mobileProjectsToShow =
-            SelectedProjectData.selectedMobileProjects.length;
+      if (mobileProjectsToShow > mobileProjects!.length) {
+        mobileProjectsToShow = mobileProjects!.length;
       }
     });
   }
@@ -58,10 +55,8 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
   void loadMoreHybridProjects() {
     setState(() {
       hybridProjectsToShow += 3;
-      if (hybridProjectsToShow >
-          SelectedProjectData.selectedHybridProjects.length) {
-        hybridProjectsToShow =
-            SelectedProjectData.selectedHybridProjects.length;
+      if (hybridProjectsToShow > hybridProjects!.length) {
+        hybridProjectsToShow = hybridProjects!.length;
       }
     });
   }
@@ -201,86 +196,121 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
                           height: 100,
                         ),
                         selectedOption == 0
-                            ? Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  ListView.builder(
-                                    physics:
-                                        const NeverScrollableScrollPhysics(),
-                                    shrinkWrap: true,
-                                    itemCount: SelectedProjectData
-                                                .selectedWebProjects.length <
-                                            webProjectsToShow
-                                        ? SelectedProjectData
-                                            .selectedWebProjects.length
-                                        : webProjectsToShow,
-                                    itemBuilder: (context, index) {
-                                      return DetailedShowcaseContainer(
-                                        projectData: SelectedProjectData
-                                            .selectedWebProjects[index],
-                                      );
-                                    },
-                                  ),
-                                  if (webProjectsToShow <
-                                      SelectedProjectData
-                                          .selectedWebProjects.length)
-                                    InkWell(
-                                      onTap: () => loadMoreWebProjects(),
-                                      overlayColor: WidgetStateProperty.all(
-                                        Colors.transparent,
-                                      ),
-                                      child: Container(
-                                        margin: const EdgeInsets.only(top: 50),
-                                        child: const Icon(
-                                          Ionicons.arrow_down_circle_outline,
-                                          size: 30,
+                            ? FutureBuilder(
+                                future: ProjectsController.getWebProjects(),
+                                builder: (context, snapshot) {
+                                  webProjects = snapshot.data;
+                                  if (snapshot.connectionState ==
+                                      ConnectionState.waiting) {
+                                    return const CircularProgressIndicator();
+                                  } else if (snapshot.hasData &&
+                                      snapshot.data!.isNotEmpty) {
+                                    return Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        ListView.builder(
+                                          physics:
+                                              const NeverScrollableScrollPhysics(),
+                                          shrinkWrap: true,
+                                          itemCount: webProjects!.length <
+                                                  webProjectsToShow
+                                              ? webProjects!.length
+                                              : webProjectsToShow,
+                                          itemBuilder: (context, index) {
+                                            return DetailedShowcaseContainer(
+                                              projectData: webProjects![index],
+                                            );
+                                          },
                                         ),
-                                      ),
-                                    ),
-                                ],
-                              )
-                            : selectedOption == 1
-                                ? Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      ListView.builder(
-                                        physics:
-                                            const NeverScrollableScrollPhysics(),
-                                        shrinkWrap: true,
-                                        itemCount: SelectedProjectData
-                                                    .selectedMobileProjects
-                                                    .length <
-                                                mobileProjectsToShow
-                                            ? SelectedProjectData
-                                                .selectedMobileProjects.length
-                                            : mobileProjectsToShow,
-                                        itemBuilder: (context, index) {
-                                          return DetailedShowcaseContainer(
-                                            projectData: SelectedProjectData
-                                                .selectedMobileProjects[index],
-                                            isMobileProjectShowcase: true,
-                                          );
-                                        },
-                                      ),
-                                      if (mobileProjectsToShow <
-                                          SelectedProjectData
-                                              .selectedMobileProjects.length)
-                                        InkWell(
-                                          onTap: () => loadMoreMobileProjects(),
-                                          overlayColor: WidgetStateProperty.all(
-                                            Colors.transparent,
-                                          ),
-                                          child: Container(
-                                            margin:
-                                                const EdgeInsets.only(top: 50),
-                                            child: const Icon(
-                                              Ionicons
-                                                  .arrow_down_circle_outline,
-                                              size: 30,
+                                        if (webProjectsToShow <
+                                            webProjects!.length)
+                                          InkWell(
+                                            onTap: () => loadMoreWebProjects(),
+                                            overlayColor:
+                                                WidgetStateProperty.all(
+                                              Colors.transparent,
+                                            ),
+                                            child: Container(
+                                              margin: const EdgeInsets.only(
+                                                  top: 50),
+                                              child: const Icon(
+                                                Ionicons
+                                                    .arrow_down_circle_outline,
+                                                size: 30,
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                    ],
+                                      ],
+                                    );
+                                  } else {
+                                    return const Center(
+                                      child: Text(
+                                          "Web Apps to be showcased soon!"),
+                                    );
+                                  }
+                                },
+                              )
+                            : selectedOption == 1
+                                ? FutureBuilder(
+                                    future:
+                                        ProjectsController.getMobileProjects(),
+                                    builder: (context, snapshot) {
+                                      mobileProjects = snapshot.data;
+                                      if (snapshot.connectionState ==
+                                          ConnectionState.waiting) {
+                                        return const CircularProgressIndicator();
+                                      } else if (snapshot.hasData &&
+                                          snapshot.data!.isNotEmpty) {
+                                        return Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            ListView.builder(
+                                              physics:
+                                                  const NeverScrollableScrollPhysics(),
+                                              shrinkWrap: true,
+                                              itemCount:
+                                                  mobileProjects!.length <
+                                                          mobileProjectsToShow
+                                                      ? mobileProjects!.length
+                                                      : mobileProjectsToShow,
+                                              itemBuilder: (context, index) {
+                                                mobileProjects!.sort((a, b) => a
+                                                    .projectIndex
+                                                    .compareTo(b.projectIndex));
+                                                return DetailedShowcaseContainer(
+                                                  projectData:
+                                                      mobileProjects![index],
+                                                );
+                                              },
+                                            ),
+                                            if (mobileProjectsToShow <
+                                                mobileProjects!.length)
+                                              InkWell(
+                                                onTap: () =>
+                                                    loadMoreMobileProjects(),
+                                                overlayColor:
+                                                    WidgetStateProperty.all(
+                                                  Colors.transparent,
+                                                ),
+                                                child: Container(
+                                                  margin: const EdgeInsets.only(
+                                                      top: 50),
+                                                  child: const Icon(
+                                                    Ionicons
+                                                        .arrow_down_circle_outline,
+                                                    size: 30,
+                                                  ),
+                                                ),
+                                              ),
+                                          ],
+                                        );
+                                      } else {
+                                        return const Center(
+                                          child: Text(
+                                              "Mobile Apps to be showcased soon!"),
+                                        );
+                                      }
+                                    },
                                   )
                                 : FutureBuilder(
                                     future:
@@ -290,7 +320,8 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
                                       if (snapshot.connectionState ==
                                           ConnectionState.waiting) {
                                         return const CircularProgressIndicator();
-                                      } else if (snapshot.hasData) {
+                                      } else if (snapshot.hasData &&
+                                          snapshot.data!.isNotEmpty) {
                                         return Text(
                                             "Hybrid Apps=> ${hybridProjects!.length.toString()}");
                                       } else {

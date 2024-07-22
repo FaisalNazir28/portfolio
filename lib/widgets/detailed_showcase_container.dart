@@ -1,18 +1,16 @@
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/models/selected_works_model.dart';
+import 'package:my_portfolio/models/projects_model.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
 
 class DetailedShowcaseContainer extends StatefulWidget {
-  final SelectedProjectModel projectData;
-  final bool isMobileProjectShowcase;
+  final ProjectsModel projectData;
 
   const DetailedShowcaseContainer({
     super.key,
     required this.projectData,
-    this.isMobileProjectShowcase = false,
   });
 
   @override
@@ -25,7 +23,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
 
   @override
   Widget build(BuildContext context) {
-    return widget.isMobileProjectShowcase
+    return widget.projectData.projectPlatform == "Mobile"
         ? mobileShowcaseContainer()
         : webShowcaseContainer();
   }
@@ -34,7 +32,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
     var isMobileScreen = Breakpoints.isSmallScreen(context);
     return Column(
       children: [
-        if (widget.projectData.index != 0)
+        if (widget.projectData.projectIndex != "0")
           const SizedBox(
             height: 120,
           ),
@@ -47,7 +45,9 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                         child: DeviceFrame(
                           device: Devices.ios.iPhone13ProMax,
                           screen: Container(
-                            color: widget.projectData.mainImageBG,
+                            color: widget.projectData.darkMainImageBG
+                                ? Colors.black
+                                : Colors.white,
                             child: Image.asset(
                               widget.projectData.mainImage,
                               fit: BoxFit.fitWidth,
@@ -63,7 +63,9 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                         child: DeviceFrame(
                           device: Devices.ios.iPhone13ProMax,
                           screen: Container(
-                            color: widget.projectData.secondImageBG,
+                            color: widget.projectData.darkSecondImageBG
+                                ? Colors.black
+                                : Colors.white,
                             child: Image.asset(
                               widget.projectData.secondImage,
                               fit: BoxFit.fitWidth,
@@ -89,7 +91,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  widget.projectData.title,
+                                  widget.projectData.projectName,
                                   style: const TextStyle(
                                     fontWeight: FontWeight.w600,
                                     fontSize: 30,
@@ -99,7 +101,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                                   height: 20,
                                 ),
                                 Text(
-                                  widget.projectData.description,
+                                  widget.projectData.projectDescription,
                                   maxLines: 4,
                                   overflow: TextOverflow.ellipsis,
                                   textAlign: TextAlign.justify,
@@ -119,7 +121,10 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                               arguments: {
                                 "projectData": widget.projectData,
                                 "isMobileProject":
-                                    widget.isMobileProjectShowcase,
+                                    widget.projectData.projectPlatform ==
+                                            "Mobile"
+                                        ? true
+                                        : false,
                               },
                             ),
                             child: Container(
@@ -184,7 +189,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                                       height: 10,
                                     ),
                                     Text(
-                                      widget.projectData.company,
+                                      widget.projectData.clientCompany,
                                       style: const TextStyle(
                                           fontSize: 16,
                                           fontWeight: FontWeight.w500),
@@ -282,7 +287,9 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                     child: DeviceFrame(
                       device: Devices.ios.iPhone13ProMax,
                       screen: Container(
-                        color: widget.projectData.mainImageBG,
+                        color: widget.projectData.darkMainImageBG
+                            ? Colors.black
+                            : Colors.white,
                         child: Image.asset(
                           widget.projectData.mainImage,
                           fit: BoxFit.fitWidth,
@@ -299,7 +306,9 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                     child: DeviceFrame(
                       device: Devices.ios.iPhone13ProMax,
                       screen: Container(
-                        color: widget.projectData.secondImageBG,
+                        color: widget.projectData.darkSecondImageBG
+                            ? Colors.black
+                            : Colors.white,
                         child: Image.asset(
                           widget.projectData.secondImage,
                           fit: BoxFit.fitWidth,
@@ -325,7 +334,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    widget.projectData.title,
+                                    widget.projectData.projectName,
                                     style: const TextStyle(
                                       fontWeight: FontWeight.w600,
                                       fontSize: 45,
@@ -335,7 +344,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                                     height: 20,
                                   ),
                                   Text(
-                                    widget.projectData.description,
+                                    widget.projectData.projectDescription,
                                     maxLines: 4,
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.justify,
@@ -360,7 +369,10 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                                 arguments: {
                                   "projectData": widget.projectData,
                                   "isMobileProject":
-                                      widget.isMobileProjectShowcase,
+                                      widget.projectData.projectPlatform ==
+                                              "Mobile"
+                                          ? true
+                                          : false,
                                 },
                               ),
                               child: Container(
@@ -428,7 +440,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                                         height: 10,
                                       ),
                                       Text(
-                                        widget.projectData.company,
+                                        widget.projectData.clientCompany,
                                         style: const TextStyle(
                                             fontSize: 18,
                                             fontWeight: FontWeight.w500),
@@ -536,7 +548,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        if (widget.projectData.index != 0)
+        if (widget.projectData.projectIndex != "0")
           const SizedBox(
             height: 100,
           ),
@@ -558,7 +570,9 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                   height: double.infinity,
                   width: double.infinity,
                   margin: const EdgeInsets.only(top: 30),
-                  color: widget.projectData.mainImageBG,
+                  color: widget.projectData.darkMainImageBG
+                      ? Colors.black
+                      : Colors.white,
                   child: Image.asset(
                     widget.projectData.mainImage,
                     fit: BoxFit.fitWidth,
@@ -574,7 +588,9 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                 child: Container(
                   height: double.infinity,
                   width: double.infinity,
-                  color: widget.projectData.secondImageBG,
+                  color: widget.projectData.darkSecondImageBG
+                      ? Colors.black
+                      : Colors.white,
                   child: Image.asset(
                     widget.projectData.secondImage,
                     fit: BoxFit.fitWidth,
@@ -590,7 +606,9 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                 child: Container(
                   height: double.infinity,
                   width: double.infinity,
-                  color: widget.projectData.thirdImageBG,
+                  color: widget.projectData.darkThirdImageBG
+                      ? Colors.black
+                      : Colors.white,
                   child: Image.asset(
                     widget.projectData.thirdImage,
                     fit: BoxFit.fitWidth,
@@ -611,7 +629,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        widget.projectData.title,
+                        widget.projectData.projectName,
                         style: const TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 25,
@@ -621,7 +639,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                         height: 10,
                       ),
                       Text(
-                        widget.projectData.description,
+                        widget.projectData.projectDescription,
                         maxLines: 4,
                         overflow: TextOverflow.ellipsis,
                         style: const TextStyle(
@@ -637,7 +655,10 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                             Routes.project,
                             arguments: {
                               "projectData": widget.projectData,
-                              "isMobileProject": widget.isMobileProjectShowcase,
+                              "isMobileProject":
+                                  widget.projectData.projectPlatform == "Mobile"
+                                      ? true
+                                      : false,
                             },
                           );
                         },
@@ -685,7 +706,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                                   height: 10,
                                 ),
                                 Text(
-                                  widget.projectData.company,
+                                  widget.projectData.clientCompany,
                                   style: const TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w500),
@@ -782,7 +803,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          widget.projectData.title,
+                          widget.projectData.projectName,
                           style: isTabletScreen
                               ? const TextStyle(
                                   fontWeight: FontWeight.w500,
@@ -797,7 +818,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                           height: 20,
                         ),
                         Text(
-                          widget.projectData.description,
+                          widget.projectData.projectDescription,
                           maxLines: 3,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
@@ -814,7 +835,10 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                               arguments: {
                                 "projectData": widget.projectData,
                                 "isMobileProject":
-                                    widget.isMobileProjectShowcase,
+                                    widget.projectData.projectPlatform ==
+                                            "Mobile"
+                                        ? true
+                                        : false,
                               },
                             );
                           },
@@ -860,7 +884,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                               height: 10,
                             ),
                             Text(
-                              widget.projectData.company,
+                              widget.projectData.clientCompany,
                               style: const TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.w500),
                             ),
