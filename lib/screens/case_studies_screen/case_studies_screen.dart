@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:my_portfolio/controllers/projects_controller.dart';
 import 'package:my_portfolio/main.dart';
+import 'package:my_portfolio/models/projects_model.dart';
 import 'package:my_portfolio/models/selected_project_data.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
@@ -21,6 +23,12 @@ class CaseStudiesScreen extends StatefulWidget {
 
 class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
   final ScrollController scrollController = ScrollController();
+
+  List<ProjectsModel>? webProjects = List<ProjectsModel>.empty(growable: true);
+  List<ProjectsModel>? mobileProjects =
+      List<ProjectsModel>.empty(growable: true);
+  List<ProjectsModel>? hybridProjects =
+      List<ProjectsModel>.empty(growable: true);
 
   int selectedOption = 0;
   int webProjectsToShow = 5;
@@ -274,9 +282,24 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
                                         ),
                                     ],
                                   )
-                                : const Center(
-                                    child: Text(
-                                        "Hybrid Apps to be showcased soon!"),
+                                : FutureBuilder(
+                                    future:
+                                        ProjectsController.getHybridProjects(),
+                                    builder: (context, snapshot) {
+                                      hybridProjects = snapshot.data;
+                                      if (snapshot.connectionState ==
+                                          ConnectionState.waiting) {
+                                        return const CircularProgressIndicator();
+                                      } else if (snapshot.hasData) {
+                                        return Text(
+                                            "Hybrid Apps=> ${hybridProjects!.length.toString()}");
+                                      } else {
+                                        return const Center(
+                                          child: Text(
+                                              "Hybrid Apps to be showcased soon!"),
+                                        );
+                                      }
+                                    },
                                   ),
                       ],
                     ),

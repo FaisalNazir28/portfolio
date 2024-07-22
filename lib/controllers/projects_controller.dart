@@ -3,7 +3,7 @@ import 'package:my_portfolio/models/projects_model.dart';
 import 'package:my_portfolio/services/firebase_collections.dart';
 
 class ProjectsController {
-  Future<List<ProjectsModel>> getAllProjects() async {
+  static Future<List<ProjectsModel>> getAllProjects() async {
     List<ProjectsModel> allProjects = List<ProjectsModel>.empty(growable: true);
     QuerySnapshot querySnapshot = await FbCollections.projects.get();
 
@@ -15,7 +15,7 @@ class ProjectsController {
     return allProjects;
   }
 
-  Future<List<ProjectsModel>> getWebProjects() async {
+  static Future<List<ProjectsModel>> getWebProjects() async {
     List<ProjectsModel> webProjects = List<ProjectsModel>.empty(growable: true);
     QuerySnapshot querySnapshot = await FbCollections.projects.get();
 
@@ -28,7 +28,7 @@ class ProjectsController {
     return webProjects;
   }
 
-  Future<List<ProjectsModel>> getMobileProjects() async {
+  static Future<List<ProjectsModel>> getMobileProjects() async {
     List<ProjectsModel> mobileProjects =
         List<ProjectsModel>.empty(growable: true);
     QuerySnapshot querySnapshot = await FbCollections.projects.get();
@@ -42,7 +42,7 @@ class ProjectsController {
     return mobileProjects;
   }
 
-  Future<List<ProjectsModel>> getHybridProjects() async {
+  static Future<List<ProjectsModel>> getHybridProjects() async {
     List<ProjectsModel> hybridProjects =
         List<ProjectsModel>.empty(growable: true);
     QuerySnapshot querySnapshot = await FbCollections.projects.get();
