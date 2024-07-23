@@ -245,54 +245,54 @@ class _ProjectScreenState extends State<ProjectScreen> {
                         const SizedBox(
                           height: 20,
                         ),
-                        const Row(
+                        Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Icon(
+                            const Icon(
                               Ionicons.thumbs_up,
                               size: 20,
                               color: Colors.blue,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10,
                             ),
                             Text(
-                              "0",
-                              style: TextStyle(
+                              projectModel.likesCount,
+                              style: const TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.w600),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 20,
                             ),
-                            Icon(
+                            const Icon(
                               CupertinoIcons.star_fill,
                               size: 20,
                               color: Colors.yellow,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10,
                             ),
                             Text(
-                              "0",
-                              style: TextStyle(
+                              projectModel.starsCount,
+                              style: const TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.w600),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 20,
                             ),
-                            Icon(
+                            const Icon(
                               Ionicons.heart,
                               size: 20,
                               color: Colors.red,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10,
                             ),
                             Text(
-                              "0",
-                              style: TextStyle(
+                              projectModel.loveCount,
+                              style: const TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.w600),
                             ),
@@ -2178,11 +2178,13 @@ class _ProjectScreenState extends State<ProjectScreen> {
                         overlayColor: WidgetStateProperty.all(
                           Colors.transparent,
                         ),
-                        onTap: () {
-                          setState(() {
-                            isLiked = true;
-                          });
-                        },
+                        onTap: isLiked == true
+                            ? () {}
+                            : () {
+                                setState(() {
+                                  isLiked = true;
+                                });
+                              },
                         child: Icon(
                           Ionicons.thumbs_up,
                           size: 28,
@@ -2329,11 +2331,13 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               overlayColor: WidgetStateProperty.all(
                                 Colors.transparent,
                               ),
-                              onTap: () {
-                                setState(() {
-                                  isLiked = true;
-                                });
-                              },
+                              onTap: isLiked == true
+                                  ? () {}
+                                  : () {
+                                      setState(() {
+                                        isLiked = true;
+                                      });
+                                    },
                               child: Icon(
                                 Ionicons.thumbs_up,
                                 size: isTabletScreen ? 35 : 50,
