@@ -199,7 +199,12 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
                                   webProjects = snapshot.data;
                                   if (snapshot.connectionState ==
                                       ConnectionState.waiting) {
-                                    return const CircularProgressIndicator();
+                                    return Container(
+                                      margin: const EdgeInsets.only(top: 100),
+                                      child: const CircularProgressIndicator(
+                                        color: Colors.black87,
+                                      ),
+                                    );
                                   } else if (snapshot.hasData &&
                                       snapshot.data!.isNotEmpty) {
                                     return Column(
@@ -262,7 +267,14 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
                                       mobileProjects = snapshot.data;
                                       if (snapshot.connectionState ==
                                           ConnectionState.waiting) {
-                                        return const CircularProgressIndicator();
+                                        return Container(
+                                          margin:
+                                              const EdgeInsets.only(top: 100),
+                                          child:
+                                              const CircularProgressIndicator(
+                                            color: Colors.black87,
+                                          ),
+                                        );
                                       } else if (snapshot.hasData &&
                                           snapshot.data!.isNotEmpty) {
                                         return Column(
@@ -330,7 +342,14 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
                                       hybridProjects = snapshot.data;
                                       if (snapshot.connectionState ==
                                           ConnectionState.waiting) {
-                                        return const CircularProgressIndicator();
+                                        return Container(
+                                          margin:
+                                              const EdgeInsets.only(top: 100),
+                                          child:
+                                              const CircularProgressIndicator(
+                                            color: Colors.black87,
+                                          ),
+                                        );
                                       } else if (snapshot.hasData &&
                                           snapshot.data!.isNotEmpty) {
                                         return Text(
