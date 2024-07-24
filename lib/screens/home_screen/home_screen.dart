@@ -314,7 +314,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     itemBuilder:
                                                         (context, index) {
                                                       return ExperienceTile(
-                                                        companyLogo: '',
+                                                        companyLogo:
+                                                            experiencesList[
+                                                                    index]
+                                                                .companyLogo,
                                                         title: experiencesList[
                                                                 index]
                                                             .title,
@@ -396,7 +399,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     itemBuilder:
                                                         (context, index) {
                                                       return ExperienceTile(
-                                                        companyLogo: '',
+                                                        companyLogo:
+                                                            awardsList[index]
+                                                                .companyLogo,
                                                         title: awardsList[index]
                                                             .title,
                                                         startDate:
@@ -472,7 +477,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   itemBuilder:
                                                       (context, index) {
                                                     return ExperienceTile(
-                                                      companyLogo: '',
+                                                      companyLogo:
+                                                          experiencesList[index]
+                                                              .companyLogo,
                                                       title:
                                                           experiencesList[index]
                                                               .title,
@@ -549,7 +556,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   itemBuilder:
                                                       (context, index) {
                                                     return ExperienceTile(
-                                                      companyLogo: '',
+                                                      companyLogo:
+                                                          awardsList[index]
+                                                              .companyLogo,
                                                       title: awardsList[index]
                                                           .title,
                                                       startDate:

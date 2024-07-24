@@ -37,7 +37,7 @@ class _ExperienceTileState extends State<ExperienceTile> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Image.asset(widget.companyLogo),
+                child: Image.network(widget.companyLogo),
               ),
               const SizedBox(
                 width: 20,

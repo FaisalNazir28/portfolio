@@ -50,9 +50,15 @@ class Authentication {
 
   Future<void> getImageUrl() async {
     try {
-      final ref = storage.ref().child('userProfiles').child('umar_ayyaz.jpeg');
+      // final ref = storage.ref().child('companyLogo').child('pieas.jpg');
+      final ref = storage
+          .ref()
+          .child('projectShowcase')
+          .child('restofe')
+          .child('restofe3.png');
       final url = await ref.getDownloadURL();
       imager = url;
+      print("URl===>>> $imager");
     } catch (e) {
       debugPrint(e.toString());
     }

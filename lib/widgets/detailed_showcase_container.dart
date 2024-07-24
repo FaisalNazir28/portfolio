@@ -47,7 +47,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                             color: widget.projectData.darkMainImageBG
                                 ? Colors.black
                                 : Colors.white,
-                            child: Image.asset(
+                            child: Image.network(
                               widget.projectData.mainImage,
                               fit: BoxFit.fitWidth,
                               alignment: Alignment.topLeft,
@@ -65,7 +65,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                             color: widget.projectData.darkSecondImageBG
                                 ? Colors.black
                                 : Colors.white,
-                            child: Image.asset(
+                            child: Image.network(
                               widget.projectData.secondImage,
                               fit: BoxFit.fitWidth,
                               alignment: Alignment.topLeft,
@@ -289,7 +289,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                         color: widget.projectData.darkMainImageBG
                             ? Colors.black
                             : Colors.white,
-                        child: Image.asset(
+                        child: Image.network(
                           widget.projectData.mainImage,
                           fit: BoxFit.fitWidth,
                           alignment: Alignment.topLeft,
@@ -308,7 +308,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                         color: widget.projectData.darkSecondImageBG
                             ? Colors.black
                             : Colors.white,
-                        child: Image.asset(
+                        child: Image.network(
                           widget.projectData.secondImage,
                           fit: BoxFit.fitWidth,
                           alignment: Alignment.topLeft,
@@ -571,7 +571,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                   color: widget.projectData.darkMainImageBG
                       ? Colors.black
                       : Colors.white,
-                  child: Image.asset(
+                  child: Image.network(
                     widget.projectData.mainImage,
                     fit: BoxFit.fitWidth,
                     alignment: Alignment.topCenter,
@@ -589,7 +589,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                   color: widget.projectData.darkSecondImageBG
                       ? Colors.black
                       : Colors.white,
-                  child: Image.asset(
+                  child: Image.network(
                     widget.projectData.secondImage,
                     fit: BoxFit.fitWidth,
                     alignment: Alignment.center,
@@ -607,7 +607,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                   color: widget.projectData.darkThirdImageBG
                       ? Colors.black
                       : Colors.white,
-                  child: Image.asset(
+                  child: Image.network(
                     widget.projectData.thirdImage,
                     fit: BoxFit.fitWidth,
                     alignment: Alignment.center,

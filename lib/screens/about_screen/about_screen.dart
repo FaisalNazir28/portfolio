@@ -422,7 +422,9 @@ class _AboutScreenState extends State<AboutScreen> {
                                             itemCount: experiencesList.length,
                                             itemBuilder: (context, index) {
                                               return ExperienceTile(
-                                                companyLogo: '',
+                                                companyLogo:
+                                                    experiencesList[index]
+                                                        .companyLogo,
                                                 title: experiencesList[index]
                                                     .title,
                                                 startDate:
@@ -561,7 +563,9 @@ class _AboutScreenState extends State<AboutScreen> {
                                               itemCount: experiencesList.length,
                                               itemBuilder: (context, index) {
                                                 return ExperienceTile(
-                                                  companyLogo: '',
+                                                  companyLogo:
+                                                      experiencesList[index]
+                                                          .companyLogo,
                                                   title: experiencesList[index]
                                                       .title,
                                                   startDate:
@@ -694,7 +698,9 @@ class _AboutScreenState extends State<AboutScreen> {
                                                 itemCount: awardsList.length,
                                                 itemBuilder: (context, index) {
                                                   return ExperienceTile(
-                                                    companyLogo: '',
+                                                    companyLogo:
+                                                        awardsList[index]
+                                                            .companyLogo,
                                                     title:
                                                         awardsList[index].title,
                                                     startDate:
@@ -803,7 +809,9 @@ class _AboutScreenState extends State<AboutScreen> {
                                                   itemBuilder:
                                                       (context, index) {
                                                     return ExperienceTile(
-                                                      companyLogo: '',
+                                                      companyLogo:
+                                                          awardsList[index]
+                                                              .companyLogo,
                                                       title: awardsList[index]
                                                           .title,
                                                       startDate:

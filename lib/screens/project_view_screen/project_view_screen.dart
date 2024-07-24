@@ -373,7 +373,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 padding: projectModel.iconPadding
                                     ? const EdgeInsets.all(20)
                                     : EdgeInsets.zero,
-                                child: Image.asset(
+                                child: Image.network(
                                   projectModel.appIcon,
                                 ),
                               ),
@@ -828,7 +828,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                         color: projectModel.darkMainImageBG
                             ? Colors.black
                             : Colors.white,
-                        child: Image.asset(
+                        child: Image.network(
                           projectModel.mainImage,
                           fit: BoxFit.fitWidth,
                           alignment: Alignment.topCenter,
@@ -846,7 +846,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                         color: projectModel.darkSecondImageBG
                             ? Colors.black
                             : Colors.white,
-                        child: Image.asset(
+                        child: Image.network(
                           projectModel.secondImage,
                           fit: BoxFit.fitWidth,
                           alignment: Alignment.center,
@@ -864,7 +864,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                         color: projectModel.darkThirdImageBG
                             ? Colors.black
                             : Colors.white,
-                        child: Image.asset(
+                        child: Image.network(
                           projectModel.thirdImage,
                           fit: BoxFit.fitWidth,
                           alignment: Alignment.center,
@@ -1211,7 +1211,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(15),
-          child: Image.asset(
+          child: Image.network(
             imagePath,
             fit: BoxFit.fitWidth,
             alignment: Alignment.center,
@@ -1689,7 +1689,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 : Colors.white,
                             height: double.infinity,
                             width: double.infinity,
-                            child: Image.asset(
+                            child: Image.network(
                               projectModel.mainImage,
                               fit: BoxFit.fitWidth,
                               alignment: Alignment.topLeft,
@@ -1701,7 +1701,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               color: projectModel.darkMainImageBG
                                   ? Colors.black
                                   : Colors.white,
-                              child: Image.asset(
+                              child: Image.network(
                                 projectModel.mainImage,
                                 fit: BoxFit.fitWidth,
                                 alignment: Alignment.topLeft,
@@ -1727,7 +1727,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 : Colors.white,
                             height: double.infinity,
                             width: double.infinity,
-                            child: Image.asset(
+                            child: Image.network(
                               projectModel.mainImage,
                               fit: BoxFit.fitWidth,
                               alignment: Alignment.topLeft,
@@ -1740,7 +1740,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               color: projectModel.darkMainImageBG
                                   ? Colors.black
                                   : Colors.white,
-                              child: Image.asset(
+                              child: Image.network(
                                 projectModel.mainImage,
                                 fit: BoxFit.fitWidth,
                                 alignment: Alignment.topLeft,
@@ -1933,7 +1933,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                   : Colors.white,
                               height: double.infinity,
                               width: double.infinity,
-                              child: Image.asset(
+                              child: Image.network(
                                 projectModel.mainImage,
                                 fit: BoxFit.fitWidth,
                                 alignment: Alignment.topLeft,
@@ -1945,7 +1945,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 color: projectModel.darkMainImageBG
                                     ? Colors.black
                                     : Colors.white,
-                                child: Image.asset(
+                                child: Image.network(
                                   projectModel.mainImage,
                                   fit: BoxFit.fitWidth,
                                   alignment: Alignment.topLeft,
@@ -1971,7 +1971,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                   : Colors.white,
                               height: double.infinity,
                               width: double.infinity,
-                              child: Image.asset(
+                              child: Image.network(
                                 projectModel.mainImage,
                                 fit: BoxFit.fitWidth,
                                 alignment: Alignment.topLeft,
@@ -1984,7 +1984,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                 color: projectModel.darkMainImageBG
                                     ? Colors.black
                                     : Colors.white,
-                                child: Image.asset(
+                                child: Image.network(
                                   projectModel.mainImage,
                                   fit: BoxFit.fitWidth,
                                   alignment: Alignment.topLeft,
@@ -2021,7 +2021,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
         device: device ?? Devices.ios.iPad12InchesGen4,
         screen: Container(
           color: backgroundColor,
-          child: Image.asset(
+          child: Image.network(
             imagePath,
             fit: BoxFit.fitWidth,
             alignment: imageAlignment,
@@ -2129,7 +2129,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
         device: Devices.ios.iPhone13ProMax,
         screen: Container(
           color: Colors.white,
-          child: Image.asset(
+          child: Image.network(
             mainImage,
             fit: BoxFit.fitWidth,
             alignment: Alignment.topLeft,
