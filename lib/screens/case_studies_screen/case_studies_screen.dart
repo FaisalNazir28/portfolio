@@ -192,9 +192,6 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
                                   ? 55
                                   : 50,
                         ),
-                        const SizedBox(
-                          height: 100,
-                        ),
                         selectedOption == 0
                             ? FutureBuilder(
                                 future: ProjectsController.getWebProjects(),
@@ -243,9 +240,16 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
                                       ],
                                     );
                                   } else {
-                                    return const Center(
-                                      child: Text(
-                                          "Web Apps to be showcased soon!"),
+                                    return const Column(
+                                      children: [
+                                        SizedBox(
+                                          height: 100,
+                                        ),
+                                        Center(
+                                          child: Text(
+                                              "Web Apps to be showcased soon!"),
+                                        ),
+                                      ],
                                     );
                                   }
                                 },
@@ -305,9 +309,16 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
                                           ],
                                         );
                                       } else {
-                                        return const Center(
-                                          child: Text(
-                                              "Mobile Apps to be showcased soon!"),
+                                        return const Column(
+                                          children: [
+                                            SizedBox(
+                                              height: 100,
+                                            ),
+                                            Center(
+                                              child: Text(
+                                                  "Mobile Apps to be showcased soon!"),
+                                            ),
+                                          ],
                                         );
                                       }
                                     },
@@ -325,9 +336,16 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
                                         return Text(
                                             "Hybrid Apps=> ${hybridProjects!.length.toString()}");
                                       } else {
-                                        return const Center(
-                                          child: Text(
-                                              "Hybrid Apps to be showcased soon!"),
+                                        return const Column(
+                                          children: [
+                                            SizedBox(
+                                              height: 100,
+                                            ),
+                                            Center(
+                                              child: Text(
+                                                  "Hybrid Apps to be showcased soon!"),
+                                            ),
+                                          ],
                                         );
                                       }
                                     },

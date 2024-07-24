@@ -32,10 +32,9 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
     var isMobileScreen = Breakpoints.isSmallScreen(context);
     return Column(
       children: [
-        if (widget.projectData.projectIndex != "5")
-          const SizedBox(
-            height: 120,
-          ),
+        const SizedBox(
+          height: 120,
+        ),
         isMobileScreen
             ? Column(
                 children: [
@@ -548,10 +547,9 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        if (widget.projectData.projectIndex != "0")
-          const SizedBox(
-            height: 100,
-          ),
+        const SizedBox(
+          height: 120,
+        ),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 25),
           height: isMobileScreen
