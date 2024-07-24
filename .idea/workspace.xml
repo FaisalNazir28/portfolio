@@ -4,203 +4,27 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9454b67-0d59-4afe-9daa-ee6c4a3d5102" name="Changes" comment="-Added real projects data in modals&#10;-Deploy version -&gt; 2.2">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/dartpad/web_plugin_registrant.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/0b179fe0628e143a73e8dd411e4f3689/.filecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/0b179fe0628e143a73e8dd411e4f3689/app.dill" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/0b179fe0628e143a73e8dd411e4f3689/app.dill.deps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/0b179fe0628e143a73e8dd411e4f3689/dart2js.d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/0b179fe0628e143a73e8dd411e4f3689/dart2js.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/0b179fe0628e143a73e8dd411e4f3689/flutter_assets.d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/0b179fe0628e143a73e8dd411e4f3689/gen_localizations.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/0b179fe0628e143a73e8dd411e4f3689/main.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/0b179fe0628e143a73e8dd411e4f3689/main.dart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/0b179fe0628e143a73e8dd411e4f3689/main.dart.js.deps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/0b179fe0628e143a73e8dd411e4f3689/outputs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/0b179fe0628e143a73e8dd411e4f3689/service_worker.d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/0b179fe0628e143a73e8dd411e4f3689/web_entrypoint.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/0b179fe0628e143a73e8dd411e4f3689/web_plugin_registrant.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/0b179fe0628e143a73e8dd411e4f3689/web_release_bundle.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/0b179fe0628e143a73e8dd411e4f3689/web_resources.d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/0b179fe0628e143a73e8dd411e4f3689/web_service_worker.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/0b179fe0628e143a73e8dd411e4f3689/web_static_assets.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/0b179fe0628e143a73e8dd411e4f3689/web_templated_files.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/version" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/.last_build_id" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/AssetManifest.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/AssetManifest.bin.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/AssetManifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/FontManifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/NOTICES" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/backgrounds/login_background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/logo/404.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/logo/artache.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/logo/flutter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/logo/gdsc.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/logo/gdscColored.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/logo/pel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/logo/pieas.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/logo/pieasColored.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/logo/soloinsight.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/logo/wordpress.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/adobe.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/adobe_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/adobexd.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/adobexd_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/androidstudio.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/anydesk.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/appstore.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/appstore_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/behance.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/behance_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/bitbucket.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/bitbucket_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/canva.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/chatgpt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/chrome.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/chrome_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/dart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/dart_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/discord.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/dribble.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/dribble_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/dropbox.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/dropbox_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/edge.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/edge_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/elementor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/facebook.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/facebook_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/figma.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/figma_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/firebase.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/firebase_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/firefox.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/firefox_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/fiverr.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/flutter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/flutter_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/git.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/git_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/github.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/gitoutlined.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/gmail.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/gmail_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/instagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/instagram_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/javascript.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/javascript_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/jira.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/jira_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/linkedin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/linkedin_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/macos.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/medium.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/nodejs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/nodejs_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/notion.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/outlook.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/outlook_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/photoshop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/photoshop_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/playstore.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/playstore_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/postman.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/postman_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/skype.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/skype_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/slack.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/slack_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/sqlite.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/sqlite_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/stackoverflow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/stackoverflow_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/teams.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/teams_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/teamviewer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/unsplash.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/upwork.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/visualstudio.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/visualstudio_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/vscode.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/vscode_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/whatsapp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/windows.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/windows_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/wordpress.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/wordpress_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/xcode.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/my_tools_icons/zoom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/profiles/anna_del.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/profiles/faisal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/profiles/kender_john.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/profiles/mark_lupher.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/profiles/steve_jon.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/profiles/umar_ayyaz.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/resume/resume.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/andres_steinkogler/as1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/andres_steinkogler/as2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/andres_steinkogler/as3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/andres_steinkogler/as4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/andres_steinkogler/as5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/andres_steinkogler/as6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/andres_steinkogler/as7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/artache/art1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/artache/art10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/artache/art11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/artache/art2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/artache/art3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/artache/art4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/artache/art5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/artache/art6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/artache/art7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/artache/art8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/artache/art9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/barak/barak1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/barak/barak2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/barak/barak3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/barak/barak4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/barak/barak5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/barak/barak6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/barak/barak7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/bridges/bridges1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/bridges/bridges2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/bridges/bridges3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/bridges/bridges4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/hmk/hmk1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/hmk/hmk2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/hmk/hmk3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/hmk/hmk4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/showcase/hmk/hmk5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/fonts/MaterialIcons-Regular.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/packages/cupertino_icons/assets/CupertinoIcons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/packages/ionicons/assets/fonts/Ionicons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/assets/shaders/ink_sparkle.frag" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/canvaskit/canvaskit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/canvaskit/canvaskit.js.symbols" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/canvaskit/canvaskit.wasm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/canvaskit/chromium/canvaskit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/canvaskit/chromium/canvaskit.js.symbols" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/canvaskit/chromium/canvaskit.wasm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/canvaskit/skwasm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/canvaskit/skwasm.js.symbols" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/canvaskit/skwasm.wasm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/canvaskit/skwasm.worker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/faisal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/flutter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/flutter_bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/flutter_service_worker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/icons/Icon-192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/icons/Icon-512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/icons/Icon-maskable-192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/icons/Icon-maskable-512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/main.dart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/web/version.json" beforeDir="false" />
+    <list default="true" id="f9454b67-0d59-4afe-9daa-ee6c4a3d5102" name="Changes" comment="-UI issues fixed in case studies screen&#10;-Deploy version -&gt; 2.7">
+      <change beforePath="$PROJECT_DIR$/.dart_tool/dartpad/web_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/dartpad/web_plugin_registrant.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/about_screen/about_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/about_screen/about_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/home_screen/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/home_screen/home_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/project_view_screen/project_view_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/project_view_screen/project_view_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/services/authentication.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/authentication.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/detailed_showcase_container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/detailed_showcase_container.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/experience_tile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/experience_tile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linux/flutter/generated_plugin_registrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/generated_plugin_registrant.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linux/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/generated_plugins.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/generated_plugins.cmake" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +66,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
-    "url": "https://github.com/FaisalNazir28/my_portfolio.git",
+    "url": "https://github.com/FaisalNazir28/portfolio.git",
     "accountId": "7ecbbe11-128c-492a-b471-b6b983b8939e"
   }
 }]]></component>
@@ -258,25 +82,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Flutter.main.dart.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
-    "io.flutter.reload.alreadyRun": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/fnvm/AndroidStudioProjects/my_portfolio/assets/showcase",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Flutter.main.dart.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/fnvm/AndroidStudioProjects/my_portfolio/assets/showcase&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\fnvm\AndroidStudioProjects\my_portfolio\assets\showcase" />
@@ -479,7 +303,39 @@
       <option name="project" value="LOCAL" />
       <updated>1718282279235</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="-Data fetching issue resolved by updating model.&#10;-Likes/Starts/Love counts updation on click implemented.&#10;-Deploy version -&gt; 2.7">
+      <option name="closed" value="true" />
+      <created>1721807506666</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1721807506666</updated>
+    </task>
+    <task id="LOCAL-00027" summary="-UI spacing issue fixed in case studies screen&#10;-Deploy version -&gt; 2.7">
+      <option name="closed" value="true" />
+      <created>1721808425050</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1721808425050</updated>
+    </task>
+    <task id="LOCAL-00028" summary="-Initial spacing and empty list text message spacing issue fixed in project lists in case studies screen&#10;-Deploy version -&gt; 2.7">
+      <option name="closed" value="true" />
+      <created>1721809591446</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1721809591446</updated>
+    </task>
+    <task id="LOCAL-00029" summary="-UI issues fixed in case studies screen&#10;-Deploy version -&gt; 2.7">
+      <option name="closed" value="true" />
+      <created>1721811305964</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1721811305964</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -515,6 +371,10 @@
     <MESSAGE value="-Custom button on tap issue fixed&#10;-Deploy version -&gt; 2.2" />
     <MESSAGE value="-Resume download failed issue fixed for mobiles&#10;-Deploy version -&gt; 2.2" />
     <MESSAGE value="-Added real projects data in modals&#10;-Deploy version -&gt; 2.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="-Added real projects data in modals&#10;-Deploy version -&gt; 2.2" />
+    <MESSAGE value="-Data fetching issue resolved by updating model.&#10;-Likes/Starts/Love counts updation on click implemented.&#10;-Deploy version -&gt; 2.7" />
+    <MESSAGE value="-UI spacing issue fixed in case studies screen&#10;-Deploy version -&gt; 2.7" />
+    <MESSAGE value="-Initial spacing and empty list text message spacing issue fixed in project lists in case studies screen&#10;-Deploy version -&gt; 2.7" />
+    <MESSAGE value="-UI issues fixed in case studies screen&#10;-Deploy version -&gt; 2.7" />
+    <option name="LAST_COMMIT_MESSAGE" value="-UI issues fixed in case studies screen&#10;-Deploy version -&gt; 2.7" />
   </component>
 </project>
