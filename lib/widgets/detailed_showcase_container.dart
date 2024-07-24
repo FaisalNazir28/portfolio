@@ -32,7 +32,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
     var isMobileScreen = Breakpoints.isSmallScreen(context);
     return Column(
       children: [
-        if (widget.projectData.projectIndex != "0")
+        if (widget.projectData.projectIndex != "5")
           const SizedBox(
             height: 120,
           ),
