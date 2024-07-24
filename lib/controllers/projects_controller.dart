@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:my_portfolio/models/projects_model.dart';
 import 'package:my_portfolio/services/firebase_collections.dart';
 
@@ -54,5 +55,39 @@ class ProjectsController {
           .toList();
     }
     return hybridProjects;
+  }
+
+  static void updateLikesCount(String projectID, int oldValue) async {
+    try {
+      int val;
+      val = oldValue + 1;
+      await FbCollections.projects
+          .doc(projectID)
+          .update({"likesCount": "$val"});
+    } catch (e) {
+      debugPrint("Error Updating Document: $e");
+    }
+  }
+
+  static void updateStarsCount(String projectID, int oldValue) async {
+    try {
+      int val;
+      val = oldValue + 1;
+      await FbCollections.projects
+          .doc(projectID)
+          .update({"starsCount": "$val"});
+    } catch (e) {
+      debugPrint("Error Updating Document: $e");
+    }
+  }
+
+  static void updateLoveCount(String projectID, int oldValue) async {
+    try {
+      int val;
+      val = oldValue + 1;
+      await FbCollections.projects.doc(projectID).update({"loveCount": "$val"});
+    } catch (e) {
+      debugPrint("Error Updating Document: $e");
+    }
   }
 }

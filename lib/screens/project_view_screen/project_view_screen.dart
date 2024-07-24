@@ -2,6 +2,7 @@ import 'package:device_frame/device_frame.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:my_portfolio/controllers/projects_controller.dart';
 import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/models/projects_model.dart';
 import 'package:my_portfolio/models/selected_project_data.dart';
@@ -775,7 +776,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
               const SizedBox(
                 height: 120,
               ),
-              likeTheWorkContainer(projectModel.projectName),
+              likeTheWorkContainer(projectModel),
             ],
           ),
         ),
@@ -2138,7 +2139,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
     );
   }
 
-  Widget likeTheWorkContainer(String title) {
+  Widget likeTheWorkContainer(ProjectsModel projectModel) {
     var isTabletScreen = Breakpoints.isMediumScreen(context);
     var isMobileScreen = Breakpoints.isSmallScreen(context);
 
@@ -2183,6 +2184,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                             : () {
                                 setState(() {
                                   isLiked = true;
+                                  ProjectsController.updateLikesCount(
+                                      projectModel.projectUID,
+                                      int.parse(projectModel.likesCount));
                                 });
                               },
                         child: Icon(
@@ -2206,11 +2210,16 @@ class _ProjectScreenState extends State<ProjectScreen> {
                         overlayColor: WidgetStateProperty.all(
                           Colors.transparent,
                         ),
-                        onTap: () {
-                          setState(() {
-                            isStarred = true;
-                          });
-                        },
+                        onTap: isStarred == true
+                            ? () {}
+                            : () {
+                                setState(() {
+                                  isStarred = true;
+                                  ProjectsController.updateStarsCount(
+                                      projectModel.projectUID,
+                                      int.parse(projectModel.starsCount));
+                                });
+                              },
                         child: Icon(
                           CupertinoIcons.star_fill,
                           size: 28,
@@ -2232,11 +2241,16 @@ class _ProjectScreenState extends State<ProjectScreen> {
                         overlayColor: WidgetStateProperty.all(
                           Colors.transparent,
                         ),
-                        onTap: () {
-                          setState(() {
-                            isLoved = true;
-                          });
-                        },
+                        onTap: isLoved == true
+                            ? () {}
+                            : () {
+                                setState(() {
+                                  isLoved = true;
+                                  ProjectsController.updateLoveCount(
+                                      projectModel.projectUID,
+                                      int.parse(projectModel.loveCount));
+                                });
+                              },
                         child: Icon(
                           Ionicons.heart,
                           size: 28,
@@ -2267,7 +2281,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                   height: 10,
                 ),
                 Text(
-                  "Application code: $title",
+                  "Application code: ${projectModel.projectName}",
                   style: const TextStyle(
                     fontSize: 15,
                   ),
@@ -2336,6 +2350,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                                   : () {
                                       setState(() {
                                         isLiked = true;
+                                        ProjectsController.updateLikesCount(
+                                            projectModel.projectUID,
+                                            int.parse(projectModel.likesCount));
                                       });
                                     },
                               child: Icon(
@@ -2359,11 +2376,16 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               overlayColor: WidgetStateProperty.all(
                                 Colors.transparent,
                               ),
-                              onTap: () {
-                                setState(() {
-                                  isStarred = true;
-                                });
-                              },
+                              onTap: isStarred == true
+                                  ? () {}
+                                  : () {
+                                      setState(() {
+                                        isStarred = true;
+                                        ProjectsController.updateStarsCount(
+                                            projectModel.projectUID,
+                                            int.parse(projectModel.starsCount));
+                                      });
+                                    },
                               child: Icon(
                                 CupertinoIcons.star_fill,
                                 size: isTabletScreen ? 35 : 50,
@@ -2385,11 +2407,16 @@ class _ProjectScreenState extends State<ProjectScreen> {
                               overlayColor: WidgetStateProperty.all(
                                 Colors.transparent,
                               ),
-                              onTap: () {
-                                setState(() {
-                                  isLoved = true;
-                                });
-                              },
+                              onTap: isLoved == true
+                                  ? () {}
+                                  : () {
+                                      setState(() {
+                                        isLoved = true;
+                                        ProjectsController.updateLoveCount(
+                                            projectModel.projectUID,
+                                            int.parse(projectModel.loveCount));
+                                      });
+                                    },
                               child: Icon(
                                 Ionicons.heart,
                                 size: isTabletScreen ? 35 : 50,
@@ -2422,7 +2449,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
                         height: 10,
                       ),
                       Text(
-                        "Application code: $title",
+                        "Application code: ${projectModel.projectName}",
                         style: TextStyle(
                           fontSize: isTabletScreen ? 14 : 16,
                         ),
