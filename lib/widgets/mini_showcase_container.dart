@@ -5,7 +5,6 @@ import 'package:my_portfolio/routes/routes.dart';
 class MiniShowcaseContainer extends StatefulWidget {
   final String title;
   final String description;
-  final Color? firstContainerBG;
   final String mainImage;
   final String detailImage;
   final Color? mainImageBG;
@@ -16,7 +15,6 @@ class MiniShowcaseContainer extends StatefulWidget {
     super.key,
     required this.title,
     required this.description,
-    this.firstContainerBG,
     this.mainImageBG,
     this.detailImageBG,
     required this.mainImage,
@@ -45,7 +43,7 @@ class _MiniShowcaseContainerState extends State<MiniShowcaseContainer> {
           padding: const EdgeInsets.symmetric(horizontal: 25),
           height: MediaQuery.of(context).size.height * .4,
           decoration: BoxDecoration(
-            color: widget.firstContainerBG ?? Colors.grey.shade300,
+            color: Colors.grey.shade300,
             borderRadius: BorderRadius.circular(20),
           ),
           child: Row(
@@ -58,7 +56,7 @@ class _MiniShowcaseContainerState extends State<MiniShowcaseContainer> {
                   width: double.infinity,
                   margin: const EdgeInsets.only(top: 30),
                   color: widget.mainImageBG ?? Colors.white,
-                  child: Image.asset(
+                  child: Image.network(
                     widget.mainImage,
                     fit: BoxFit.fitWidth,
                     alignment: Alignment.topCenter,
@@ -74,7 +72,7 @@ class _MiniShowcaseContainerState extends State<MiniShowcaseContainer> {
                   height: double.infinity,
                   width: double.infinity,
                   color: widget.detailImageBG ?? Colors.white,
-                  child: Image.asset(
+                  child: Image.network(
                     widget.detailImage,
                     fit: BoxFit.fitWidth,
                     alignment: Alignment.center,

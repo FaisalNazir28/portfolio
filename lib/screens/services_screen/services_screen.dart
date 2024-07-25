@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/controllers/projects_controller.dart';
 import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/services/stats_service.dart';
-import 'package:my_portfolio/utilities/app_images.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
 import 'package:my_portfolio/widgets/footer.dart';
 import 'package:my_portfolio/widgets/header.dart';
@@ -255,27 +255,56 @@ class _ServicesScreenState extends State<ServicesScreen> {
                               const SizedBox(
                                 height: 50,
                               ),
-                              Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  MiniShowcaseContainer(
-                                    title: 'Full pages Website design',
-                                    description:
-                                        'Creating immersive and engaging full-page website designs that captivate audiences and deliver a seamless user experience.',
-                                    mainImage: AppImages.artache1,
-                                    detailImage: AppImages.artache1,
-                                    initialContainer: true,
-                                  ),
-                                  MiniShowcaseContainer(
-                                    title: 'Portfolio Websites',
-                                    description:
-                                        'Intuitively designed portfolio websites for esteemed users helping people showcase their work and skills.',
-                                    mainImage: AppImages.hmk1,
-                                    detailImage: AppImages.hmk2,
-                                    detailImageBG: Colors.black,
-                                  ),
-                                ],
-                              ),
+                              FutureBuilder(
+                                  future: ProjectsController.getWebProjects(),
+                                  builder: (context, snapshot) {
+                                    if (snapshot.connectionState ==
+                                        ConnectionState.waiting) {
+                                      return const CircularProgressIndicator(
+                                        color: Colors.black87,
+                                      );
+                                    } else {
+                                      var portfolioWebsites = snapshot.data!
+                                          .where((e) =>
+                                              e.projectType ==
+                                                  "Portfolio Development" ||
+                                              e.projectType ==
+                                                  "Portfolio Website")
+                                          .toList();
+                                      var fullPagerWebsites = snapshot.data!
+                                          .where((e) =>
+                                              e.projectType !=
+                                                  "Portfolio Development" &&
+                                              e.projectType !=
+                                                  "Portfolio Website")
+                                          .toList();
+                                      return Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          MiniShowcaseContainer(
+                                            title: 'Full pages Website design',
+                                            description:
+                                                'Creating immersive and engaging full-page website designs that captivate audiences and deliver a seamless user experience.',
+                                            mainImage:
+                                                fullPagerWebsites[1].mainImage,
+                                            detailImage:
+                                                fullPagerWebsites[1].mainImage,
+                                            initialContainer: true,
+                                          ),
+                                          MiniShowcaseContainer(
+                                            title: 'Portfolio Websites',
+                                            description:
+                                                'Intuitively designed portfolio websites for esteemed users helping people showcase their work and skills.',
+                                            mainImage:
+                                                portfolioWebsites[0].mainImage,
+                                            detailImage: portfolioWebsites[0]
+                                                .secondImage,
+                                            detailImageBG: Colors.black,
+                                          ),
+                                        ],
+                                      );
+                                    }
+                                  }),
                             ],
                           )
                         : Row(
@@ -444,29 +473,109 @@ class _ServicesScreenState extends State<ServicesScreen> {
                               SizedBox(
                                 width: isDesktopScreen ? 20 : 50,
                               ),
-                              Expanded(
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    MiniShowcaseContainer(
-                                      title: 'Full pages Website design',
-                                      description:
-                                          'Creating immersive and engaging full-page website designs that captivate audiences and deliver a seamless user experience.',
-                                      mainImage: AppImages.artache1,
-                                      detailImage: AppImages.artache1,
-                                      initialContainer: true,
-                                    ),
-                                    MiniShowcaseContainer(
-                                      title: 'Portfolio Websites',
-                                      description:
-                                          'Intuitively designed portfolio websites for esteemed users helping people showcase their work and skills.',
-                                      mainImage: AppImages.hmk1,
-                                      detailImage: AppImages.hmk2,
-                                      detailImageBG: Colors.black,
-                                    ),
-                                  ],
-                                ),
-                              ),
+                              FutureBuilder(
+                                  future: ProjectsController.getWebProjects(),
+                                  builder: (context, snapshot) {
+                                    if (snapshot.connectionState ==
+                                        ConnectionState.waiting) {
+                                      return Expanded(
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.stretch,
+                                          children: [
+                                            Container(
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  .4,
+                                              decoration: BoxDecoration(
+                                                color: Colors.grey.shade300,
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                              ),
+                                            ),
+                                            const SizedBox(
+                                              height: 30,
+                                            ),
+                                            Container(
+                                              height: 35,
+                                              decoration: BoxDecoration(
+                                                color: Colors.grey.shade300,
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                              ),
+                                            ),
+                                            const SizedBox(
+                                              height: 20,
+                                            ),
+                                            Container(
+                                              height: 25,
+                                              decoration: BoxDecoration(
+                                                color: Colors.grey.shade300,
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                              ),
+                                            ),
+                                            const SizedBox(
+                                              height: 20,
+                                            ),
+                                            Container(
+                                              height: 50,
+                                              decoration: BoxDecoration(
+                                                color: Colors.grey.shade300,
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      );
+                                    } else {
+                                      var portfolioWebsites = snapshot.data!
+                                          .where((e) =>
+                                              e.projectType ==
+                                                  "Portfolio Development" ||
+                                              e.projectType ==
+                                                  "Portfolio Website")
+                                          .toList();
+                                      var fullPagerWebsites = snapshot.data!
+                                          .where((e) =>
+                                              e.projectType !=
+                                                  "Portfolio Development" &&
+                                              e.projectType !=
+                                                  "Portfolio Website")
+                                          .toList();
+                                      return Expanded(
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            MiniShowcaseContainer(
+                                              title: 'Full Page Website Design',
+                                              description:
+                                                  'Creating immersive and engaging full-page website designs that captivate audiences and deliver a seamless user experience.',
+                                              mainImage: fullPagerWebsites[0]
+                                                  .mainImage,
+                                              detailImage: fullPagerWebsites[0]
+                                                  .mainImage,
+                                              initialContainer: true,
+                                            ),
+                                            MiniShowcaseContainer(
+                                              title: 'Portfolio Websites',
+                                              description:
+                                                  'Intuitively designed portfolio websites for esteemed users helping people showcase their work and skills.',
+                                              mainImage: portfolioWebsites[0]
+                                                  .mainImage,
+                                              detailImage: portfolioWebsites[0]
+                                                  .secondImage,
+                                              mainImageBG: Colors.black,
+                                              detailImageBG: Colors.black,
+                                            ),
+                                          ],
+                                        ),
+                                      );
+                                    }
+                                  }),
                             ],
                           ),
                   ),

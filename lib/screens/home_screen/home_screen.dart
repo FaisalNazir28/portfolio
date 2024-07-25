@@ -260,7 +260,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           CrossAxisAlignment.stretch,
                                       children: [
                                         const Text(
-                                          "Working experience",
+                                          "Working Experience",
                                           style: TextStyle(
                                               fontSize: 40,
                                               fontWeight: FontWeight.w500),
@@ -426,7 +426,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         CrossAxisAlignment.stretch,
                                     children: [
                                       Text(
-                                        "Working experience",
+                                        "Working Experience",
                                         style: TextStyle(
                                             fontSize: isMobileScreen ? 23 : 40,
                                             fontWeight: isMobileScreen
@@ -671,7 +671,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               Colors.black,
                                         ),
                                         ShowcaseContainer(
-                                          title: 'Full pages website design',
+                                          title: 'Full Page Website Design',
                                           description:
                                               'Creating immersive and engaging full-page website designs that captivate audiences and deliver a seamless user experience.',
                                           initialIcon:
@@ -715,7 +715,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Column(
                           children: [
                             const Text(
-                              "Selected works",
+                              "Selected Works",
                               style: TextStyle(
                                   fontSize: 50, fontWeight: FontWeight.w500),
                             ),
