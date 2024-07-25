@@ -727,7 +727,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 builder: (context, snapshot) {
                                   if (snapshot.connectionState ==
                                       ConnectionState.waiting) {
-                                    return const CircularProgressIndicator();
+                                    return const CircularProgressIndicator(
+                                      color: Colors.black87,
+                                    );
                                   } else {
                                     projectsList = snapshot.data!;
                                     projectsList.sort((a, b) => a.projectIndex
