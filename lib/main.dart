@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/routes/routes.dart';
 import 'package:my_portfolio/screens/about_screen/about_screen.dart';
@@ -9,9 +10,9 @@ import 'package:my_portfolio/screens/playground_screen/playground_screen.dart';
 import 'package:my_portfolio/screens/project_view_screen/project_view_screen.dart';
 import 'package:my_portfolio/screens/services_screen/services_screen.dart';
 import 'package:my_portfolio/services/firebase_options.dart';
+
 import 'screens/client_screen/client_screen.dart';
 import 'screens/login_screen/login_screen.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 bool initialLaunch = true;
 
