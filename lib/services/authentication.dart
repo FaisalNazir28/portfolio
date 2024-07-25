@@ -66,6 +66,7 @@ class Authentication {
 
   void logOutUser() async {
     await auth.signOut();
+    userModel = UserModel();
   }
 
   bool userState() {

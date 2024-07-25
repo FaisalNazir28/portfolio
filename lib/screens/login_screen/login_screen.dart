@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:my_portfolio/main.dart';
+import 'package:my_portfolio/models/user_model.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
 import 'package:my_portfolio/services/authentication.dart';
@@ -21,6 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _passwordController = TextEditingController();
   bool loading = false;
   bool isError = false;
+  bool inActiveDialog = false;
 
   @override
   void initState() {
@@ -188,16 +190,29 @@ class _LoginScreenState extends State<LoginScreen> {
                                                         _passwordController
                                                             .text,
                                                     onSuccess: () {
-                                                      setState(() {
-                                                        Navigator.pushNamed(
-                                                            context,
-                                                            Routes.client);
-                                                        loading = false;
-                                                        _emailController
-                                                            .clear();
-                                                        _passwordController
-                                                            .clear();
-                                                      });
+                                                      Authentication.userModel
+                                                              .isActive
+                                                          ? setState(() {
+                                                              Navigator.pushNamed(
+                                                                  context,
+                                                                  Routes
+                                                                      .client);
+                                                              loading = false;
+                                                              _emailController
+                                                                  .clear();
+                                                              _passwordController
+                                                                  .clear();
+                                                            })
+                                                          : () {
+                                                              inActiveDialog =
+                                                                  true;
+                                                              loading = false;
+                                                              Authentication
+                                                                      .userModel =
+                                                                  UserModel();
+                                                              Authentication()
+                                                                  .logOutUser();
+                                                            };
                                                     },
                                                     onError: () {
                                                       setState(() {
@@ -406,16 +421,30 @@ class _LoginScreenState extends State<LoginScreen> {
                                                           _passwordController
                                                               .text,
                                                       onSuccess: () {
-                                                        setState(() {
-                                                          Navigator.pushNamed(
-                                                              context,
-                                                              Routes.client);
-                                                          loading = false;
-                                                          _emailController
-                                                              .clear();
-                                                          _passwordController
-                                                              .clear();
-                                                        });
+                                                        Authentication.userModel
+                                                                    .isActive ==
+                                                                true
+                                                            ? setState(() {
+                                                                Navigator.pushNamed(
+                                                                    context,
+                                                                    Routes
+                                                                        .client);
+                                                                loading = false;
+                                                                _emailController
+                                                                    .clear();
+                                                                _passwordController
+                                                                    .clear();
+                                                              })
+                                                            : setState(() {
+                                                                inActiveDialog =
+                                                                    true;
+                                                                loading = false;
+                                                                Authentication
+                                                                        .userModel =
+                                                                    UserModel();
+                                                                Authentication()
+                                                                    .logOutUser();
+                                                              });
                                                       },
                                                       onError: () {
                                                         setState(() {
@@ -510,6 +539,115 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
           ),
+          if (inActiveDialog)
+            Center(
+              child: Container(
+                width: MediaQuery.of(context).size.width * .5,
+                height: MediaQuery.of(context).size.height * .5,
+                padding: const EdgeInsets.all(50),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(
+                      Ionicons.cloud_offline_outline,
+                      size: 50,
+                      color: Colors.red,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const Text(
+                      "User inactive!",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const Text(
+                        "Associated user is inactive! Contact administrator to revoke."),
+                    const SizedBox(
+                      height: 60,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            setState(() {
+                              Navigator.pushNamed(context, Routes.home);
+                              inActiveDialog = false;
+                            });
+                          },
+                          child: Container(
+                              margin: const EdgeInsets.only(right: 60),
+                              width: 100,
+                              decoration: BoxDecoration(
+                                color: Colors.black87,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 15, vertical: 10),
+                              child: const Text(
+                                "Home",
+                                style: TextStyle(color: Colors.white),
+                                textAlign: TextAlign.center,
+                              )),
+                        ),
+                        InkWell(
+                          onTap: () {
+                            setState(() {
+                              inActiveDialog = false;
+                            });
+                          },
+                          child: Container(
+                              margin: const EdgeInsets.only(right: 60),
+                              width: 150,
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 15, vertical: 10),
+                              decoration: BoxDecoration(
+                                color: Colors.black87,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: const Text(
+                                "Back to login",
+                                style: TextStyle(color: Colors.white),
+                                textAlign: TextAlign.center,
+                              )),
+                        ),
+                        InkWell(
+                          onTap: () {
+                            setState(() {
+                              Navigator.pushNamed(context, Routes.contact);
+                              inActiveDialog = false;
+                            });
+                          },
+                          child: Container(
+                              width: 100,
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 15, vertical: 10),
+                              decoration: BoxDecoration(
+                                color: Colors.black87,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: const Text(
+                                "Contact",
+                                style: TextStyle(color: Colors.white),
+                                textAlign: TextAlign.center,
+                              )),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
           Positioned(
             left: 5,
             bottom: 2,
