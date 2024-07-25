@@ -3,9 +3,9 @@ import 'dart:html' as html;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:my_portfolio/controllers/projects_controller.dart';
 import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
-import 'package:my_portfolio/utilities/app_images.dart';
 import 'package:my_portfolio/utilities/constants.dart';
 import 'package:my_portfolio/widgets/custom_drawer.dart';
 import 'package:my_portfolio/widgets/footer.dart';
@@ -206,47 +206,87 @@ class _PlayGroundScreenState extends State<PlayGroundScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        ShowcaseContainer(
-                          title: 'Portfolio Websites',
-                          description:
-                              'Intuitively designed portfolio websites for esteemed users helping people showcase their work and skills.',
-                          initialIcon: CupertinoIcons.desktopcomputer,
-                          firstContainerMainImage: AppImages.hmk1,
-                          firstContainerDetailImage: AppImages.hmk2,
-                          secondContainerMainImage: AppImages.bridges1,
-                          secondContainerDetailImage: AppImages.bridges4,
-                          firstContainerMainImageBG: Colors.black,
-                          firstContainerDetailImageBG: Colors.black,
-                          secondContainerMainImageBG: Colors.black,
-                          secondContainerDetailImageBG: Colors.black,
-                          hideTitles: true,
-                        ),
-                        ShowcaseContainer(
-                          title: 'Full pages website design',
-                          description:
-                              'Creating immersive and engaging full-page website designs that captivate audiences and deliver a seamless user experience.',
-                          initialIcon: Icons.desktop_windows_outlined,
-                          firstContainerMainImage: AppImages.artache1,
-                          firstContainerDetailImage: AppImages.artache2,
-                          secondContainerMainImage: AppImages.barak1,
-                          secondContainerDetailImage: AppImages.barak2,
-                          hideTitles: true,
-                        ),
-                        ShowcaseContainer(
-                          title: 'Portfolio Websites',
-                          description:
-                              'Intuitively designed portfolio websites for esteemed users helping people showcase their work and skills.',
-                          initialIcon: CupertinoIcons.desktopcomputer,
-                          firstContainerMainImage: AppImages.andres1,
-                          firstContainerDetailImage: AppImages.andres2,
-                          secondContainerMainImage: AppImages.hmk4,
-                          secondContainerDetailImage: AppImages.andres4,
-                          firstContainerMainImageBG: Colors.black,
-                          firstContainerDetailImageBG: Colors.black,
-                          secondContainerMainImageBG: Colors.black,
-                          secondContainerDetailImageBG: Colors.black,
-                          hideTitles: true,
-                        ),
+                        FutureBuilder(
+                            future: ProjectsController.getWebProjects(),
+                            builder: (context, snapshot) {
+                              if (snapshot.connectionState ==
+                                  ConnectionState.waiting) {
+                                return Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                        margin: const EdgeInsets.only(top: 50),
+                                        child: const CircularProgressIndicator(
+                                          color: Colors.black87,
+                                        )),
+                                  ],
+                                );
+                              } else {
+                                var projectsWebsites = snapshot.data!;
+                                return Column(
+                                  children: [
+                                    ShowcaseContainer(
+                                      title: 'Portfolio Websites',
+                                      description:
+                                          'Intuitively designed portfolio websites for esteemed users helping people showcase their work and skills.',
+                                      initialIcon:
+                                          CupertinoIcons.desktopcomputer,
+                                      firstContainerMainImage:
+                                          projectsWebsites[0].mainImage,
+                                      firstContainerDetailImage:
+                                          projectsWebsites[0].secondImage,
+                                      secondContainerMainImage:
+                                          projectsWebsites[4].mainImage,
+                                      secondContainerDetailImage:
+                                          projectsWebsites[4].extraImage1,
+                                      firstContainerMainImageBG: Colors.black,
+                                      firstContainerDetailImageBG: Colors.black,
+                                      secondContainerMainImageBG: Colors.black,
+                                      secondContainerDetailImageBG:
+                                          Colors.black,
+                                      hideTitles: true,
+                                    ),
+                                    ShowcaseContainer(
+                                      title: 'Full pages website design',
+                                      description:
+                                          'Creating immersive and engaging full-page website designs that captivate audiences and deliver a seamless user experience.',
+                                      initialIcon:
+                                          Icons.desktop_windows_outlined,
+                                      firstContainerMainImage:
+                                          projectsWebsites[1].mainImage,
+                                      firstContainerDetailImage:
+                                          projectsWebsites[1].secondImage,
+                                      secondContainerMainImage:
+                                          projectsWebsites[2].mainImage,
+                                      secondContainerDetailImage:
+                                          projectsWebsites[2].secondImage,
+                                      hideTitles: true,
+                                    ),
+                                    ShowcaseContainer(
+                                      title: 'Portfolio Websites',
+                                      description:
+                                          'Intuitively designed portfolio websites for esteemed users helping people showcase their work and skills.',
+                                      initialIcon:
+                                          CupertinoIcons.desktopcomputer,
+                                      firstContainerMainImage:
+                                          projectsWebsites[3].mainImage,
+                                      firstContainerDetailImage:
+                                          projectsWebsites[3].secondImage,
+                                      secondContainerMainImage:
+                                          projectsWebsites[0].extraImage1,
+                                      secondContainerDetailImage:
+                                          projectsWebsites[4].thirdImage,
+                                      firstContainerMainImageBG: Colors.black,
+                                      firstContainerDetailImageBG: Colors.black,
+                                      secondContainerMainImageBG: Colors.black,
+                                      secondContainerDetailImageBG:
+                                          Colors.black,
+                                      hideTitles: true,
+                                    ),
+                                  ],
+                                );
+                              }
+                            }),
                         const SizedBox(
                           height: 80,
                         ),

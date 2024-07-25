@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:my_portfolio/controllers/awards_controller.dart';
 import 'package:my_portfolio/controllers/experiences_controller.dart';
+import 'package:my_portfolio/controllers/projects_controller.dart';
 import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/models/awards_model.dart';
 import 'package:my_portfolio/models/experiences_model.dart';
@@ -826,21 +827,44 @@ class _AboutScreenState extends State<AboutScreen> {
                                 )
                               ],
                             ),
-                      ShowcaseContainer(
-                        title: 'Portfolio Websites',
-                        description:
-                            'Intuitively designed portfolio websites for esteemed users helping people showcase their work and skills.',
-                        initialIcon: CupertinoIcons.desktopcomputer,
-                        firstContainerMainImage: AppImages.hmk1,
-                        firstContainerDetailImage: AppImages.hmk2,
-                        secondContainerMainImage: AppImages.andres1,
-                        secondContainerDetailImage: AppImages.andres2,
-                        firstContainerMainImageBG: Colors.black,
-                        firstContainerDetailImageBG: Colors.black,
-                        secondContainerMainImageBG: Colors.black,
-                        secondContainerDetailImageBG: Colors.black,
-                        hideTitles: true,
-                      ),
+                      FutureBuilder(
+                          future: ProjectsController.getWebProjects(),
+                          builder: (context, snapshot) {
+                            if (snapshot.connectionState ==
+                                ConnectionState.waiting) {
+                              return Container(
+                                  margin: const EdgeInsets.only(top: 50),
+                                  child: const CircularProgressIndicator(
+                                    color: Colors.black87,
+                                  ));
+                            } else {
+                              var portfolioWebsites = snapshot.data!
+                                  .where((e) =>
+                                      e.projectType ==
+                                          "Portfolio Development" ||
+                                      e.projectType == "Portfolio Website")
+                                  .toList();
+                              return ShowcaseContainer(
+                                title: 'Portfolio Websites',
+                                description:
+                                    'Intuitively designed portfolio websites for esteemed users helping people showcase their work and skills.',
+                                initialIcon: CupertinoIcons.desktopcomputer,
+                                firstContainerMainImage:
+                                    portfolioWebsites[0].mainImage,
+                                firstContainerDetailImage:
+                                    portfolioWebsites[0].secondImage,
+                                secondContainerMainImage:
+                                    portfolioWebsites[1].mainImage,
+                                secondContainerDetailImage:
+                                    portfolioWebsites[1].secondImage,
+                                firstContainerMainImageBG: Colors.black,
+                                firstContainerDetailImageBG: Colors.black,
+                                secondContainerMainImageBG: Colors.black,
+                                secondContainerDetailImageBG: Colors.black,
+                                hideTitles: true,
+                              );
+                            }
+                          }),
                     ],
                   ),
                 ),

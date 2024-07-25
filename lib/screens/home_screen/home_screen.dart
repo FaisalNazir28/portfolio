@@ -620,30 +620,75 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ],
                             ),
-                            ShowcaseContainer(
-                              title: 'Portfolio Websites',
-                              description:
-                                  'Intuitively designed portfolio websites for esteemed users helping people showcase their work and skills.',
-                              initialIcon: CupertinoIcons.desktopcomputer,
-                              firstContainerMainImage: AppImages.hmk1,
-                              firstContainerDetailImage: AppImages.hmk2,
-                              secondContainerMainImage: AppImages.andres1,
-                              secondContainerDetailImage: AppImages.andres3,
-                              firstContainerMainImageBG: Colors.black,
-                              firstContainerDetailImageBG: Colors.black,
-                              secondContainerMainImageBG: Colors.black,
-                              secondContainerDetailImageBG: Colors.black,
-                            ),
-                            ShowcaseContainer(
-                              title: 'Full pages website design',
-                              description:
-                                  'Creating immersive and engaging full-page website designs that captivate audiences and deliver a seamless user experience.',
-                              initialIcon: Icons.desktop_windows_outlined,
-                              firstContainerMainImage: AppImages.artache1,
-                              firstContainerDetailImage: AppImages.artache2,
-                              secondContainerMainImage: AppImages.barak1,
-                              secondContainerDetailImage: AppImages.barak2,
-                            ),
+                            FutureBuilder(
+                                future: ProjectsController.getWebProjects(),
+                                builder: (context, snapshot) {
+                                  if (snapshot.connectionState ==
+                                      ConnectionState.waiting) {
+                                    return Container(
+                                        margin: const EdgeInsets.only(top: 50),
+                                        child: const CircularProgressIndicator(
+                                          color: Colors.black87,
+                                        ));
+                                  } else {
+                                    var portfolioWebsites = snapshot.data!
+                                        .where((e) =>
+                                            e.projectType ==
+                                                "Portfolio Development" ||
+                                            e.projectType ==
+                                                "Portfolio Website")
+                                        .toList();
+                                    var fullPagerWebsites = snapshot.data!
+                                        .where((e) =>
+                                            e.projectType !=
+                                                "Portfolio Development" &&
+                                            e.projectType !=
+                                                "Portfolio Website")
+                                        .toList();
+                                    return Column(
+                                      children: [
+                                        ShowcaseContainer(
+                                          title: 'Portfolio Websites',
+                                          description:
+                                              'Intuitively designed portfolio websites for esteemed users helping people showcase their work and skills.',
+                                          initialIcon:
+                                              CupertinoIcons.desktopcomputer,
+                                          firstContainerMainImage:
+                                              portfolioWebsites[0].mainImage,
+                                          firstContainerDetailImage:
+                                              portfolioWebsites[0].secondImage,
+                                          secondContainerMainImage:
+                                              portfolioWebsites[1].mainImage,
+                                          secondContainerDetailImage:
+                                              portfolioWebsites[1].secondImage,
+                                          firstContainerMainImageBG:
+                                              Colors.black,
+                                          firstContainerDetailImageBG:
+                                              Colors.black,
+                                          secondContainerMainImageBG:
+                                              Colors.black,
+                                          secondContainerDetailImageBG:
+                                              Colors.black,
+                                        ),
+                                        ShowcaseContainer(
+                                          title: 'Full pages website design',
+                                          description:
+                                              'Creating immersive and engaging full-page website designs that captivate audiences and deliver a seamless user experience.',
+                                          initialIcon:
+                                              Icons.desktop_windows_outlined,
+                                          firstContainerMainImage:
+                                              fullPagerWebsites[0].mainImage,
+                                          firstContainerDetailImage:
+                                              fullPagerWebsites[0].secondImage,
+                                          secondContainerMainImage:
+                                              fullPagerWebsites[1].mainImage,
+                                          secondContainerDetailImage:
+                                              fullPagerWebsites[1].secondImage,
+                                        ),
+                                      ],
+                                    );
+                                  }
+                                }),
                           ],
                         ),
                       ),

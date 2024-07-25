@@ -6,8 +6,6 @@ class ShowcaseContainer extends StatefulWidget {
   final String title;
   final String description;
   final IconData initialIcon;
-  final Color? firstContainerBG;
-  final Color? secondContainerBG;
   final String firstContainerMainImage;
   final String firstContainerDetailImage;
   final Color? firstContainerMainImageBG;
@@ -23,8 +21,6 @@ class ShowcaseContainer extends StatefulWidget {
     required this.title,
     required this.description,
     required this.initialIcon,
-    this.firstContainerBG,
-    this.secondContainerBG,
     this.firstContainerMainImageBG,
     this.firstContainerDetailImageBG,
     this.secondContainerMainImageBG,
@@ -146,7 +142,7 @@ class _ShowcaseContainerState extends State<ShowcaseContainer> {
                     padding: const EdgeInsets.symmetric(horizontal: 25),
                     height: MediaQuery.of(context).size.height * .45,
                     decoration: BoxDecoration(
-                      color: widget.firstContainerBG ?? Colors.grey.shade300,
+                      color: Colors.grey.shade300,
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Row(
@@ -160,7 +156,7 @@ class _ShowcaseContainerState extends State<ShowcaseContainer> {
                             margin: const EdgeInsets.only(top: 30),
                             color: widget.firstContainerMainImageBG ??
                                 Colors.white,
-                            child: Image.asset(
+                            child: Image.network(
                               widget.firstContainerMainImage,
                               fit: BoxFit.fitWidth,
                               alignment: Alignment.topCenter,
@@ -177,7 +173,7 @@ class _ShowcaseContainerState extends State<ShowcaseContainer> {
                             width: double.infinity,
                             color: widget.firstContainerDetailImageBG ??
                                 Colors.white,
-                            child: Image.asset(
+                            child: Image.network(
                               widget.firstContainerDetailImage,
                               fit: BoxFit.fitWidth,
                               alignment: Alignment.center,
@@ -192,7 +188,7 @@ class _ShowcaseContainerState extends State<ShowcaseContainer> {
                     padding: const EdgeInsets.symmetric(horizontal: 25),
                     height: MediaQuery.of(context).size.height * .45,
                     decoration: BoxDecoration(
-                      color: widget.secondContainerBG ?? Colors.grey.shade300,
+                      color: Colors.grey.shade300,
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Row(
@@ -206,7 +202,7 @@ class _ShowcaseContainerState extends State<ShowcaseContainer> {
                             margin: const EdgeInsets.only(top: 30),
                             color: widget.secondContainerMainImageBG ??
                                 Colors.white,
-                            child: Image.asset(
+                            child: Image.network(
                               widget.secondContainerMainImage,
                               fit: BoxFit.fitWidth,
                               alignment: Alignment.topCenter,
@@ -223,7 +219,7 @@ class _ShowcaseContainerState extends State<ShowcaseContainer> {
                             width: double.infinity,
                             color: widget.secondContainerDetailImageBG ??
                                 Colors.white,
-                            child: Image.asset(
+                            child: Image.network(
                               widget.secondContainerDetailImage,
                               fit: BoxFit.fitWidth,
                               alignment: Alignment.center,
@@ -242,7 +238,7 @@ class _ShowcaseContainerState extends State<ShowcaseContainer> {
                       padding: const EdgeInsets.symmetric(horizontal: 25),
                       height: MediaQuery.of(context).size.height * .4,
                       decoration: BoxDecoration(
-                        color: widget.firstContainerBG ?? Colors.grey.shade300,
+                        color: Colors.grey.shade300,
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Row(
@@ -256,7 +252,7 @@ class _ShowcaseContainerState extends State<ShowcaseContainer> {
                               margin: const EdgeInsets.only(top: 30),
                               color: widget.firstContainerMainImageBG ??
                                   Colors.white,
-                              child: Image.asset(
+                              child: Image.network(
                                 widget.firstContainerMainImage,
                                 fit: BoxFit.fitWidth,
                                 alignment: Alignment.topCenter,
@@ -273,7 +269,7 @@ class _ShowcaseContainerState extends State<ShowcaseContainer> {
                               width: double.infinity,
                               color: widget.firstContainerDetailImageBG ??
                                   Colors.white,
-                              child: Image.asset(
+                              child: Image.network(
                                 widget.firstContainerDetailImage,
                                 fit: BoxFit.fitWidth,
                                 alignment: Alignment.center,
@@ -290,7 +286,7 @@ class _ShowcaseContainerState extends State<ShowcaseContainer> {
                       padding: const EdgeInsets.symmetric(horizontal: 25),
                       height: MediaQuery.of(context).size.height * .4,
                       decoration: BoxDecoration(
-                        color: widget.secondContainerBG ?? Colors.grey.shade300,
+                        color: Colors.grey.shade300,
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Row(
@@ -304,7 +300,7 @@ class _ShowcaseContainerState extends State<ShowcaseContainer> {
                               margin: const EdgeInsets.only(top: 30),
                               color: widget.secondContainerMainImageBG ??
                                   Colors.white,
-                              child: Image.asset(
+                              child: Image.network(
                                 widget.secondContainerMainImage,
                                 fit: BoxFit.fitWidth,
                                 alignment: Alignment.topCenter,
@@ -321,7 +317,7 @@ class _ShowcaseContainerState extends State<ShowcaseContainer> {
                               width: double.infinity,
                               color: widget.secondContainerDetailImageBG ??
                                   Colors.white,
-                              child: Image.asset(
+                              child: Image.network(
                                 widget.secondContainerDetailImage,
                                 fit: BoxFit.fitWidth,
                                 alignment: Alignment.center,
