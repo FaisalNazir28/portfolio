@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/models/selected_works_model.dart';
+import 'package:my_portfolio/models/projects_model.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
 
 class SelectedWorkContainer extends StatefulWidget {
-  final SelectedProjectModel projectData;
+  final ProjectsModel projectData;
   final bool isProjectViewScreen;
-  final bool isMobileProject;
+  final List<ProjectsModel> projectsList;
 
   const SelectedWorkContainer({
     super.key,
     required this.projectData,
-    required this.isMobileProject,
     this.isProjectViewScreen = false,
+    required this.projectsList,
   });
 
   @override
@@ -65,7 +65,7 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                           ),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(15),
-                            child: Image.asset(
+                            child: Image.network(
                               widget.projectData.mainImage,
                               fit: BoxFit.cover,
                               alignment: Alignment.topCenter,
@@ -74,7 +74,7 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                         ),
                         const SizedBox(height: 25.0),
                         Text(
-                          widget.projectData.title,
+                          widget.projectData.projectName,
                           style: const TextStyle(
                             fontSize: 30.0,
                             fontWeight: FontWeight.w600,
@@ -82,7 +82,7 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                         ),
                         const SizedBox(height: 20.0),
                         Text(
-                          widget.projectData.company,
+                          widget.projectData.clientCompany,
                           style: const TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.w500,
@@ -98,7 +98,7 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                         ),
                         const SizedBox(height: 28.0),
                         Text(
-                          widget.projectData.description,
+                          widget.projectData.projectDescription,
                           maxLines: isHovered ? 4 : 2,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
@@ -119,7 +119,11 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                           Routes.project,
                           arguments: {
                             "projectData": widget.projectData,
-                            "isMobileProject": widget.isMobileProject,
+                            "isMobileProject":
+                                widget.projectData.projectPlatform == "Mobile"
+                                    ? true
+                                    : false,
+                            "projectsList": widget.projectsList
                           },
                         );
                       },
@@ -165,7 +169,7 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                                     ),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(15),
-                                      child: Image.asset(
+                                      child: Image.network(
                                         widget.projectData.mainImage,
                                         fit: BoxFit.cover,
                                         alignment: Alignment.topCenter,
@@ -179,7 +183,7 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                                       ),
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(15),
-                                        child: Image.asset(
+                                        child: Image.network(
                                           widget.projectData.mainImage,
                                           fit: BoxFit.cover,
                                           alignment: Alignment.topCenter,
@@ -199,7 +203,7 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              widget.projectData.title,
+                              widget.projectData.projectName,
                               style: const TextStyle(
                                 fontSize: 30.0,
                                 fontWeight: FontWeight.w600,
@@ -207,7 +211,7 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                             ),
                             const SizedBox(height: 20.0),
                             Text(
-                              widget.projectData.company,
+                              widget.projectData.clientCompany,
                               style: const TextStyle(
                                 fontSize: 20.0,
                                 fontWeight: FontWeight.w500,
@@ -224,7 +228,7 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                             const SizedBox(height: 28.0),
                             Expanded(
                               child: Text(
-                                widget.projectData.description,
+                                widget.projectData.projectDescription,
                                 maxLines: 3,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
@@ -241,7 +245,12 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                                   Routes.project,
                                   arguments: {
                                     "projectData": widget.projectData,
-                                    "isMobileProject": widget.isMobileProject,
+                                    "isMobileProject":
+                                        widget.projectData.projectPlatform ==
+                                                "Mobile"
+                                            ? true
+                                            : false,
+                                    "projectsList": widget.projectsList
                                   },
                                 );
                               },
@@ -281,7 +290,7 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                       ),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(15),
-                        child: Image.asset(
+                        child: Image.network(
                           widget.projectData.mainImage,
                           fit: BoxFit.cover,
                           alignment: Alignment.topCenter,
@@ -290,7 +299,7 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                     ),
                     const SizedBox(height: 20.0),
                     Text(
-                      widget.projectData.title,
+                      widget.projectData.projectName,
                       style: const TextStyle(
                         fontSize: 30.0,
                         fontWeight: FontWeight.w600,
@@ -298,7 +307,7 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                     ),
                     const SizedBox(height: 12.0),
                     Text(
-                      widget.projectData.company,
+                      widget.projectData.clientCompany,
                       style: const TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.w500,
@@ -315,7 +324,7 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                     const SizedBox(height: 18.0),
                     widget.isProjectViewScreen == true
                         ? Text(
-                            widget.projectData.description,
+                            widget.projectData.projectDescription,
                             maxLines: 3,
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(
@@ -325,7 +334,7 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                           )
                         : Expanded(
                             child: Text(
-                              widget.projectData.description,
+                              widget.projectData.projectDescription,
                               maxLines: 3,
                               overflow: TextOverflow.ellipsis,
                               style: const TextStyle(
@@ -344,7 +353,12 @@ class _SelectedWorkContainerState extends State<SelectedWorkContainer> {
                               Routes.project,
                               arguments: {
                                 "projectData": widget.projectData,
-                                "isMobileProject": widget.isMobileProject,
+                                "isMobileProject":
+                                    widget.projectData.projectPlatform ==
+                                            "Mobile"
+                                        ? true
+                                        : false,
+                                "projectsList": widget.projectsList
                               },
                             );
                           },

@@ -7,10 +7,12 @@ import 'package:my_portfolio/routes/routes.dart';
 
 class DetailedShowcaseContainer extends StatefulWidget {
   final ProjectsModel projectData;
+  final List<ProjectsModel> projectsList;
 
   const DetailedShowcaseContainer({
     super.key,
     required this.projectData,
+    required this.projectsList,
   });
 
   @override
@@ -124,6 +126,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                                             "Mobile"
                                         ? true
                                         : false,
+                                "projectsList": widget.projectsList
                               },
                             ),
                             child: Container(
@@ -372,6 +375,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                                               "Mobile"
                                           ? true
                                           : false,
+                                  "projectsList": widget.projectsList
                                 },
                               ),
                               child: Container(
@@ -657,6 +661,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                                   widget.projectData.projectPlatform == "Mobile"
                                       ? true
                                       : false,
+                              "projectsList": widget.projectsList
                             },
                           );
                         },
@@ -837,6 +842,7 @@ class _DetailedShowcaseContainerState extends State<DetailedShowcaseContainer> {
                                             "Mobile"
                                         ? true
                                         : false,
+                                "projectsList": widget.projectsList
                               },
                             );
                           },

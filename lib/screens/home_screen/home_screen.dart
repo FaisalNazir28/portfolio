@@ -2,10 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/controllers/awards_controller.dart';
 import 'package:my_portfolio/controllers/experiences_controller.dart';
+import 'package:my_portfolio/controllers/projects_controller.dart';
 import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/models/awards_model.dart';
 import 'package:my_portfolio/models/experiences_model.dart';
-import 'package:my_portfolio/models/selected_project_data.dart';
+import 'package:my_portfolio/models/projects_model.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
 import 'package:my_portfolio/utilities/app_images.dart';
@@ -32,6 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<ExperiencesModel> experiencesList =
       List<ExperiencesModel>.empty(growable: true);
   List<AwardsModel> awardsList = List<AwardsModel>.empty(growable: true);
+  List<ProjectsModel> projectsList = List<ProjectsModel>.empty(growable: true);
 
   @override
   void initState() {
@@ -675,47 +677,60 @@ class _HomeScreenState extends State<HomeScreen> {
                             const SizedBox(
                               height: 50,
                             ),
-                            GridView.builder(
-                                physics: const NeverScrollableScrollPhysics(),
-                                shrinkWrap: true,
-                                gridDelegate:
-                                    SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: isDesktopScreen ? 2 : 1,
-                                  childAspectRatio: isDesktopScreen
-                                      ? isDesktop1200to1300
-                                          ? 0.55
-                                          : isDesktop1300to1400
-                                              ? 0.60
-                                              : isDesktop1400to1500
-                                                  ? 0.64
-                                                  : isDesktop1500to1600
+                            FutureBuilder(
+                                future: ProjectsController.getWebProjects(),
+                                builder: (context, snapshot) {
+                                  if (snapshot.connectionState ==
+                                      ConnectionState.waiting) {
+                                    return const CircularProgressIndicator();
+                                  } else {
+                                    projectsList = snapshot.data!;
+                                    projectsList.sort((a, b) => a.projectIndex
+                                        .compareTo(b.projectIndex));
+                                    return GridView.builder(
+                                        physics:
+                                            const NeverScrollableScrollPhysics(),
+                                        shrinkWrap: true,
+                                        gridDelegate:
+                                            SliverGridDelegateWithFixedCrossAxisCount(
+                                          crossAxisCount:
+                                              isDesktopScreen ? 2 : 1,
+                                          childAspectRatio: isDesktopScreen
+                                              ? isDesktop1200to1300
+                                                  ? 0.55
+                                                  : isDesktop1300to1400
+                                                      ? 0.60
+                                                      : isDesktop1400to1500
+                                                          ? 0.64
+                                                          : isDesktop1500to1600
+                                                              ? 0.69
+                                                              : isDesktop1600to1700
+                                                                  ? 0.74
+                                                                  : isDesktop1700to1800
+                                                                      ? 0.79
+                                                                      : isDesktop1800to1900
+                                                                          ? 0.84
+                                                                          : 0.88
+                                              : isTabletScreen
+                                                  ? isTablet600to800
+                                                      ? 1.5
+                                                      : 2.3
+                                                  : isMobileLessThan500
                                                       ? 0.69
-                                                      : isDesktop1600to1700
-                                                          ? 0.74
-                                                          : isDesktop1700to1800
-                                                              ? 0.79
-                                                              : isDesktop1800to1900
-                                                                  ? 0.84
-                                                                  : 0.88
-                                      : isTabletScreen
-                                          ? isTablet600to800
-                                              ? 1.5
-                                              : 2.3
-                                          : isMobileLessThan500
-                                              ? 0.69
-                                              : isMobile500to550
-                                                  ? 0.76
-                                                  : 0.83,
-                                  crossAxisSpacing: 50.0,
-                                  mainAxisSpacing: 50.0,
-                                ),
-                                itemCount: 4,
-                                itemBuilder: (context, index) {
-                                  return SelectedWorkContainer(
-                                    projectData: SelectedProjectData
-                                        .selectedWebProjects[index],
-                                    isMobileProject: false,
-                                  );
+                                                      : isMobile500to550
+                                                          ? 0.76
+                                                          : 0.83,
+                                          crossAxisSpacing: 50.0,
+                                          mainAxisSpacing: 50.0,
+                                        ),
+                                        itemCount: 4,
+                                        itemBuilder: (context, index) {
+                                          return SelectedWorkContainer(
+                                            projectData: projectsList[index],
+                                            projectsList: projectsList,
+                                          );
+                                        });
+                                  }
                                 }),
                           ],
                         ),

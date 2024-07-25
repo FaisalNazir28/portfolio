@@ -196,7 +196,6 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
                             ? FutureBuilder(
                                 future: ProjectsController.getWebProjects(),
                                 builder: (context, snapshot) {
-                                  webProjects = snapshot.data;
                                   if (snapshot.connectionState ==
                                       ConnectionState.waiting) {
                                     return Container(
@@ -207,6 +206,9 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
                                     );
                                   } else if (snapshot.hasData &&
                                       snapshot.data!.isNotEmpty) {
+                                    webProjects = snapshot.data!;
+                                    webProjects!.sort((a, b) => a.projectIndex
+                                        .compareTo(b.projectIndex));
                                     return Column(
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
@@ -221,6 +223,7 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
                                           itemBuilder: (context, index) {
                                             return DetailedShowcaseContainer(
                                               projectData: webProjects![index],
+                                              projectsList: webProjects!,
                                             );
                                           },
                                         ),
@@ -296,6 +299,7 @@ class _CaseStudiesScreenState extends State<CaseStudiesScreen> {
                                                 return DetailedShowcaseContainer(
                                                   projectData:
                                                       mobileProjects![index],
+                                                  projectsList: webProjects!,
                                                 );
                                               },
                                             ),

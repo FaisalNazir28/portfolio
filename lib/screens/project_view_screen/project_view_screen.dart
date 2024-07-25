@@ -5,7 +5,6 @@ import 'package:ionicons/ionicons.dart';
 import 'package:my_portfolio/controllers/projects_controller.dart';
 import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/models/projects_model.dart';
-import 'package:my_portfolio/models/selected_project_data.dart';
 import 'package:my_portfolio/responsiveness/breakpoints.dart';
 import 'package:my_portfolio/routes/routes.dart';
 import 'package:my_portfolio/widgets/custom_app_button.dart';
@@ -54,6 +53,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
     final arguments = ModalRoute.of(context)!.settings.arguments as Map;
     final ProjectsModel projectModel = arguments["projectData"];
     final bool isMobileProject = arguments["isMobileProject"];
+    final List<ProjectsModel> projectsList = arguments["projectsList"];
 
     return Scaffold(
       appBar: const CustomHeader(),
@@ -67,7 +67,11 @@ class _ProjectScreenState extends State<ProjectScreen> {
               children: [
                 isMobileProject
                     ? mobileAppShowcase(projectModel)
-                    : webAppShowcase(projectModel, isMobileProject),
+                    : webAppShowcase(
+                        projectModel,
+                        isMobileProject,
+                        projectsList,
+                      ),
                 ReviewWidget(defaultColor: true),
                 const CustomFooter(),
               ],
@@ -784,7 +788,11 @@ class _ProjectScreenState extends State<ProjectScreen> {
     );
   }
 
-  Widget webAppShowcase(ProjectsModel projectModel, bool isMobileProject) {
+  Widget webAppShowcase(
+    ProjectsModel projectModel,
+    bool isMobileProject,
+    List<ProjectsModel> projectsList,
+  ) {
     var isDesktopScreen = Breakpoints.isLargeScreen(context);
     var isTabletScreen = Breakpoints.isMediumScreen(context);
     var isMobileScreen = Breakpoints.isSmallScreen(context);
@@ -1193,7 +1201,10 @@ class _ProjectScreenState extends State<ProjectScreen> {
           ),
         ),
         anotherWorkContainer(
-            int.parse(projectModel.projectIndex), isMobileProject),
+          int.parse(projectModel.projectIndex),
+          isMobileProject,
+          projectsList,
+        ),
       ],
     );
   }
@@ -2031,16 +2042,19 @@ class _ProjectScreenState extends State<ProjectScreen> {
     );
   }
 
-  Widget anotherWorkContainer(int currentIndex, bool isMobileProject) {
+  Widget anotherWorkContainer(
+    int currentIndex,
+    bool isMobileProject,
+    List<ProjectsModel> projectsList,
+  ) {
     var isDesktopScreen = Breakpoints.isLargeScreen(context);
     var isTabletScreen = Breakpoints.isMediumScreen(context);
 
     List checkNextIndex() {
       List nextIndex = List.empty(growable: true);
-      if (currentIndex == SelectedProjectData.selectedWebProjects.first.index) {
+      if (currentIndex == int.parse(projectsList.first.projectIndex)) {
         nextIndex = [currentIndex + 1, currentIndex + 2];
-      } else if (currentIndex ==
-          SelectedProjectData.selectedWebProjects.last.index) {
+      } else if (currentIndex == int.parse(projectsList.last.projectIndex)) {
         nextIndex = [currentIndex - 2, currentIndex - 1];
       } else {
         nextIndex = [currentIndex - 1, currentIndex + 1];
@@ -2076,10 +2090,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                     children: [
                       Expanded(
                         child: SelectedWorkContainer(
-                          projectData: SelectedProjectData
-                              .selectedWebProjects[checkNextIndex()[0]],
-                          isMobileProject: isMobileProject,
+                          projectData: projectsList[checkNextIndex()[0]],
                           isProjectViewScreen: true,
+                          projectsList: projectsList,
                         ),
                       ),
                       const SizedBox(
@@ -2087,10 +2100,9 @@ class _ProjectScreenState extends State<ProjectScreen> {
                       ),
                       Expanded(
                         child: SelectedWorkContainer(
-                          projectData: SelectedProjectData
-                              .selectedWebProjects[checkNextIndex()[1]],
-                          isMobileProject: isMobileProject,
+                          projectData: projectsList[checkNextIndex()[1]],
                           isProjectViewScreen: true,
+                          projectsList: projectsList,
                         ),
                       ),
                     ],
@@ -2099,19 +2111,17 @@ class _ProjectScreenState extends State<ProjectScreen> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       SelectedWorkContainer(
-                        projectData: SelectedProjectData
-                            .selectedWebProjects[checkNextIndex()[0]],
-                        isMobileProject: isMobileProject,
+                        projectData: projectsList[checkNextIndex()[0]],
                         isProjectViewScreen: true,
+                        projectsList: projectsList,
                       ),
                       const SizedBox(
                         height: 40,
                       ),
                       SelectedWorkContainer(
-                        projectData: SelectedProjectData
-                            .selectedWebProjects[checkNextIndex()[1]],
-                        isMobileProject: isMobileProject,
+                        projectData: projectsList[checkNextIndex()[1]],
                         isProjectViewScreen: true,
+                        projectsList: projectsList,
                       ),
                     ],
                   )
