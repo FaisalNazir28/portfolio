@@ -41,6 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     var isTabletScreen = Breakpoints.isMediumScreen(context);
     var isMobileScreen = Breakpoints.isSmallScreen(context);
+    var isTablet600to800 = Breakpoints.isTablet600to800(context);
 
     return Scaffold(
       backgroundColor: const Color(0xfff5f5f0),
@@ -203,7 +204,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                               _passwordController
                                                                   .clear();
                                                             })
-                                                          : () {
+                                                          : setState(() {
                                                               inActiveDialog =
                                                                   true;
                                                               loading = false;
@@ -212,7 +213,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                                   UserModel();
                                                               Authentication()
                                                                   .logOutUser();
-                                                            };
+                                                            });
                                                     },
                                                     onError: () {
                                                       setState(() {
@@ -542,8 +543,16 @@ class _LoginScreenState extends State<LoginScreen> {
           if (inActiveDialog)
             Center(
               child: Container(
-                width: MediaQuery.of(context).size.width * .5,
-                height: MediaQuery.of(context).size.height * .5,
+                width: isMobileScreen
+                    ? MediaQuery.of(context).size.width * .8
+                    : isTabletScreen
+                        ? MediaQuery.of(context).size.width * .7
+                        : MediaQuery.of(context).size.width * .5,
+                height: isMobileScreen
+                    ? MediaQuery.of(context).size.height * .9
+                    : isTabletScreen
+                        ? MediaQuery.of(context).size.height * .7
+                        : MediaQuery.of(context).size.height * .5,
                 padding: const EdgeInsets.all(50),
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -570,80 +579,157 @@ class _LoginScreenState extends State<LoginScreen> {
                     const SizedBox(
                       height: 20,
                     ),
-                    const Text(
-                        "Associated user is inactive! Contact administrator to revoke."),
+                    Text(
+                      isMobileScreen
+                          ? "Associated user is inactive!\nContact administrator to revoke."
+                          : "Associated user is inactive! Contact administrator to revoke.",
+                      textAlign: TextAlign.center,
+                    ),
                     const SizedBox(
                       height: 60,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            setState(() {
-                              Navigator.pushNamed(context, Routes.home);
-                              inActiveDialog = false;
-                            });
-                          },
-                          child: Container(
-                              margin: const EdgeInsets.only(right: 60),
-                              width: 100,
-                              decoration: BoxDecoration(
-                                color: Colors.black87,
-                                borderRadius: BorderRadius.circular(20),
+                    isMobileScreen || isTablet600to800
+                        ? Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    Navigator.pushNamed(context, Routes.home);
+                                    inActiveDialog = false;
+                                  });
+                                },
+                                child: Container(
+                                    margin: const EdgeInsets.only(bottom: 40),
+                                    width: 150,
+                                    decoration: BoxDecoration(
+                                      color: Colors.black87,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 15, vertical: 10),
+                                    child: const Text(
+                                      "Home",
+                                      style: TextStyle(color: Colors.white),
+                                      textAlign: TextAlign.center,
+                                    )),
                               ),
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 15, vertical: 10),
-                              child: const Text(
-                                "Home",
-                                style: TextStyle(color: Colors.white),
-                                textAlign: TextAlign.center,
-                              )),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            setState(() {
-                              inActiveDialog = false;
-                            });
-                          },
-                          child: Container(
-                              margin: const EdgeInsets.only(right: 60),
-                              width: 150,
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 15, vertical: 10),
-                              decoration: BoxDecoration(
-                                color: Colors.black87,
-                                borderRadius: BorderRadius.circular(20),
+                              InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    inActiveDialog = false;
+                                  });
+                                },
+                                child: Container(
+                                    margin: const EdgeInsets.only(bottom: 40),
+                                    width: 150,
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 15, vertical: 10),
+                                    decoration: BoxDecoration(
+                                      color: Colors.black87,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: const Text(
+                                      "Back to login",
+                                      style: TextStyle(color: Colors.white),
+                                      textAlign: TextAlign.center,
+                                    )),
                               ),
-                              child: const Text(
-                                "Back to login",
-                                style: TextStyle(color: Colors.white),
-                                textAlign: TextAlign.center,
-                              )),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            setState(() {
-                              Navigator.pushNamed(context, Routes.contact);
-                              inActiveDialog = false;
-                            });
-                          },
-                          child: Container(
-                              width: 100,
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 15, vertical: 10),
-                              decoration: BoxDecoration(
-                                color: Colors.black87,
-                                borderRadius: BorderRadius.circular(20),
+                              InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    Navigator.pushNamed(
+                                        context, Routes.contact);
+                                    inActiveDialog = false;
+                                  });
+                                },
+                                child: Container(
+                                    width: 150,
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 15, vertical: 10),
+                                    decoration: BoxDecoration(
+                                      color: Colors.black87,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: const Text(
+                                      "Contact",
+                                      style: TextStyle(color: Colors.white),
+                                      textAlign: TextAlign.center,
+                                    )),
                               ),
-                              child: const Text(
-                                "Contact",
-                                style: TextStyle(color: Colors.white),
-                                textAlign: TextAlign.center,
-                              )),
-                        ),
-                      ],
-                    ),
+                            ],
+                          )
+                        : Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    Navigator.pushNamed(context, Routes.home);
+                                    inActiveDialog = false;
+                                  });
+                                },
+                                child: Container(
+                                    margin: const EdgeInsets.only(right: 60),
+                                    width: 100,
+                                    decoration: BoxDecoration(
+                                      color: Colors.black87,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 15, vertical: 10),
+                                    child: const Text(
+                                      "Home",
+                                      style: TextStyle(color: Colors.white),
+                                      textAlign: TextAlign.center,
+                                    )),
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    inActiveDialog = false;
+                                  });
+                                },
+                                child: Container(
+                                    margin: const EdgeInsets.only(right: 60),
+                                    width: 150,
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 15, vertical: 10),
+                                    decoration: BoxDecoration(
+                                      color: Colors.black87,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: const Text(
+                                      "Back to login",
+                                      style: TextStyle(color: Colors.white),
+                                      textAlign: TextAlign.center,
+                                    )),
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    Navigator.pushNamed(
+                                        context, Routes.contact);
+                                    inActiveDialog = false;
+                                  });
+                                },
+                                child: Container(
+                                    width: 100,
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 15, vertical: 10),
+                                    decoration: BoxDecoration(
+                                      color: Colors.black87,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: const Text(
+                                      "Contact",
+                                      style: TextStyle(color: Colors.white),
+                                      textAlign: TextAlign.center,
+                                    )),
+                              ),
+                            ],
+                          ),
                   ],
                 ),
               ),
