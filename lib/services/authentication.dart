@@ -70,7 +70,7 @@ class Authentication {
   }
 
   bool userState() {
-    if (auth.currentUser != null) {
+    if (auth.currentUser != null && userModel.isAdmin == false) {
       return true;
     } else {
       return false;

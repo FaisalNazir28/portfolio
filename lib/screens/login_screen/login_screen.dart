@@ -192,7 +192,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                                             .text,
                                                     onSuccess: () {
                                                       Authentication.userModel
-                                                              .isActive
+                                                                      .isAdmin !=
+                                                                  true &&
+                                                              Authentication
+                                                                      .userModel
+                                                                      .isActive ==
+                                                                  true
                                                           ? setState(() {
                                                               Navigator.pushNamed(
                                                                   context,
@@ -423,8 +428,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                                               .text,
                                                       onSuccess: () {
                                                         Authentication.userModel
-                                                                    .isActive ==
-                                                                true
+                                                                        .isAdmin !=
+                                                                    true &&
+                                                                Authentication
+                                                                        .userModel
+                                                                        .isActive ==
+                                                                    true
                                                             ? setState(() {
                                                                 Navigator.pushNamed(
                                                                     context,
